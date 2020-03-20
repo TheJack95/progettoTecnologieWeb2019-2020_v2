@@ -1,0 +1,67 @@
+Tabella Utenti
+	Campi:
+		Email varchar
+    	Password varchar
+    	Nome varchar
+    	Cognome varchar
+    	Telefono varchar
+    	Indirizzo varchar
+    	DataNascita date
+    	FLadmin bool
+    	PRIMARY KEY(Email)
+
+Tabella AutoVendita
+	Campi:  
+		Marca varchar
+		Modello varchar
+		KM int
+		Cilindrata varchar
+		PrezzoVendita int
+		PRIMARY KEY (Marca,Modello,KM)
+
+Tabella AutoNoleggio
+	Campi:  
+		Marca varchar
+		Modello varchar
+		Cilindrata varchar
+		CostoNoleggio smallint (Costo giornaliero)
+		Cauzione int
+		PRIMARY KEY (Marca,Modello)
+
+Tabella PreventivoAcquisto
+	Campi: 
+		IdPrev int AUTO_INCREMENT 
+		Utente varchar
+		Marca varchar
+		Modello varchar
+		PrezzoVendita int
+		PRIMARY KEY (Utente)
+
+Tabella PrenotazioneNoleggio
+	Campi:
+		IdPrenot int AUTO_INCREMENT,
+		utente varchar
+		Marca varchar
+		Modello varchar
+		InizioNoleggio date
+		FineNoleggio date
+		CostoTotale int
+		PRIMARY KEY (Utente)
+
+Tabella Messaggi
+	Campi:
+		ID int AUTO_INCREMENT,
+    	Nome varchar
+    	Cognome varchar
+    	Email varchar
+    	NumeroTelefono varchar(10),
+    	Messaggio text,
+    	PRIMARY KEY(ID)
+
+
+
+		
+
+
+		
+		
