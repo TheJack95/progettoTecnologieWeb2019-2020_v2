@@ -1,0 +1,19 @@
+Pagine Noleggio e Acquisto
+Lista con tutti i veicoli
+Box di ricerca
+
+Filtro per data disponibilità (presente solo in Noleggio)
+filtro le auto in PrenotazioneNoleggio, in cui dataOggi < InizioNoleggio o dataOggi > FineNoleggio
+
+Check-box per sole auto disponibili nella data odierna (solo pagina acquaista??)
+check su flag disponibilità (pagina acquaista)
+
+Tasto per acquisto/prenotazione
+    - Acquisto (richiedi preventivo): invia richiesta preventivo ad amministratore
+        invio messaggio utente x richiede preventivo per macchina y (scrivo su tabella (PreventivoAcquisto)
+    - Prenotazione: manda ad un form in cui l'utente inserisce giorni in cui la vuole prenotare
+        apre form: popolare campi data inizio fine noleggio. campi auto già pre-compilato e non modificabile
+        controllo sulle date inserite
+        controllo se auto disponibile in date insetite
+    - se utente non loggato -> messaggio d'errore e manda a pagina login
+
