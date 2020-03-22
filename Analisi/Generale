@@ -1,0 +1,28 @@
+*** INCONTRI ***
+
+martedì 17/03 idea generale e divisione compiti
+venerdì 20/03 discussione sulle analisi, sui requisiti e le features
+sabato 28/03 sviluppo collettivo delle parti comuni: menù, breadcrums, header, footer
+
+*** DIVISIONE DELLO SVILUPPO ***
+
+Riccardo: area personale utente base, login, registrazione
+Giacomo: lista veicoli in vendita, lista veicoli a noleggio
+Giulia: area personale amministratore
+Erik: database, homepage, contatti
+
+*** SCELTE DI PROGETTO ***
+
+- HTML5 puro (che vengono validate da XHTML5)
+- PHP che crea le pagine
+- DB in forma normale
+- CSS3 puro
+
+*** STRUMENTI ***
+
+GitHub
+Skype
+Telegram
+Visual Studio (Code)
+Atom
+per il DB?
