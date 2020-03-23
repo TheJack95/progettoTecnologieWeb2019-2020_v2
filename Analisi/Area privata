@@ -1,0 +1,25 @@
+                        Analisi area privata
+
+-->Utente generico (utente che non ha effettuato l'accesso)
+    L'utente che non ha eseguito l'accesso non possiede un area personale
+    dedicata; per tanto non ha modo di accedere a questa parte del sito
+    (vede solo login sul menu)
+
+-->Utente Loggato (utente che ha effettuato l'accesso)
+    Per l'utente che si è identificato è disponibile una sezione ad essso
+    dedicata che si compone di quattro pagine tutte aventi un menu laterale permettendo
+    la navigazione tra le stesse:
+      -"Informazioni personali" è la pagina visualizzata di default cliccando
+       il link area personale dal menu di navigazione del sito, presenta i
+       dati di base dell'utente e la possibilità di modificarli
+      -"Preventivi richiesti" è la pagina in cui l'utente può visualizzare
+       lo storico dei veicoli acquistati
+      -"Veicoli noleggiati" è la pagina in cui l'utente può visualizzare
+       lo storico dei veicoli noleggiati
+      -"Messaggi" pagina in cui l'utente puo inviare un messaggio agli amministratori
+       del sito e visualizzare i messaggi precedenti
+
+-->Database
+    La sezione Area Personale interagisce con le tabelle "Utenti", "Messaggi",
+    "preventivi" e "noleggi" per recuperare le informazioni delle relative pagine,
+    nonchè per l'invio dei messaggi.
