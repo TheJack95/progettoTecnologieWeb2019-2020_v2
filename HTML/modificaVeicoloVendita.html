@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Modifica Veicolo &vert; Area Amministratore</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="title" content="modifica veicolo da vendere" />
+		<meta name="description" content="pagina per modifica veicolo da vendere" />
+		<meta name="keywords" content="modifica veicolo, veicolo vendita, area personale, area amministratore" />
+		<meta name="language" content="italian it" />
+		<meta name="author" content="Giulia Fiorese" />
+		<link rel="icon" type="images/png" href="../Images/auto.svg" />
+		<link rel="stylesheet" type="text/css" href="" />
+		<script type="text/javascript" src=""></script>
+    </head>
+
+    <body>
+        <header></header>
+        <breadcrumb></breadcrumb>
+        <menu></menu>
+        <div id="menuAmministratore">
+            <ul>
+                <li><a href="homeAmministratore.html"><span xml:lang="en">HOME</span> AREA PERSONALE</a></li>
+                <li><a href="infoAmministratore.html">INFORMAZIONI PERSONALI</a></li>
+                <li><a href="messaggiAmministratore.html">MESSAGGI</a></li>
+                <li><a href="veicoliNoleggioAmministratore.html">VEICOLI A NOLEGGIO</a></li>
+                <li><a href="veicoliVenditaAmministratore.html">VEICOLI IN VENDITA</a></li>
+            </ul>
+        </div>
+        <div class="corpoAmministratore">
+            <h1>MODIFICA VEICOLO DA VENDERE</h1>
+            <messaggio></messaggio>
+            <p>Inserisci qui le informazioni sul veicolo da modificare&period;</p>
+            <form id="modificaVeicoloVendita" onsubmit="" action="../PHP/modificaVeicoloVendita.php" method="POST">
+                <label for="marca">Marca</label>
+                <input type="text" name="marca" id="marca" class="" tabindex="1" />
+
+                <label for="modello">Modello</label>
+                <input type="text" name="modello" id="modello" class="" tabindex="2" />
+
+                <label for="km">Chilometri</label>
+                <input type="text" name="km" id="km" class="" tabindex="3" />
+
+                <label for="cilindrata">Cilindrata</label>
+                <input type="text" name="cilindrata" id="cilindrata" class="" tabindex="4" />
+
+                <label for="prezzo">Prezzo</label>
+                <input type="text" name="prezzo" id="prezzo" class="" tabindex="5" />
+
+                <input type="submit" id="modificheVeicoloVendita" value="SALVA" tabindex="6" />
+            </form>
+        </div>
+        <footer></footer>
+    </body>
+</html>

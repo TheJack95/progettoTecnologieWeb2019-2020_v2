@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Modifica Info &vert; Area Amministratore</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="title" content="modifica informazioni personali amministratore" />
+		<meta name="description" content="pagina per modifica informazioni personali amministratore" />
+		<meta name="keywords" content="modifica, informazioni personali, area personale, area amministratore" />
+		<meta name="language" content="italian it" />
+		<meta name="author" content="Giulia Fiorese" />
+		<link rel="icon" type="images/png" href="../Images/auto.svg" />
+		<link rel="stylesheet" type="text/css" href="" />
+		<script type="text/javascript" src=""></script>
+    </head>
+
+    <body>
+        <header></header>
+        <breadcrumb></breadcrumb>
+        <menu></menu>
+        <div id="menuAmministratore">
+            <ul>
+                <li><a href="../PHP/homeAmministratore.php"><span xml:lang="en">HOME</span> AREA PERSONALE</a></li>
+                <li><a href="../PHP/infoAmministratore.php"></a>INFORMAZIONI PERSONALI</a></li>
+                <li><a href="../PHP/messaggiAmministratore.php">MESSAGGI</a></li>
+                <li><a href="../PHP/veicoliNoleggioAmministratore.php">VEICOLI A NOLEGGIO</a></li>
+                <li><a href="../PHP/veicoliVenditaAmministratore.php">VEICOLI IN VENDITA</a></li>
+            </ul>
+        </div>
+        <div class="corpoAmministratore">
+            <h1>MODIFICA INFORMAZIONI PERSONALI</h1>
+            <messaggio></messaggio>
+            <p>Inserisci qui le informazioni personali da modificare&period;</p>
+            <form id="modificaInfo" onsubmit="" action="../PHP/modificaInfoAmministratore.php" method="POST">
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" id="nome" class="" tabindex="1" />
+
+                <label for="cognome">Cognome</label>
+                <input type="text" name="cognome" id="cognome" class="" tabindex="2" />
+
+                <label for="telefono">Telefono</label>
+                <input type="text" name="telefono" id="telefono" class="" tabindex="3" />
+
+                <label for="cellulare">Cellulare</label>
+                <input type="text" name="cellulare" id="cellulare" class="" tabindex="4" />
+
+                <input type="submit" id="modificaInfo" value="SALVA" tabindex="5" />
+            </form>
+        </div>
+        <footer></footer>
+    </body>
+</html>
