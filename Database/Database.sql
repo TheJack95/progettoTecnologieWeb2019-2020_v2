@@ -11,13 +11,13 @@ CREATE TABLE IF NOT EXISTS Utenti(
 );
 
 CREATE TABLE IF NOT EXISTS AutoVendita(
-    Targa varchar(7),
+    IdAuto int AUTO_INCREMENT,
 	Marca varchar(20),
 	Modello varchar(50),
 	KM int,
 	Cilindrata smallint,
 	PrezzoVendita int,
-	PRIMARY KEY(Targa)
+	PRIMARY KEY(IdAuto)
 );
 
 CREATE TABLE IF NOT EXISTS AutoNoleggio(
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS AutoNoleggio(
 CREATE TABLE IF NOT EXISTS PreventivoAcquisto(
 	IdPrev int AUTO_INCREMENT,
 	Utente varchar(50),
-    Targa varchar(7),
+    Automobile int,
 	PrezzoVendita int,
 	PRIMARY KEY(IdPrev)
 );
@@ -63,7 +63,7 @@ ALTER TABLE PreventivoAcquisto
 	ON UPDATE CASCADE;
 
 ALTER TABLE PreventivoAcquisto
-	ADD CONSTRAINT FK_PrevTarga FOREIGN KEY (Targa) REFERENCES AutoVendita(Targa);
+	ADD CONSTRAINT FK_PrevTarga FOREIGN KEY (Automobile) REFERENCES AutoVendita(IdAuto);
 
 ALTER TABLE PrenotazioneNoleggio
 	ADD CONSTRAINT FK_PrenUtente FOREIGN KEY (Utente) REFERENCES Utenti(Email)
