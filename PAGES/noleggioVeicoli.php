@@ -1,0 +1,63 @@
+<?php
+
+require_once "../PHP/funzioni.php";
+require_once "../PHP/funzioniAuto.php";
+
+$output = file_get_contents("../HTML/noleggioAcquista.html");
+
+$output = str_replace("<header></header>",funzioniGenerali::header(),$output);
+
+$output = str_replace("<menu></menu>",funzioniGenerali::menu(),$output);
+$output = str_replace('<a href="noleggioVeicoli.php">VEICOLI A NOLEGGIO</a>','<strong>VEICOLI A NOLEGGIO</strong>',$output);
+
+$output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Veicoli a noleggio"),$output);
+
+$output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
+
+$rows = (new Veicoli())->getAutoNoleggio();
+$veicoli = "";
+
+foreach($rows as $row) {
+
+	$veicoli .= '<div>'."\n"
+				//."	<img class='' src='".$row->Immagine."' alt='".$row->DescrizioneImmagine."'/>"."\n"
+				.'	<div>'."\n"
+				.'		<h2>'.$row->Marca ." ". $row->Modello.'</h4>'."\n"
+				.'	</div>'."\n"
+				.'	<div>'."\n"
+				.'		<h4>Cilindrata</h4>'."\n"
+				.'		<p>'.$row->Cilindrata.'</p>'."\n"
+				.'	</div>'."\n"
+				.'	<div>'."\n"
+				.'		<h4>Costo noleggio</h4>'."\n"
+				.'		<p>'.$row->CostoNoleggio.'</p>'."\n"
+				.'	</div>'."\n"
+				.'	<div>'."\n"
+				.'		<h4>Cauzione</h4>'."\n"
+				.'		<p>'.$row->Cauzione.'</p>'."\n"
+				.'	</div>'."\n"
+				.'	<form action="../PHP/" method="post">'."\n"
+				.'		<div>'."\n"
+				.'			<button type="submit" name="" value="'.$row->Targa.'" class="button internal-button">Noleggio</button>'."\n"
+				.'		</div>'."\n"
+				.'	</form>'."\n"
+				.'</div>';
+}
+
+$output = str_replace("<auto></auto>",$veicoli,$output);
+
+$filtri = '<div>'."\n"
+			.'<p>Filtra per data disponibilita</p>'."\n"
+			.'<div>'."\n"
+			.'	<label>Dal</label>'."\n"
+			.'	<input type="date" name="dataInizio">'."\n"
+
+			.'	<label>Al</label>'."\n"
+			.'	<input type="date" name="dataFine">'."\n"
+			.'</div>'."\n"
+		  .'</div>';
+
+$output = str_replace("<filtriAuto></filtriAuto>",$filtri,$output);
+
+echo $output;
+?>

@@ -12,12 +12,12 @@
     #funzione per scrivere i breadcrumb
         public static function breadcrumb(...$sequenza){
             $breadcrumb_form = '<div id="breadcrumb">'
-                                    .'<p>Ti trovi in ';
+                                    .'<p>Ti trovi in: ';
             foreach($sequenza as $element){
                 $breadcrumb_form .= "$element ";
             }
-            $breadcrumb_form .=      "$breadcrumb</p>"
-                               .'/<div>';
+            $breadcrumb_form .=     "</p>"
+                               .'</div>';
             return $breadcrumb_form;
         }
     
@@ -28,8 +28,8 @@
             }
             $menu_form = '<ul>'
                             .'<li><a href=""><span xml:lang="en">HOMEPAGE</span></a></li>'
-                            .'<li><a href="">VEICOLI A NOLEGGIO</a></li>'
-                            .'<li><a href="">VEICOLI IN VENDITA</a></li>'
+                            .'<li><a href="noleggioVeicoli.php">VEICOLI A NOLEGGIO</a></li>'
+                            .'<li><a href="acquistaVeicoli.php">VEICOLI IN VENDITA</a></li>'
                             .'<li><a href="">CONTATTI</a></li>';
             
             if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) { //login effettuato correttamente
