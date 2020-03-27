@@ -2,8 +2,24 @@
     require_once "../PHP/funzioni.php";
     require_once "../PHP/funzioniGiulia.php";
 
+    #AGGIUNGERE CONTROLLO SUL LOGIN
+
+    $oggettoPagina = new funzioniAmministratore();
+    $connessione = $oggettoPagina->apriConnessioneDB();
+    $informazioni = "";
+
+    if($connessione){
     #funzione lettura da database delle informazioni dell'utente
-    $informazioni = funzioniAmministratore::selectInfoPersonali();
+        $infoPersonali = $oggettoPagina->selectInfoPersonali();
+        if($infoPersonali==null){
+            $informazioni .= "non sono disponibili i tuoi dati personali, riprova più tardi";
+        } else{
+            $informazioni .= $infoPersonali['Email']." ".$infoPersonali['Nome']." ".$infoPersonali['Cognome']." ".$infoPersonali['Telefono']." ".$infoPersonali['Indirizzo']." ".$infoPersonali['DataNascita']." .";
+        }
+
+    } else{
+        $informazioni .= "Errore di connessione al database. Riprova più tardi!";
+    }
 
     $output = file_get_contents("../HTML/infoAmministratore.html");
     $output = str_replace("<header></header>",funzioniGenerali::header(),$output);

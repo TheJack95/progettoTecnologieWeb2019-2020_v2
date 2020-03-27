@@ -4,9 +4,16 @@
 
     #AGGIUNGERE CONTROLLO SUL LOGIN
 
-    #funzione lettura da SESSION identita' dell'utente
-    $nome = funzioniAmministratore::selectNomeUtente();
+    $oggettoPagina = new funzioniAmministratore();
+    $connessione = $oggettoPagina->apriConnessioneDB();
 
+    if($connessione){
+    #funzione lettura da SESSION identita' dell'utente
+        $nome = $oggettoPagina->selectNomeUtente();
+    } else{
+        $nome = "non è disponibile il tuo nome in questo momento";
+    }
+    
     $output = file_get_contents("../HTML/homeAmministratore.html");
     $output = str_replace("<header></header>",funzioniGenerali::header(),$output);
     $output = str_replace("<menu></menu>",funzioniGenerali::menu(),$output);

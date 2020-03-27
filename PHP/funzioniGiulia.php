@@ -32,7 +32,8 @@
     
     #funzione per la lettura da database del nome dell'utente
         public function selectNomeUtente() {
-            $identita = $_SESSION['email'];
+#            $identita = $_SESSION['email'];
+            $identita = " ";
             $query = 'SELECT Nome FROM Utenti WHERE Email=\''.$identita.'\'';
             $queryNomeUtente = mysqli_query($this->connection,$query);
             if(mysqli_num_rows($queryNomeUtente)==0){
@@ -44,7 +45,8 @@
     
     #funzione per la lettura da database delle informazioni dell'utente
         public function selectInfoPersonali() {
-            $identita = $_SESSION['email'];
+#            $identita = $_SESSION['email'];
+            $identita = " ";
             $query = 'SELECT Email, Nome, Cognome, Telefono, Indirizzo, DataNascita FROM Utenti WHERE Email=\''.$identita.'\'';
             $queryResult = mysqli_query($this->connection,$query);
             if(mysqli_num_rows($queryResult)==0){
