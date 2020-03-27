@@ -45,18 +45,16 @@ foreach($rows as $row) {
 $output = str_replace("<auto></auto>",$veicoli,$output);
 
 $filtri ='<div>'."\n"
-		.'	<form action="../PHP/filtri.php?page=n" method="POST">'."\n"
+		.'	<form action="noleggioVeicoli.php" method="POST">'."\n"
 		.'  	<fieldset>'."\n"
 		.'				<label>Ricerca auto</label>'."\n"
 		.'				<input type="text" name="searchbar" placeholder="Cerca..." tabindex="1">'."\n"
-		.'				<label>Solo Viecoli Disponibili</label>'."\n"
-		.'				<input type="checkbox" name="viecoliDisponibili" value="true" tabindex="2">'."\n"
 		.'				<p>Filtra per data disponibilita</p>'."\n"
 		.'				<label>Dal</label>'."\n"
-		.'				<input type="date" name="dataInizio" tabindex="3">'."\n"
+		.'				<input type="date" name="dataInizio" tabindex="2">'."\n"
 		.'				<label>Al</label>'."\n"
-		.'				<input type="date" name="dataFine" tabindex="4">'."\n"
-		.'				<button type="submit" name="applicaFiltri" value="applicaFiltri" class="button internal-button" tabindex="5">Cerca</button>'."\n"
+		.'				<input type="date" name="dataFine" tabindex="3">'."\n"
+		.'				<button type="submit" name="applicaFiltri" value="applicaFiltri" class="button internal-button" tabindex="4">Cerca</button>'."\n"
 		.'  	</fieldset>'."\n"
 		.'	</form>'."\n"
 		.'</div>';

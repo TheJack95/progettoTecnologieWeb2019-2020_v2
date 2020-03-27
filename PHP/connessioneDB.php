@@ -23,14 +23,14 @@ class database_connection
 
     public function esegui($query)
     {
-        $result = @mysqli_query($this->connessione, $query);
-        @mysqli_close($this->connessione);
+        $result = mysqli_query($this->connessione, $query);
+        mysqli_close($this->connessione);
         return $result;
     }
 
     public function chiudiConnessione()
     {
-        @mysqli_close($this->connessione);
+        mysqli_close($this->connessione);
     }
 }
 ?>
