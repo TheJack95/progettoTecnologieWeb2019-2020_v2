@@ -1,5 +1,5 @@
 <?php
-    require_once "../PHP/Connessione_Db.php";
+    require_once "../PHP/connessioneDB.php";
 
     $nome = $_POST["nome"];
     $cognome = $_POST["cognome"];

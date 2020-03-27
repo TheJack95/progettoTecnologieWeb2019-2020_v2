@@ -27,10 +27,10 @@
                 session_start();
             }
             $menu_form = '<ul>'
-                            .'<li><a href=""><span xml:lang="en">HOMEPAGE</span></a></li>'
+                            .'<li><a href="home.php"><span xml:lang="en">HOMEPAGE</span></a></li>'
                             .'<li><a href="noleggioVeicoli.php">VEICOLI A NOLEGGIO</a></li>'
                             .'<li><a href="acquistaVeicoli.php">VEICOLI IN VENDITA</a></li>'
-                            .'<li><a href="">CONTATTI</a></li>';
+                            .'<li><a href="contatti.php">CONTATTI</a></li>';
             
             if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) { //login effettuato correttamente
                 $menu_form .= '<li><a class="" href="">AREA PERSONALE</a></li>'

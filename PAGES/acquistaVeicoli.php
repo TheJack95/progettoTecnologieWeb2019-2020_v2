@@ -8,16 +8,20 @@ $output = file_get_contents("../HTML/noleggioAcquista.html");
 $output = str_replace("<header></header>",funzioniGenerali::header(),$output);
 
 $output = str_replace("<menu></menu>",funzioniGenerali::menu(),$output);
-$output = str_replace('<a href="noleggioVeicoli.php">VEICOLI IN VENDITA</a>','<strong>VEICOLI IN VENDITA</strong>',$output);
+$output = str_replace('<a href="acquistaVeicoli.php">VEICOLI IN VENDITA</a>','<strong>VEICOLI IN VENDITA</strong>',$output);
 
 $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Veicoli in vendita"),$output);
 
-$output = str_replace("<filtriAuto></filtriAuto>","",$output);
-
 $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
 
-$rows = Veicoli::getAutoAcquista();
-$veicoli = "";
+$rows = null;
+$veicoli = null;
+
+if(!isset($_SESSION["filtri"])) {
+	(new Veicoli())->getAutoAcquista();
+} else {
+
+}
 
 foreach($rows as $row) {
 
@@ -48,6 +52,20 @@ foreach($rows as $row) {
 }
 
 $output = str_replace("<auto></auto>",$veicoli,$output);
+
+$filtri ='<div>'."\n"
+		.'	<form action="../PHP/filtri.php?page=a" method="POST">'."\n"
+		.'  	<fieldset>'."\n"
+		.'			<label>Ricerca auto</label>'."\n"
+		.'				<input type="text" name="searchbar" placeholder="Cerca..." tabindex="1">'."\n"
+		.'				<label>Solo Viecoli Disponibili</label>'."\n"
+		.'				<input type="checkbox" name="veicoliDisponibili" value="true" tabindex="2">'."\n"
+		.'				<button type="submit" name="applicaFiltri" value="applicaFiltri" class="button internal-button" tabindex="3">Cerca</button>'."\n"
+		.'  	</fieldset>'."\n"
+		.'	</form>'."\n"
+		.'</div>';
+
+$output = str_replace("<filtriAuto></filtriAuto>",$filtri,$output);
 
 echo $output;
 

@@ -37,25 +37,29 @@ foreach($rows as $row) {
 				.'		<p>'.$row->Cauzione.'</p>'."\n"
 				.'	</div>'."\n"
 				.'	<form action="../PHP/" method="post">'."\n"
-				.'		<div>'."\n"
-				.'			<button type="submit" name="" value="'.$row->Targa.'" class="button internal-button">Noleggio</button>'."\n"
-				.'		</div>'."\n"
+				.'		<button type="submit" name="" value="'.$row->Targa.'" class="button internal-button" tabindex="1">Noleggio</button>'."\n"
 				.'	</form>'."\n"
 				.'</div>';
 }
 
 $output = str_replace("<auto></auto>",$veicoli,$output);
 
-$filtri = '<div>'."\n"
-			.'<p>Filtra per data disponibilita</p>'."\n"
-			.'<div>'."\n"
-			.'	<label>Dal</label>'."\n"
-			.'	<input type="date" name="dataInizio">'."\n"
-
-			.'	<label>Al</label>'."\n"
-			.'	<input type="date" name="dataFine">'."\n"
-			.'</div>'."\n"
-		  .'</div>';
+$filtri ='<div>'."\n"
+		.'	<form action="../PHP/filtri.php?page=n" method="POST">'."\n"
+		.'  	<fieldset>'."\n"
+		.'				<label>Ricerca auto</label>'."\n"
+		.'				<input type="text" name="searchbar" placeholder="Cerca..." tabindex="1">'."\n"
+		.'				<label>Solo Viecoli Disponibili</label>'."\n"
+		.'				<input type="checkbox" name="viecoliDisponibili" value="true" tabindex="2">'."\n"
+		.'				<p>Filtra per data disponibilita</p>'."\n"
+		.'				<label>Dal</label>'."\n"
+		.'				<input type="date" name="dataInizio" tabindex="3">'."\n"
+		.'				<label>Al</label>'."\n"
+		.'				<input type="date" name="dataFine" tabindex="4">'."\n"
+		.'				<button type="submit" name="applicaFiltri" value="applicaFiltri" class="button internal-button" tabindex="5">Cerca</button>'."\n"
+		.'  	</fieldset>'."\n"
+		.'	</form>'."\n"
+		.'</div>';
 
 $output = str_replace("<filtriAuto></filtriAuto>",$filtri,$output);
 

@@ -1,21 +1,15 @@
 <?php
 
+require_once "../PHP/connessioneDB.php";
+
 class Veicoli {
 
-    private $veicoli='';
-
-    private const host = 'localhost';
-	private const user = 'admin';
-	private const pass = 'admin';
-    private const dbName = 'TecWeb';
+    private $connVeicoli='';
     
     /* Il costruttore crea una connessione con il database */
     public function __construct()
     {
-        if (!($this->veicoli = @mysqli_connect(static::host, static::user, static::pass, static::dbName))) {
-            error_log("Debugging errno: " . mysqli_connect_errno()."Debugging error: " . mysqli_connect_error());
-            echo "Momentaneamente i dati non sono disponibili. Riprovare più tardi.";
-        }
+        $this->connVeicoli = new database_connection();
     }
 
 	/**
@@ -24,7 +18,7 @@ class Veicoli {
 	*/
 	public function getAutoAcquista() {
 		$query = 'SELECT IdAuto, Marca, Modello, Cilindrata, KM, PrezzoVendita FROM AutoVendita';
-		$queryResult = mysqli_query($this->veicoli,$query);
+		$queryResult = $this->connVeicoli->esegui($query);
 
 		if(mysqli_num_rows($queryResult)==0) {
 			return [];
@@ -51,7 +45,7 @@ class Veicoli {
 	*/
 	public function getAutoNoleggio() {
 		$query = 'SELECT Targa, Marca, Modello, Cilindrata, CostoNoleggio, Cauzione FROM AutoNoleggio';
-		$queryResult = mysqli_query($this->veicoli,$query);
+		$queryResult = $this->connVeicoli->esegui($query);
 
 		if(mysqli_num_rows($queryResult)==0) {
 			return [];
