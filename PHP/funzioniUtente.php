@@ -1,0 +1,139 @@
+<?php
+  require_once "../PHP/connessioneDB.php";
+
+  class funzioniUtente {
+
+    #connessione al database tramite costruttore
+    public function __construct(){
+        $this->dbConnection = new database_connection();
+    }
+
+    #estrazione dati utente
+    public function getDati(){
+        $emailUtente = " ";
+        $query = 'SELECT Email, Nome, Cognome, Telefono, Indirizzo, DataNascita FROM Utenti WHERE Email=\''.$emailUtente.'\'';
+        $queryResult = $this->dbConnection->esegui($query);
+        $contentItems = "";
+        if(mysqli_num_rows($queryResult)==0){
+          return null;
+        } else{
+          $row=mysqli_fetch_assoc($queryResult);
+          $contentItems ="<div id='content'>"."\n"
+                        ."	<h2>I tuoi dati personali</h2>"."\n"
+                        ."	<div>"."\n"
+                        ."		<div>"."\n"
+                        ."			<span>Nome:</span>"."\n"
+                        ."			<span id='nome'>".$row['Nome']."</span>"."\n"
+                        ."		</div>"."\n"
+                        ."		<div>"."\n"
+                        ."			<span>Cognome:</span>"."\n"
+                        ."			<span id='cognome'>".$row['Cognome']."</span>"."\n"
+                        ."		</div>"."\n"
+                        ."		<div>"."\n"
+                        ."			<span>Data di nascita:</span>"."\n"
+                        ."			<span id='data'>".$row['DataNascita']."</span>"."\n"
+                        ."		</div>"."\n"
+                        ."		<div>"."\n"
+                        ."			<span>E-mail:</span>"."\n"
+                        ."			<span id='email'>".$row['Email']."</span>"."\n"
+                        ."		</div>"."\n"
+                        ."		<div>"."\n"
+                        ."			<span>Numero di telefono:</span>"."\n"
+                        ."			<span id='telefono'>".$row['Telefono']."</span>"."\n"
+                        ."		</div>"."\n"
+                        ."		<div>"."\n"
+                        ."			<span>Indirizzo:</span>"."\n"
+                        ."			<span id='email'>".$row['Indirizzo']."</span>"."\n"
+                        ."		</div>"."\n"
+                        ."	</div>"."\n"
+                        ."</div>"."\n";
+            }
+            return $contentItems;
+    }
+
+    #estrazione preventivi
+    public function getPreventivi(){
+      $emailUtente = " ";
+      $query = 'SELECT IdPrev, Automobile, PrezzoVendita FROM PreventivoAcquisto WHERE Utente=\''.$emailUtente.'\'';
+      $queryResult = $this->dbConnection->esegui($query);
+      $contentItems = "";
+      if(mysqli_num_rows($queryResult)==0){
+        return "<h3>Non ci sono acquisti da visualizzare</h3>";
+      } else{
+        while($row=mysqli_fetch_assoc($queryResult)) {
+					$contentItems.='<div class="preventivi">'."\n";
+          				      .'	<div>'."\n"
+          							.'		<h4>Veicolo</h4>'."\n"
+          							.'		<p>'. $row['Automobile'].'</p>'."\n"
+          							.'	</div>'."\n"
+          							.'	<div>'."\n"
+          							.'		<h4>Prezzo</h4>'."\n"
+          							.'		<p>'.$row['PrezzoVendita'].'</p>'."\n"
+          							.'	</div>'."\n"
+          							.'	<div>'."\n"
+          							.'	</div>'."\n"
+          							.'</div>';
+        }
+        return $contentItems;
+      }
+    }
+
+    #estrazione noleggi
+    public function getNoleggi(){
+      $emailUtente = " ";
+      $query = 'SELECT IdPrenot, Targa, CostoTotale, InizioNoleggio, FineNoleggio FROM PrenotazioneNoleggio WHERE Utente=\''.$emailUtente.'\'';
+      $queryResult = $this->dbConnection->esegui($query);
+      $contentItems = "";
+      if(mysqli_num_rows($queryResult)==0){
+        return "<h3>Non ci sono noleggi da visualizzare</h3>";
+      } else{
+        while($row=mysqli_fetch_assoc($queryResult)) {
+					$contentItems.='<div class="noleggi">'."\n";
+          				      .'	<div>'."\n"
+          							.'		<h4>Veicolo</h4>'."\n"
+          							.'		<p>'. $row['Targa'].'</p>'."\n"
+          							.'	</div>'."\n"
+          							.'	<div>'."\n"
+          							.'		<h4>Costo totale</h4>'."\n"
+          							.'		<p>'.$row['CostoTotale'].'</p>'."\n"
+          							.'	</div>'."\n"
+                        .'	<div>'."\n"
+          							.'		<h4>Inizio noleggio</h4>'."\n"
+          							.'		<p>'.$row['InizioNoleggio'].'</p>'."\n"
+          							.'	</div>'."\n"
+                        .'	<div>'."\n"
+          							.'		<h4>Fine noleggio</h4>'."\n"
+          							.'		<p>'.$row['FineNoleggio'].'</p>'."\n"
+          							.'	</div>'."\n"
+          							.'	<div>'."\n"
+          							.'	</div>'."\n"
+          							.'</div>';
+        }
+        return $contentItems;
+      }
+    }
+
+    #estrazione messaggi
+    public function getMessaggi(){
+      $emailUtente = " ";
+      $query = 'SELECT Messaggio FROM Messaggi WHERE Email=\''.$emailUtente.'\'';
+      $queryResult = $this->dbConnection->esegui($query);
+      $contentItems = "";
+      if(mysqli_num_rows($queryResult)==0){
+        return "<h3>Non ci sono messaggi da visualizzare</h3>";
+      } else{
+        while($row=mysqli_fetch_assoc($queryResult)) {
+					$contentItems.='<div class="messaggi">'."\n";
+                        .'	<div class="testoMessaggio">'."\n"
+                        .'		<h4>Messaggio</h4>'."\n"
+                        .'		<p>'.$row->Messaggio.'</p>'."\n"
+                        .'	</div>'."\n"
+                        .'</div>';
+        }
+        return $contentItems;
+      }
+    }
+
+
+
+  }
