@@ -2,9 +2,9 @@
  class database_connection
  {
      private const HOST = 'localhost';
-     private const USERNAME = 'root';
-     private const PASSWORD = '';
-     private const DATABASE_NAME = 'Concessionaria';
+     private const USERNAME = 'admin';
+     private const PASSWORD = 'admin';
+     private const DATABASE_NAME = 'concessionaria';
      private $connessione;
 
      
