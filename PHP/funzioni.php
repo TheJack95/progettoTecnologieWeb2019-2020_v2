@@ -3,8 +3,8 @@
     #funzione per scrivere l'header
         public static function header() {
             $header_form = '<div id="header">'
-                                .'<a href=""><img class="logoHeader" src="" alt="" /></a>'
-                                .'<p class="nomeSito"><a href="">CONCESSIONARIA GREG</a></p>'
+                                .'<a href="home.php"><img class="logoHeader" src="" alt="" /></a>'
+                                .'<p class="nomeSito"><a href="home.php">CONCESSIONARIA GREG</a></p>'
                         .'</div>';
             return $header_form;
         }
