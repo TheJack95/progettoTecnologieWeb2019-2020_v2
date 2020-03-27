@@ -14,22 +14,15 @@ $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("
 
 $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
 
-$rows = null;
-$veicoli = null;
-
-if(!isset($_SESSION["filtri"])) {
-	(new Veicoli())->getAutoAcquista();
-} else {
-
-}
+$rows = (new Veicoli())->getAutoAcquista();
+$veicoli = "";
 
 foreach($rows as $row) {
 
 	$veicoli .= '<div>'."\n"
 				//."	<img class='' src='".$row->Immagine."' alt='".$row->DescrizioneImmagine."'/>"."\n"
 				.'	<div>'."\n"
-				.'		<h4>'.$row->Marca.'</h4>'."\n"
-				.'		<h4>'.$row->Modello.'</h4>'."\n"
+				.'		<h2>'.$row->Marca. " " .$row->Modello.'</h2>'."\n"
 				.'	</div>'."\n"
 				.'	<div>'."\n"
 				.'		<h4>Cilindrata</h4>'."\n"
@@ -54,7 +47,7 @@ foreach($rows as $row) {
 $output = str_replace("<auto></auto>",$veicoli,$output);
 
 $filtri ='<div>'."\n"
-		.'	<form action="../PHP/filtri.php?page=a" method="POST">'."\n"
+		.'	<form action="acquistaVeicoli.php" method="POST">'."\n"
 		.'  	<fieldset>'."\n"
 		.'			<label>Ricerca auto</label>'."\n"
 		.'				<input type="text" name="searchbar" placeholder="Cerca..." tabindex="1">'."\n"
