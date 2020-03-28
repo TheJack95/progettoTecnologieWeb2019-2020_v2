@@ -5,11 +5,23 @@ venerdì 20/03 discussione sulle analisi, sui requisiti e le features
 martedì 24/03 sviluppo collettivo delle parti comuni: menù, breadcrums, header, footer
 sabato 28/03 discussione eventuali problemi e progressione sviluppo php
 
+PROSSIMI INCONTRI:  venerdì 03/04 ore 17
+                    sabato 04/04 ore 10
+
+DA PREPARARE:   completamento pagine php e funzioni
+                inizio JavaScript
+                eventuale inizio CSS
+
+*** ATTENZIONE ***
+
+- tutte le pagine devono rispettare lo standard XHTML 1.0 STRICT
+- solo le pagine che hanno (VERAMENTE) bisogno di tag html5 si faranno in HTML5, sempre rispettando lo standard XHTML5
+
 *** DIVISIONE DELLO SVILUPPO ***
 
 Riccardo: area personale utente base, login, registrazione
-Giacomo: lista veicoli in vendita, lista veicoli a noleggio
-Giulia: area personale amministratore
+Giacomo: lista veicoli in vendita, lista veicoli a noleggio, funzioni annesse
+Giulia: area personale amministratore e funzioni annesse
 Erik: database, homepage, contatti
 
 *** SCELTE DI PROGETTO ***
