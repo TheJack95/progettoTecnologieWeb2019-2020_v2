@@ -1,6 +1,6 @@
 <?php
-    require_once "../PHP/funzioni.php";
-    require_once "../PHP/funzioniGiulia.php";
+    require_once "../PHP/funzioniGenerali.php";
+    require_once "../PHP/funzioniAmministratore.php";
 
     #AGGIUNGERE CONTROLLO SUL LOGIN
 

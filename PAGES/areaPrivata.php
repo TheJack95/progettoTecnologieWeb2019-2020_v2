@@ -1,6 +1,6 @@
 <?php
 
-require_once "../PHP/funzioni.php";
+require_once "../PHP/funzioniGenerali.php";
 require_once "../PHP/funzioniUtente.php";
 
 if(!isset($_SESSION))
@@ -36,7 +36,7 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 				."	<h3>Azioni rapide</h3>"."\n"
 				."	<p>Benvenuto $utente! Scegli cosa fare dalle azioni rapide o naviga con il menu a sinistra!</p>"."\n"
 				."	<div id='container'>"."\n"
-				."		<a class='azioniRapide' href='areaPrivata.php?pageName=messaggi'>Messaggi</a>"."\n"
+				."		<a class='azioniRapide' href='areaPrivata.php?pageName=messaggi'>Controlla i Messaggi</a>"."\n"
 				."		<a class='azioniRapide' href='acquistaVeicoli.php'>Guarda le nostre offerte</a>"."\n"
 				."		<a class='azioniRapide' href='info.php'>Contatta l'Amministratore</a>"."\n"
 				."	</div>"."\n"

@@ -20,7 +20,7 @@
                                .'</div>';
             return $breadcrumb_form;
         }
-    
+
     #funzione per scrivere il menu'
         public static function menu(){
             if(!isset($_SESSION)) {
@@ -31,9 +31,9 @@
                             .'<li><a href="noleggioVeicoli.php">VEICOLI A NOLEGGIO</a></li>'
                             .'<li><a href="acquistaVeicoli.php">VEICOLI IN VENDITA</a></li>'
                             .'<li><a href="contatti.php">CONTATTI</a></li>';
-            
+
             if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) { //login effettuato correttamente
-                $menu_form .= '<li><a class="" href="">AREA PERSONALE</a></li>'
+                $menu_form .= '<li><a class="" href="areaPrivata.php">AREA PERSONALE</a></li>'
                             .'<li><a class="" href="">ESCI</a></li>'
                         .'</ul>';
             } else { //non ho fatto il login oppure qualcosa E' andato storto
@@ -42,7 +42,7 @@
             }
             return $menu_form;
         }
-    
+
     #funzione per scrivere il footer
         public static function footer() {
             $footer_form = '<div id="footer">'
