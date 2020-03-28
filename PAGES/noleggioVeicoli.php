@@ -1,6 +1,6 @@
 <?php
 
-require_once "../PHP/funzioni.php";
+require_once "../PHP/funzioniGenerali.php";
 require_once "../PHP/funzioniAuto.php";
 
 $output = file_get_contents("../HTML/noleggioAcquista.html");
