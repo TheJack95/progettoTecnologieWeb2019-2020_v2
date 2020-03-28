@@ -2,13 +2,12 @@
 
 require_once "../PHP/connessioneDB.php";
 
-class Veicoli {
+class funzioniVeicoli {
 
     private $connVeicoli='';
     
     /* Il costruttore crea una connessione con il database */
-    public function __construct()
-    {
+    public function __construct() {
         $this->connVeicoli = new database_connection();
     }
 
@@ -99,9 +98,10 @@ class Veicoli {
 					) AS tmp
 					ON t1.Targa = tmp.Targa
 					AND t1.InizioNoleggio = tmp.maxData
-					RIGHT  JOIN AutoNoleggio on AutoNoleggio.Targa = t1.Targa
+					RIGHT JOIN AutoNoleggio on AutoNoleggio.Targa = t1.Targa
 					WHERE InizioNoleggio NOT BETWEEN DATE('$dataInizio') AND DATE('$dataFine')
-						AND FineNoleggio  NOT BETWEEN DATE('$dataInizio') AND DATE('$dataFine')";
+						AND FineNoleggio  NOT BETWEEN DATE('$dataInizio') AND DATE('$dataFine')
+						AND DATE('$dataInizio') NOT BETWEEN InizioNoleggio AND FineNoleggio";
 		}
 		
 		$where = $this->makeWhereClause("AutoNoleggio");

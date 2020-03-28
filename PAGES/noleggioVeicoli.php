@@ -8,13 +8,12 @@ $output = file_get_contents("../HTML/noleggioAcquista.html");
 $output = str_replace("<header></header>",funzioniGenerali::header(),$output);
 
 $output = str_replace("<menu></menu>",funzioniGenerali::menu(),$output);
-$output = str_replace('<a href="noleggioVeicoli.php">VEICOLI A NOLEGGIO</a>','<strong>VEICOLI A NOLEGGIO</strong>',$output);
 
 $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Veicoli a noleggio"),$output);
 
 $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
 
-$rows = (new Veicoli())->getAutoNoleggio();
+$rows = (new funzioniVeicoli())->getAutoNoleggio();
 $veicoli = "";
 
 foreach($rows as $row) {
@@ -60,6 +59,7 @@ $filtri ='<div>'."\n"
 		.'</div>';
 
 $output = str_replace("<filtriAuto></filtriAuto>",$filtri,$output);
+$output = str_replace('<a href="noleggioVeicoli.php">VEICOLI A NOLEGGIO</a>','<strong>VEICOLI A NOLEGGIO</strong>',$output);
 
 echo $output;
 ?>
