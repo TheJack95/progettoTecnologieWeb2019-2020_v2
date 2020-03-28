@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title></title>
+		<meta name="title" content="Auto per il noleggio o l'acquisto" />
+		<meta name="description" content="pagina riguardante tutte le auto acquistabili o noleggiabili" />
+		<meta name="keywords" content="auto, automobili, noleggio, acquisto, noleggaire, acquistare" />
+		<meta name="language" content="italian it" />
+		<meta name="author" content="Giacomo Corro" />
+	</head>
+
+	<body>
+		<header></header>
+
+		<menu></menu>
+		<breadcrumb></breadcrumb>
+
+		<noscript>
+			<h2>
+				Il tuo browser non supporta JavaScript oppure è stato disabilitato. Alcune funzioni
+				potrebbero non funzionare correttamente.
+			</h2>
+		</noscript>
+
+		<h1>Riepilogo noleggio</h1>
+
+		<messaggio></messaggio>
+
+		<div>
+			<form action="../PHP/noleggiaVeicoloFn.php?costo=_COSTONOLEGGIO_" method="POST">
+				<p>Inserisci date del noleggio</p>
+				<label>Dal</label>
+				<input type="date" name="dataInizioNolo" onchange="dateChange(event);" tabindex="2">
+				<label>Al</label>
+				<input type="date" name="dataFineNolo" onchange="dateChange(event);" tabindex="3">
+				<button type="submit" name="targa" value="'_TARGA_'" class="button internal-button" tabindex="4">Noleggia</button>
+			</form>
+		</div>
+			
+		<div>
+			<img class='' src='_IMMAGINE_' alt='_DESCRAUTO_'/>
+			<h2>_MARCAMODELLO_</h2>
+			<ul>
+				<li><p><strong>Cilindrata:</strong>  _CILINDRATA_</p></li>
+				<li><p><strong>Costo noleggi:</strong> <span id="">_COSTONOLEGGIO_</span></p></li>
+				<li><p><strong>Cauzione:</strong> _CAUZIONE_</p></li>
+			</ul>
+		</div>
+
+		<footer></footer>
+	</body>
+</html>

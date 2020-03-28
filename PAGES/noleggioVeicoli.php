@@ -1,7 +1,7 @@
 <?php
 
 require_once "../PHP/funzioniGenerali.php";
-require_once "../PHP/funzioniAuto.php";
+require_once "../PHP/funzioniVeicoli.php";
 
 $output = file_get_contents("../HTML/noleggioAcquista.html");
 
@@ -20,24 +20,21 @@ foreach($rows as $row) {
 
 	$veicoli .= '<div>'."\n"
 				//."	<img class='' src='".$row->Immagine."' alt='".$row->DescrizioneImmagine."'/>"."\n"
-				.'	<div>'."\n"
-				.'		<h2>'.$row->Marca ." ". $row->Modello.'</h4>'."\n"
+				.'	<div>'
+				.'		<h2>'.$row->Marca." ".$row->Modello.'</h2>'."\n"
+				.'		<ul>'
+				.'			<li>'
+				.'				<p><strong>Cilindrata:</strong>  '.$row->Cilindrata.'</p>'
+				.'			</li>'
+				.'			<li>'
+				.'				<p><strong>Costo noleggio:</strong>'.$row->CostoNoleggio.'</p>'
+				.'			</li>'
+				.'			<li>'
+				.'				<p><strong>Cauzione:</strong>'.$row->Cauzione.'</p>'
+				.'			</li>'
+				.'		</ul>'
 				.'	</div>'."\n"
-				.'	<div>'."\n"
-				.'		<h4>Cilindrata</h4>'."\n"
-				.'		<p>'.$row->Cilindrata.'</p>'."\n"
-				.'	</div>'."\n"
-				.'	<div>'."\n"
-				.'		<h4>Costo noleggio</h4>'."\n"
-				.'		<p>'.$row->CostoNoleggio.'</p>'."\n"
-				.'	</div>'."\n"
-				.'	<div>'."\n"
-				.'		<h4>Cauzione</h4>'."\n"
-				.'		<p>'.$row->Cauzione.'</p>'."\n"
-				.'	</div>'."\n"
-				.'	<form action="../PHP/" method="post">'."\n"
-				.'		<button type="submit" name="" value="'.$row->Targa.'" class="button internal-button" tabindex="1">Noleggio</button>'."\n"
-				.'	</form>'."\n"
+				.'	<a href="noleggioVeicolo.php?targaAuto='.$row->Targa.'">Noleggia auto</a>'."\n"
 				.'</div>';
 }
 

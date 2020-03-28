@@ -132,8 +132,61 @@ class funzioniVeicoli {
 		}
 	}
 
-	public function isAutoDisponobileDate($idAuto) {
+	/**
+	* Funzione che controlla se un'auto è disponibile al momento dell'acquisto
+	* @param int $idAuto 
+	* @return bool
+	*/
+	public function isAutoDisponobileDate(int $idAuto) {
 
 	}
+
+	/**
+	* Funzione per prenotare l'auto
+	* @return Object status: true/false, response: messaggio di risposta
+	*/
+	public function prenotaAuto(string $utente, string $dataInizioNolo, string $dataFineNolo,string $targa, int $costo) {
+		$query = "INSERT INTO PrenotazioneNoleggio VALUES(null,'$utente', $targa, '$dataInizioNolo', '$dataFineNolo', '$costo')";
+		echo $query;
+		$queryResult = $this->connVeicoli->esegui($query);
+		if($queryResult == false) {
+			return (Object) [
+				"status" => false
+				,"response" => "Errore nella comunicazione con il database"
+			];
+		} else {
+			return (Object) [
+				"status" => true
+				,"response" => "Noleggio auto avvenuto correttamente"
+			];
+		}
+	}
+
+	/**
+	* Funzione per leggere dati dell'auto dal db
+	* @param string $targa 
+	* @return string il risultato della query
+	*/
+	public function getAuto(string $targa) {
+		$query = "SELECT Targa, Marca, Modello, Cilindrata, CostoNoleggio, Cauzione FROM AutoNoleggio WHERE Targa = '$targa'";
+
+		$queryResult = $this->connVeicoli->esegui($query);
+
+		if($queryResult == false) {
+			return "Errore nella comunicazione con il database";
+		} else {
+			$row =  mysqli_fetch_assoc($queryResult);
+			$auto = (Object) [
+				"Targa" => $row['Targa']
+				,"Marca" => $row['Marca']
+				,"Modello" => $row['Modello']
+				,"Cilindrata" => $row['Cilindrata']
+				,"CostoNoleggio" => $row['CostoNoleggio']
+				,"Cauzione" => $row['Cauzione']
+			];
+			return $auto;
+		}
+	}
+
 }
 ?>

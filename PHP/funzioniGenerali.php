@@ -21,7 +21,10 @@
             return $breadcrumb_form;
         }
 
-    #funzione per scrivere il menu'
+    #
+        /**
+         * 
+         */
         public static function menu(){
             if(!isset($_SESSION)) {
                 session_start();
@@ -43,12 +46,35 @@
             return $menu_form;
         }
 
-    #funzione per scrivere il footer
+        /**
+         * Funzione per scrivere il footer
+         */
         public static function footer() {
             $footer_form = '<div id="footer">'
                                 .'<p>CONCESSIONARIA GREG - Tutti i diritti riservati - A cura di <span xml:lang="en">Tecweb Group</span></p>'
                           .'</div>';
             return $footer_form;
+        }
+
+        /**
+         * Funzione per settare il messaggio nella pagina vuota
+         * 
+         * @param string $messaggio string testo da visualizzare
+         * @param bool $errore indica se il messaggio è  un errore
+         * 
+         * @return string l'HTML della pagina
+         */
+        public static function setMessaggio($messaggio, $errore){
+
+            $class  = $errore ? "errorMessage" : "messaggio";
+
+            $output = file_get_contents("../HTML/paginaVuota.html");
+            $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Errore"),$output);
+            $output = str_replace("<header></header>",funzioniGenerali::header(),$output);
+            $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
+            $output = str_replace("<messaggio></messaggio>","<p class='$class'>$messaggio</p>",$output);
+
+            return $output;
         }
     }
 ?>
