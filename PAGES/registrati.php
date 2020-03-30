@@ -1,5 +1,5 @@
 <?php
-    require_once "../PHP/funzioni.php";
+    require_once "../PHP/funzioniGenerali.php";
 
     $output = file_get_contents("../HTML/registrati.html");
     $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Registrazione"),$output);

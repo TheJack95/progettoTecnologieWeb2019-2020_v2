@@ -8,7 +8,7 @@
     $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Area Personale &gt;&gt; Veicoli a noleggio"),$output);
     $output = str_replace("<menuAmministratore></menuAmministratore>",funzioniAmministratore::menuAmm(),$output);
     $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
-    $output = str_replace('<a href="veicoliNoleggioAmministratore.php">VEICOLI A NOLEGGIO</a>','<img class="iconaMenu" src="../Images/auto.svg" alt="icona del men&ugrave; che ritrae una automobilina" />VEICOLI A NOLEGGIO',$output);
+    $output = str_replace('<a href="veicoliNoleggioAmministratore.php">VEICOLI A NOLEGGIO</a>','<img class="iconaMenu" src="../Images/auto.svg" alt="icona del men&ugrave; che ritrae una automobilina" /><strong>VEICOLI A NOLEGGIO</strong>',$output);
 
     echo $output;
 ?>

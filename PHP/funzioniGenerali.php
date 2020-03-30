@@ -30,7 +30,7 @@
                 session_start();
             }
             $menu_form = '<ul>'
-                            .'<li><a href="home.php"><span xml:lang="en">HOMEPAGE</span></a></li>'
+                            .'<li><a href="home.php"><span xml:lang="en">HOME</span></a></li>'
                             .'<li><a href="noleggioVeicoli.php">VEICOLI A NOLEGGIO</a></li>'
                             .'<li><a href="acquistaVeicoli.php">VEICOLI IN VENDITA</a></li>'
                             .'<li><a href="contatti.php">CONTATTI</a></li>';
@@ -39,8 +39,8 @@
                 $menu_form .= '<li><a class="" href="areaPrivata.php">AREA PERSONALE</a></li>'
                             .'<li><a class="" href="">ESCI</a></li>'
                         .'</ul>';
-            } else { //non ho fatto il login oppure qualcosa E' andato storto
-                $menu_form .= '<li><a class="" href="">ACCEDI</a></li>'
+            } else { //non ho fatto il login oppure qualcosa e' andato storto
+                $menu_form .= '<li><a class="" href="login.php">ACCEDI</a></li>'
                         .'</ul>';
             }
             return $menu_form;

@@ -1,21 +1,7 @@
 <?php
-    class funzioniAmministratore {
-    #credenziali per il database
-        const host = 'localhost';
-	    const user = 'admin';
-	    const pass = 'admin';
-	    const dbName = 'tecweb';
-    #funzione per la connessione al database
-        public function apriConnessioneDB() {
-            $connection = "";
-            $this->connection = mysqli_connect(static::host,static::user,static::pass,static::dbName);
-            if(!$this->connection){
-                return false;
-            } else{
-                return true;
-            }
-        }
+    require_once "../PHP/connessioneDB.php";
 
+    class funzioniAmministratore {
     #funzione per il menù dell'area personale dell'amministratore
         public static function menuAmm() {
             $menuAmm_form = '<div id="menuAmministratore">'.
@@ -29,13 +15,20 @@
                             '</div>';
             return $menuAmm_form;
         }
+
+        private $connesssioneAmministratore='';
+
+    #funzione per la connessione al database
+        public function __construct() {
+            $this->connessioneAmministratore = new database_connection();
+        }
     
     #funzione per la lettura da database del nome dell'utente
-        public function selectNomeUtente() {
-#            $identita = $_SESSION['email'];
-            $identita = " ";
+        public static function selectNomeUtente() {
+            $identita = " "; #$identita = $_SESSION['email'];
             $query = 'SELECT Nome FROM Utenti WHERE Email=\''.$identita.'\'';
-            $queryNomeUtente = mysqli_query($this->connection,$query);
+            $queryNomeUtente = $this->connessioneAmministratore->esegui($query);
+            $_POST = array();
             if(mysqli_num_rows($queryNomeUtente)==0){
                 return null;
             } else{
@@ -44,7 +37,7 @@
         }
     
     #funzione per la lettura da database delle informazioni dell'utente
-        public function selectInfoPersonali() {
+        public static function selectInfoPersonali() {
 #            $identita = $_SESSION['email'];
             $identita = " ";
             $query = 'SELECT Email, Nome, Cognome, Telefono, Indirizzo, DataNascita FROM Utenti WHERE Email=\''.$identita.'\'';
@@ -62,7 +55,7 @@
         }
 
     #funzione per la lettura da database dei veicoli a noleggio
-        public function selectVeicoliNoleggio() {
+        public static function selectVeicoliNoleggio() {
             $query = 'SELECT Targa, Marca, Modello, Cilindrata, CostoNoleggio, Cauzione FROM AutoNoleggio ORDER BY Marca GROUP BY Modello ASC';
             $queryResult = mysqli_query($this->connection,$query);
             if(mysqli_num_rows($queryResult)==0){
@@ -78,7 +71,7 @@
         }
 
     #funzione per la lettura da database dei veicoli in vendita
-        public function selectVeicoliVendita() {
+        public static function selectVeicoliVendita() {
             $query = 'SELECT Marca, Modello, KM, Cilindrata, PrezzoVendita FROM AutoAutoVendita ORDER BY Marca GROUP BY Modello ASC';
             $queryResult = mysqli_query($this->connection,$query);
             if(mysqli_num_rows($queryResult)==0){
@@ -94,7 +87,7 @@
         }
 
     #funzione per l'inserimento nel database di un nuovo veicolo a noleggio
-        public function insertVeicoloNoleggio() {
+        public static function insertVeicoloNoleggio() {
             $targa = $_POST['targa'];
             $marca = $_POST['marca'];
             $modello = $_POST['modello'];
@@ -111,7 +104,7 @@
         }
 
     #funzione per l'inserimento nel database di un nuovo veicolo in vendita
-        public function insertVeicoloVendita() {
+        public static function insertVeicoloVendita() {
             $idAuto = $_POST['idAuto'];
             $marca = $_POST['marca'];
             $modello = $_POST['modello'];
@@ -128,7 +121,7 @@
         }
 
     #funzione per l'inserimento nel database di un nuovo messaggio
-        public function insertRisposta() {
+        public static function insertRisposta() {
             $destinatario = $_POST['destinatario'];
             $oggetto = $_POST['oggetto'];
             $testo = $_POST['testo'];
