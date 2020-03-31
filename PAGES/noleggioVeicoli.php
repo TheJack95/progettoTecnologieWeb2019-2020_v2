@@ -34,7 +34,7 @@ foreach($rows as $row) {
 				.'			</li>'
 				.'		</ul>'
 				.'	</div>'."\n"
-				.'	<a href="riepilogoVeicolo.php?targaAuto='.$row->Targa.'">Noleggia auto</a>'."\n"
+				.'	<a href="noleggioVeicolo.php?targaAuto='.$row->Targa.'">Noleggia auto</a>'."\n"
 				.'</div>';
 }
 

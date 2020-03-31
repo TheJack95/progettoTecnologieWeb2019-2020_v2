@@ -14,7 +14,7 @@
 	#controllo se i campi obbligatori sono stati inseriti e se sono validi
 	if(isset($_POST['dataInizioNolo']) && isset($_POST['dataFineNolo']) && $_POST['dataInizioNolo'] != "" && $_POST['dataFineNolo'] != "") {
         $auto = new funzioniVeicoli();
-        $utente  = "admin@admin.com"; //$_SESSION['utente'];
+        $utente  = $_SESSION['utente'];
         $dataInizioNolo  = $_POST['dataInizioNolo'];
         $dataFineNolo  = $_POST['dataFineNolo'];
         $targa  = $_POST['targa'];
@@ -29,7 +29,7 @@
 
     } else {
         $targa  = $_POST['targa'];
-        $response->response = 'Errore: date del noleggio mancanti. Se il problema persiste contatta l\'amministratore. <a href="../PAGES/riepilogoVeicolo.php?targaAuto='.$targa.'">Torna indietro</a>';
+        $response->response = 'Errore: date del noleggio mancanti. Se il problema persiste contatta l\'amministratore. <a href="../PAGES/noleggioVeicolo.php?targaAuto='.$targa.'">Torna indietro</a>';
         $response->status = false;
     }
 
