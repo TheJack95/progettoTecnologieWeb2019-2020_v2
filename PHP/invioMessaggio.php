@@ -5,7 +5,7 @@
     if (!isset($_SESSION))
         session_start();
 
-    $messaggio = '';
+    $errore = '';
 	
 
     $nome = $_POST["nome"];
@@ -20,14 +20,14 @@
     
         $conn = new database_connection;
         if($conn->esegui("INSERT INTO Messaggi (Nome,Cognome,Email,NumeroTelefono,Messaggio) VALUES ('$nome','$cognome','$email','$telefono','$messaggio')") == TRUE)
-            $messaggio = '<p class=\"successo\">Messaggio inserito con successo</p>';
+            $errore = '<p class=\"successo\">Messaggio inserito con successo</p>';
         else
-            $messaggio = '<p class=\"errore\"> Si è verificato un errore di connessione, se il problema persiste riprova piu tardi. </p>'; 
+            $errore = '<p class=\"errore\"> Si è verificato un errore di connessione, se il problema persiste riprova piu tardi. </p>'; 
     }
     else
-        $messaggio = '<p class=\"errore\"> Non &egrave; possibile procedere all&apos;invio del messaggio perch&egrave; non sono stati inseriti tutti i cambi obbligatori in modo corretto o il numero di telefono inserito non &egrave; valido. Ricorda che il campo telefono deve contenere un numero telefonico valido o essere vuoto </p>';
+        $errore = '<p class=\"errore\"> Non &egrave; possibile procedere all&apos;invio del messaggio perch&egrave; non sono stati inseriti tutti i cambi obbligatori in modo corretto o il numero di telefono inserito non &egrave; valido. Ricorda che il campo telefono deve contenere un numero telefonico valido o essere vuoto </p>';
     
-    $_SESSION['response'] = $messaggio;
+    $_SESSION['response'] = $errore;
     
     header("location: ../PAGES/contatti.php#formMessaggio");
 
