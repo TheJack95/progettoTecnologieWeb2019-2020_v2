@@ -13,11 +13,10 @@ $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("
 
 $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
 
-$rows = (new funzioniVeicoli())->getAutoAcquista();
+$rows = (new funzioniVeicoli())->getVeicoliAcquista();
 $veicoli = "";
 
 foreach($rows as $row) {
-
 	$veicoli .= '<div>'."\n"
 				//."	<img class='' src='".$row->Immagine."' alt='".$row->DescrizioneImmagine."'/>"."\n"
 				.'	<div>'."\n"
@@ -34,8 +33,12 @@ foreach($rows as $row) {
 				.'			</li>'
 				.'		</ul>'
                 .'	</div>'."\n"
-				.'	<a href="noleggioVeicolo.php?targaAuto='.$row->IdAuto.'">Richiedi preventivo</a>'."\n"
+				.'	<a href="../PHP/acquistaVeicoloFn.php?idAuto='.$row->IdAuto.'&prezzoVendita='.$row->PrezzoVendita.'">Richiedi preventivo</a>'."\n"
 				.'</div>';
+}
+
+if(count($rows) == 0) {
+	$veicoli = '<p> Nessun veicolo disponibile. </p>'; 
 }
 
 $output = str_replace("<auto></auto>",$veicoli,$output);

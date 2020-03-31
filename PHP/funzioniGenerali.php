@@ -73,7 +73,7 @@
             $output = str_replace("<header></header>",funzioniGenerali::header(),$output);
             $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
             $output = str_replace("<messaggio></messaggio>","<p class='$class'>$messaggio</p>",$output);
-
+            
             return $output;
         }
     }

@@ -13,7 +13,7 @@ $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("
 
 $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
 
-$rows = (new funzioniVeicoli())->getAutoNoleggio();
+$rows = (new funzioniVeicoli())->getVeicoliNoleggio();
 $veicoli = "";
 
 foreach($rows as $row) {
@@ -34,7 +34,7 @@ foreach($rows as $row) {
 				.'			</li>'
 				.'		</ul>'
 				.'	</div>'."\n"
-				.'	<a href="noleggioVeicolo.php?targaAuto='.$row->Targa.'">Noleggia auto</a>'."\n"
+				.'	<a href="riepilogoVeicolo.php?targaAuto='.$row->Targa.'">Noleggia auto</a>'."\n"
 				.'</div>';
 }
 

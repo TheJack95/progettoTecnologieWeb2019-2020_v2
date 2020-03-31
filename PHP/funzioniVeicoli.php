@@ -41,7 +41,7 @@ class funzioniVeicoli {
 	* Funzione per la creazione della lista delle auto disponibili per l'acquisto. Esegue Select * From AutoVendita
 	* @return array la lista delle auto prese dal DB
 	*/
-	public function getAutoAcquista() {
+	public function getVeicoliAcquista() {
 		$query = 'SELECT IdAuto, Marca, Modello, Cilindrata, KM, PrezzoVendita FROM AutoVendita';
 
 		if(isset($_POST["veicoliDisponibili"])) {
@@ -80,7 +80,7 @@ class funzioniVeicoli {
 	* Funzione per la creazione della lista delle auto disponibili per il noleggio. Esegue Select * From AutoNoleggio
 	* @return array la lista delle auto prese dal DB
 	*/
-	public function getAutoNoleggio() {
+	public function getVeicoliNoleggio() {
 
 		$query = 'SELECT Targa, Marca, Modello, Cilindrata, CostoNoleggio, Cauzione FROM AutoNoleggio WHERE 1';
 
@@ -145,9 +145,8 @@ class funzioniVeicoli {
 	* Funzione per prenotare l'auto
 	* @return Object status: true/false, response: messaggio di risposta
 	*/
-	public function prenotaAuto(string $utente, string $dataInizioNolo, string $dataFineNolo,string $targa, int $costo) {
+	public function noleggia(string $utente, string $dataInizioNolo, string $dataFineNolo,string $targa, int $costo) {
 		$query = "INSERT INTO PrenotazioneNoleggio VALUES(null,'$utente', $targa, '$dataInizioNolo', '$dataFineNolo', '$costo')";
-		echo $query;
 		$queryResult = $this->connVeicoli->esegui($query);
 		if($queryResult == false) {
 			return (Object) [
@@ -163,11 +162,31 @@ class funzioniVeicoli {
 	}
 
 	/**
-	* Funzione per leggere dati dell'auto dal db
-	* @param string $targa 
+	* Funzione per richiedere un preventivoAuto dell'auto
+	* @return Object status: true/false, response: messaggio di risposta
+	*/
+	public function richiediPreventivo(string $utente, string $idAuto, string $prezzoVendita) {
+		$query = "INSERT INTO PreventivoAcquisto VALUES(null,'$utente', $idAuto, '$prezzoVendita')";
+		$queryResult = $this->connVeicoli->esegui($query);
+		if($queryResult == false) {
+			return (Object) [
+				"status" => false
+				,"response" => "Errore nella comunicazione con il database"
+			];
+		} else {
+			return (Object) [
+				"status" => true
+				,"response" => "Preventivo richiesto correttamente"
+			];
+		}
+	}
+
+	/**
+	* Funzione per leggere dati dell'auto a noleggio dal db
+	* @param string $targa la targa del veicolo 
 	* @return string il risultato della query
 	*/
-	public function getAuto(string $targa) {
+	public function getVeicoloNoleggio(string $targa) {
 		$query = "SELECT Targa, Marca, Modello, Cilindrata, CostoNoleggio, Cauzione FROM AutoNoleggio WHERE Targa = '$targa'";
 
 		$queryResult = $this->connVeicoli->esegui($query);
@@ -183,6 +202,32 @@ class funzioniVeicoli {
 				,"Cilindrata" => $row['Cilindrata']
 				,"CostoNoleggio" => $row['CostoNoleggio']
 				,"Cauzione" => $row['Cauzione']
+			];
+			return $auto;
+		}
+	}
+
+	/**
+	* Funzione per leggere dati dell'auto in vendita dal db
+	* @param string $idAuto id del veicolo 
+	* @return string il risultato della query
+	*/
+	public function getVeicoloAcquista(string $idAuto) {
+		$query = "SELECT idAuto, Marca, Modello, Cilindrata, KM, PrezzoVendita FROM AutoVendita WHERE idAuto = '$idAuto'";
+
+		$queryResult = $this->connVeicoli->esegui($query);
+
+		if($queryResult == false) {
+			return "Errore nella comunicazione con il database";
+		} else {
+			$row =  mysqli_fetch_assoc($queryResult);
+			$auto = (Object) [
+				"idAuto" => $row['idAuto']
+				,"Marca" => $row['Marca']
+				,"Modello" => $row['Modello']
+				,"Cilindrata" => $row['Cilindrata']
+				,"KM" => $row['KM']
+				,"PrezzoVendita" => $row['PrezzoVendita']
 			];
 			return $auto;
 		}

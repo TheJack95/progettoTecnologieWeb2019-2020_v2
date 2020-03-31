@@ -1,11 +1,15 @@
 <?php 
-    echo var_dump($_POST);
 
     require_once "../PHP/funzioniVeicoli.php";
     require_once "../PHP/funzioniGenerali.php";
 
     if(!isset($_SESSION))
 		session_start();
+
+    $response = (Object) [
+        "status" => false
+        ,"response" => ""
+    ];
 
 	#controllo se i campi obbligatori sono stati inseriti e se sono validi
 	if(isset($_POST['dataInizioNolo']) && isset($_POST['dataFineNolo']) && $_POST['dataInizioNolo'] != "" && $_POST['dataFineNolo'] != "") {
@@ -21,8 +25,16 @@
         $interval = date_diff($datetime1, $datetime2);
         $costoTotale = $interval->days*$costo;
 
-        $response = $auto->prenotaAuto($utente, $dataInizioNolo, $dataFineNolo, $targa, $costo);
+        $response = $auto->noleggia($utente, $dataInizioNolo, $dataFineNolo, $targa, $costo);
 
-        echo funzioniGenerali::setMessaggio($response->response,$response->status);
+    } else {
+        $targa  = $_POST['targa'];
+        $response->response = 'Errore: date del noleggio mancanti. Se il problema persiste contatta l\'amministratore. <a href="../PAGES/riepilogoVeicolo.php?targaAuto='.$targa.'">Torna indietro</a>';
+        $response->status = false;
     }
+
+    $output = funzioniGenerali::setMessaggio($response->response,$response->status);
+    $output = str_replace('<a href="home.php">','<a href="../PAGES/home.php">',$output);
+
+    echo $output;
 ?>
