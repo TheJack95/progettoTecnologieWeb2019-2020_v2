@@ -19,6 +19,8 @@ class database_connection {
 
     public function esegui($query) {
         $result = mysqli_query($this->connessione, $query);
+        if($result == false)
+            $result = '<p class=\"errore\"> Si è verificato un errore di connessione, se il problema persiste riprova piu tardi. </p>'; 
         mysqli_close($this->connessione);
         return $result;
     }
