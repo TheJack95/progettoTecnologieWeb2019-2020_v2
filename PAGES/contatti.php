@@ -9,5 +9,10 @@
     $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
     $output = str_replace('<a href="contatti.php">CONTATTI</a>','<strong>CONTATTI</strong>',$output);
 
+    if(isset($_SESSION['response'])){
+        $output = str_replace('<messaggio></messaggio>',$_SESSION['response'],$output);
+        unset($_SESSION['response']);
+    }
+
     echo $output;
 ?>
