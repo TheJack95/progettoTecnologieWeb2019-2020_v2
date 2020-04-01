@@ -23,16 +23,20 @@
             <messaggio></messaggio>
             <p>Scrivi qui il messaggio da inviare&period;</p>
             <form id="nuovoMessaggioAmministratore" onsubmit="" action="" method="POST">
-                <label for="destinatario">Destinatario</label>
-                <input type="text" name="destinatario" id="destinatario" class="" tabindex="12" />
+                <fieldset>
+                    <legend>Informazioni richieste</legend>
 
-                <label for="oggetto">Oggetto</label>
-                <input type="text" name="oggetto" id="oggetto" class="" tabindex="13" />
+                    <label for="destinatario">Destinatario</label>
+                    <input type="text" name="destinatario" id="destinatario" class="" tabindex="12" />
 
-                <label for="testo">Testo</label>
-                <input type="text" name="testo" id="testo" class="" tabindex="14" />
+                    <label for="oggetto">Oggetto</label>
+                    <input type="text" name="oggetto" id="oggetto" class="" tabindex="13" />
 
-                <input type="submit" id="inviaMessaggio" value="INVIA" tabindex="15" />
+                    <label for="testo">Testo</label>
+                    <input type="text" name="testo" id="testo" class="" tabindex="14" />
+
+                    <input type="submit" id="inviaMessaggio" value="INVIA" tabindex="15" />
+                </fieldset>
             </form>
         </div>
         <footer></footer>
