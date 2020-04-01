@@ -30,17 +30,17 @@
                 session_start();
             }
             $menu_form = '<ul>'
-                            .'<li><a href="home.php"><span xml:lang="en">HOME</span></a></li>'
-                            .'<li><a href="noleggioVeicoli.php">VEICOLI A NOLEGGIO</a></li>'
-                            .'<li><a href="acquistaVeicoli.php">VEICOLI IN VENDITA</a></li>'
-                            .'<li><a href="contatti.php">CONTATTI</a></li>';
+                            .'<li tabindex="1"><a href="home.php"><span xml:lang="en">HOME</span></a></li>'
+                            .'<li tabindex="2"><a href="noleggioVeicoli.php">VEICOLI A NOLEGGIO</a></li>'
+                            .'<li tabindex="3"><a href="acquistaVeicoli.php">VEICOLI IN VENDITA</a></li>'
+                            .'<li tabindex="4"><a href="contatti.php">CONTATTI</a></li>';
 
             if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) { //login effettuato correttamente
-                $menu_form .= '<li><a class="" href="areaPrivata.php">AREA PERSONALE</a></li>'
-                            .'<li><a class="" href="">ESCI</a></li>'
+                $menu_form .= '<li tabindex="5"><a class="" href="areaPrivata.php">AREA PERSONALE</a></li>'
+                            .'<li tabindex="6"><a class="" href="">ESCI</a></li>'
                         .'</ul>';
             } else { //non ho fatto il login oppure qualcosa e' andato storto
-                $menu_form .= '<li><a class="" href="login.php">ACCEDI</a></li>'
+                $menu_form .= '<li tabindex="5"><a class="" href="login.php">ACCEDI</a></li>'
                         .'</ul>';
             }
             return $menu_form;

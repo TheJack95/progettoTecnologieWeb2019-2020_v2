@@ -6,11 +6,11 @@
         public static function menuAmm() {
             $menuAmm_form = '<div id="menuAmministratore">'.
                                 '<ul>'.
-                                    '<li><a href="homeAmministratore.php"><span xml:lang="en">HOME</span> AREA PERSONALE</a></li>'.
-                                    '<li><a href="infoAmministratore.php">INFORMAZIONI PERSONALI</a></li>'.
-                                    '<li><a href="messaggiAmministratore.php">MESSAGGI</a></li>'.
-                                    '<li><a href="veicoliNoleggioAmministratore.php">VEICOLI A NOLEGGIO</a></li>'.
-                                    '<li><a href="veicoliVenditaAmministratore.php">VEICOLI IN VENDITA</a></li>'.
+                                    '<li tabindex="7"><a href="homeAmministratore.php"><span xml:lang="en">HOME</span> AREA PERSONALE</a></li>'.
+                                    '<li tabindex="8"><a href="infoAmministratore.php">INFORMAZIONI PERSONALI</a></li>'.
+                                    '<li tabindex="9"><a href="messaggiAmministratore.php">MESSAGGI</a></li>'.
+                                    '<li tabindex="10"><a href="veicoliNoleggioAmministratore.php">VEICOLI A NOLEGGIO</a></li>'.
+                                    '<li tabindex="11"><a href="veicoliVenditaAmministratore.php">VEICOLI IN VENDITA</a></li>'.
                                 '</ul>'.
                             '</div>';
             return $menuAmm_form;
@@ -27,7 +27,7 @@
         public static function selectNomeUtente() {
             $identita = " "; #$identita = $_SESSION['email'];
             $query = 'SELECT Nome FROM Utenti WHERE Email=\''.$identita.'\'';
-            $queryNomeUtente = $this->connessioneAmministratore->esegui($query);
+            #$queryNomeUtente = $this->connessioneAmministratore->esegui($query);
             $_POST = array();
             if(mysqli_num_rows($queryNomeUtente)==0){
                 return null;
