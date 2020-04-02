@@ -28,7 +28,7 @@
     $output = str_replace("<menuAmministratore></menuAmministratore>",funzioniAmministratore::menuAmm(),$output);
     $output = str_replace("<infoPersonali></infoPersonali>",$informazioni,$output);
     $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
-    $output = str_replace('<a href="infoAmministratore.php">INFORMAZIONI PERSONALI</a>','<img class="iconaMenu" src="../Images/auto.svg" alt="icona del men&ugrave; che ritrae una automobilina" />INFORMAZIONI PERSONALI',$output);
+    $output = str_replace('<a href="infoAmministratore.php">INFORMAZIONI PERSONALI</a>','<img class="iconaMenu" src="../Images/auto.svg" alt="icona del men&ugrave; che ritrae una automobilina" /><strong>INFORMAZIONI PERSONALI</strong>',$output);
 
     echo $output;
 ?>
