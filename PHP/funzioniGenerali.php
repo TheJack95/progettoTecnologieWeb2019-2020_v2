@@ -21,9 +21,8 @@
             return $breadcrumb_form;
         }
 
-    #
         /**
-         * 
+         * Funzione per scrivere il menu
          */
         public static function menu(){
             if(!isset($_SESSION)) {
@@ -75,6 +74,20 @@
             $output = str_replace("<messaggio></messaggio>","<p class='$class'>$messaggio</p>",$output);
             
             return $output;
+        }
+
+        /**
+         * Verifica se l'utente è loggato
+         * @return true|string redirec alla pagine messaggio di errore se non si è loggati
+         */
+        public static function checkSession() {
+            if(!isset($_SESSION))
+                session_start();
+            if(!isset($_SESSION['utente'])) {
+                return funzioniGenerali::setMessaggio("Devi effettuare l&apos;accesso prima di procedere con l&apos;operazione. Verrai reindirizzato alla pagina di login", true);
+            } else {
+                return true;
+            }
         }
     }
 ?>

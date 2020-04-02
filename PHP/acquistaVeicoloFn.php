@@ -3,11 +3,9 @@
 require_once "../PHP/funzioniVeicoli.php";
 require_once "../PHP/funzioniGenerali.php";
 
-if(!isset($_SESSION))
-	session_start();
+$logged = funzioniGenerali::checkSession();
 
-
-if(isset($_SESSION['utente'])) {
+if($logged) {
 	$response = (Object) [
 		"status" => false
 		,"response" => ""
@@ -23,7 +21,7 @@ if(isset($_SESSION['utente'])) {
 		$response = $auto->richiediPreventivo($utente, $idAuto, $prezzoVendita);
 
 	} else {
-		$response->response = 'Errore imprevisto, riprovare. Se il problema persiste contatta l\'amministratore.';
+		$response->response = 'Errore imprevisto, riprovare. Se il problema persiste contatta l&apos;amministratore.';
 		$response->status = false;
 	}
 
@@ -32,12 +30,8 @@ if(isset($_SESSION['utente'])) {
 
 	echo $output;
 } else {
-	$messaggio = 'Devi effettuare l&apos;accesso prima di procedere con l&apos;operazione. Verrai reindirizzato alla pagina di login';
-
-	$output = funzioniGenerali::setMessaggio($messaggio,false);
-	$output = str_replace('<a href="home.php">','<a href="../PAGES/home.php">',$output);
-
-	echo $output;
+	echo $logged;
 	header("refresh:5; url= ../PAGES/login.php");
+	
 }
 ?>

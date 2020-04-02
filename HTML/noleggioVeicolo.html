@@ -1,14 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title></title>
-		<meta name="title" content="Auto per il noleggio o l'acquisto" />
-		<meta name="description" content="pagina riguardante tutte le auto acquistabili o noleggiabili" />
+		<title>Riepilogo noleggio veicolo</title>
+		<meta name="title" content="Riepilogo auto per il noleggio o l'acquisto" />
+		<meta name="description" content="pagina riguardante il riepilogo dell'auto noleggiata" />
 		<meta name="keywords" content="auto, automobili, noleggio, acquisto, noleggaire, acquistare" />
 		<meta name="language" content="italian it" />
 		<meta name="author" content="Giacomo Corro" />
+
+		
+		<script src="../JS/prova.js" type="text/javascript"></script> 
 	</head>
 
 	<body>
@@ -29,13 +32,15 @@
 		<messaggio></messaggio>
 
 		<div>
-			<form action="../PHP/noleggiaVeicoloFn.php?costo=_COSTONOLEGGIO_" method="POST">
-				<p>Inserisci date del noleggio</p>
-				<label>Dal</label>
-				<input type="date" name="dataInizioNolo" onchange="dateChange(event);" tabindex="2">
-				<label>Al</label>
-				<input type="date" name="dataFineNolo" onchange="dateChange(event);" tabindex="3">
-				<button type="submit" name="targa" value="'_TARGA_'" class="button internal-button" tabindex="4">Noleggia</button>
+			<form action="../PHP/noleggiaVeicoloFn.php?costo=_COSTONOLEGGIO_" method="post">
+				<fieldset>
+					<p>Inserisci date del noleggio, nel formato gg-mm-aaaa</p>
+					<label>Dal</label>
+					<input type="text" name="dataInizioNolo" onchange="dataInizioChange(event);" tabindex="2" />
+					<label>Al</label>
+					<input id="dataFineNolo" name="dataFineNolo" type="text" onchange="dataFineChange(event);" tabindex="3" />
+					<button type="submit" name="targa" value="'_TARGA_'" class="button internal-button" tabindex="4">Noleggia</button>
+				</fieldset>
 			</form>
 		</div>
 			
@@ -44,9 +49,11 @@
 			<h2>_MARCAMODELLO_</h2>
 			<ul>
 				<li><p><strong>Cilindrata:</strong>  _CILINDRATA_</p></li>
-				<li><p><strong>Costo noleggi:</strong> <span id="">_COSTONOLEGGIO_</span></p></li>
+				<li><p><strong>Costo noleggio (al giorno):</strong> <span id="costoNolo">_COSTONOLEGGIO_</span></p></li>
 				<li><p><strong>Cauzione:</strong> _CAUZIONE_</p></li>
 			</ul>
+
+			<h3 id="cosTot">COSTO TOTALE: 0</h3>
 		</div>
 
 		<footer></footer>

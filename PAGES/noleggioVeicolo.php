@@ -5,7 +5,7 @@ require_once "../PHP/funzioniVeicoli.php";
 
 if(!isset($_SESSION))
     session_start();
-
+    $_SESSION['utente'] = true;
 if(isset($_SESSION['utente'])) {
 
     $output = file_get_contents("../HTML/noleggioVeicolo.html");
@@ -18,7 +18,7 @@ if(isset($_SESSION['utente'])) {
 
     $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
 
-    $veicolo = (new funzioniVeicoli())->getVeicoliNoleggio($_GET["targaAuto"]);
+    $veicolo = (new funzioniVeicoli())->getVeicoloNoleggio($_GET["targaAuto"]);
     
     //$output = str_replace("__IMMAGINE__",$veicolo->Immagine,$output);
     //$output = str_replace("_DESCRAUTO_",$veicolo->DescrImmagine,$output);
