@@ -4,13 +4,12 @@
 
     #AGGIUNGERE CONTROLLO SUL LOGIN
 
-    $oggettoPagina = new funzioniAmministratore();
-    $connessione = $oggettoPagina->apriConnessioneDB();
+    $connessione = new funzioniAmministratore();
     $informazioni = "";
 
     if($connessione){
     #funzione lettura da database delle informazioni dell'utente
-        $infoPersonali = $oggettoPagina->selectInfoPersonali();
+        $infoPersonali = $connessione->selectInfoPersonali();
         if($infoPersonali==null){
             $informazioni .= "non sono disponibili i tuoi dati personali, riprova pi&ugrave; tardi";
         } else{
