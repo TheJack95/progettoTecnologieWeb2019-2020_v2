@@ -1,12 +1,15 @@
 <?php 
 
-    require_once "../PHP/funzioniVeicoli.php";
-    require_once "../PHP/funzioniGenerali.php";
-    require_once "../PHP/controlloInput.php";
+require_once "../PHP/funzioniVeicoli.php";
+require_once "../PHP/funzioniGenerali.php";
+require_once "../PHP/controlloInput.php";
 
-    if(!isset($_SESSION))
-		session_start();
-
+if(!isset($_SESSION))
+    session_start();
+    
+$_SESSION["logged"] = true;
+$logged = funzioniGenerali::checkSession();
+if($logged->status) {
     $response = (Object) [
         "status" => false
         ,"response" => ""
@@ -32,7 +35,7 @@
 
             $response = $auto->noleggia($utente, $dataInizioNolo, $dataFineNolo, $targa, $costo);
         } else {
-            $response->response = 'Attenzione: il formato delle date non è corretto. Deve essere gg-mm-aaaa. <a href="../PAGES/noleggioVeicolo.php?targaAuto='.$targa.'">Torna indietro</a>';
+            $response->response = 'Attenzione: il formato delle date non &egrave; corretto. Deve essere gg-mm-aaaa. <a href="../PAGES/noleggioVeicolo.php?targaAuto='.$targa.'">Torna indietro</a>';
             $response->status = false;
         }
 
@@ -46,4 +49,9 @@
     $output = str_replace('<a href="home.php">','<a href="../PAGES/home.php">',$output);
 
     echo $output;
+} else {
+    $logged->message = str_replace('<a href="home.php">','<a href="../PAGES/home.php">',$logged->message);
+    echo $logged->message;
+	header("refresh:5; url= ../PAGES/login.php");
+}
 ?>

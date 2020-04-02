@@ -12,13 +12,13 @@
     #funzione lettura da database delle informazioni dell'utente
         $infoPersonali = $oggettoPagina->selectInfoPersonali();
         if($infoPersonali==null){
-            $informazioni .= "non sono disponibili i tuoi dati personali, riprova più tardi";
+            $informazioni .= "non sono disponibili i tuoi dati personali, riprova pi&ugrave; tardi";
         } else{
             $informazioni .= $infoPersonali['Email']." ".$infoPersonali['Nome']." ".$infoPersonali['Cognome']." ".$infoPersonali['Telefono']." ".$infoPersonali['Indirizzo']." ".$infoPersonali['DataNascita']." .";
         }
 
     } else{
-        $informazioni .= "Errore di connessione al database. Riprova più tardi!";
+        $informazioni .= "Errore di connessione al database. Riprova pi&ugrave; tardi!";
     }
 
     $output = file_get_contents("../HTML/infoAmministratore.html");

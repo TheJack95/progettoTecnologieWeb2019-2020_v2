@@ -2,7 +2,7 @@
     require_once "../PHP/connessioneDB.php";
 
     class funzioniAmministratore {
-    #funzione per il menù dell'area personale dell'amministratore
+    #funzione per il menu dell'area personale dell'amministratore
         public static function menuAmm() {
             $menuAmm_form = '<div id="menuAmministratore">'.
                                 '<ul>'.

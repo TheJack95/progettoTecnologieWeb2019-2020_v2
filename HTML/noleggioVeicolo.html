@@ -20,19 +20,12 @@
 		<menu></menu>
 		<breadcrumb></breadcrumb>
 
-		<noscript>
-			<h2>
-				Il tuo browser non supporta JavaScript oppure è stato disabilitato. Alcune funzioni
-				potrebbero non funzionare correttamente.
-			</h2>
-		</noscript>
-
 		<h1>Riepilogo noleggio</h1>
 
 		<messaggio></messaggio>
 
 		<div>
-			<form action="../PHP/noleggiaVeicoloFn.php?costo=_COSTONOLEGGIO_" method="post">
+			<form action="../PHP/noleggiaVeicoloFn.php?costo=_COSTONOLEGGIO_" onsubmit="return checkDateNolo();" method="post">
 				<fieldset>
 					<p>Inserisci date del noleggio, nel formato gg-mm-aaaa</p>
 					<label>Dal</label>

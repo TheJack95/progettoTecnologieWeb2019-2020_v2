@@ -17,7 +17,13 @@
                 $breadcrumb_form .= "$element ";
             }
             $breadcrumb_form .=     "</p>"
-                               .'</div>';
+                               .'</div>'."\n";
+
+            $breadcrumb_form .= "<noscript>"."\n"
+                                ."    <h2>"."\n"
+                                ."        Il tuo browser non supporta JavaScript oppure &egrave; stato disabilitato. Alcune funzionalit&agrave; potrebbero non funzionare correttamente."."\n"
+                                ."    </h2>"."\n"
+                                ."</noscript>"."\n";
             return $breadcrumb_form;
         }
 
@@ -59,7 +65,7 @@
          * Funzione per settare il messaggio nella pagina vuota
          * 
          * @param string $messaggio string testo da visualizzare
-         * @param bool $errore indica se il messaggio è  un errore
+         * @param bool $errore indica se il messaggio &egrave;  un errore
          * 
          * @return string l'HTML della pagina
          */
@@ -77,16 +83,23 @@
         }
 
         /**
-         * Verifica se l'utente è loggato
-         * @return true|string redirec alla pagine messaggio di errore se non si è loggati
+         * Verifica se l'utente &egrave; loggato
+         * @return Object status, message
          */
         public static function checkSession() {
             if(!isset($_SESSION))
                 session_start();
-            if(!isset($_SESSION['utente'])) {
-                return funzioniGenerali::setMessaggio("Devi effettuare l&apos;accesso prima di procedere con l&apos;operazione. Verrai reindirizzato alla pagina di login", true);
+
+            if(isset($_SESSION['logged']) && $_SESSION['logged']->status == 2) {
+                return (Object) [
+                    "status" => true,
+                    "message" => "utente loggato",
+                ];
             } else {
-                return true;
+                return (Object) [
+                    "status" => false,
+                    "message" => funzioniGenerali::setMessaggio("Devi effettuare l&apos;accesso prima di procedere con l&apos;operazione. Verrai reindirizzato alla pagina di login", true)
+                ];
             }
         }
     }

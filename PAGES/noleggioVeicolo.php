@@ -5,8 +5,13 @@ require_once "../PHP/funzioniVeicoli.php";
 
 if(!isset($_SESSION))
     session_start();
-    $_SESSION['utente'] = true;
-if(isset($_SESSION['utente'])) {
+
+$_SESSION["logged"] = (Object) [
+    "status" => 2
+    ,"response" => ""
+];
+$logged = funzioniGenerali::checkSession();
+if($logged->status) {
 
     $output = file_get_contents("../HTML/noleggioVeicolo.html");
 
@@ -30,13 +35,9 @@ if(isset($_SESSION['utente'])) {
 
     echo $output;
 } else {
-    $messaggio = 'Devi effettuare l&apos;accesso prima di procedere con l&apos;operazione. Verrai reindirizzato alla pagina di login';
-
-    $output = funzioniGenerali::setMessaggio($messaggio,false);
-    $output = str_replace('<a href="home.php">','<a href="../PAGES/home.php">',$output);
-
-    echo $output;
-    header("refresh:5; url= ../PAGES/login.php");
+    $logged->message = str_replace('<a href="home.php">','<a href="../PAGES/home.php">',$logged->message);
+    echo $logged->message;
+	header("refresh:5; url= ../PAGES/login.php");
 }
 
 

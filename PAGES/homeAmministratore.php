@@ -10,7 +10,7 @@
     #funzione lettura da SESSION identita' dell'utente
         $nome = $connessione->selectNomeUtente();
     } else{
-        $nome = "non è disponibile il tuo nome in questo momento";
+        $nome = "non &egrave; disponibile il tuo nome in questo momento";
     }
     
     $output = file_get_contents("../HTML/homeAmministratore.html");

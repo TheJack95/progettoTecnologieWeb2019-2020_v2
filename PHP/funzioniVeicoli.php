@@ -133,7 +133,7 @@ class funzioniVeicoli {
 	}
 
 	/**
-	* Funzione che controlla se un'auto è disponibile al momento dell'acquisto
+	* Funzione che controlla se un'auto &egrave; disponibile al momento dell'acquisto
 	* @param int $idAuto 
 	* @return bool
 	*/

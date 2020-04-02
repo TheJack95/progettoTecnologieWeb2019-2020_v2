@@ -4,8 +4,7 @@ require_once "../PHP/funzioniVeicoli.php";
 require_once "../PHP/funzioniGenerali.php";
 
 $logged = funzioniGenerali::checkSession();
-
-if($logged) {
+if($logged->status) {
 	$response = (Object) [
 		"status" => false
 		,"response" => ""
@@ -30,8 +29,7 @@ if($logged) {
 
 	echo $output;
 } else {
-	echo $logged;
+	echo $logged->message;
 	header("refresh:5; url= ../PAGES/login.php");
-	
 }
 ?>
