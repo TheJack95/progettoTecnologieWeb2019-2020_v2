@@ -10,7 +10,7 @@
 
     #estrazione dati utente
     public function getDati(){
-        $emailUtente = " ";
+        $emailUtente = $_SESSION["user"];
         $query = 'SELECT Email, Nome, Cognome, Telefono, Indirizzo, DataNascita FROM Utenti WHERE Email=\''.$emailUtente.'\'';
         $queryResult = $this->dbConnection->esegui($query);
         $contentItems = "";
@@ -53,7 +53,7 @@
 
     #estrazione preventivi
     public function getPreventivi(){
-      $emailUtente = " ";
+      $emailUtente = $_SESSION["user"];
       $query = 'SELECT IdPrev, Automobile, PrezzoVendita FROM PreventivoAcquisto WHERE Utente=\''.$emailUtente.'\'';
       $queryResult = $this->dbConnection->esegui($query);
       $contentItems = "";
@@ -80,7 +80,7 @@
 
     #estrazione noleggi
     public function getNoleggi(){
-      $emailUtente = " ";
+      $emailUtente = $_SESSION["user"];
       $query = 'SELECT IdPrenot, Targa, CostoTotale, InizioNoleggio, FineNoleggio FROM PrenotazioneNoleggio WHERE Utente=\''.$emailUtente.'\'';
       $queryResult = $this->dbConnection->esegui($query);
       $contentItems = "";
@@ -115,7 +115,7 @@
 
     #estrazione messaggi
     public function getMessaggi(){
-      $emailUtente = " ";
+      $emailUtente = $_SESSION["user"];
       $query = 'SELECT Messaggio FROM Messaggi WHERE Email=\''.$emailUtente.'\'';
       $queryResult = $this->dbConnection->esegui($query);
       $contentItems = "";

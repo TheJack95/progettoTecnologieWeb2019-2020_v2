@@ -8,20 +8,12 @@ $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("
 if(!isset($_SESSION))
     session_start();
 
-if(isset($_SESSION["logged"])) {
+if(isset($_SESSION["errmessage"])) {
 
-    $errorMessage = $_SESSION["logged"]->response;
+    $errorMessage = $_SESSION["errmessage"];
+    $output = str_replace("<loginError></loginError>","<p class='errorMessage'>$errorMessage</p>",$output);
+    unset($_SESSION["errmessage"]);
 
-    switch($_SESSION["logged"]->status) {
-        case 0:
-            $output = str_replace("<loginError></loginError>","<p class='errorMessage'>$errorMessage</p>",$output);
-            break;
-        case 1:
-            $output = str_replace("<errorMessage></errorMessage>","<p class='errorMessage'>$errorMessage</p>",$output);
-            break;
-    }
-
-    unset($_SESSION["logged"]);
 }
 
 echo $output;

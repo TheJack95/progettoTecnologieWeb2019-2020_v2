@@ -12,7 +12,7 @@ $output = str_replace("<menu></menu>",funzioniGenerali::menu(),$output);
 $output = str_replace('<a class="" href="areaPersonale.php">AREA PERSONALE</a>','<strong>AREA PERSONALE</strong>',$output);
 $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
 
-if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
+if(isset($_SESSION["user"]) {
 
 	$contentItems = "";
 	$sideNav = "";
@@ -84,11 +84,9 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 
 	echo $output;
 } else {
-	$response = (Object) [
-		"status" => -1
-		,"response" => "Attenzione: non hai effettuato il login. Verrai reindirizzato alla pagina di login."
-	];
-	$_SESSION["logged"] = $response;
+	$errmessage = "Attenzione: non hai effettuato il login. Verrai reindirizzato alla pagina di login."
+	$_SESSION["errmessage"] = $errmessage;
+  header("refresh:5; url= http://localhost/progettoTecnologieWeb2019-2020_v2/PAGES/login.php");
 }
 
 ?>
