@@ -1,5 +1,7 @@
 <?php
 
+require_once "../PHP/connessioneDB.php";
+
 try {
 
 	$mail = $_POST["mail"];
