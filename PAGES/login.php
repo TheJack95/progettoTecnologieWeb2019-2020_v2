@@ -13,7 +13,11 @@ if(isset($_SESSION["errmessage"])) {
     $errorMessage = $_SESSION["errmessage"];
     $output = str_replace("<loginError></loginError>","<p class='errorMessage'>$errorMessage</p>",$output);
     unset($_SESSION["errmessage"]);
+} elseif(isset($_SESSION["successmessage"])) {
 
+    $errorMessage = $_SESSION["successmessage"];
+    $output = str_replace("<loginError></loginError>","<p class='errorMessage'>$errorMessage</p>",$output);
+    unset($_SESSION["errmessage"]);
 }
 
 echo $output;

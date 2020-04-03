@@ -40,7 +40,7 @@ try {
 }
 
 if(isset($_SESSION["utente"])) {
-	header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020_v2/PAGES/areaPrivata.php?pageName=principale");
+	header("Location: http://localhost/progettoTecnologieWeb2019-2020_v2/PAGES/areaPrivata.php?pageName=principale");
 } else {
 	header("Location: http://localhost/progettoTecnologieWeb2019-2020_v2/PAGES/login.php");
 }

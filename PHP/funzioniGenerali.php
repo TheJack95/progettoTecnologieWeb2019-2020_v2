@@ -40,7 +40,7 @@
                             .'<li tabindex="3"><a href="acquistaVeicoli.php">VEICOLI IN VENDITA</a></li>'
                             .'<li tabindex="4"><a href="contatti.php">CONTATTI</a></li>';
 
-            if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) { //login effettuato correttamente
+            if(isset($_SESSION["user"])) { //login effettuato correttamente
                 $menu_form .= '<li tabindex="5"><a class="" href="areaPrivata.php">AREA PERSONALE</a></li>'
                             .'<li tabindex="6"><a class="" href="">ESCI</a></li>'
                         .'</ul>';
@@ -63,10 +63,10 @@
 
         /**
          * Funzione per settare il messaggio nella pagina vuota
-         * 
+         *
          * @param string $messaggio string testo da visualizzare
          * @param bool $errore indica se il messaggio &egrave;  un errore
-         * 
+         *
          * @return string l'HTML della pagina
          */
         public static function setMessaggio($messaggio, $errore){
@@ -78,7 +78,7 @@
             $output = str_replace("<header></header>",funzioniGenerali::header(),$output);
             $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
             $output = str_replace("<messaggio></messaggio>","<p class='$class'>$messaggio</p>",$output);
-            
+
             return $output;
         }
 

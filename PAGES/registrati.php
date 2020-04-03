@@ -8,13 +8,12 @@
     if(!isset($_SESSION))
         session_start();
 
-    if(isset($_SESSION['registrazione'])) {
-        $class = $_SESSION['registrazione']->status ? "messaggio" : "errorMessage";
-        $output = str_replace("<messaggio></messaggio>","<p class='$class'>".$_SESSION['registrazione']->response."</p>",$output);
+    if(isset($_SESSION['errmessage'])) {
+        $output = str_replace("<messaggio></messaggio>","<p>".$_SESSION['errmessage']."</p>",$output);
     } else
         $output = str_replace("<messaggio></messaggio>","",$output);
 
     echo $output;
 
-    unset($_SESSION["registrazione"]);
+    unset($_SESSION["errmessage"]);
 ?>
