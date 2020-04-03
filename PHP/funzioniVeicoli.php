@@ -42,10 +42,10 @@ class funzioniVeicoli {
 	* @return array la lista delle auto prese dal DB
 	*/
 	public function getVeicoliAcquista() {
-		$query = 'SELECT IdAuto, Marca, Modello, Cilindrata, KM, PrezzoVendita FROM AutoVendita';
+		$query = 'SELECT IdAuto, Marca, Modello, Cilindrata, KM, PrezzoVendita, Immagine, DescrImmagine FROM AutoVendita';
 
 		if(isset($_POST["veicoliDisponibili"])) {
-			$query = 'SELECT IdAuto, Marca, Modello, Cilindrata, KM, PrezzoVendita FROM VeicoliDisponibiliVendita';
+			$query = 'SELECT IdAuto, Marca, Modello, Cilindrata, KM, PrezzoVendita, Immagine, DescrImmagine FROM VeicoliDisponibiliVendita';
 		}
 
 		$where = $this->makeWhereClause("AutoVendita");
@@ -69,6 +69,8 @@ class funzioniVeicoli {
 					,"Cilindrata" => $row['Cilindrata']
 					,"PrezzoVendita" => $row['PrezzoVendita']
 					,"KM" => $row['KM']
+					,"Immagine" => $row['Immagine']
+					,"DescrImmagine" => $row['DescrImmagine']
 				];
 				array_push($result,$auto);
 			}
@@ -82,14 +84,14 @@ class funzioniVeicoli {
 	*/
 	public function getVeicoliNoleggio() {
 
-		$query = 'SELECT Targa, Marca, Modello, Cilindrata, CostoNoleggio, Cauzione FROM AutoNoleggio WHERE 1';
+		$query = 'SELECT Targa, Marca, Modello, Cilindrata, CostoNoleggio, Cauzione, Immagine, DescrImmagine FROM AutoNoleggio WHERE 1';
 
 		if(isset($_POST["dataInizio"]) && isset($_POST["dataFine"]) && $_POST["dataInizio"] != "" && $_POST["dataFine"] != "") {
 
 			$dataInizio = $_POST["dataInizio"];
 			$dataFine = $_POST["dataFine"];
 
-			$query = "SELECT AutoNoleggio.Targa, Marca, Modello, Cilindrata, CostoNoleggio, Cauzione FROM PrenotazioneNoleggio t1
+			$query = "SELECT AutoNoleggio.Targa, Marca, Modello, Cilindrata, CostoNoleggio, Cauzione, Immagine, DescrImmagine FROM PrenotazioneNoleggio t1
 					INNER JOIN
 					(
 						SELECT PrenotazioneNoleggio.Targa, max(InizioNoleggio) maxData
@@ -125,6 +127,8 @@ class funzioniVeicoli {
 					,"Cilindrata" => $row['Cilindrata']
 					,"CostoNoleggio" => $row['CostoNoleggio']
 					,"Cauzione" => $row['Cauzione']
+					,"Immagine" => $row['Immagine']
+					,"DescrImmagine" => $row['DescrImmagine']
 				];
 				array_push($result,$auto);
 			}
@@ -187,7 +191,7 @@ class funzioniVeicoli {
 	* @return string il risultato della query
 	*/
 	public function getVeicoloNoleggio(string $targa) {
-		$query = "SELECT Targa, Marca, Modello, Cilindrata, CostoNoleggio, Cauzione FROM AutoNoleggio WHERE Targa = '$targa'";
+		$query = "SELECT Targa, Marca, Modello, Cilindrata, CostoNoleggio, Cauzione, Immagine, DescrImmagine FROM AutoNoleggio WHERE Targa = '$targa'";
 
 		$queryResult = $this->connVeicoli->esegui($query);
 
@@ -202,6 +206,8 @@ class funzioniVeicoli {
 				,"Cilindrata" => $row['Cilindrata']
 				,"CostoNoleggio" => $row['CostoNoleggio']
 				,"Cauzione" => $row['Cauzione']
+				,"Immagine" => $row['Immagine']
+				,"DescrImmagine" => $row['DescrImmagine']
 			];
 			return $auto;
 		}
@@ -213,7 +219,7 @@ class funzioniVeicoli {
 	* @return string il risultato della query
 	*/
 	public function getVeicoloAcquista(string $idAuto) {
-		$query = "SELECT idAuto, Marca, Modello, Cilindrata, KM, PrezzoVendita FROM AutoVendita WHERE idAuto = '$idAuto'";
+		$query = "SELECT idAuto, Marca, Modello, Cilindrata, KM, PrezzoVendita, Immagine, DescrImmagine FROM AutoVendita WHERE idAuto = '$idAuto'";
 
 		$queryResult = $this->connVeicoli->esegui($query);
 
@@ -228,6 +234,8 @@ class funzioniVeicoli {
 				,"Cilindrata" => $row['Cilindrata']
 				,"KM" => $row['KM']
 				,"PrezzoVendita" => $row['PrezzoVendita']
+				,"Immagine" => $row['Immagine']
+				,"DescrImmagine" => $row['DescrImmagine']
 			];
 			return $auto;
 		}

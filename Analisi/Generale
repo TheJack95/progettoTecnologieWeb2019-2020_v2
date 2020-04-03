@@ -4,18 +4,21 @@ martedì 17/03 idea generale e divisione compiti
 venerdì 20/03 discussione sulle analisi, sui requisiti e le features
 martedì 24/03 sviluppo collettivo delle parti comuni: menù, breadcrums, header, footer
 sabato 28/03 discussione eventuali problemi e progressione sviluppo php
+venerdì 03/04 completamento pagine php e funzioni
 
-PROSSIMI INCONTRI:  venerdì 03/04 ore 17
-                    sabato 04/04 ore 10
+PROSSIMI INCONTRI: martedì 7/04 ore 15
 
-DA PREPARARE:   completamento pagine php e funzioni
-                inizio JavaScript
-                eventuale inizio CSS
+DA PREPARARE:   sistemare tabindex
+                sistemare database
+                CONTROLLARE CODIFICA SIMBOLI
+                solo url relativi
+                sviluppo controlli in JavaScript
 
 *** ATTENZIONE ***
 
 - tutte le pagine devono rispettare lo standard XHTML 1.0 STRICT
 - solo le pagine che hanno (VERAMENTE) bisogno di tag html5 si faranno in HTML5, sempre rispettando lo standard XHTML5
+- il calcolo del costo totale può essere fatto solo in JS - che si fa?
 
 *** DIVISIONE DELLO SVILUPPO ***
 

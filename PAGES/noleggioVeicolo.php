@@ -25,8 +25,8 @@ if($logged->status) {
 
     $veicolo = (new funzioniVeicoli())->getVeicoloNoleggio($_GET["targaAuto"]);
     
-    //$output = str_replace("__IMMAGINE__",$veicolo->Immagine,$output);
-    //$output = str_replace("_DESCRAUTO_",$veicolo->DescrImmagine,$output);
+    $output = str_replace("__IMMAGINE__",$veicolo->Immagine,$output);
+    $output = str_replace("_DESCRAUTO_",$veicolo->DescrImmagine,$output);
     $output = str_replace("_TARGA_",$veicolo->Targa,$output);
     $output = str_replace("_MARCAMODELLO_",$veicolo->Marca." ".$veicolo->Modello,$output);
     $output = str_replace("_CILINDRATA_",$veicolo->Cilindrata,$output);

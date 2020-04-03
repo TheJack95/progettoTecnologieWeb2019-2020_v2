@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS AutoVendita(
 	Cilindrata smallint,
 	PrezzoVendita int,
 	Immagine text NULL,
-	DescImmagine text NULL,
+	DescrImmagine text NULL,
 
 	PRIMARY KEY(IdAuto)
 );
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS AutoNoleggio(
 	CostoNoleggio smallint,
 	Cauzione int,
 	Immagine text NULL,
-	DescImmagine text NULL,
+	DescrImmagine text NULL,
 
 	PRIMARY KEY(Targa)
 );
