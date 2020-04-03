@@ -1,47 +1,44 @@
 <?php
 
 require_once "../PHP/funzioniGenerali.php";
-require_once "../PHP/funzioniAuto.php";
+require_once "../PHP/funzioniVeicoli.php";
 
 $output = file_get_contents("../HTML/noleggioAcquista.html");
 
 $output = str_replace("<header></header>",funzioniGenerali::header(),$output);
 
 $output = str_replace("<menu></menu>",funzioniGenerali::menu(),$output);
-$output = str_replace('<a href="acquistaVeicoli.php">VEICOLI IN VENDITA</a>','<strong>VEICOLI IN VENDITA</strong>',$output);
 
 $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Veicoli in vendita"),$output);
 
 $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
 
-$rows = (new Veicoli())->getAutoAcquista();
+$rows = (new funzioniVeicoli())->getVeicoliAcquista();
 $veicoli = "";
 
 foreach($rows as $row) {
-
 	$veicoli .= '<div>'."\n"
 				//."	<img class='' src='".$row->Immagine."' alt='".$row->DescrizioneImmagine."'/>"."\n"
 				.'	<div>'."\n"
 				.'		<h2>'.$row->Marca. " " .$row->Modello.'</h2>'."\n"
-				.'	</div>'."\n"
-				.'	<div>'."\n"
-				.'		<h4>Cilindrata</h4>'."\n"
-				.'		<p>'.$row->Cilindrata.'</p>'."\n"
-				.'	</div>'."\n"
-				.'	<div>'."\n"
-				.'		<h4>KM</h4>'."\n"
-				.'		<p>'.$row->KM.'</p>'."\n"
-				.'	</div>'."\n"
-				.'	<div>'."\n"
-				.'		<h4>Prezzo</h4>'."\n"
-				.'		<p>'.$row->PrezzoVendita.'</p>'."\n"
-				.'	</div>'."\n"
-				.'	<form action="../PHP/" method="post">'."\n"
-				.'		<div>'."\n"
-				.'			<button type="submit" name="" value="'.$row->IdAuto.'" class="button internal-button">Richiedi Prevetivo</button>'."\n"
-				.'		</div>'."\n"
-				.'	</form>'."\n"
+                .'	    <ul>'
+                .'          <li>'
+				.'				<p><strong>Cilindrata:</strong> '.$row->Cilindrata.'</p>'
+				.'			</li>'
+				.'			<li>'
+				.'				<p><strong>KM:</strong> '.$row->KM.'</p>'
+				.'			</li>'
+				.'			<li>'
+				.'				<p><strong>Prezzo di vendita:</strong> '.$row->PrezzoVendita.'</p>'
+				.'			</li>'
+				.'		</ul>'
+                .'	</div>'."\n"
+				.'	<a href="../PHP/acquistaVeicoloFn.php?idAuto='.$row->IdAuto.'&prezzoVendita='.$row->PrezzoVendita.'">Richiedi preventivo</a>'."\n"
 				.'</div>';
+}
+
+if(count($rows) == 0) {
+	$veicoli = '<p> Nessun veicolo disponibile. </p>'; 
 }
 
 $output = str_replace("<auto></auto>",$veicoli,$output);
@@ -59,6 +56,7 @@ $filtri ='<div>'."\n"
 		.'</div>';
 
 $output = str_replace("<filtriAuto></filtriAuto>",$filtri,$output);
+$output = str_replace('<a href="acquistaVeicoli.php">VEICOLI IN VENDITA</a>','<strong>VEICOLI IN VENDITA</strong>',$output);
 
 echo $output;
 

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Riepilogo noleggio veicolo</title>
+		<meta name="title" content="Riepilogo auto per il noleggio o l'acquisto" />
+		<meta name="description" content="pagina riguardante il riepilogo dell'auto noleggiata" />
+		<meta name="keywords" content="auto, automobili, noleggio, acquisto, noleggaire, acquistare" />
+		<meta name="language" content="italian it" />
+		<meta name="author" content="Giacomo Corro" />
+
+		
+		<script src="../JS/prova.js" type="text/javascript"></script> 
+	</head>
+
+	<body>
+		<header></header>
+
+		<menu></menu>
+		<breadcrumb></breadcrumb>
+
+		<h1>Riepilogo noleggio</h1>
+
+		<messaggio></messaggio>
+
+		<div>
+			<form action="../PHP/noleggiaVeicoloFn.php?costo=_COSTONOLEGGIO_" onsubmit="return checkDateNolo();" method="post">
+				<fieldset>
+					<p>Inserisci date del noleggio, nel formato gg-mm-aaaa</p>
+					<label>Dal</label>
+					<input type="text" name="dataInizioNolo" onchange="dataInizioChange(event);" tabindex="2" />
+					<label>Al</label>
+					<input id="dataFineNolo" name="dataFineNolo" type="text" onchange="dataFineChange(event);" tabindex="3" />
+					<button type="submit" name="targa" value="'_TARGA_'" class="button internal-button" tabindex="4">Noleggia</button>
+				</fieldset>
+			</form>
+		</div>
+			
+		<div>
+			<img class='' src='_IMMAGINE_' alt='_DESCRAUTO_'/>
+			<h2>_MARCAMODELLO_</h2>
+			<ul>
+				<li><p><strong>Cilindrata:</strong>  _CILINDRATA_</p></li>
+				<li><p><strong>Costo noleggio (al giorno):</strong> <span id="costoNolo">_COSTONOLEGGIO_</span></p></li>
+				<li><p><strong>Cauzione:</strong> _CAUZIONE_</p></li>
+			</ul>
+
+			<h3 id="cosTot">COSTO TOTALE: 0</h3>
+		</div>
+
+		<footer></footer>
+	</body>
+</html>

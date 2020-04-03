@@ -4,14 +4,11 @@
 
     #AGGIUNGERE CONTROLLO SUL LOGIN
 
-    $oggettoPagina = new funzioniAmministratore();
-    $connessione = $oggettoPagina->apriConnessioneDB();
+    $connessione = new funzioniAmministratore();
 
     if($connessione){
     #funzione lettura da SESSION identita' dell'utente
-        $nome = $oggettoPagina->selectNomeUtente();
-    } else{
-        $nome = "non è disponibile il tuo nome in questo momento";
+        $nome = $connessione->selectNomeUtente();
     }
     
     $output = file_get_contents("../HTML/homeAmministratore.html");
@@ -21,7 +18,7 @@
     $output = str_replace("<menuAmministratore></menuAmministratore>",funzioniAmministratore::menuAmm(),$output);
     $output = str_replace("<nome></nome>",$nome,$output);
     $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
-    $output = str_replace('<a href="homeAmministratore.php"><span xml:lang="en">HOME</span> AREA PERSONALE</a>','<img class="iconaMenu" src="../Images/auto.svg" alt="icona del men&ugrave; che ritrae una automobilina" /><span xml:lang="en">HOME</span> AREA PERSONALE',$output);
+    $output = str_replace('<a href="homeAmministratore.php"><span xml:lang="en">HOME</span> AREA PERSONALE</a>','<img class="iconaMenu" src="../Images/auto.svg" alt="icona del men&ugrave; che ritrae una automobilina" /><strong><span xml:lang="en">HOME</span> AREA PERSONALE</strong>',$output);
 
     echo $output;
 ?>

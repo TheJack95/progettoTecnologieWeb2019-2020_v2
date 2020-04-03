@@ -2,13 +2,12 @@
 
 require_once "../PHP/connessioneDB.php";
 
-class Veicoli {
+class funzioniVeicoli {
 
     private $connVeicoli='';
     
     /* Il costruttore crea una connessione con il database */
-    public function __construct()
-    {
+    public function __construct() {
         $this->connVeicoli = new database_connection();
     }
 
@@ -42,7 +41,7 @@ class Veicoli {
 	* Funzione per la creazione della lista delle auto disponibili per l'acquisto. Esegue Select * From AutoVendita
 	* @return array la lista delle auto prese dal DB
 	*/
-	public function getAutoAcquista() {
+	public function getVeicoliAcquista() {
 		$query = 'SELECT IdAuto, Marca, Modello, Cilindrata, KM, PrezzoVendita FROM AutoVendita';
 
 		if(isset($_POST["veicoliDisponibili"])) {
@@ -81,7 +80,7 @@ class Veicoli {
 	* Funzione per la creazione della lista delle auto disponibili per il noleggio. Esegue Select * From AutoNoleggio
 	* @return array la lista delle auto prese dal DB
 	*/
-	public function getAutoNoleggio() {
+	public function getVeicoliNoleggio() {
 
 		$query = 'SELECT Targa, Marca, Modello, Cilindrata, CostoNoleggio, Cauzione FROM AutoNoleggio WHERE 1';
 
@@ -99,9 +98,10 @@ class Veicoli {
 					) AS tmp
 					ON t1.Targa = tmp.Targa
 					AND t1.InizioNoleggio = tmp.maxData
-					RIGHT  JOIN AutoNoleggio on AutoNoleggio.Targa = t1.Targa
+					RIGHT JOIN AutoNoleggio on AutoNoleggio.Targa = t1.Targa
 					WHERE InizioNoleggio NOT BETWEEN DATE('$dataInizio') AND DATE('$dataFine')
-						AND FineNoleggio  NOT BETWEEN DATE('$dataInizio') AND DATE('$dataFine')";
+						AND FineNoleggio  NOT BETWEEN DATE('$dataInizio') AND DATE('$dataFine')
+						AND DATE('$dataInizio') NOT BETWEEN InizioNoleggio AND FineNoleggio";
 		}
 		
 		$where = $this->makeWhereClause("AutoNoleggio");
@@ -132,8 +132,106 @@ class Veicoli {
 		}
 	}
 
-	public function isAutoDisponobileDate($idAuto) {
+	/**
+	* Funzione che controlla se un'auto &egrave; disponibile al momento dell'acquisto
+	* @param int $idAuto 
+	* @return bool
+	*/
+	public function isAutoDisponobileDate(int $idAuto) {
 
 	}
+
+	/**
+	* Funzione per prenotare l'auto
+	* @return Object status: true/false, response: messaggio di risposta
+	*/
+	public function noleggia(string $utente, string $dataInizioNolo, string $dataFineNolo,string $targa, int $costo) {
+		$query = "INSERT INTO PrenotazioneNoleggio VALUES(null,'$utente', $targa, '$dataInizioNolo', '$dataFineNolo', '$costo')";
+		$queryResult = $this->connVeicoli->esegui($query);
+		if($queryResult == false) {
+			return (Object) [
+				"status" => false
+				,"response" => "Errore nella comunicazione con il database"
+			];
+		} else {
+			return (Object) [
+				"status" => true
+				,"response" => "Noleggio auto avvenuto correttamente"
+			];
+		}
+	}
+
+	/**
+	* Funzione per richiedere un preventivoAuto dell'auto
+	* @return Object status: true/false, response: messaggio di risposta
+	*/
+	public function richiediPreventivo(string $utente, string $idAuto, string $prezzoVendita) {
+		$query = "INSERT INTO PreventivoAcquisto VALUES(null,'$utente', $idAuto, '$prezzoVendita')";
+		$queryResult = $this->connVeicoli->esegui($query);
+		if($queryResult == false) {
+			return (Object) [
+				"status" => false
+				,"response" => "Errore nella comunicazione con il database"
+			];
+		} else {
+			return (Object) [
+				"status" => true
+				,"response" => "Preventivo richiesto correttamente"
+			];
+		}
+	}
+
+	/**
+	* Funzione per leggere dati dell'auto a noleggio dal db
+	* @param string $targa la targa del veicolo 
+	* @return string il risultato della query
+	*/
+	public function getVeicoloNoleggio(string $targa) {
+		$query = "SELECT Targa, Marca, Modello, Cilindrata, CostoNoleggio, Cauzione FROM AutoNoleggio WHERE Targa = '$targa'";
+
+		$queryResult = $this->connVeicoli->esegui($query);
+
+		if($queryResult == false) {
+			return "Errore nella comunicazione con il database";
+		} else {
+			$row =  mysqli_fetch_assoc($queryResult);
+			$auto = (Object) [
+				"Targa" => $row['Targa']
+				,"Marca" => $row['Marca']
+				,"Modello" => $row['Modello']
+				,"Cilindrata" => $row['Cilindrata']
+				,"CostoNoleggio" => $row['CostoNoleggio']
+				,"Cauzione" => $row['Cauzione']
+			];
+			return $auto;
+		}
+	}
+
+	/**
+	* Funzione per leggere dati dell'auto in vendita dal db
+	* @param string $idAuto id del veicolo 
+	* @return string il risultato della query
+	*/
+	public function getVeicoloAcquista(string $idAuto) {
+		$query = "SELECT idAuto, Marca, Modello, Cilindrata, KM, PrezzoVendita FROM AutoVendita WHERE idAuto = '$idAuto'";
+
+		$queryResult = $this->connVeicoli->esegui($query);
+
+		if($queryResult == false) {
+			return "Errore nella comunicazione con il database";
+		} else {
+			$row =  mysqli_fetch_assoc($queryResult);
+			$auto = (Object) [
+				"idAuto" => $row['idAuto']
+				,"Marca" => $row['Marca']
+				,"Modello" => $row['Modello']
+				,"Cilindrata" => $row['Cilindrata']
+				,"KM" => $row['KM']
+				,"PrezzoVendita" => $row['PrezzoVendita']
+			];
+			return $auto;
+		}
+	}
+
 }
 ?>
