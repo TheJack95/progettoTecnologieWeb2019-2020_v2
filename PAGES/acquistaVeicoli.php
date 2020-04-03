@@ -18,7 +18,7 @@ $veicoli = "";
 
 foreach($rows as $row) {
 	$veicoli .= '<div>'."\n"
-				//."	<img class='' src='".$row->Immagine."' alt='".$row->DescrizioneImmagine."'/>"."\n"
+				."	<img class='' src='".$row->Immagine."' alt='".$row->DescrImmagine."'/>"."\n"
 				.'	<div>'."\n"
 				.'		<h2>'.$row->Marca. " " .$row->Modello.'</h2>'."\n"
                 .'	    <ul>'
