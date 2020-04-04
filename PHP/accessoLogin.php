@@ -4,6 +4,9 @@ require_once "../PHP/connessioneDB.php";
 
 try {
 
+  if(!isset($_SESSION))
+      session_start();
+
 	$mail = $_POST["mail"];
 	$password = $_POST["password"];
   $dbConnection = new database_connection();
