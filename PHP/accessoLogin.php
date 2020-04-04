@@ -4,21 +4,22 @@ require_once "../PHP/connessioneDB.php";
 
 try {
 
-	$mail = $_POST["mail"];
+  if(!isset($_SESSION))
+      session_start();
+
+	$emailUtente = $_POST["mail"];
 	$password = $_POST["password"];
   $dbConnection = new database_connection();
   $messaggio = "";
 
-		if (isset($mail)) {
+		if (isset($emailUtente)) {
 			$query = 'SELECT Email, Password, FlAdmin, Nome, Cognome FROM Utenti WHERE Email=\''.$emailUtente.'\'';
       $queryResult = $dbConnection->esegui($query);
 
 			if (mysqli_num_rows($queryResult)!=0) {
           $row=mysqli_fetch_assoc($queryResult);
 
-					if (isset($password) && password_verify($password, $row['Password'])) {
-						unset($utente->password);
-
+					if (isset($password) && ($password==$row['Password'])) {
 						$_SESSION["admin"] = $row['FlAdmin'];
 						$_SESSION["user"] = $row['Email'];
 						$_SESSION["utente"] = $row['Nome']." ".$row['Cognome'];

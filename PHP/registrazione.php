@@ -1,8 +1,12 @@
 <?php
 
+require_once "../PHP/controlloInput.php";
 require_once "../PHP/connessioneDB.php";
 
 try {
+
+  if(!isset($_SESSION))
+      session_start();
 
   $mail = $_POST["email"];
   $nome = $_POST["nome"];

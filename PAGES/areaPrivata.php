@@ -6,13 +6,13 @@ require_once "../PHP/funzioniUtente.php";
 if(!isset($_SESSION))
 	session_start();
 
-$output = file_get_contents("../HTML/areaPersonale.html");
+$output = file_get_contents("../HTML/areaPrivata.html");
 $output = str_replace("<header></header>",funzioniGenerali::header(),$output);
 $output = str_replace("<menu></menu>",funzioniGenerali::menu(),$output);
 $output = str_replace('<a class="" href="areaPersonale.php">AREA PERSONALE</a>','<strong>AREA PERSONALE</strong>',$output);
 $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
 
-if(isset($_SESSION["user"]) {
+if(isset($_SESSION["user"])) {
 
 	$contentItems = "";
 	$sideNav = "";
@@ -84,7 +84,7 @@ if(isset($_SESSION["user"]) {
 
 	echo $output;
 } else {
-	$errmessage = "Attenzione: non hai effettuato il login. Verrai reindirizzato alla pagina di login."
+	$errmessage = "Attenzione: non hai effettuato il login. Verrai reindirizzato alla pagina di login.";
 	$_SESSION["errmessage"] = $errmessage;
   header("refresh:5; url= http://localhost/progettoTecnologieWeb2019-2020_v2/PAGES/login.php");
 }
