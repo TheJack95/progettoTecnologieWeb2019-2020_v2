@@ -42,7 +42,7 @@
 
             if(isset($_SESSION["user"])) { //login effettuato correttamente
                 $menu_form .= '<li tabindex="5"><a class="" href="areaPrivata.php">AREA PERSONALE</a></li>'
-                            .'<li tabindex="6"><a class="" href="">ESCI</a></li>'
+                            .'<li tabindex="6"><a class="" href="../PHP/logout.php">ESCI</a></li>'
                         .'</ul>';
             } else { //non ho fatto il login oppure qualcosa e' andato storto
                 $menu_form .= '<li tabindex="5"><a class="" href="login.php">ACCEDI</a></li>'

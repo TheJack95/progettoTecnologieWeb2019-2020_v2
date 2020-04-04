@@ -40,7 +40,7 @@ try {
 	echo $e->getMessage();
 }
 
-if(isset($_SESSION["utente"])) {
+if(isset($_SESSION["user"])) {
 	header("Location: http://localhost/progettoTecnologieWeb2019-2020_v2/PAGES/areaPrivata.php?pageName=principale");
 } else {
 	header("Location: http://localhost/progettoTecnologieWeb2019-2020_v2/PAGES/login.php");

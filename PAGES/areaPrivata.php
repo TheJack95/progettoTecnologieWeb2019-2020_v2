@@ -3,8 +3,7 @@
 require_once "../PHP/funzioniGenerali.php";
 require_once "../PHP/funzioniUtente.php";
 
-if(!isset($_SESSION))
-	session_start();
+
 
 $output = file_get_contents("../HTML/areaPrivata.html");
 $output = str_replace("<header></header>",funzioniGenerali::header(),$output);
