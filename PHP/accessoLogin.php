@@ -7,12 +7,12 @@ try {
   if(!isset($_SESSION))
       session_start();
 
-	$mail = $_POST["mail"];
+	$emailUtente = $_POST["mail"];
 	$password = $_POST["password"];
   $dbConnection = new database_connection();
   $messaggio = "";
 
-		if (isset($mail)) {
+		if (isset($emailUtente)) {
 			$query = 'SELECT Email, Password, FlAdmin, Nome, Cognome FROM Utenti WHERE Email=\''.$emailUtente.'\'';
       $queryResult = $dbConnection->esegui($query);
 
