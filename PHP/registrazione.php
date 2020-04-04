@@ -1,5 +1,6 @@
 <?php
 
+require_once "../PHP/controlloInput.php";
 require_once "../PHP/connessioneDB.php";
 
 try {
