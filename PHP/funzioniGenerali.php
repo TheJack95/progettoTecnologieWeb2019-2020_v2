@@ -90,7 +90,7 @@
             if(!isset($_SESSION))
                 session_start();
 
-            if(isset($_SESSION['logged']) && $_SESSION['logged']->status == 2) {
+            if(isset($_SESSION["user"])) {
                 return (Object) [
                     "status" => true,
                     "message" => "utente loggato",

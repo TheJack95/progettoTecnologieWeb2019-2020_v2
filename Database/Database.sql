@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS Utenti(
     Email varchar(50),
-    Password varchar(50),
+    Password varchar(100),
     Nome varchar(30),
     Cognome varchar(30),
     Telefono varchar(15),
