@@ -19,9 +19,7 @@ try {
 			if (mysqli_num_rows($queryResult)!=0) {
           $row=mysqli_fetch_assoc($queryResult);
 
-					if (isset($password) && password_verify($password, $row['Password'])) {
-						unset($utente->password);
-
+					if (isset($password) && ($password==$row['Password'])) {
 						$_SESSION["admin"] = $row['FlAdmin'];
 						$_SESSION["user"] = $row['Email'];
 						$_SESSION["utente"] = $row['Nome']." ".$row['Cognome'];

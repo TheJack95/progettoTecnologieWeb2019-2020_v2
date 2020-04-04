@@ -61,7 +61,7 @@
         return "<h3>Non ci sono acquisti da visualizzare</h3>";
       } else{
         while($row=mysqli_fetch_assoc($queryResult)) {
-					$contentItems.='<div class="preventivi">'."\n";
+					$contentItems.='<div class="preventivi">'."\n"
           				      .'	<div>'."\n"
           							.'		<h4>Veicolo</h4>'."\n"
           							.'		<p>'. $row['Automobile'].'</p>'."\n"
@@ -88,7 +88,7 @@
         return "<h3>Non ci sono noleggi da visualizzare</h3>";
       } else{
         while($row=mysqli_fetch_assoc($queryResult)) {
-					$contentItems.='<div class="noleggi">'."\n";
+					$contentItems.='<div class="noleggi">'."\n"
           				      .'	<div>'."\n"
           							.'		<h4>Veicolo</h4>'."\n"
           							.'		<p>'. $row['Targa'].'</p>'."\n"
@@ -123,7 +123,7 @@
         return "<h3>Non ci sono messaggi da visualizzare</h3>";
       } else{
         while($row=mysqli_fetch_assoc($queryResult)) {
-					$contentItems.='<div class="messaggi">'."\n";
+					$contentItems.='<div class="messaggi">'."\n"
                         .'	<div class="testoMessaggio">'."\n"
                         .'		<h4>Messaggio</h4>'."\n"
                         .'		<p>'.$row->Messaggio.'</p>'."\n"
