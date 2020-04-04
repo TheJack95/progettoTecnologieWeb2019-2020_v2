@@ -4,6 +4,7 @@ require_once "../PHP/funzioniGenerali.php";
 $output = file_get_contents("../HTML/login.html");
 $output = str_replace("<menu></menu>",funzioniGenerali::menu(),$output);
 $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Accedi"),$output);
+$output = str_replace('<a class="" href="login.php">ACCEDI</a></li>','<strong>ACCEDI</strong>',$output);
 
 if(!isset($_SESSION))
     session_start();

@@ -80,6 +80,7 @@ if(isset($_SESSION["user"])) {
 
 	$output = str_replace("<contentItems></contentItems>",$contentItems, $output);
 	$output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Area Personale$breadcrumb"),$output);
+	$output = str_replace('<a class="" href="areaPrivata.php">AREA PERSONALE</a>','<strong>AREA PERSONALE</strong>',$output);
 
 	echo $output;
 } else {
