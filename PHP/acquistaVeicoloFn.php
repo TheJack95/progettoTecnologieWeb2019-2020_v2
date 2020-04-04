@@ -13,7 +13,7 @@ if($logged->status) {
 	#controllo se i campi obbligatori sono stati inseriti e se sono validi
 	if(isset($_GET['idAuto']) && isset($_GET['prezzoVendita'])) {
 		$auto = new funzioniVeicoli();
-		$utente  = $_SESSION['utente'];
+		$utente  = $_SESSION['user'];
 		$idAuto  = $_GET['idAuto'];
 		$prezzoVendita = intval($_GET['prezzoVendita']);
 

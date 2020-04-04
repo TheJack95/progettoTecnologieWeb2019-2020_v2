@@ -23,7 +23,7 @@ if($logged->status) {
             && controlloInput::checkDateFormat($_POST['dataFineNolo']) && controlloInput::validDate($_POST['dataFineNolo'])){
 
             $auto = new funzioniVeicoli();
-            $utente  = $_SESSION['utente'];
+            $utente  = $_SESSION['user'];
             $dataInizioNolo  = $_POST['dataInizioNolo'];
             $dataFineNolo  = $_POST['dataFineNolo'];
             $costo = intval($_GET['costo']);
