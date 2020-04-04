@@ -13,6 +13,6 @@ try {
 }
 
 
-header("Location: http://localhost/progettoTecnologieWeb2019-2020_v2/PAGES/login.php");
+header("url= ../PAGES/login.php");
 
 ?>

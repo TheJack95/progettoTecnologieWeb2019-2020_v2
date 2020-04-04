@@ -45,7 +45,7 @@ try {
 										,FlAdmin
 									) VALUES ('$mail','$passHash','$nome','$cognome','$cell','0','$nascita','0')";
 
-							if ($dbConnection->esegui($queryInsert)) {
+							if ($dbConnection->esegui($queryInsert) == TRUE) {
                 $messaggio = "Registrazione effettuata con successo. Puoi effettuare il login.";
                 $_SESSION["successmessage"] = $messaggio;
 							} else  {
@@ -73,9 +73,9 @@ try {
 }
 
 if(isset($_SESSION["succmessage"])) {
-	header("Location: http://localhost/progettoTecnologieWeb2019-2020_v2/PAGES/login.php");
+	header("url= ../PAGES/login.php");
 } else {
-	header("Location: http://localhost/progettoTecnologieWeb2019-2020_v2/PAGES/registrati.php");
+	header("url= ../PAGES/registrati.php");
 }
 
 ?>

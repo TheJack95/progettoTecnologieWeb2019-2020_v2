@@ -86,7 +86,7 @@ if(isset($_SESSION["user"])) {
 } else {
 	$errmessage = "Attenzione: non hai effettuato il login. Verrai reindirizzato alla pagina di login.";
 	$_SESSION["errmessage"] = $errmessage;
-  header("refresh:5; url= http://localhost/progettoTecnologieWeb2019-2020_v2/PAGES/login.php");
+  header("refresh:5; url= ../PAGES/login.php");
 }
 
 ?>
