@@ -19,12 +19,12 @@
         <breadcrumb></breadcrumb>
         <menuAmministratore></menuAmministratore>
         <div class="corpoAmministratore">
-            <h1>NUOVO VEICOLO DA VENDERE</h1>
+            <p>Inserisci qui le informazioni sul veicolo in vendita&period;</p>
             <messaggio></messaggio>
-            <p>Inserisci qui le informazioni sul veicolo da aggiungere&period;</p>
-            <form id="nuovoVeicoloVendita" onsubmit="" action="" method="POST">
+            <form id="nuovoVeicoloVendita" action="../PHP/salvaNuovoVeicoloVendita.php" method="POST">
                 <fieldset>
-                    <legend>Informazioni sul nuovo veicolo</legend>
+                    <legend>Informazioni sul veicolo in vendita da aggiungere </legend>
+                    <p>I campi marcati con l&apos;asterisco * sono obbligatori</p>
                 
                     <label for="marca">Marca</label>
                     <input type="text" name="marca" id="marca" class="" tabindex="12" />
@@ -33,7 +33,7 @@
                     <input type="text" name="modello" id="modello" class="" tabindex="13" />
 
                     <label for="km">Chilometri</label>
-                    <input type="text" name="" id="km" class="km" tabindex="14" />
+                    <input type="text" name="km" id="km" class="" tabindex="14" />
 
                     <label for="cilindrata">Cilindrata</label>
                     <input type="text" name="cilindrata" id="cilindrata" class="" tabindex="15" />
@@ -41,7 +41,7 @@
                     <label for="prezzo">Prezzo</label>
                     <input type="text" name="prezzo" id="prezzo" class="" tabindex="16" />
 
-                    <input type="submit" id="salvaVeicoloVendita" value="SALVA" tabindex="17" />
+                    <input type="submit" id="salvaNuovoVeicoloVendita" value="SALVA" tabindex="17" />
                 </fieldset>
             </form>
         </div>

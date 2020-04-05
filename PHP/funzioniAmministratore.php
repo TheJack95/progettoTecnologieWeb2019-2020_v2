@@ -16,75 +16,131 @@
             return $menuAmm_form;
         }
 
-        private $connesssioneAmministratore='';
-
     #funzione per la connessione al database
+        private $connesssioneAmministratore = '';
+
         public function __construct() {
             $this->connessioneAmministratore = new database_connection();
         }
     
-    #funzione per la lettura da database del nome dell'utente
-        public function selectNomeUtente() {
-            $identita = " "; #$identita = $_SESSION['email'];
-            $query = 'SELECT Nome FROM Utenti WHERE Email=\''.$identita.'\'';
-            $queryNomeUtente = $this->connessioneAmministratore->esegui($query);
-            $_POST = array();
-            if(mysqli_num_rows($queryNomeUtente)==0) {
-                return null;
-            } else{
-                return $queryNomeUtente;
-            }
-        }
-    
     #funzione per la lettura da database delle informazioni dell'utente
         public function selectInfoPersonali() {
-            $identita = " ";
-            $query = 'SELECT Email, Nome, Cognome, Telefono, Indirizzo, DataNascita FROM Utenti WHERE Email=\''.$identita.'\'';
+            $email = $_SESSION["user"];
+            $query = 'SELECT Email, Nome, Cognome, Telefono, Indirizzo, DataNascita FROM Utenti WHERE Email=\''.$email.'\'';
             $queryResult = $this->connessioneAmministratore->esegui($query);
             $_POST = array();
-            if(mysqli_num_rows($queryResult)==0) {
-                return null;
+            if($queryResult == false) {
+                return [];
             } else {
-                $infoPersonali = array();
-                while($row=mysqli_fetch_assoc($queryResult)){
-                    $arrayInfoPersonali = array('Email'=>$row['Email'],'Nome'=>$row['Nome'],'Cognome'=>$row['Cognome'],'Telefono'=>$row['Telefono'],'Indirizzo'=>$row['Indirizzo'],'DataNascita'=>$row['DataNascita']);
-                    array_push($infoPersonali,$arrayInfoPersonali);
+                $result = array();
+			    while($row=mysqli_fetch_assoc($queryResult)) {
+                    $infoPersonali = (Object) [
+                                "Email"=>$row['Email'],
+                                "Nome"=>$row['Nome'],
+                                "Cognome"=>$row['Cognome'],
+                                "Telefono"=>$row['Telefono'],
+                                "Indirizzo"=>$row['Indirizzo'],
+                                "DataNascita"=>$row['DataNascita']
+                            ];
+                    array_push($result,$infoPersonali);
                 }
-                return $infoPersonali;
+                return $result;
+            }
+        }
+
+    #funzione per la lettura dal database dei messaggi ricevuti
+        public function selectMessaggiRicevuti() {
+            $query = 'SELECT Nome, Cognome, Email, NumeroTelefono, Messaggio FROM Messaggi ORDER BY IdMess DESC';
+            $queryResult = $this->connessioneAmministratore->esegui($query);
+            $_POST = array();
+            if($queryResult == false) {
+                return [];
+            } else {
+                $result = array();
+                while($row=mysqli_fetch_assoc($queryResult)) {
+                    $messRicevuti = (Object) [
+                                "Nome"=>$row['Nome'],
+                                "Cognome"=>$row['Cognome'],
+                                "Email"=>$row['Email'],
+                                "NumeroTelefono"=>$row['NumeroTelefono'],
+                                "Messaggio"=>$row['Messaggio']
+                            ];
+                    array_push($result,$messRicevuti);
+                }
+                return $result;
+            }
+        }
+
+    #funzione per la lettura dal database dei messaggi inviati
+        public function selectMessaggiInviati() {
+            $query = 'SELECT Email, EmailDestinatario, Oggetto, Messaggio FROM RisposteMessaggi ORDER BY IdRisp DESC';
+            $queryResult = $this->connessioneAmministratore->esegui($query);
+            $_POST = array();
+            if($queryResult == false) {
+                return [];
+            } else {
+                $result = array();
+                while($row=mysqli_fetch_assoc($queryResult)) {
+                    $messInviati = (Object) [
+                                "Email"=>$row['Email'],
+                                "EmailDestinatario"=>$row['EmailDestinatario'],
+                                "Oggetto"=>$row['Oggetto'],
+                                "Messaggio"=>$row['Messaggio']
+                            ];
+                    array_push($result,$messInviati);
+                }
+                return $result;
             }
         }
 
     #funzione per la lettura da database dei veicoli a noleggio
         public function selectVeicoliNoleggio() {
-            $query = 'SELECT Targa, Marca, Modello, Cilindrata, CostoNoleggio, Cauzione FROM AutoNoleggio ORDER BY Marca GROUP BY Modello ASC';
+            $query = 'SELECT Targa, Marca, Modello, Cilindrata, CostoNoleggio, Cauzione, Immagine, DescrImmagine FROM AutoNoleggio GROUP BY Modello ORDER BY Marca ASC';
             $queryResult = $this->connessioneAmministratore->esegui($query);
             $_POST = array();
-            if(mysqli_num_rows($queryResult)==0) {
-		        return null;
-	        } else {
-                $veicoliNoleggio = array();
+            if($queryResult == false) {
+                return [];
+            } else {
+                $result = array();
                 while($row=mysqli_fetch_assoc($queryResult)) {
-                    $arrayVeicoloNoleggio = array('Targa'=>$row['Targa'],'Marca'=>$row['Marca'],'Modello'=>$row['Modello'],'Cilindrata'=>$row['Cilindrata'],'CostoNoleggio'=>$row['CostoNoleggio'],'Cauzione'=>$row['Cauzione']);
-                    array_push($veicoliNoleggio,$arrayVeicoloNoleggio);
+                    $veicoloN = (Object) [
+                            "Targa"=>$row['Targa'],
+                            "Marca"=>$row['Marca'],
+                            "Modello"=>$row['Modello'],
+                            "Cilindrata"=>$row['Cilindrata'],
+                            "CostoNoleggio"=>$row['CostoNoleggio'],
+                            "Cauzione"=>$row['Cauzione'],
+                            "Immagine"=>$row['Immagine'],
+                            "DescrImmagine"=>$row['DescrImmagine']
+                    ];
+                    array_push($result,$veicoloN);
                 }
-                return $veicoliNoleggio;
+                return $result;
             }
         }
 
     #funzione per la lettura da database dei veicoli in vendita
         public function selectVeicoliVendita() {
-            $query = 'SELECT Marca, Modello, KM, Cilindrata, PrezzoVendita FROM AutoAutoVendita ORDER BY Marca GROUP BY Modello ASC';
+            $query = 'SELECT Marca, Modello, KM, Cilindrata, PrezzoVendita, Immagine, DescrImmagine FROM AutoVendita GROUP BY Modello ORDER BY Marca ASC';
             $queryResult = $this->connessioneAmministratore->esegui($query);
             $_POST = array();
-            if(mysqli_num_rows($queryResult)==0 ) {
-		        return null;
-	        } else {
-                $veicoliVendita = array();
+            if($queryResult == false) {
+                return [];
+            } else {
+                $result = array();
                 while($row=mysqli_fetch_assoc($queryResult)) {
-                    $arrayVeicoloVendita = array('Marca'=>$row['Marca'],'Modello'=>$row['Modello'],'KM'=>$row['KM'],'Cilindrata'=>$row['Cilindrata'],'PrezzoVendita'=>$row['PrezzoVendita']);
-                    array_push($veicoliVendita,$arrayVeicoloVendita);
+                    $veicoloV = (Object) [
+                            "Marca"=>$row['Marca'],
+                            "Modello"=>$row['Modello'],
+                            "KM"=>$row['KM'],
+                            "Cilindrata"=>$row['Cilindrata'],
+                            "PrezzoVendita"=>$row['PrezzoVendita'],
+                            "Immagine"=>$row['Immagine'],
+                            "DescrImmagine"=>$row['DescrImmagine']
+                    ];
+                    array_push($result,$veicoloV);
                 }
-                return $veicoliVendita;
+                return $result;
             }
         }
 
@@ -119,40 +175,6 @@
                 return true;
             } else{
                 return false;
-            }
-        }
-
-    #funzione per la lettura dal database dei messaggi
-        public function selectMessaggiRicevuti() {
-            $query = 'SELECT Nome, Cognome, Email, NumeroTelefono, Messaggio FROM Messaggi ORDER BY IdMess DESC';
-            $queryResult = $this->connessioneAmministratore->esegui($query);
-            $_POST = array();
-            if(mysqli_num_rows($queryResult)==0) {
-                return null;
-            } else {
-                $messaggi = array();
-                while($row=mysqli_fetch_assoc($queryResult)) {
-                    $singoloMessaggio = array('Nome'=>$row['Nome'],'Cognome'=>$row['Cognome'],'Email'=>$row['Email'],'NumeroTelefono'=>$row['NumeroTelefono'],'Messaggio'=>$row['Messaggio']);
-                    array_push($messaggi,$singoloMessaggio);
-                }
-                return $messaggi;
-            }
-        }
-
-        public function selectMessaggiInviati() {
-            $identita = " "; #$identita = $_SESSION['email'];
-            $query = 'SELECT EmailDestinatario, Oggetto, Messaggio FROM RisposteMessaggi WHERE Email=\''.$identita.'\' ORDER BY IdRisp DESC';
-            $queryResult = $this->connessioneAmministratore->esegui($query);
-            $_POST = array();
-            if(mysqli_num_rows($queryResult)==0) {
-                return null;
-            } else {
-                $messaggi = array();
-                while($row=mysqli_fetch_assoc($queryResult)) {
-                    $singoloMessaggio = array('EmailDestinatario'=>$row['EmailDestinatario'],'Oggetto'=>$row['Oggetto'],'Messaggio'=>$row['Messaggio']);
-                    array_push($messaggi,$singoloMessaggio);
-                }
-                return $messaggi;
             }
         }
 
