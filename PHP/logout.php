@@ -12,7 +12,10 @@ try {
 	$_SESSION["errmessage"] = "Errore, ".$e->getMessage()."Riprova ad effettuare il logout, se il problema presiste contatta l&apos;amministratore.";
 }
 
-
-header("refresh:2; url= ../PAGES/login.php");
+if(!isset($_SESSION["user"])) {
+	header("refresh:2; url= ../PAGES/login.php");
+} else {
+	header("refresh:2; url= ../PAGES/areaPrivata.php");
+}
 
 ?>

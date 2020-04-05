@@ -40,10 +40,12 @@ try {
 	echo $e->getMessage();
 }
 
-if(isset($_SESSION["user"])) {
-	header("refresh:2; url= ../PAGES/areaPrivata.php?pageName=principale");
+if(isset($_SESSION["admin"])) {
+	header("refresh:2; url= ../PAGES/homeAmministratore.php");
+} elseif(isset($_SESSION["user"])) {
+  header("refresh:2; url= ../PAGES/areaPrivata.php?pageName=principale");
 } else {
-	header("refresh:2; url= ../PAGES/login.php");
+  header("refresh:2; url= ../PAGES/login.php");
 }
 
 ?>
