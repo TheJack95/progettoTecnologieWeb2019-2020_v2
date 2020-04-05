@@ -73,9 +73,9 @@ try {
 }
 
 if(isset($_SESSION["succmessage"])) {
-	header("refresh:2; url= ../PAGES/login.php");
+	header("location: ../PAGES/login.php");
 } else {
-	header("refresh:2; url= ../PAGES/registrati.php");
+	header("location: ../PAGES/registrati.php");
 }
 
 ?>

@@ -41,11 +41,11 @@ try {
 }
 
 if(isset($_SESSION["admin"])) {
-	header("refresh:2; url= ../PAGES/homeAmministratore.php");
+	header("location: ../PAGES/homeAmministratore.php");
 } elseif(isset($_SESSION["user"])) {
-  header("refresh:2; url= ../PAGES/areaPrivata.php?pageName=principale");
+  header("location: ../PAGES/areaPrivata.php?pageName=principale");
 } else {
-  header("refresh:2; url= ../PAGES/login.php");
+  header("location: ../PAGES/login.php");
 }
 
 ?>

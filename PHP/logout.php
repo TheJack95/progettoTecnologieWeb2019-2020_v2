@@ -16,9 +16,9 @@ try {
 }
 
 if(!isset($_SESSION["user"])) {
-	header("refresh:2; url= ../PAGES/login.php");
+	header("location: ../PAGES/login.php");
 } else {
-	header("refresh:2; url= ../PAGES/areaPrivata.php");
+	header("location: ../PAGES/areaPrivata.php");
 }
 
 ?>
