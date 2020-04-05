@@ -40,7 +40,7 @@ try {
 	echo $e->getMessage();
 }
 
-if(isset($_SESSION["admin"])) {
+if(isset($_SESSION["admin"]) && ($_SESSION["admin"] == 1)) {
 	header("location: ../PAGES/homeAmministratore.php");
 } elseif(isset($_SESSION["user"])) {
   header("location: ../PAGES/areaPrivata.php?pageName=principale");
