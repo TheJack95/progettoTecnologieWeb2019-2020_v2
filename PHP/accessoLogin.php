@@ -41,9 +41,9 @@ try {
 }
 
 if(isset($_SESSION["user"])) {
-	header("url= ../PAGES/areaPrivata.php?pageName=principale");
+	header("refresh:2; url= ../PAGES/areaPrivata.php?pageName=principale");
 } else {
-	header("url= ../PAGES/login.php");
+	header("refresh:2; url= ../PAGES/login.php");
 }
 
 ?>

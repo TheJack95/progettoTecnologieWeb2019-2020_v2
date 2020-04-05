@@ -8,7 +8,6 @@ require_once "../PHP/funzioniUtente.php";
 $output = file_get_contents("../HTML/areaPrivata.html");
 $output = str_replace("<header></header>",funzioniGenerali::header(),$output);
 $output = str_replace("<menu></menu>",funzioniGenerali::menu(),$output);
-$output = str_replace('<a class="" href="areaPersonale.php">AREA PERSONALE</a>','<strong>AREA PERSONALE</strong>',$output);
 $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
 
 if(isset($_SESSION["user"])) {

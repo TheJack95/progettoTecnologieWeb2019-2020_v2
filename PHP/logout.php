@@ -13,6 +13,6 @@ try {
 }
 
 
-header("url= ../PAGES/login.php");
+header("refresh:2; url= ../PAGES/login.php");
 
 ?>
