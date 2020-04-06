@@ -72,9 +72,10 @@
         public static function setMessaggio($messaggio, $errore){
 
             $class  = $errore ? "errorMessage" : "messaggio";
+            $breadcrumb  = $errore ? "Errore" : "Messaggio";
 
             $output = file_get_contents("../HTML/paginaVuota.html");
-            $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Errore"),$output);
+            $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb($breadcrumb),$output);
             $output = str_replace("<header></header>",funzioniGenerali::header(),$output);
             $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
             $output = str_replace("<messaggio></messaggio>","<p class='$class'>$messaggio</p>",$output);
