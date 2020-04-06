@@ -149,8 +149,10 @@ class funzioniVeicoli {
 	* Funzione per prenotare l'auto
 	* @return Object status: true/false, response: messaggio di risposta
 	*/
-	public function noleggia(string $utente, string $dataInizioNolo, string $dataFineNolo,string $targa, int $costo) {
-		$query = "INSERT INTO PrenotazioneNoleggio VALUES(null,'$utente', $targa, '$dataInizioNolo', '$dataFineNolo', '$costo')";
+	public function noleggia(string $utente, $dataInizioNolo, $dataFineNolo,string $targa, int $costo) {
+		$dataInizioString = $dataInizioNolo->format('Ymd');
+		$dataFineString = $dataFineNolo->format('Ymd');
+		$query = "INSERT INTO PrenotazioneNoleggio VALUES(null,'$utente', $targa, '$dataInizioString', '$dataFineString', '$costo')";
 		$queryResult = $this->connVeicoli->esegui($query);
 		if($queryResult == false) {
 			return (Object) [

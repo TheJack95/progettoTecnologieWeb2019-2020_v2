@@ -19,8 +19,8 @@ if($logged->status) {
 	if(isset($_POST['dataInizioNolo']) && isset($_POST['dataFineNolo']) && $_POST['dataInizioNolo'] != "" && $_POST['dataFineNolo'] != "") {
         $targa  = $_POST['targa'];
 
-        if (controlloInput::checkDateFormat($_POST['dataInizioNolo']) && controlloInput::validDate($_POST['dataInizioNolo'])
-            && controlloInput::checkDateFormat($_POST['dataFineNolo']) && controlloInput::validDate($_POST['dataFineNolo'])){
+        if (controlloInput::checkDateFormat($_POST['dataInizioNolo']) && date_create(controlloInput::validDate($_POST['dataInizioNolo']))
+            && controlloInput::checkDateFormat($_POST['dataFineNolo']) && date_create(controlloInput::validDate($_POST['dataFineNolo']))){
 
             $auto = new funzioniVeicoli();
             $utente  = $_SESSION['user'];
@@ -33,7 +33,7 @@ if($logged->status) {
             $interval = date_diff($datetime1, $datetime2);
             $costoTotale = $interval->days*$costo;
 
-            $response = $auto->noleggia($utente, $dataInizioNolo, $dataFineNolo, $targa, $costo);
+            $response = $auto->noleggia($utente, $datetime1, $datetime2, $targa, $costo);
         } else {
             $response->response = 'Attenzione: il formato delle date non &egrave; corretto. Deve essere gg-mm-aaaa. <a href="../PAGES/noleggioVeicolo.php?targaAuto='.$targa.'">Torna indietro</a>';
             $response->status = false;
@@ -45,13 +45,13 @@ if($logged->status) {
         $response->status = false;
     }
 
-    $output = funzioniGenerali::setMessaggio($response->response,$response->status);
+    $output = funzioniGenerali::setMessaggio($response->response,!$response->status);
     $output = str_replace('<a href="home.php">','<a href="../PAGES/home.php">',$output);
 
     echo $output;
 } else {
     $logged->message = str_replace('<a href="home.php">','<a href="../PAGES/home.php">',$logged->message);
     echo $logged->message;
-	header("refresh:5; url= ../PAGES/login.php");
+	//header("refresh:5; url= ../PAGES/login.php");
 }
 ?>
