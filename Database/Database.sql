@@ -66,8 +66,7 @@ CREATE TABLE IF NOT EXISTS Messaggi (
 
 CREATE TABLE IF NOT EXISTS RisposteMessaggi (
     IdRisp int AUTO_INCREMENT,
-    Email varchar(50),	
-    EmailDestinatario varchar(50),
+    Destinatario int,
 	Oggetto varchar(100),
     Messaggio text,
     PRIMARY KEY(IdRisp)
@@ -86,3 +85,6 @@ ALTER TABLE PrenotazioneNoleggio
 
 ALTER TABLE PrenotazioneNoleggio
 	ADD CONSTRAINT FK_PrenTarga FOREIGN KEY (Targa) REFERENCES AutoNoleggio(Targa);
+
+ALTER TABLE RisposteMessaggi
+	ADD CONSTRAINT FK_Destinatario FOREIGN KEY (Destinatario) REFERENCES Messaggi(IdMess);
