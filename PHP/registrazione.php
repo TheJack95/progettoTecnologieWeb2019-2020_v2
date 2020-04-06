@@ -15,6 +15,7 @@ try {
   $pw = $_POST["password"];
   $pwRi = $_POST["ripetiPassword"];
   $cel = $_POST["numeroTelefono"];
+  $indirizzo = $_POST["indirizzo"];
   $dbConnection = new database_connection();
   $messaggio = "";
 
@@ -43,7 +44,7 @@ try {
 										,Indirizzo
 										,DataNascita
 										,FlAdmin
-									) VALUES ('$mail','$passHash','$nome','$cognome','$cell','0','$nascita','0')";
+									) VALUES ('$mail','$passHash','$nome','$cognome','$cell','$indirizzo','$nascita','0')";
 
               $databaseConnection = new database_connection();
 

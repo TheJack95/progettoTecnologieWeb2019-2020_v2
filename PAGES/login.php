@@ -18,7 +18,7 @@ if(isset($_SESSION["errmessage"])) {
 
     $errorMessage = $_SESSION["successmessage"];
     $output = str_replace("<loginError></loginError>","<p class='errorMessage'>$errorMessage</p>",$output);
-    unset($_SESSION["errmessage"]);
+    unset($_SESSION["successmessage"]);
 }
 
 echo $output;
