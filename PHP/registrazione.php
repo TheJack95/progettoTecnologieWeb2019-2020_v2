@@ -45,7 +45,9 @@ try {
 										,FlAdmin
 									) VALUES ('$mail','$passHash','$nome','$cognome','$cell','0','$nascita','0')";
 
-							if ($dbConnection->esegui($queryInsert) == TRUE) {
+              $databaseConnection = new database_connection();
+
+							if ($databaseConnection->esegui($queryInsert) === TRUE) {
                 $messaggio = "Registrazione effettuata con successo. Puoi effettuare il login.";
                 $_SESSION["successmessage"] = $messaggio;
 							} else  {
