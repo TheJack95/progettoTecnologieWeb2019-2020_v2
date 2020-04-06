@@ -74,7 +74,7 @@ try {
 	echo $e->getMessage();
 }
 
-if(isset($_SESSION["succmessage"])) {
+if(isset($_SESSION["successmessage"])) {
 	header("location: ../PAGES/login.php");
 } else {
 	header("location: ../PAGES/registrati.php");
