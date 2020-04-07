@@ -2,21 +2,21 @@
     class funzioniGenerali {
     #funzione per scrivere l'header
         public static function header() {
-            $header_form = '<div id="header">'
-                                .'<a href="home.php"><img class="logoHeader" src="" alt="" /></a>'
-                                .'<p class="nomeSito"><a href="home.php">CONCESSIONARIA GREG</a></p>'
-                        .'</div>';
+            $header_form = '<div id="header">'."\n".
+                            '   <a href="home.php"><img class="logoHeader" src="" alt="" /></a>'."\n".
+                            '   <p class="nomeSito"><a href="home.php">CONCESSIONARIA GREG</a></p>'."\n".
+                            '</div>';
             return $header_form;
         }
 
     #funzione per scrivere i breadcrumb
         public static function breadcrumb(...$sequenza){
-            $breadcrumb_form = '<div id="breadcrumb">'
-                                    .'<p>Ti trovi in: ';
+            $breadcrumb_form = '<div id="breadcrumb">'."\n".
+                                '   <p>Ti trovi in: ';
             foreach($sequenza as $element){
                 $breadcrumb_form .= "$element ";
             }
-            $breadcrumb_form .=     "</p>"
+            $breadcrumb_form .=     "</p>"."\n"
                                .'</div>'."\n";
 
             $breadcrumb_form .= "<noscript>"."\n"
@@ -34,20 +34,21 @@
             if(!isset($_SESSION)) {
                 session_start();
             }
-            $menu_form = '<ul>'
-                            .'<li tabindex="1"><a href="home.php"><span xml:lang="en">HOME</span></a></li>'
-                            .'<li tabindex="2"><a href="noleggioVeicoli.php">VEICOLI A NOLEGGIO</a></li>'
-                            .'<li tabindex="3"><a href="acquistaVeicoli.php">VEICOLI IN VENDITA</a></li>'
-                            .'<li tabindex="4"><a href="contatti.php">CONTATTI</a></li>';
-
+                $menu_form =    '<div id="menu">'."\n".
+                                '   <ul>'."\n".
+                                '       <li tabindex="1"><a href="home.php"><span xml:lang="en">HOME</span></a></li>'."\n".
+                                '       <li tabindex="2"><a href="noleggioVeicoli.php">VEICOLI A NOLEGGIO</a></li>'."\n".
+                                '       <li tabindex="3"><a href="acquistaVeicoli.php">VEICOLI IN VENDITA</a></li>'."\n".
+                                '       <li tabindex="4"><a href="contatti.php">CONTATTI</a></li>'."\n";
             if(isset($_SESSION["user"])) { //login effettuato correttamente
-                $menu_form .= '<li tabindex="5"><a class="" href="areaPrivata.php">AREA PERSONALE</a></li>'
-                            .'<li tabindex="6"><a class="" href="../PHP/logout.php">ESCI</a></li>'
-                        .'</ul>';
+                $menu_form .=   '       <li tabindex="5"><a class="" href="areaPrivata.php">AREA PERSONALE</a></li>'."\n".
+                                '       <li tabindex="6"><a class="" href="../PHP/logout.php">ESCI</a></li>'."\n";
             } else { //non ho fatto il login oppure qualcosa e' andato storto
-                $menu_form .= '<li tabindex="5"><a class="" href="login.php">ACCEDI</a></li>'
-                        .'</ul>';
+                $menu_form .=   '       <li tabindex="5"><a class="" href="login.php">ACCEDI</a></li>'."\n";
             }
+                $menu_form .=   '   </ul>'."\n".
+                                '</div>';
+
             return $menu_form;
         }
 
@@ -55,9 +56,9 @@
          * Funzione per scrivere il footer
          */
         public static function footer() {
-            $footer_form = '<div id="footer">'
-                                .'<p>CONCESSIONARIA GREG - Tutti i diritti riservati - A cura di <span xml:lang="en">Tecweb Group</span></p>'
-                          .'</div>';
+            $footer_form =  '<div id="footer">'."\n".
+                            '   <p>CONCESSIONARIA GREG - Tutti i diritti riservati - A cura di <span xml:lang="en">Tecweb Group</span></p>'."\n".
+                            '</div>';
             return $footer_form;
         }
 
