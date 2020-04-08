@@ -44,11 +44,11 @@ if(count($rows) == 0) {
 $output = str_replace("<auto></auto>",$veicoli,$output);
 
 $filtri ='<div>'."\n"
-		.'	<form action="acquistaVeicoli.php" method="POST">'."\n"
+		.'	<form action="acquistaVeicoli.php" method="post">'."\n"
 		.'  	<fieldset>'."\n"
-		.'			<label>Ricerca auto</label>'."\n"
-		.'				<input type="text" name="searchbar" placeholder="Cerca..." tabindex="7">'."\n"
-		.'				<button type="submit" name="applicaFiltri" value="applicaFiltri" class="button internal-button" tabindex="8">Cerca</button>'."\n"
+		.'			<label for="searchbar">Cerca veicoli</label>'."\n"
+		.'			<input type="text" id="searchbar" name="searchbar" tabindex="0" title="searchbar"/>'."\n"
+		.'			<button type="submit" name="applicafiltri" value="applicaFiltri" class="button internal-button" tabindex="1" title="cerca">Cerca</button>'."\n"
 		.'  	</fieldset>'."\n"
 		.'	</form>'."\n"
 		.'</div>';

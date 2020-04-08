@@ -24,7 +24,7 @@ if($logged->status) {
 		$response->status = false;
 	}
 
-	$output = funzioniGenerali::setMessaggio($response->response,!$response->status);
+	$output = funzioniGenerali::setMessaggio($response->response.'<a href="../PAGES/home.php"> Torna alla home</a>',!$response->status);
 	$output = str_replace('<a href="home.php">','<a href="../PAGES/home.php">',$output);
 
 	echo $output;

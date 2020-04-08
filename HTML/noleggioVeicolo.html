@@ -22,8 +22,6 @@
 
 		<h1>Riepilogo noleggio</h1>
 
-		<messaggio></messaggio>
-
 		<div>
 			<form action="../PHP/noleggiaVeicoloFn.php?costo=_COSTONOLEGGIO_" onsubmit="return checkDateNolo();" method="post">
 				<fieldset>
@@ -31,7 +29,7 @@
 					<label>Dal</label>
 					<input type="text" name="dataInizioNolo" onchange="dataInizioChange(event);" tabindex="7" />
 					<label>Al</label>
-					<input id="dataFineNolo" name="dataFineNolo" type="text" onchange="dataFineChange(event);" tabindex="8" />
+					<input name="dataFineNolo" type="text" onchange="dataFineChange(event);" tabindex="8" />
 					<button type="submit" name="targa" value="'_TARGA_'" class="button internal-button" tabindex="9">Noleggia</button>
 				</fieldset>
 			</form>
@@ -42,11 +40,11 @@
 			<h2>_MARCAMODELLO_</h2>
 			<ul>
 				<li><p><strong>Cilindrata:</strong>  _CILINDRATA_</p></li>
-				<li><p><strong>Costo noleggio (al giorno):</strong> <span id="costoNolo">_COSTONOLEGGIO_</span></p></li>
+				<li><p><strong>Costo noleggio (al giorno):</strong> <span>_COSTONOLEGGIO_</span></p></li>
 				<li><p><strong>Cauzione:</strong> _CAUZIONE_</p></li>
 			</ul>
 
-			<h3 id="cosTot">COSTO TOTALE: 0</h3>
+			<h3>COSTO TOTALE: 0</h3>
 		</div>
 
 		<footer></footer>
