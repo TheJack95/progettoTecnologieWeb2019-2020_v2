@@ -28,10 +28,20 @@
 			}
 		}
 
+		public function FormatDate($data){
+			if (isset($data) && !empty($data)){
+				$dataFormata = date_create($data);
+				date_format($dataFormata, 'Y-m-d');
+				return $dataFormata;
+			} else {
+				return $data;
+			}
+		}
+
 		public function checkDateFormat($data){
 			if (isset($data) && !empty($data) && preg_match("/^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/",$data))
 				return true;
-			
+
 			return false;
 		}
 

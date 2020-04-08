@@ -30,9 +30,11 @@ try {
         && controlloInput::validPass($pw)
         && controlloInput::validPass($pwRi)
         && $pw === $pwRi ) {
+          if(isset($nascita))
+            $nascitaFormatted = controlloInput::FormatDate($nascita);
 
-          if(controlloInput::checkDateFormat($nascita)) {
-						if(controlloInput::checkBirthdate($nascita)) {
+          if(controlloInput::checkDateFormat($nascitaFormatted)) {
+						if(controlloInput::checkBirthdate($nascitaFormatted)) {
 							$passHash = password_hash($pw, PASSWORD_DEFAULT);
 
 							$queryInsert = "INSERT INTO Utenti (
