@@ -163,14 +163,13 @@
 
     #funzione per l'inserimento nel database di un nuovo veicolo in vendita
         public function insertVeicoloVendita() {
-            $idAuto = $_POST['idAuto'];
             $marca = $_POST['marca'];
             $modello = $_POST['modello'];
             $km = $_POST['km'];
             $cilindrata = $_POST['cilindrata'];
             $prezzoVendita = $_POST['prezzoVendita'];
             
-            $insertVeicoloVendita = "INSERT INTO AutoVendita() VALUES ('$idAuto','$marca','$modello','$km','$cilindrata','$prezzoVendita')";
+            $insertVeicoloVendita = "INSERT INTO AutoVendita() VALUES ('','$marca','$modello','$km','$cilindrata','$prezzoVendita')";
             if($this->connection->query($insertVeicoloVendita) === TRUE){
                 return true;
             } else{
@@ -180,14 +179,15 @@
 
     #funzione per l'inserimento nel database di un nuovo messaggio
         public function insertRisposta() {
+            $mittente = $_POST['mittente'];
             $destinatario = $_POST['destinatario'];
             $oggetto = $_POST['oggetto'];
             $testo = $_POST['testo'];
 
-            $insertRisposta = "INSERT INTO MessaggiRisposta() VALUES ('$destinatario','$oggetto','$testo')";
-            if ($this->connection->query($insertRisposta) === TRUE){
+            $insertRisposta = "INSERT INTO MessaggiRisposta() VALUES ('','$mittente','$destinatario','$oggetto','$testo')";
+            if ($this->connection->query($insertRisposta) === TRUE) {
                 return true;
-            } else{
+            } else {
                 return false;
             }
         }
