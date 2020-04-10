@@ -19,12 +19,16 @@ if(isset($_SESSION["user"])) {
 	$utente = $_SESSION["utente"];
 
 	$sideNav = "<div id='nav'>"."\n"
-				."	<h3>Menu Utente</h3>"."\n"
+				."	<h3 class='titoloMenu'>Menu Utente</h3>"."\n"
 				."	<ul>"."\n"
 				."	   <li><a href='areaPrivata.php?pageName=principale'>Area Personale</a></li>"."\n"
+				."	   <hr/>"."\n"
 				."	   <li><a href='areaPrivata.php?pageName=datiPersonali'>Dati Personali</a></li>"."\n"
+				."	   <hr/>"."\n"
 				."	   <li><a href='areaPrivata.php?pageName=preventivi'>Preventivi</a></li>"."\n"
+				."	   <hr/>"."\n"
 				."	   <li><a href='areaPrivata.php?pageName=noleggi'>Noleggi</a></li>"."\n"
+				."	   <hr/>"."\n"
 				."	   <li><a href='areaPrivata.php?pageName=messaggi'>Messaggi</a></li>"."\n"
 				."	</ul>"."\n"
 				."</div>"."\n";
