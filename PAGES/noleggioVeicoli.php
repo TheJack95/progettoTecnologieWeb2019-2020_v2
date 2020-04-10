@@ -18,9 +18,9 @@ $veicoli = "";
 
 foreach($rows as $row) {
 
-	$veicoli .= '<div>'."\n"
-				."	<img class='' src='".$row->Immagine."' alt='".$row->DescrImmagine."'/>"."\n"
-				.'	<div>'
+	$veicoli .= '<div class="containerVeicolo">'."\n"
+				.'	<img class="fotoVeicolo" src="'.$row->Immagine.'" alt="'.$row->DescrImmagine.'"/>'."\n"
+				.'	<div class="datiVeicolo">'
 				.'		<h2>'.$row->Marca." ".$row->Modello.'</h2>'."\n"
 				.'		<ul>'
 				.'			<li>'
@@ -33,24 +33,24 @@ foreach($rows as $row) {
 				.'				<p><strong>Cauzione:</strong>'.$row->Cauzione.'</p>'
 				.'			</li>'
 				.'		</ul>'
+				.'		<a href="noleggioVeicolo.php?targaAuto='.$row->Targa.'">Noleggia auto</a>'."\n"
 				.'	</div>'."\n"
-				.'	<a href="noleggioVeicolo.php?targaAuto='.$row->Targa.'">Noleggia auto</a>'."\n"
 				.'</div>';
 }
 
 $output = str_replace("<auto></auto>",$veicoli,$output);
 
 $filtri ='<div>'."\n"
-		.'	<form action="noleggioVeicoli.php" method="POST">'."\n"
+		.'	<form action="noleggioVeicoli.php" method="post">'."\n"
 		.'  	<fieldset>'."\n"
-		.'				<label>Ricerca auto</label>'."\n"
-		.'				<input type="text" name="searchbar" placeholder="Cerca..." tabindex="7">'."\n"
+		.'				<label for="searchbar">Cerca veicoli</label>'."\n"
+		.'				<input type="text" name="searchbar" tabindex="0" title="searchbar"/>'."\n"
 		.'				<p>Filtra per data disponibilit&agrave;</p>'."\n"
-		.'				<label>Dal</label>'."\n"
-		.'				<input type="text" name="dataInizio" tabindex="8">'."\n"
-		.'				<label>Al</label>'."\n"
-		.'				<input type="text" name="dataFine" tabindex="9">'."\n"
-		.'				<button type="submit" name="applicaFiltri" value="applicaFiltri" class="button internal-button" tabindex="10">Cerca</button>'."\n"
+		.'				<label for="dataInizio">Dal</label>'."\n"
+		.'				<input type="text" name="dataInizio" tabindex="1" title="datainizionolo" class="dataInput" />'."\n"
+		.'				<label for="dataFine">Al</label>'."\n"
+		.'				<input type="text" name="dataFine" tabindex="2" title="datafinenolo" class="dataInput" />'."\n"
+		.'				<input type="submit" name="applicaFiltri" value="Cerca" class="button internal-button" tabindex="3" />'."\n"
 		.'  	</fieldset>'."\n"
 		.'	</form>'."\n"
 		.'</div>';

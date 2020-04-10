@@ -17,9 +17,9 @@ $rows = (new funzioniVeicoli())->getVeicoliAcquista();
 $veicoli = "";
 
 foreach($rows as $row) {
-	$veicoli .= '<div>'."\n"
-				."	<img class='' src='".$row->Immagine."' alt='".$row->DescrImmagine."'/>"."\n"
-				.'	<div>'."\n"
+	$veicoli .= '<div class="containerVeicolo">'."\n"
+				.'	<img class="fotoVeicolo" src="'.$row->Immagine.'" alt="'.$row->DescrImmagine.'" />'."\n"
+				.'	<div class="datiVeicolo">'."\n"
 				.'		<h2>'.$row->Marca. " " .$row->Modello.'</h2>'."\n"
                 .'	    <ul>'
                 .'          <li>'
@@ -32,8 +32,8 @@ foreach($rows as $row) {
 				.'				<p><strong>Prezzo di vendita:</strong> '.$row->PrezzoVendita.'</p>'
 				.'			</li>'
 				.'		</ul>'
+				.'		<a href="../PHP/acquistaVeicoloFn.php?idAuto='.$row->IdAuto.'&prezzoVendita='.$row->PrezzoVendita.'">Richiedi preventivo</a>'."\n"
                 .'	</div>'."\n"
-				.'	<a href="../PHP/acquistaVeicoloFn.php?idAuto='.$row->IdAuto.'&prezzoVendita='.$row->PrezzoVendita.'">Richiedi preventivo</a>'."\n"
 				.'</div>';
 }
 
@@ -43,15 +43,13 @@ if(count($rows) == 0) {
 
 $output = str_replace("<auto></auto>",$veicoli,$output);
 
-$filtri ='<div>'."\n"
-		.'	<form action="acquistaVeicoli.php" method="POST">'."\n"
-		.'  	<fieldset>'."\n"
-		.'			<label>Ricerca auto</label>'."\n"
-		.'				<input type="text" name="searchbar" placeholder="Cerca..." tabindex="7">'."\n"
-		.'				<button type="submit" name="applicaFiltri" value="applicaFiltri" class="button internal-button" tabindex="8">Cerca</button>'."\n"
-		.'  	</fieldset>'."\n"
-		.'	</form>'."\n"
-		.'</div>';
+$filtri ='<form action="acquistaVeicoli.php" method="post">'."\n"
+		.'	<fieldset>'."\n"
+		.'		<label for="searchbar">Cerca veicoli</label>'."\n"
+		.'		<input type="text" id="searchbar" name="searchbar" tabindex="0" title="searchbar"/>'."\n"
+		.'		<input type="submit" name="applicafiltri" value="Cerca" class="button" tabindex="1"/>'."\n"
+		.'	</fieldset>'."\n"
+		.'</form>';
 
 $output = str_replace("<filtriAuto></filtriAuto>",$filtri,$output);
 $output = str_replace('<a href="acquistaVeicoli.php">VEICOLI IN VENDITA</a>','<strong>VEICOLI IN VENDITA</strong>',$output);

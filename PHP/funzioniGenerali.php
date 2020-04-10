@@ -3,7 +3,7 @@
     #funzione per scrivere l'header
         public static function header() {
             $header_form = '<div id="header">'."\n".
-                            '   <a href="home.php"><img class="logoHeader" src="" alt="" /></a>'."\n".
+                            '   <a href="home.php"><img class="logoHeader" src="" alt="logo concessionaria greg" /></a>'."\n".
                             '   <p class="nomeSito"><a href="home.php">CONCESSIONARIA GREG</a></p>'."\n".
                             '</div>';
             return $header_form;
@@ -19,10 +19,10 @@
             $breadcrumb_form .=     "</p>"."\n"
                                .'</div>'."\n";
 
-            $breadcrumb_form .= "<noscript>"."\n"
-                                ."    <h2>"."\n"
+            $breadcrumb_form .= "<noscript class=\"messaggio\">"."\n"
+                                ."    <h1>"."\n"
                                 ."        Il tuo browser non supporta JavaScript oppure &egrave; stato disabilitato. Alcune funzionalit&agrave; potrebbero non funzionare correttamente."."\n"
-                                ."    </h2>"."\n"
+                                ."    </h1>"."\n"
                                 ."</noscript>"."\n";
             return $breadcrumb_form;
         }
@@ -36,15 +36,15 @@
             }
                 $menu_form =    '<div id="menu">'."\n".
                                 '   <ul>'."\n".
-                                '       <li tabindex="1"><a href="home.php"><span xml:lang="en">HOME</span></a></li>'."\n".
-                                '       <li tabindex="2"><a href="noleggioVeicoli.php">VEICOLI A NOLEGGIO</a></li>'."\n".
-                                '       <li tabindex="3"><a href="acquistaVeicoli.php">VEICOLI IN VENDITA</a></li>'."\n".
-                                '       <li tabindex="4"><a href="contatti.php">CONTATTI</a></li>'."\n";
+                                '       <li><a href="home.php"><span xml:lang="en" lang="en">HOME</span></a></li>'."\n".
+                                '       <li><a href="noleggioVeicoli.php">VEICOLI A NOLEGGIO</a></li>'."\n".
+                                '       <li><a href="acquistaVeicoli.php">VEICOLI IN VENDITA</a></li>'."\n".
+                                '       <li><a href="contatti.php">CONTATTI</a></li>'."\n";
             if(isset($_SESSION["user"])) { //login effettuato correttamente
-                $menu_form .=   '       <li tabindex="5"><a class="" href="areaPrivata.php">AREA PERSONALE</a></li>'."\n".
-                                '       <li tabindex="6"><a class="" href="../PHP/logout.php">ESCI</a></li>'."\n";
+                $menu_form .=   '       <li><a class="" href="areaPrivata.php">AREA PERSONALE</a></li>'."\n".
+                                '       <li><a class="" href="../PHP/logout.php">ESCI</a></li>'."\n";
             } else { //non ho fatto il login oppure qualcosa e' andato storto
-                $menu_form .=   '       <li tabindex="5"><a class="" href="login.php">ACCEDI</a></li>'."\n";
+                $menu_form .=   '       <li><a class="" href="login.php">ACCEDI</a></li>'."\n";
             }
                 $menu_form .=   '   </ul>'."\n".
                                 '</div>';
@@ -57,7 +57,7 @@
          */
         public static function footer() {
             $footer_form =  '<div id="footer">'."\n".
-                            '   <p>CONCESSIONARIA GREG - Tutti i diritti riservati - A cura di <span xml:lang="en">Tecweb Group</span></p>'."\n".
+                            '   <p>CONCESSIONARIA GREG - Tutti i diritti riservati - A cura di <span xml:lang="en" lang="en">Tecweb Group</span></p>'."\n".
                             '</div>';
             return $footer_form;
         }
@@ -100,7 +100,7 @@
             } else {
                 return (Object) [
                     "status" => false,
-                    "message" => funzioniGenerali::setMessaggio("Devi effettuare l&apos;accesso prima di procedere con l&apos;operazione. Verrai reindirizzato alla pagina di login", true)
+                    "message" => funzioniGenerali::setMessaggio('Devi effettuare l&apos;accesso prima di procedere con l&apos;operazione. Vai alla pagina di <a href="../PAGES/login.php">login</a>', true)
                 ];
             }
         }

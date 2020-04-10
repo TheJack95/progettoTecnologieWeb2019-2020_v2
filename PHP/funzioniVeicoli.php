@@ -177,12 +177,12 @@ class funzioniVeicoli {
 		if($queryResult == false) {
 			return (Object) [
 				"status" => false
-				,"response" => "Errore nella comunicazione con il database"
+				,"response" => "Errore nella comunicazione con il database."
 			];
 		} else {
 			return (Object) [
 				"status" => true
-				,"response" => "Preventivo richiesto correttamente"
+				,"response" => "Preventivo richiesto correttamente."
 			];
 		}
 	}

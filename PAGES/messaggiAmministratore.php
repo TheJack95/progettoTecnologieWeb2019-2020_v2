@@ -12,11 +12,11 @@
 
         foreach($requestR as $responseR) {
             $ricevuti .= "<ul>"
-                        ."  <li>Nome&colon; <strong>".$response->Nome."</strong></li>"
-                        ."  <li>Cognome&colon; <strong>".$response->Cognome."</strong></li>"
-                        ."  <li>NumeroTelefono&colon; <strong>".$response->NumeroTelefono."</strong></li>"
-                        ."  <li>Email&colon; <strong>".$response->Email."</strong></li>"
-                        ."  <li>Messsaggio&colon; <strong>".$response->Messaggio."</strong></li>"
+                        ."  <li>Nome&colon; <strong>".$responseR->Nome."</strong></li>"
+                        ."  <li>Cognome&colon; <strong>".$responseR->Cognome."</strong></li>"
+                        ."  <li>NumeroTelefono&colon; <strong>".$responseR->NumeroTelefono."</strong></li>"
+                        ."  <li>Email&colon; <strong>".$responseR->Email."</strong></li>"
+                        ."  <li>Messsaggio&colon; <strong>".$responseR->Messaggio."</strong></li>"
                         ."</ul>";
         }
         if(count($requestR) == 0) {
@@ -28,10 +28,10 @@
 
         foreach($requestI as $responseI) {
             $inviati .= "<ul>".
-                        "  <li>Email Mittente&colon; <strong>".$response->Email."</strong></li>".
-                        "  <li>Email Destinatario&colon; <strong>".$response->EmailDestinatario."</strong></li>".
-                        "  <li>Oggetto&colon; <strong>".$response->Oggetto."</strong></li>".
-                        "  <li>Messsaggio&colon; <strong>".$response->Messaggio."</strong></li>".
+                        "  <li>Email Mittente&colon; <strong>".$responseI->Email."</strong></li>".
+                        "  <li>Email Destinatario&colon; <strong>".$responseI->EmailDestinatario."</strong></li>".
+                        "  <li>Oggetto&colon; <strong>".$responseI->Oggetto."</strong></li>".
+                        "  <li>Messsaggio&colon; <strong>".$responseI->Messaggio."</strong></li>".
                         "</ul>";
         }
         if(count($requestI) == 0) {

@@ -5,16 +5,16 @@ venerdì 20/03 discussione sulle analisi, sui requisiti e le features
 martedì 24/03 sviluppo collettivo delle parti comuni: menù, breadcrums, header, footer
 sabato 28/03 discussione eventuali problemi e progressione sviluppo php
 venerdì 03/04 completamento pagine php e funzioni
+mercoledì 08/04 
 
-PROSSIMI INCONTRI: martedì 7/04 ore 15
+PROSSIMI INCONTRI: sabato pomeriggio
 
-DA PREPARARE:   sistemare tabindex
-                sistemare database
-                CONTROLLARE CODIFICA SIMBOLI
-                solo url relativi
-                sviluppo controlli in JavaScript
+DA PREPARARE:   sviluppo controlli in JavaScript
+                CSS generale
 
 *** ATTENZIONE ***
+
+- nel CSS usare em (scala in base al parente più vicino) per i font, per gli oggetti la %
 
 - tutte le pagine devono rispettare lo standard XHTML 1.0 STRICT
 - solo le pagine che hanno (VERAMENTE) bisogno di tag html5 si faranno in HTML5, sempre rispettando lo standard XHTML5
