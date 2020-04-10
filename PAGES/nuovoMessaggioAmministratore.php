@@ -8,21 +8,21 @@
 
     if(isset($_SESSION["admin"]) && $_SESSION["admin"] == 1) {
         $output = file_get_contents("../HTML/nuovoMessaggioAmministratore.html");
-        
+
         $output = str_replace("<header></header>",funzioniGenerali::header(),$output);
         $output = str_replace("<menu></menu>",funzioniGenerali::menu(),$output);
         $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Area Personale &gt;&gt; Nuovo messaggio"),$output);
         $output = str_replace("<menuAmministratore></menuAmministratore>",funzioniAmministratore::menuAmm(),$output);
-        
+
         if(isset($_SESSION["nuovoMessaggio"])){
             $output = str_replace("<messaggio></messaggio>",$_SESSION["nuovoMessaggio"],$output);
         } else {
             $output = str_replace("<messaggio></messaggio>"," ",$output);
         }
-        
+
         $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
-        
-        $output = str_replace('<a class="" href="areaPrivata.php">AREA PERSONALE</a>','<a class="" href="homeAmministratore.php">AREA PERSONALE</a>',$output);
+
+        $output = str_replace('<a class="" href="homeAmministratore.php">AREA AMMINISTRATORE</a>','<strong>AREA AMMINISTRATORE</strong>',$output);
 
         echo $output;
     } else {

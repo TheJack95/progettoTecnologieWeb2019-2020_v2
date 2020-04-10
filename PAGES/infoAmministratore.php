@@ -25,15 +25,15 @@
         }
 
         $output = file_get_contents("../HTML/infoAmministratore.html");
-    
+
         $output = str_replace("<header></header>",funzioniGenerali::header(),$output);
         $output = str_replace("<menu></menu>",funzioniGenerali::menu(),$output);
         $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Area Personale &gt;&gt; Informazioni Personali"),$output);
         $output = str_replace("<menuAmministratore></menuAmministratore>",funzioniAmministratore::menuAmm(),$output);
         $output = str_replace("<infoPersonali></infoPersonali>",$informazioni,$output);
         $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
-        
-        $output = str_replace('<a class="" href="areaPrivata.php">AREA PERSONALE</a>','<a href="homeAmministratore.php">AREA PERSONALE</a>',$output);
+
+        $output = str_replace('<a class="" href="homeAmministratore.php">AREA AMMINISTRATORE</a>','<strong>AREA AMMINISTRATORE</strong>',$output);
         $output = str_replace('<a href="infoAmministratore.php">INFORMAZIONI PERSONALI</a>','<img class="iconaMenu" src="../Images/auto.svg" alt="icona del men&ugrave; che ritrae una automobilina" /><strong>INFORMAZIONI PERSONALI</strong>',$output);
 
         echo $output;

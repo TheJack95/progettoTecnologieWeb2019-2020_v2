@@ -40,7 +40,10 @@
                                 '       <li><a href="noleggioVeicoli.php">VEICOLI A NOLEGGIO</a></li>'."\n".
                                 '       <li><a href="acquistaVeicoli.php">VEICOLI IN VENDITA</a></li>'."\n".
                                 '       <li><a href="contatti.php">CONTATTI</a></li>'."\n";
-            if(isset($_SESSION["user"])) { //login effettuato correttamente
+            if(isset($_SESSION["admin"]) && $_SESSION["admin"] == 1) { //login effettuato come amministratore
+              $menu_form .=   '       <li><a class="" href="homeAmministratore.php">AREA AMMINISTRATORE</a></li>'."\n".
+                              '       <li><a class="" href="../PHP/logout.php">ESCI</a></li>'."\n";
+            } elseif(isset($_SESSION["user"])) { //login effettuato come utente
                 $menu_form .=   '       <li><a class="" href="areaPrivata.php">AREA PERSONALE</a></li>'."\n".
                                 '       <li><a class="" href="../PHP/logout.php">ESCI</a></li>'."\n";
             } else { //non ho fatto il login oppure qualcosa e' andato storto
