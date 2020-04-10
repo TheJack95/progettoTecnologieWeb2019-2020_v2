@@ -15,7 +15,7 @@
 }
 
 .fotoVeicolo {
-	width: 40%;
+	width: auto;
 	height: auto;
 }
 
@@ -29,7 +29,39 @@
 	padding: 0;
 }
 
+input {
+	width: 50%;
+	height: 2em;
+}
+
+.button {
+	border: 1px solid #241d13;
+	cursor: pointer;
+	font-size: 1em;
+	font-weight: bold;
+	width: 5em;
+	border-radius: 4px;
+}
+
+.dataInput {
+	width: 25% !important;
+}
+
 @media (max-width:1000px) {
+
+	form {
+		text-align: center;
+	}
+
+	input[type="text"] {
+		width: 100%;
+		border: 1px solid;
+	}
+	input[type="submit"] {
+		margin: 0.5em;
+		border: 1px solid black;
+		font-size: 1em;
+	}
 
 	.containerVeicolo {
 		text-align: center;

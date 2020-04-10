@@ -30,6 +30,5 @@ if($logged->status) {
 	echo $output;
 } else {
 	echo $logged->message;
-	header("refresh:5; url= ../PAGES/login.php");
 }
 ?>
