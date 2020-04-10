@@ -1,0 +1,50 @@
+.containerVeicolo{
+	padding: 1%;
+	margin: 1%;
+	border: 1px solid#616161;
+	-webkit-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
+	-moz-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
+	box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
+	overflow: auto;
+	width: auto;
+	background-color: white;
+}
+
+.containerVeicolo > *{
+	float: left;
+}
+
+.fotoVeicolo {
+	width: 40%;
+	height: auto;
+}
+
+.datiVeicolo {
+	width: 50%;
+	margin-left: 50px;
+}
+
+.datiVeicolo ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+@media (max-width:1000px) {
+
+	.containerVeicolo {
+		text-align: center;
+	}
+
+	.containerVeicolo > *{
+		float: none;
+	}
+
+	.datiVeicolo ul {
+		list-style-type: none;
+		padding: 0;
+	}
+
+	.photoVeicolo {
+		width: 80%;
+	}
+}
