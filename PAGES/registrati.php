@@ -11,7 +11,7 @@
         session_start();
 
     if(isset($_SESSION['errmessage'])) {
-        $output = str_replace("<messaggio></messaggio>","<p>".$_SESSION['errmessage']."</p>",$output);
+        $output = str_replace("<messaggio></messaggio>","<p class='errorMessage'>".$_SESSION['errmessage']."</p>",$output);
     } else
         $output = str_replace("<messaggio></messaggio>","",$output);
 

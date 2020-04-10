@@ -36,7 +36,7 @@ if(isset($_SESSION["user"])) {
 				."	<div id='container'>"."\n"
 				."		<a class='azioniRapide' href='areaPrivata.php?pageName=messaggi'>Controlla i Messaggi</a>"."\n"
 				."		<a class='azioniRapide' href='acquistaVeicoli.php'>Guarda le nostre offerte</a>"."\n"
-				."		<a class='azioniRapide' href='info.php'>Contatta l'Amministratore</a>"."\n"
+				."		<a class='azioniRapide' href='contatti.php#formMessaggio'>Contatta l'Amministratore</a>"."\n"
 				."	</div>"."\n"
 				."</div>"."\n";
 
