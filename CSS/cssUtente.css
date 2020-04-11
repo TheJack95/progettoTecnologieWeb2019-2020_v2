@@ -1,13 +1,29 @@
 #nav {
-  background-color: #eaeaea;
-  padding: 1.2em;
+    background-color: #eaeaea;
+    padding: 1.2em;
+    display: inline-block;
+    width: 25%;
 }
 
-#titoloMenu {
+#content {
+    display: inline-block;
+    width: 60%;
+    padding: 1.5em;
+}
+
+.titoloMenu {
     font-weight: bold;
     text-align: center;
-    font-size: 1em;
+    font-size: 1.2em;
     margin-bottom: 1em;
+}
+
+.titolo {
+    font-family: Helvetica,Arial,sans-serif;
+    font-weight: bold;
+    font-size: 1.6em;
+    margin-bottom: 1.2em;
+    text-align: center;
 }
 
 hr {
@@ -22,4 +38,8 @@ hr {
 #nav a {
     font-weight: bold;
     margin-left: 20px;
+}
+
+#nav li {
+  list-style: none;
 }

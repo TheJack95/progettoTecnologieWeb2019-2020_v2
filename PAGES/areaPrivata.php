@@ -34,8 +34,7 @@ if(isset($_SESSION["user"])) {
 				."</div>"."\n";
 
 	$contentItems = "<div id='content'>"."\n"
-				."	<h1 class='titolo'>Area Personale</h1>"."\n"
-				."	<h3>Azioni rapide</h3>"."\n"
+				."	<h3 class='titolo'>Azioni rapide</h3>"."\n"
 				."	<p>Benvenuto $utente! Scegli cosa fare dalle azioni rapide o naviga con il menu a sinistra!</p>"."\n"
 				."	<div id='container'>"."\n"
 				."		<a class='azioniRapide' href='areaPrivata.php?pageName=messaggi'>Controlla i Messaggi</a>"."\n"
