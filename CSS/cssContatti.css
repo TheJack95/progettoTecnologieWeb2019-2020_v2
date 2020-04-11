@@ -1,0 +1,43 @@
+.titolo{
+    font-size: 1.5em;
+    margin-bottom : 0.5em;
+    margin-top: 0.5em;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+#testo{
+    margin-bottom: 1em;
+    clear: both;
+    overflow: hidden;
+}
+
+
+.containerInfo{
+    text-align: center;
+}
+
+#contatti{
+    float: right;
+    position: relative;
+    right: 20%;
+    text-align: justify;
+    margin-bottom: 2em;
+}
+
+#indirizzo{
+    float: left;
+    position: relative;
+    left: 20%;
+    text-align: justify;
+    margin-bottom: 2em;
+}
+
+ul{
+    list-style: none;
+}
+
+#mappa{
+    margin: 2em 0;
+}

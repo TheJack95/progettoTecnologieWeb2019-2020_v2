@@ -1,0 +1,47 @@
+#nav {
+    background-color: #eaeaea;
+    padding: 1.2em;
+    display: inline-block;
+    width: 25%;
+}
+
+#content {
+    display: inline-block;
+    width: 60%;
+    padding: 1.5em;
+    margin-top: 0;
+    margin-bottom: 0.2em;
+    float: right;
+}
+
+.titoloMenu {
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+.titolo {
+    font-weight: bold;
+    font-size: 1.6em;
+    margin-bottom: 1.2em;
+    text-align: center;
+}
+
+hr {
+    display: block;
+    height: 0.0625em;
+    border: 0;
+    border-top: 0.0625em solid #b0b0b0;
+    margin: 1em 0;
+    padding: 0;
+}
+
+#nav a {
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+#nav li {
+  list-style: none;
+}

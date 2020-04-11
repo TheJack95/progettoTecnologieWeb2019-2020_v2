@@ -19,24 +19,27 @@ if(isset($_SESSION["user"])) {
 	$utente = $_SESSION["utente"];
 
 	$sideNav = "<div id='nav'>"."\n"
-				."	<h3>Menu Utente</h3>"."\n"
+				."	<h3 class='titoloMenu'>Menu Utente</h3>"."\n"
 				."	<ul>"."\n"
 				."	   <li><a href='areaPrivata.php?pageName=principale'>Area Personale</a></li>"."\n"
+				."	   <hr/>"."\n"
 				."	   <li><a href='areaPrivata.php?pageName=datiPersonali'>Dati Personali</a></li>"."\n"
+				."	   <hr/>"."\n"
 				."	   <li><a href='areaPrivata.php?pageName=preventivi'>Preventivi</a></li>"."\n"
+				."	   <hr/>"."\n"
 				."	   <li><a href='areaPrivata.php?pageName=noleggi'>Noleggi</a></li>"."\n"
+				."	   <hr/>"."\n"
 				."	   <li><a href='areaPrivata.php?pageName=messaggi'>Messaggi</a></li>"."\n"
 				."	</ul>"."\n"
 				."</div>"."\n";
 
 	$contentItems = "<div id='content'>"."\n"
-				."	<h1 class='titolo'>Area Personale</h1>"."\n"
-				."	<h3>Azioni rapide</h3>"."\n"
+				."	<h3 class='titolo'>Azioni rapide</h3>"."\n"
 				."	<p>Benvenuto $utente! Scegli cosa fare dalle azioni rapide o naviga con il menu a sinistra!</p>"."\n"
 				."	<div id='container'>"."\n"
 				."		<a class='azioniRapide' href='areaPrivata.php?pageName=messaggi'>Controlla i Messaggi</a>"."\n"
 				."		<a class='azioniRapide' href='acquistaVeicoli.php'>Guarda le nostre offerte</a>"."\n"
-				."		<a class='azioniRapide' href='info.php'>Contatta l'Amministratore</a>"."\n"
+				."		<a class='azioniRapide' href='contatti.php#formMessaggio'>Contatta l'Amministratore</a>"."\n"
 				."	</div>"."\n"
 				."</div>"."\n";
 

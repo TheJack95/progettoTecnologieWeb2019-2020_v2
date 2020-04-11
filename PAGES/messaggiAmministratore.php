@@ -1,7 +1,7 @@
 <?php
     require_once "../PHP/funzioniGenerali.php";
     require_once "../PHP/funzioniAmministratore.php";
-    
+
     if(!isset($_SESSION)) {
         session_start();
     }
@@ -39,7 +39,7 @@
         }
 
         $output = file_get_contents("../HTML/messaggiAmministratore.html");
-    
+
         $output = str_replace("<header></header>",funzioniGenerali::header(),$output);
         $output = str_replace("<menu></menu>",funzioniGenerali::menu(),$output);
         $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Area Personale &gt;&gt; Messaggi"),$output);
@@ -47,8 +47,8 @@
         $output = str_replace("<messaggiRicevuti></messaggiRicevuti>",$ricevuti,$output);
         $output = str_replace("<messaggiInviati></messaggiInviati>",$inviati,$output);
         $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
-    
-        $output = str_replace('<a class="" href="areaPrivata.php">AREA PERSONALE</a>','<a href="homeAmministratore.php">AREA PERSONALE</a>',$output);
+
+        $output = str_replace('<a class="" href="homeAmministratore.php">AREA AMMINISTRATORE</a>','<strong>AREA AMMINISTRATORE</strong>',$output);
         $output = str_replace('<a href="messaggiAmministratore.php">MESSAGGI</a>','<img class="iconaMenu" src="../Images/auto.svg" alt="icona del men&ugrave; che ritrae una automobilina" /><strong>MESSAGGI</strong>',$output);
 
         echo $output;

@@ -11,6 +11,7 @@
         <meta name="author" content="Erik Tabacchi" />
 
         <link rel="stylesheet" type="text/css" href="../CSS/cssGenerale.css" />
+        <link rel="stylesheet" type="text/css" href="../CSS/cssContatti.css" />
         
 	</head>
 
@@ -19,11 +20,12 @@
         <menu></menu>
         <breadcrumb></breadcrumb>
 
-        <div id="mappa">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2801.041923095581!2d11.884345815518582!3d45.40849417910036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477eda586ea23ad3%3A0xf4caaf73601b8ca!2sVia%20Paolotti%2C%2035121%20Padova%20PD!5e0!3m2!1sit!2sit!4v1585019531129!5m2!1sit!2sit" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-        </div>
+        <div class="containerInfo">
+            <div id="mappa">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2801.041923095581!2d11.884345815518582!3d45.40849417910036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477eda586ea23ad3%3A0xf4caaf73601b8ca!2sVia%20Paolotti%2C%2035121%20Padova%20PD!5e0!3m2!1sit!2sit!4v1585019531129!5m2!1sit!2sit" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
 
-        <div id="containerInfo">
+            
             <div id="indirizzo">
                 <div class="titolo"> INDIRIZZI </div>
                 <ul>
@@ -33,19 +35,19 @@
             </div>
 
 
-        <div id="contatti">
-            <div class="titolo"> CONTATTI </div>
-            <ul>
-                <li>Email: ConcessionariaGreg@gmail.com</li>
-                <li>Numero di telefono:  0437 83756</li>
-                <li>Numero di fax: 0437 95565</li>
-            </ul>
-        </div>
-
-        <div id="testo">Puoi contattarci anche utilizzando il form sottostante, un messaggio di risposta verra inviato alla tua area privata il prima possibile.</div>
-
+            <div id="contatti">
+                <div class="titolo"> CONTATTI </div>
+                <ul>
+                    <li>Email: ConcessionariaGreg@gmail.com</li>
+                    <li>Numero di telefono:  0437 83756</li>
+                    <li>Numero di fax: 0437 95565</li>
+                </ul>
+            </div>
         
-        <div class="">
+            <div id="testo">Puoi contattarci anche utilizzando il form sottostante, un messaggio di risposta verra inviato alla tua area privata il prima possibile.</div>
+
+        </div>
+         
             <messaggio></messaggio>
             <form id="formMessaggio" action="../PHP/invioMessaggio.php"  method="post">
                 <fieldset>
@@ -71,9 +73,9 @@
                     
                 </fieldset>
             </form>
-        </div>
         
-
+        
+            <footer></footer>
         
 
        
