@@ -1,0 +1,19 @@
+.titolo{
+    font-size: 1.5em;
+    margin-bottom : 0.5em;
+    margin-top: 0.5em;
+    font-weight: bold;
+}
+
+img{
+    
+    margin: 0.5em;
+}
+
+.container{
+    margin: 2%;
+}
+
+.text{
+    margin-bottom: 2em;
+}
