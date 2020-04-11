@@ -5,10 +5,10 @@
 html, body {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 100%;
-	max-width: 95%;
+	max-width: 85%;
 	margin: auto;
 	padding: 0;
-	height: 100%;
+	background-color: bisque;
 }
 
 body {
@@ -114,4 +114,33 @@ body {
 {
     /* Needed for when the area gets squished too far and there is content that can't be displayed */
     overflow: auto; 
+}
+
+#menu {
+	clear: both;
+	width: 100%;
+	text-align: center;
+	font-size: 1.1em;
+	color: #FFF;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	background: #F1AB00;
+	min-height: 2.0em;
+}
+
+#menu ul {
+	margin-top: 0.4em;
+}
+
+#menu li {
+	display: inline;
+	list-style-type: none;
+	padding-left: 1.0em;
+	padding-right: 1.0em;
+}
+
+.main {
+	border: 1px solid #f1ab00;
+    margin-top: 1em;
+    background-color: #f1ab00;
 }
