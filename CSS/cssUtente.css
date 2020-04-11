@@ -9,6 +9,9 @@
     display: inline-block;
     width: 60%;
     padding: 1.5em;
+    margin-top: 0;
+    margin-bottom: 0.2em;
+    float: right;
 }
 
 .titoloMenu {
@@ -19,7 +22,6 @@
 }
 
 .titolo {
-    font-family: Helvetica,Arial,sans-serif;
     font-weight: bold;
     font-size: 1.6em;
     margin-bottom: 1.2em;
