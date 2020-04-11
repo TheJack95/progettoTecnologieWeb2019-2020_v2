@@ -149,15 +149,16 @@ class funzioniVeicoli {
 	* Funzione per prenotare l'auto
 	* @return Object status: true/false, response: messaggio di risposta
 	*/
-	public function noleggia(string $utente, $dataInizioNolo, $dataFineNolo,string $targa, int $costo) {
-		$dataInizioString = $dataInizioNolo->format('Ymd');
-		$dataFineString = $dataFineNolo->format('Ymd');
-		$query = "INSERT INTO PrenotazioneNoleggio VALUES(null,'$utente', $targa, '$dataInizioString', '$dataFineString', '$costo')";
-		$queryResult = $this->connVeicoli->esegui($query);
-		if($queryResult == false) {
+	public function noleggia(string $utente, $dataInizioNolo, $dataFineNolo,string $targa, int $costo, $chiudiConn = true) {
+		$dataInizioString = $dataInizioNolo->format('Y-m-d');
+		$dataFineString = $dataFineNolo->format('Y-m-d');
+		$query = "INSERT INTO PrenotazioneNoleggio VALUES(null,'$utente', '$targa', '$dataInizioString', '$dataFineString', $costo)";
+		$queryResult = $this->connVeicoli->esegui($query, $chiudiConn);
+		if($queryResult === false) {
 			return (Object) [
 				"status" => false
 				,"response" => "Errore nella comunicazione con il database"
+				,"query" => $query
 			];
 		} else {
 			return (Object) [
@@ -171,10 +172,10 @@ class funzioniVeicoli {
 	* Funzione per richiedere un preventivoAuto dell'auto
 	* @return Object status: true/false, response: messaggio di risposta
 	*/
-	public function richiediPreventivo(string $utente, string $idAuto, string $prezzoVendita) {
+	public function richiediPreventivo(string $utente, string $idAuto, string $prezzoVendita, $chiudiConn = true) {
 		$query = "INSERT INTO PreventivoAcquisto VALUES(null,'$utente', $idAuto, '$prezzoVendita')";
 		$queryResult = $this->connVeicoli->esegui($query);
-		if($queryResult == false) {
+		if($queryResult === false) {
 			return (Object) [
 				"status" => false
 				,"response" => "Errore nella comunicazione con il database."
@@ -192,10 +193,10 @@ class funzioniVeicoli {
 	* @param string $targa la targa del veicolo 
 	* @return string il risultato della query
 	*/
-	public function getVeicoloNoleggio(string $targa) {
+	public function getVeicoloNoleggio(string $targa, $chiudiConn = true) {
 		$query = "SELECT Targa, Marca, Modello, Cilindrata, CostoNoleggio, Cauzione, Immagine, DescrImmagine FROM AutoNoleggio WHERE Targa = '$targa'";
 
-		$queryResult = $this->connVeicoli->esegui($query);
+		$queryResult = $this->connVeicoli->esegui($query, $chiudiConn);
 
 		if($queryResult == false) {
 			return "Errore nella comunicazione con il database";
@@ -220,10 +221,10 @@ class funzioniVeicoli {
 	* @param string $idAuto id del veicolo 
 	* @return string il risultato della query
 	*/
-	public function getVeicoloAcquista(string $idAuto) {
+	public function getVeicoloAcquista(string $idAuto, $chiudiConn = true) {
 		$query = "SELECT idAuto, Marca, Modello, Cilindrata, KM, PrezzoVendita, Immagine, DescrImmagine FROM AutoVendita WHERE idAuto = '$idAuto'";
 
-		$queryResult = $this->connVeicoli->esegui($query);
+		$queryResult = $this->connVeicoli->esegui($query, $chiudiConn);
 
 		if($queryResult == false) {
 			return "Errore nella comunicazione con il database";

@@ -4,10 +4,7 @@ require_once "../PHP/funzioniVeicoli.php";
 require_once "../PHP/funzioniGenerali.php";
 require_once "../PHP/controlloInput.php";
 
-if(!isset($_SESSION))
-    session_start();
-    
-$_SESSION["logged"] = true;
+
 $logged = funzioniGenerali::checkSession();
 if($logged->status) {
     $response = (Object) [
@@ -17,23 +14,24 @@ if($logged->status) {
 
 	#controllo se i campi obbligatori sono stati inseriti e se sono validi
 	if(isset($_POST['dataInizioNolo']) && isset($_POST['dataFineNolo']) && $_POST['dataInizioNolo'] != "" && $_POST['dataFineNolo'] != "") {
-        $targa  = $_POST['targa'];
+        $targa  = $_GET['targaAuto'];
 
         if (controlloInput::checkDateFormat($_POST['dataInizioNolo']) && date_create(controlloInput::validDate($_POST['dataInizioNolo']))
             && controlloInput::checkDateFormat($_POST['dataFineNolo']) && date_create(controlloInput::validDate($_POST['dataFineNolo']))){
 
-            $auto = new funzioniVeicoli();
+            $conn = new funzioniVeicoli();
+            $auto = $conn->getVeicoloNoleggio($targa, false);
             $utente  = $_SESSION['user'];
             $dataInizioNolo  = $_POST['dataInizioNolo'];
             $dataFineNolo  = $_POST['dataFineNolo'];
-            $costo = intval($_GET['costo']);
+            $costo = intval($auto->CostoNoleggio);
 
             $datetime1 = date_create($dataInizioNolo);
             $datetime2 = date_create($dataFineNolo);
             $interval = date_diff($datetime1, $datetime2);
             $costoTotale = $interval->days*$costo;
 
-            $response = $auto->noleggia($utente, $datetime1, $datetime2, $targa, $costo);
+            $response = $conn->noleggia($utente, $datetime1, $datetime2, $targa, $costo);
         } else {
             $response->response = 'Attenzione: il formato delle date non &egrave; corretto. Deve essere gg-mm-aaaa. <a href="../PAGES/noleggioVeicolo.php?targaAuto='.$targa.'">Torna indietro</a>';
             $response->status = false;

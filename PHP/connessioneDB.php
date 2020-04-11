@@ -17,9 +17,10 @@ class database_connection {
         return $this->getConnessione;
     }
 
-    public function esegui($query) {
+    public function esegui($query, $chiudiConn = true) {
         $result = mysqli_query($this->connessione, $query);
-        mysqli_close($this->connessione);
+        if($chiudiConn)
+            mysqli_close($this->connessione);
         return $result;
     }
 
