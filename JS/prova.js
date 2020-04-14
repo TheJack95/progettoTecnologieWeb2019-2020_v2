@@ -11,16 +11,28 @@ const regexDate = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/
  */
 function dateReverse(data, type, separator) {
     let dataSplitted = data.split(separator);
-
     switch (type) {
         case "Date":
-            return new Date(dataSplitted[2],dataSplitted[1],dataSplitted[0]);
+            return new Date(dataSplitted[2],dataSplitted[1]-1,dataSplitted[0]);
         case "string":
             return dataSplitted[2] + separator + dataSplitted[1] + separator + dataSplitted[0];
         default:
             console.error("Tipo " + type + " non ammesso");
             return "Invalid input 'type'";
     }
+}
+
+/**
+ * Controlla se dataMag >= dataMin e se le date sono successive ad oggi
+ * @param {string} dataMag data maggiore in string
+ * @param {string} dataMin data minore in string
+ */
+function isDateValid(dataMag, dataMin) {
+    let today = new Date();
+    let dataMagDate = dateReverse(dataMag,"Date", "-");
+    let dataMinDate = dateReverse(dataMin,"Date", "-");
+    console.log(dataMagDate,dataMinDate);
+    return false && dataMinDate >= today && dataMagDate >= dataMinDate;
 }
 
 var dataInizioChange = function(event) {
@@ -51,22 +63,28 @@ var dataFineChange = function(event) {
             }
         }
     } else {
-        document.getElementById('cosTot').innerHTML = "COSTO TOT: € 0";
+        document.getElementById('costoTot').innerHTML = "COSTO TOT: € 0";
     }
 }
 
-var checkDateNolo= function() {
-    if(dataInizioNolo && dataFineNolo)
-        return true;
-    else
+var checkDateNolo = function() {
+    if(dataInizioNolo && dataFineNolo) {
+        if(isDateValid(dataFineNolo, dataInizioNolo))
+            return true; 
+        else {
+            alert("Errore: le date devono essere successive ad oggi e la data di fine noleggio deve essere successiva alla data di inizio");
+            return false;
+        }
+    }
+    else {
         alert("Errore: date mancanti. Controlla di aver inserito correttamente le date di inizio e fine noleggio");
         return false;
+    }
 }
 
 function calcolaCosto(ggNolo) {
-    //devo girare le date altrimenti su alcuni browser js ha problemi
     let costoGG = parseFloat(document.getElementById('costoNolo').innerText)
     let costoTot = ggNolo * costoGG;
     
-    document.getElementById('cosTot').innerHTML = "COSTO TOT: € " + costoTot;
+    document.getElementById('costoTot').innerHTML = "COSTO TOT: € " + costoTot;
 }

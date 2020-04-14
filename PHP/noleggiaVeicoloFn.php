@@ -16,24 +16,28 @@ if($logged->status) {
 	if(isset($_POST['dataInizioNolo']) && isset($_POST['dataFineNolo']) && $_POST['dataInizioNolo'] != "" && $_POST['dataFineNolo'] != "") {
         $targa  = $_GET['targaAuto'];
 
-        if (controlloInput::checkDateFormat($_POST['dataInizioNolo']) && date_create(controlloInput::validDate($_POST['dataInizioNolo']))
-            && controlloInput::checkDateFormat($_POST['dataFineNolo']) && date_create(controlloInput::validDate($_POST['dataFineNolo']))){
+        if (controlloInput::checkDateFormat($_POST['dataInizioNolo']) && controlloInput::validDate($_POST['dataInizioNolo'])
+            && controlloInput::checkDateFormat($_POST['dataFineNolo']) && controlloInput::validDate($_POST['dataFineNolo'])) {
+            
+            $dataFineNolo = date_create($_POST['dataFineNolo']);
+            $dataInizioNolo = date_create($_POST['dataInizioNolo']);  
 
-            $conn = new funzioniVeicoli();
-            $auto = $conn->getVeicoloNoleggio($targa, false);
-            $utente  = $_SESSION['user'];
-            $dataInizioNolo  = $_POST['dataInizioNolo'];
-            $dataFineNolo  = $_POST['dataFineNolo'];
-            $costo = intval($auto->CostoNoleggio);
-
-            $datetime1 = date_create($dataInizioNolo);
-            $datetime2 = date_create($dataFineNolo);
-            $interval = date_diff($datetime1, $datetime2);
-            $costoTotale = $interval->days*$costo;
-
-            $response = $conn->noleggia($utente, $datetime1, $datetime2, $targa, $costo);
+            if($dataFineNolo >= $dataInizioNolo) {
+                $conn = new funzioniVeicoli();
+                $auto = $conn->getVeicoloNoleggio($targa, false);
+                $utente  = $_SESSION['user'];
+                $costo = intval($auto->CostoNoleggio);
+                
+                $interval = date_diff($dataInizioNolo, $dataFineNolo);
+                $costoTotale = $interval->days*$costo;
+    
+                $response = $conn->noleggia($utente, $datetime1, $datetime2, $targa, $costo);
+            } else {
+                $response->response = 'La data di fine noleggio deve essere successiva o uguale alla data di inizio. <a href="../PAGES/noleggioVeicolo.php?targaAuto='.$targa.'">Torna indietro</a>';
+                $response->status = false;
+            }
         } else {
-            $response->response = 'Attenzione: il formato delle date non &egrave; corretto. Deve essere gg-mm-aaaa. <a href="../PAGES/noleggioVeicolo.php?targaAuto='.$targa.'">Torna indietro</a>';
+            $response->response = 'Attenzione: il formato delle date non &egrave; corretto. Le date devono essere successive ad oggi. Deve essere gg-mm-aaaa. <a href="../PAGES/noleggioVeicolo.php?targaAuto='.$targa.'">Torna indietro</a>';
             $response->status = false;
         }
 
