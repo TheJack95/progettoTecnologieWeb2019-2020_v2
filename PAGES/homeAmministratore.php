@@ -17,7 +17,7 @@
         $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
 
         $output = str_replace('<a class="" href="homeAmministratore.php">AREA AMMINISTRATORE</a>','<strong>AREA AMMINISTRATORE</strong>',$output);
-        $output = str_replace('<a href="homeAmministratore.php"><span xml:lang="en">HOME</span> AREA PERSONALE</a>','<img class="iconaMenu" src="../Images/auto.svg" alt="icona del men&ugrave; che ritrae una automobilina" /><strong><span xml:lang="en">HOME</span> AREA PERSONALE</strong>',$output);
+        $output = str_replace('<a href="homeAmministratore.php"><span xml:lang="en">HOME</span> AMMINISTRATORE</a>','<strong><span xml:lang="en">HOME</span> AMMINISTRATORE</strong>',$output);
 
         echo $output;
     } else {

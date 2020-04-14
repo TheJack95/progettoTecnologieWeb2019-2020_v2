@@ -1,4 +1,18 @@
-.iconaMenu {
-    max-width:2em;
-    max-height:2em;
+#menuAmministratore {
+	float: left;
+	width: 25%;
+	text-align: left;
+	font-size: 1em;
+	color: #FFF;
+    background: #F1AB00;
+}
+
+#menuAmministratore ul {
+    margin-left: -2em;
+}
+
+#menuAmministratore li {
+    list-style: none;
+    margin: 0.3em;
+    padding: 0.8em;
 }
