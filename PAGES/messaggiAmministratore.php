@@ -42,14 +42,14 @@
 
         $output = str_replace("<header></header>",funzioniGenerali::header(),$output);
         $output = str_replace("<menu></menu>",funzioniGenerali::menu(),$output);
-        $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Area Personale &gt;&gt; Messaggi"),$output);
+        $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Area Amministratore &gt;&gt; MESSAGGI"),$output);
         $output = str_replace("<menuAmministratore></menuAmministratore>",funzioniAmministratore::menuAmm(),$output);
         $output = str_replace("<messaggiRicevuti></messaggiRicevuti>",$ricevuti,$output);
         $output = str_replace("<messaggiInviati></messaggiInviati>",$inviati,$output);
         $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
 
         $output = str_replace('<a class="" href="homeAmministratore.php">AREA AMMINISTRATORE</a>','<strong>AREA AMMINISTRATORE</strong>',$output);
-        $output = str_replace('<a href="messaggiAmministratore.php">MESSAGGI</a>','<img class="iconaMenu" src="../Images/auto.svg" alt="icona del men&ugrave; che ritrae una automobilina" /><strong>MESSAGGI</strong>',$output);
+        $output = str_replace('<a href="messaggiAmministratore.php">MESSAGGI</a>','<strong>MESSAGGI</strong>',$output);
 
         echo $output;
     } else {

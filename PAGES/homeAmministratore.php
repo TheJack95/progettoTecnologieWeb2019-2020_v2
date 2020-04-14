@@ -11,7 +11,7 @@
 
         $output = str_replace("<header></header>",funzioniGenerali::header(),$output);
         $output = str_replace("<menu></menu>",funzioniGenerali::menu(),$output);
-        $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Area Personale &gt;&gt; Homepage"),$output);
+        $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Area Amministratore &gt;&gt; HOME AMMINISTRATORE"),$output);
         $output = str_replace("<menuAmministratore></menuAmministratore>",funzioniAmministratore::menuAmm(),$output);
         $output = str_replace("<nome></nome>",$_SESSION["utente"],$output);
         $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);

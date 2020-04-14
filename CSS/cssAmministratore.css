@@ -1,10 +1,12 @@
 #menuAmministratore {
 	float: left;
-	width: 25%;
+    max-width: 27%;
+    height: auto;
 	text-align: left;
 	font-size: 1em;
 	color: #FFF;
-    background: #F1AB00;
+    background: #FFC800;
+    margin: 0.3em;
 }
 
 #menuAmministratore ul {
@@ -13,6 +15,10 @@
 
 #menuAmministratore li {
     list-style: none;
-    margin: 0.3em;
+    margin: 0.2em;
     padding: 0.8em;
+}
+
+.corpoAmministratore {
+    
 }

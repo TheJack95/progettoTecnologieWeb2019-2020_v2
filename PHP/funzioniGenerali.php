@@ -12,7 +12,7 @@
     #funzione per scrivere i breadcrumb
         public static function breadcrumb(...$sequenza){
             $breadcrumb_form = '<div id="breadcrumb">'."\n".
-                                '   <p>Ti trovi in: ';
+                                '   <p>Ti trovi in ';
             foreach($sequenza as $element){
                 $breadcrumb_form .= "$element ";
             }
