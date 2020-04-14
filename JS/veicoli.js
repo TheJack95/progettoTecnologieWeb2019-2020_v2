@@ -31,7 +31,6 @@ function isDateValid(dataMag, dataMin) {
     let today = new Date();
     let dataMagDate = dateReverse(dataMag,"Date", "-");
     let dataMinDate = dateReverse(dataMin,"Date", "-");
-    console.log(dataMagDate,dataMinDate);
     return false && dataMinDate >= today && dataMagDate >= dataMinDate;
 }
 
@@ -58,7 +57,7 @@ var dataFineChange = function(event) {
         } else {
             dataFineNolo = event.target.value;
             if(dataInizioNolo != null) {
-                let ggNolo = (dateReverse(dataFineNolo,"Date", "-") - dateReverse(dataInizioNolo,"Date", "-"))/86400000;
+                let ggNolo = parseInt((dateReverse(dataFineNolo,"Date", "-") - dateReverse(dataInizioNolo,"Date", "-"))/86400000);
                 calcolaCosto(ggNolo);
             }
         }

@@ -52,6 +52,19 @@ input {
 	margin-bottom: 0.5em;
 }
 
+#costoTot {
+	margin-left: 50px;
+	margin-top: 100px;
+}
+
+.titolo{
+    margin-bottom : 0.5em;
+    margin-top: 0.5em;
+    font-weight: bold;
+    text-align: center;
+}
+
+
 @media (max-width:1000px) {
 
 	form {
