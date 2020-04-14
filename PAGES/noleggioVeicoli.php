@@ -21,7 +21,7 @@ foreach($rows as $row) {
 	$veicoli .= '<div class="containerVeicolo">'."\n"
 				.'	<img class="fotoVeicolo" src="'.$row->Immagine.'" alt="'.$row->DescrImmagine.'"/>'."\n"
 				.'	<div class="datiVeicolo">'
-				.'		<h2>'.$row->Marca." ".$row->Modello.'</h2>'."\n"
+				.'		<h2 class="titoloVeicolo">'.$row->Marca." ".$row->Modello.'</h2>'."\n"
 				.'		<ul>'
 				.'			<li>'
 				.'				<p><strong>Cilindrata:</strong>  '.$row->Cilindrata.'</p>'
@@ -45,7 +45,7 @@ $filtri ='<div>'."\n"
 		.'  	<fieldset>'."\n"
 		.'				<label for="searchbar">Cerca veicoli</label>'."\n"
 		.'				<input type="text" name="searchbar" tabindex="0" title="searchbar"/>'."\n"
-		.'				<p>Filtra per data disponibilit&agrave;</p>'."\n"
+		.'				<p>Filtra per data disponibilit&agrave; (formato gg-mm-aaaa)</p>'."\n"
 		.'				<label for="dataInizio">Dal</label>'."\n"
 		.'				<input type="text" name="dataInizio" tabindex="1" title="datainizionolo" class="dataInput" />'."\n"
 		.'				<label for="dataFine">Al</label>'."\n"

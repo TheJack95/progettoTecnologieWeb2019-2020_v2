@@ -1,3 +1,7 @@
+CREATE DATABASE IF NOT EXISTS consessionaria;
+
+USE consessionaria;
+
 CREATE TABLE IF NOT EXISTS Utenti(
     Email varchar(50),
     Password varchar(100),

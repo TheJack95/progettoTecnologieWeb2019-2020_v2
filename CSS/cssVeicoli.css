@@ -47,6 +47,11 @@ input {
 	width: 25% !important;
 }
 
+.titoloVeicolo {
+	font-size: 3em;
+	margin-bottom: 0.5em;
+}
+
 @media (max-width:1000px) {
 
 	form {
