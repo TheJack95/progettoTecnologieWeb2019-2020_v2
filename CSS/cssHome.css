@@ -6,14 +6,20 @@
 }
 
 img{
-    
+    float: right;
     margin: 0.5em;
 }
 
-.container{
+.containerText{
     margin: 2%;
 }
 
 .text{
     margin-bottom: 2em;
+}
+
+#occasione{
+    clear: both;
+    text-align: center;
+    margin-top: 3em;
 }
