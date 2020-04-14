@@ -11,17 +11,15 @@
         $informazioni = "";
 
         foreach($request as $response) {
-            $informazioni .= "<ul>"
-                            ."  <li>Nome&colon; <strong>".$response->Nome."</strong></li>"
-                            ."  <li>Cognome&colon; <strong>".$response->Cognome."</strong></li>"
-                            ."  <li>Data di nascita&colon; <strong>".$response->DataNascita."</strong></li>"
-                            ."  <li>Indirizzo&colon; <strong>".$response->Indirizzo."</strong></li>"
-                            ."  <li>Telefono&colon; <strong>".$response->Telefono."</strong></li>"
-                            ."  <li>Email&colon; <strong>".$response->Email."</strong></li>"
-                            ."</ul>";
+            $informazioni .= "<p>Nome&colon; <strong>".$response->Nome."</strong></p>"."\n"
+                            ."<p>Cognome&colon; <strong>".$response->Cognome."</strong></p>"."\n"
+                            ."<p>Data di nascita&colon; <strong>".$response->DataNascita."</strong></p>"."\n"
+                            ."<p>Indirizzo&colon; <strong>".$response->Indirizzo."</strong></p>"."\n"
+                            ."<p>Telefono&colon; <strong>".$response->Telefono."</strong></p>"."\n"
+                            ."<p>Email&colon; <strong>".$response->Email."</strong></p>"."\n";
         }
         if(count($request) == 0) {
-            $informazioni .= "<p class=\"\">Al momento non sono disponibili le informazioni richieste&comma; riprova pi&ugrave; tardi&period;</p>";
+            $informazioni .= "<p class=\"msgAmm\">Al momento non sono disponibili le informazioni richieste&comma; riprova pi&ugrave; tardi&period;</p>";
         }
 
         $output = file_get_contents("../HTML/infoAmministratore.html");
@@ -38,7 +36,7 @@
 
         echo $output;
     } else {
-        $message = "Attenzione&colon; non hai i permessi per accedere all&apos;area personale e sei stato reindirizzato alla pagina per accedere&excl;";
+        $message = "ATTENZIONE&excl; Non hai i permessi per accedere all&apos;area dell&apos;amministratore<br />e sei stato reindirizzato alla pagina per l&apos;accesso&period; ACCEDI E RIPROVA&period;";
         $_SESSION["errmessage"] = $message;
         header("location: ../PAGES/login.php");
     }

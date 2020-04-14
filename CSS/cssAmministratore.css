@@ -70,3 +70,15 @@
 .testoAmm {
     margin: 0.5em;
 }
+
+.msgAmm {
+    border: 1px solid #000000;
+    border-radius: 5px;
+    padding: 0.2em;
+    color: #000000;
+    background-color: #FAFAFA;
+    max-width: 70%;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-right: 2em;
+}

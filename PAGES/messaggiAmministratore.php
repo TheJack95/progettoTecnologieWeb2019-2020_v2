@@ -11,31 +11,28 @@
         $ricevuti = "";
 
         foreach($requestR as $responseR) {
-            $ricevuti .= "<ul>"
-                        ."  <li>Nome&colon; <strong>".$responseR->Nome."</strong></li>"
-                        ."  <li>Cognome&colon; <strong>".$responseR->Cognome."</strong></li>"
-                        ."  <li>NumeroTelefono&colon; <strong>".$responseR->NumeroTelefono."</strong></li>"
-                        ."  <li>Email&colon; <strong>".$responseR->Email."</strong></li>"
-                        ."  <li>Messsaggio&colon; <strong>".$responseR->Messaggio."</strong></li>"
-                        ."</ul>";
+            $ricevuti .= "<p>Nome&colon; <strong>".$responseR->Nome."</strong></p>"."\n"
+                        ."<p>Cognome&colon; <strong>".$responseR->Cognome."</strong></p>"."\n"
+                        ."<p>NumeroTelefono&colon; <strong>".$responseR->NumeroTelefono."</strong></p>"."\n"
+                        ."<p>Email&colon; <strong>".$responseR->Email."</strong></p>"."\n"
+                        ."<p>Messsaggio&colon; <strong>".$responseR->Messaggio."</strong></p>"."\n"
+                        ."<a class=\"tastoModifiche\" href=\"../PAGES/rispostaMessaggioAmministratore.php\">RISPONDI</a>";
         }
         if(count($requestR) == 0) {
-            $ricevuti .= "<p class=\"\">Al momento non ci sono messaggi ricevuti&comma; riprova pi&ugrave; tardi&period;</p>";
+            $ricevuti .= "<p class=\"msgAmm\">Al momento non ci sono messaggi ricevuti&comma; riprova pi&ugrave; tardi&period;</p>";
         }
 
         $requestI = (new funzioniAmministratore())->selectMessaggiInviati();
         $inviati = "";
 
         foreach($requestI as $responseI) {
-            $inviati .= "<ul>".
-                        "  <li>Email Mittente&colon; <strong>".$responseI->Email."</strong></li>".
-                        "  <li>Email Destinatario&colon; <strong>".$responseI->EmailDestinatario."</strong></li>".
-                        "  <li>Oggetto&colon; <strong>".$responseI->Oggetto."</strong></li>".
-                        "  <li>Messsaggio&colon; <strong>".$responseI->Messaggio."</strong></li>".
-                        "</ul>";
+            $inviati .= "<p>Email Mittente&colon; <strong>".$responseI->Email."</strong></p>"."\n".
+                        "<p>Email Destinatario&colon; <strong>".$responseI->EmailDestinatario."</strong></p>"."\n".
+                        "<p>Oggetto&colon; <strong>".$responseI->Oggetto."</strong></p>"."\n".
+                        "<p>Messsaggio&colon; <strong>".$responseI->Messaggio."</strong></p>"."\n";
         }
         if(count($requestI) == 0) {
-            $inviati .= "<p class=\"\">Al momento non ci sono messaggi inviati&comma; riprova pi&ugrave; tardi&period;</p>";
+            $inviati .= "<p class=\"msgAmm\">Al momento non ci sono messaggi inviati&comma; riprova pi&ugrave; tardi&period;</p>";
         }
 
         $output = file_get_contents("../HTML/messaggiAmministratore.html");
@@ -53,7 +50,7 @@
 
         echo $output;
     } else {
-        $message = "Attenzione&colon; non hai i permessi per accedere all&apos;area personale e sei stato reindirizzato alla pagina per accedere&excl;";
+        $message = "ATTENZIONE&excl; Non hai i permessi per accedere all&apos;area dell&apos;amministratore<br />e sei stato reindirizzato alla pagina per l&apos;accesso&period; ACCEDI E RIPROVA&period;";
         $_SESSION["errmessage"] = $message;
         header("location: ../PAGES/login.php");
     }

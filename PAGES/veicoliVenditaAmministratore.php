@@ -19,10 +19,11 @@
                         ."  <li>Prezzo&colon; <strong>".$response->PrezzoVendita."</strong></li>"
                         ."  <li>Immagine&colon; <strong>".$response->Immagine."</strong></li>"
                         ."  <li>DescrImmagine&colon; <strong>".$response->DescrImmagine."</strong></li>"
+                        ."  <li><a class=\"tastoModifiche\" href=\"../PAGES/modificaVeicoloNoleggio.php\">MODIFICA</a></li>"
                         ."</ul>";
         }
         if(count($request) == 0) {
-            $veicoliV .= "<p class=\"\">Al momento non sono disponibili le informazioni richieste&comma; riprova pi&ugrave; tardi&period;</p>";
+            $veicoliV .= "<p class=\"msgAmm\">Al momento non sono disponibili le informazioni richieste&comma; riprova pi&ugrave; tardi&period;</p>";
         }
 
         $output = file_get_contents("../HTML/veicoliVenditaAmministratore.html");
@@ -39,7 +40,7 @@
 
         echo $output;
     } else {
-        $message = "Attenzione&colon; non hai i permessi per accedere all&apos;area dell&apos;amministratore e sei stato reindirizzato alla pagina per accedere&excl;";
+        $message = "ATTENZIONE&excl; Non hai i permessi per accedere all&apos;area dell&apos;amministratore<br />e sei stato reindirizzato alla pagina per l&apos;accesso&period; ACCEDI E RIPROVA&period;";
         $_SESSION["errmessage"] = $message;
         header("location: ../PAGES/login.php");
     }

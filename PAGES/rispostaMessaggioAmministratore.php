@@ -7,7 +7,7 @@
     }
 
     if(isset($_SESSION["admin"]) && $_SESSION["admin"] == 1) {
-        $output = file_get_contents("../HTML/nuovoMessaggioAmministratore.html");
+        $output = file_get_contents("../HTML/rispostaMessaggioAmministratore.html");
 
         $output = str_replace("<header></header>",funzioniGenerali::header(),$output);
         $output = str_replace("<menu></menu>",funzioniGenerali::menu(),$output);
