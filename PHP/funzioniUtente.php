@@ -61,10 +61,14 @@
         return "<h3>Non ci sono acquisti da visualizzare</h3>";
       } else{
         while($row=mysqli_fetch_assoc($queryResult)) {
-					$contentItems.='<div class="preventivi">'."\n"
+          $queryAuto = 'SELECT Marca, Modello, KM, Cilindrata, Immagine FROM AutoVendita WHERE IdAuto=\''.$row['Automobile'].'\'';
+          $connessioneAuto = new database_connection();
+          $queryAutoResult = $connessioneAuto->esegui($queryAuto);
+          $rowAuto=mysqli_fetch_assoc($queryAutoResult);
+          $contentItems.='<div class="preventivi">'."\n"
           				      .'	<div>'."\n"
           							.'		<h4>Veicolo</h4>'."\n"
-          							.'		<p>'. $row['Automobile'].'</p>'."\n"
+          							.'		<p>'.$rowAuto['Marca']." ".$rowAuto['Modello'].'</p>'."\n"
           							.'	</div>'."\n"
           							.'	<div>'."\n"
           							.'		<h4>Prezzo</h4>'."\n"

@@ -1,3 +1,26 @@
+.preventivi {
+  border: 1px solid#616161;
+  -webkit-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
+  -moz-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
+  box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
+  padding: 1.2em;
+  margin: 2.5em;
+  overflow: auto;
+  width: inherit;
+  background-color: #eaeaea;
+}
+
+.azioniRapide{
+  border: 1px solid#616161;
+  -webkit-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
+  -moz-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
+  box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
+  padding: 0.4em;
+  margin: 0.6;
+  width: auto;
+  background-color: #eaeaea;
+}
+
 #nav {
     background-color: #eaeaea;
     padding: 1.2em;
@@ -7,7 +30,8 @@
 
 #content {
     display: inline-block;
-    width: 60%;
+    width: auto;
+    height: auto;
     padding: 1.5em;
     margin-top: 0;
     margin-bottom: 0.2em;
