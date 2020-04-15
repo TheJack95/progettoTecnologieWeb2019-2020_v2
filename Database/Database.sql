@@ -1,6 +1,6 @@
-CREATE DATABASE IF NOT EXISTS consessionaria;
+CREATE DATABASE IF NOT EXISTS concessionaria;
 
-USE consessionaria;
+USE concessionaria;
 
 CREATE TABLE IF NOT EXISTS Utenti(
     Email varchar(50),

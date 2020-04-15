@@ -1,4 +1,4 @@
-USE consessionaria;
+USE concessionaria;
 
 /* popolamento tabella Utenti */
 INSERT INTO Utenti() VALUE
