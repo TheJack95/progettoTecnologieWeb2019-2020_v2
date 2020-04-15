@@ -1,7 +1,7 @@
 
 <?php
     require_once "../PHP/funzioniGenerali.php";
-    require_once "../PHP/connesioneDB.php";
+    require_once "../PHP/connessioneDB.php";
 
     $output = file_get_contents("../HTML/home.html");
     $output = str_replace("<header></header>",funzioniGenerali::header(),$output);
