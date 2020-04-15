@@ -1,5 +1,6 @@
 <?php
     require_once "../PHP/connessioneDB.php";
+    require_once "../PHP/controlloInput.php";
 
     if(!isset($_SESSION)) {
         session_start();
@@ -11,7 +12,9 @@
         $cognome = $_POST["cognome"];
         $telefono = $_POST["telefono"];
         $indirizzo = $_POST["indirizzo"];
-        $nascita = $_POST["nascita"];
+        if(isset($_POST["nascita"])) {
+            $nascita = controlloInput::FormatDate($nascita);
+        }
 
         $connessioneDatabase = new database_connection;
         $updateInfo = "UPDATE Utenti SET Nome='$nome', Cognome='$cognome', Telefono='$telefono', Indirizzo='$indirizzo', DataNascita='$nascita' WHERE Email='$email'";
