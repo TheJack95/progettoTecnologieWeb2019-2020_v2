@@ -1,4 +1,24 @@
+.main {
+  overflow: auto;
+}
+
+.listaMenu {
+  padding: 0;
+}
+
 .preventivi {
+  border: 1px solid#616161;
+  -webkit-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
+  -moz-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
+  box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
+  padding: 1.2em;
+  margin: 2.5em;
+  overflow: auto;
+  width: inherit;
+  background-color: #eaeaea;
+}
+
+.noleggi {
   border: 1px solid#616161;
   -webkit-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
   -moz-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
@@ -16,26 +36,29 @@
   -moz-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
   box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
   padding: 0.4em;
-  margin: 0.6;
+  margin: 0.6em;
   width: auto;
+  overflow: auto;
   background-color: #eaeaea;
 }
 
 #nav {
     background-color: #eaeaea;
     padding: 1.2em;
-    display: inline-block;
+    display: inline;
     width: 25%;
+    height:inherit;
+    float: left;
 }
 
 #content {
     display: inline-block;
-    width: auto;
+    width: 60%;
     height: auto;
     padding: 1.5em;
     margin-top: 0;
     margin-bottom: 0.2em;
-    float: right;
+    overflow: auto;
 }
 
 .titoloMenu {
@@ -63,9 +86,9 @@ hr {
 
 #nav a {
     font-weight: bold;
-    margin-left: 20px;
 }
 
 #nav li {
   list-style: none;
+  text-align: center;
 }

@@ -120,7 +120,7 @@
     #estrazione messaggi
     public function getMessaggi(){
       $emailUtente = $_SESSION["user"];
-      $query = 'SELECT Messaggio FROM Messaggi WHERE Email=\''.$emailUtente.'\'';
+      $query = 'SELECT Messaggio, IdMess FROM Messaggi WHERE Email=\''.$emailUtente.'\'';
       $queryResult = $this->dbConnection->esegui($query);
       $contentItems = "";
       if(mysqli_num_rows($queryResult)==0){
@@ -129,8 +129,8 @@
         while($row=mysqli_fetch_assoc($queryResult)) {
 					$contentItems.='<div class="messaggi">'."\n"
                         .'	<div class="testoMessaggio">'."\n"
-                        .'		<h4>Messaggio</h4>'."\n"
-                        .'		<p>'.$row->Messaggio.'</p>'."\n"
+                        .'		<h4>Messaggio N° '.$row['IdMess'].'</h4>'."\n"
+                        .'		<p>'.$row['Messaggio'].'</p>'."\n"
                         .'	</div>'."\n"
                         .'</div>';
         }
