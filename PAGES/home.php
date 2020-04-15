@@ -8,14 +8,16 @@
     $output = str_replace("<menu></menu>",funzioniGenerali::menu(),$output);
     $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Homepage"),$output);
     $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
+    $output = str_replace('   <a href="home.php"><img class="logoHeader" src="" alt="logo concessionaria greg" /></a>','<a><img class="logoHeader" src="" alt="logo concessionaria greg" /></a>',$output);
+    $output = str_replace('   <p class="nomeSito"><a href="home.php">CONCESSIONARIA GREG</a></p>','   <p class="nomeSito"><a>CONCESSIONARIA GREG</a></p>',$output);
     $output = str_replace('<a href="home.php"><span xml:lang="en" lang="en">HOME</span></a>','<strong>HOME</strong>',$output);
 
     /*$occasione = new database_connection;
     $sql = "SELECT column FROM AutoVendita ORDER BY RAND() LIMIT 1";
     $resultCheck = $occasione->esegui($sql);
-    
+
     if($resultCheck == FALSE)
-        $result = "<p class = \"erroMessage\">Non è possibile al momento possibile reperire l'occasione, riprova più tardi </p>"; 
+        $result = "<p class = \"erroMessage\">Non è possibile al momento possibile reperire l'occasione, riprova più tardi </p>";
     else{
         $row = mysqli_fetch_assoc($resultCheck);
         $result ="<div class=\"occasioneGiorno\">
