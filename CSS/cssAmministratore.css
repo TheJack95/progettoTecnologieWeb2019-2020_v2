@@ -1,4 +1,84 @@
-.iconaMenu {
-    max-width:2em;
-    max-height:2em;
+#menuAmministratore {
+	float: left;
+    max-width: 27%;
+    height: auto;
+	text-align: left;
+	font-size: 1em;
+	color: #FFF;
+    background: #FFC800;
+    margin: 0.3em;
+}
+
+#menuAmministratore ul {
+    margin-left: -2em;
+}
+
+#menuAmministratore li {
+    list-style: none;
+    margin: 0.2em;
+    padding: 0.8em;
+}
+
+.formAmm select,
+.formAmm input {
+    padding: 0.3em 0.1em 0.3em 0.1em;
+    border: 1px solid grey;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3);
+    border-radius: 2px;  
+}
+
+.formAmm label, select, input {
+    display: inline-block;
+}
+
+.formAmm label {
+    width: 30%;
+    padding: 1em 0.4em 0 0;
+    text-align: right;
+}
+
+.formAmm input[type="text"],
+.formAmm input[list="titleInput"],
+.formAmm input[type="date"],
+.formAmm input[type="email"],
+.formAmm input[type="password"],
+.formAmm input[type="number"],
+.formAmm input[type="file"],
+.formAmm input[type="submit"],
+.formAmm textarea,
+.formAmm select {
+    display: inline-block;
+    box-sizing: content-box;
+    width: 60%;
+    background-color:white;
+}
+
+.formAmm input[type="submit"] {
+    margin-top: 1em;
+    width: 40%;
+    height: 2em;
+    cursor: pointer;
+    font-weight: bold;
+    border: 1px solid #241d13;
+    border-radius: 4px;
+}
+
+.formAmm fieldset {
+    margin: 1em;
+}
+
+.testoAmm {
+    margin: 0.5em;
+}
+
+.msgAmm {
+    border: 1px solid #000000;
+    border-radius: 5px;
+    padding: 0.2em;
+    color: #000000;
+    background-color: #FAFAFA;
+    max-width: 70%;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-right: 2em;
 }

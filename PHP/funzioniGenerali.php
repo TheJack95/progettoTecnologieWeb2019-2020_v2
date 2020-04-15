@@ -2,7 +2,7 @@
     class funzioniGenerali {
     #funzione per scrivere l'header
         public static function header() {
-            $header_form = '<div id="header">'."\n".
+            $header_form = '<div class="flexbox-item" id="header">'."\n".
                             '   <a href="home.php"><img class="logoHeader" src="" alt="logo concessionaria greg" /></a>'."\n".
                             '   <p class="nomeSito"><a href="home.php">CONCESSIONARIA GREG</a></p>'."\n".
                             '</div>';
@@ -12,7 +12,7 @@
     #funzione per scrivere i breadcrumb
         public static function breadcrumb(...$sequenza){
             $breadcrumb_form = '<div id="breadcrumb">'."\n".
-                                '   <p>Ti trovi in: ';
+                                '   <p>Ti trovi in ';
             foreach($sequenza as $element){
                 $breadcrumb_form .= "$element ";
             }
@@ -60,6 +60,7 @@
          */
         public static function footer() {
             $footer_form =  '<div id="footer">'."\n".
+                            '   <img class="logoHeader" src="" alt="logo concessionaria greg" />'."\n".
                             '   <p>CONCESSIONARIA GREG - Tutti i diritti riservati - A cura di <span xml:lang="en" lang="en">Tecweb Group</span></p>'."\n".
                             '</div>';
             return $footer_form;
@@ -82,7 +83,7 @@
             $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb($breadcrumb),$output);
             $output = str_replace("<header></header>",funzioniGenerali::header(),$output);
             $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
-            $output = str_replace("<messaggio></messaggio>","<p class='$class'>$messaggio</p>",$output);
+            $output = str_replace("<messaggio></messaggio>","<p class='$class messaggio'>$messaggio</p>",$output);
 
             return $output;
         }

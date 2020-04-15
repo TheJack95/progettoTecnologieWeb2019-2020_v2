@@ -20,7 +20,7 @@ foreach($rows as $row) {
 	$veicoli .= '<div class="containerVeicolo">'."\n"
 				.'	<img class="fotoVeicolo" src="'.$row->Immagine.'" alt="'.$row->DescrImmagine.'" />'."\n"
 				.'	<div class="datiVeicolo">'."\n"
-				.'		<h2>'.$row->Marca. " " .$row->Modello.'</h2>'."\n"
+				.'		<h2 class="titoloVeicolo">'.$row->Marca. " " .$row->Modello.'</h2>'."\n"
                 .'	    <ul>'
                 .'          <li>'
 				.'				<p><strong>Cilindrata:</strong> '.$row->Cilindrata.'</p>'

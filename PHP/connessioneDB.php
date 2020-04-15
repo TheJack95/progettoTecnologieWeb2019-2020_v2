@@ -18,10 +18,15 @@ class database_connection {
     }
 
     public function esegui($query, $chiudiConn = true) {
-        $result = mysqli_query($this->connessione, $query);
-        if($chiudiConn)
-            mysqli_close($this->connessione);
-        return $result;
+        if($this->connessione) {
+            $result = mysqli_query($this->connessione, $query);
+            if($chiudiConn)
+                mysqli_close($this->connessione);
+            return $result;
+        } else {
+            echo "Errore nella connessione con il database. Riprovare pi&ugrave; tardi.";
+        }
+
     }
 
     public function chiudiConnessione() {

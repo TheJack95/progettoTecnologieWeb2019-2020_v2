@@ -21,7 +21,7 @@
 #contatti{
     float: right;
     position: relative;
-    right: 20%;
+    right: 10%;
     text-align: justify;
     margin-bottom: 2em;
 }
@@ -29,7 +29,7 @@
 #indirizzo{
     float: left;
     position: relative;
-    left: 20%;
+    left: 10%;
     text-align: justify;
     margin-bottom: 2em;
 }
@@ -40,4 +40,49 @@ ul{
 
 #mappa{
     margin: 2em 0;
+    
+}
+
+label{
+ display: block;
+ margin: 0.5em 0;
+ margin-left: 15%;
+ text-align: left;
+}
+
+#formText{
+    margin-bottom: 2em;
+}
+
+input{
+    width: 70%;
+    margin-bottom: 1em;
+}
+
+fieldset{
+    text-align: center;
+}
+
+textarea{
+    width: 70%;
+    height: 10em;
+}
+
+#inviaMessaggio{
+    width: 6em;
+    height: 2.5em;
+    font-weight: bolder;
+    background-color: #F1AB00;
+    color: white;
+    border: none;
+    border-radius: 5%;
+    box-shadow: 4% 5% gray;
+    display: block;
+    margin-top: 1.5em;
+}
+
+
+
+#formMessaggio{
+    margin: 0 4em;
 }

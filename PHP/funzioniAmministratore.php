@@ -6,7 +6,7 @@
         public static function menuAmm() {
             $menuAmm_form = '<div id="menuAmministratore">'."\n".
                             '   <ul>'."\n".
-                            '       <li tabindex="7"><a href="homeAmministratore.php"><span xml:lang="en">HOME</span> AREA PERSONALE</a></li>'."\n".
+                            '       <li tabindex="7"><a href="homeAmministratore.php"><span xml:lang="en">HOME</span> AMMINISTRATORE</a></li>'."\n".
                             '       <li tabindex="8"><a href="infoAmministratore.php">INFORMAZIONI PERSONALI</a></li>'."\n".
                             '       <li tabindex="9"><a href="messaggiAmministratore.php">MESSAGGI</a></li>'."\n".
                             '       <li tabindex="10"><a href="veicoliNoleggioAmministratore.php">VEICOLI A NOLEGGIO</a></li>'."\n".

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
     <head>
-        <title>Nuovo Veicolo &vert; Area Personale</title>
+        <title>Nuovo Veicolo &vert; Area Amministratore</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="title" content="pagina per aggiunta di nuovo veicolo" />
 		<meta name="description" content="pagina per aggiunta di nuovo veicolo" />
@@ -9,7 +9,8 @@
 		<meta name="language" content="italian it" />
 		<meta name="author" content="Giulia Fiorese" />
 		<link rel="icon" type="images/png" href="../Images/auto.svg" />
-		<link rel="stylesheet" type="text/css" href="../CSS/cssAreaPersonale.css" />
+		<link rel="stylesheet" type="text/css" href="../CSS/cssAmministratore.css" />
+        <link rel="stylesheet" type="text/css" href="../CSS/cssGenerale.css" />
 		<script type="text/javascript" src=""></script>
     </head>
 
@@ -21,7 +22,7 @@
         <div class="corpoAmministratore">
             <p>Inserisci qui le informazioni sul veicolo a noleggio&period;</p>
             <messaggio></messaggio>
-            <form id="nuovoVeicoloNoleggio" action="../PHP/salvaNuovoVeicoloNoleggio.php" method="POST">
+            <form id="nuovoVeicoloNoleggio" class="formAmm" action="../PHP/salvaNuovoVeicoloNoleggio.php" method="POST">
                 <fieldset>
                     <legend>Informazioni sul veicolo a noleggio da aggiungere </legend>
                     <p>I campi marcati con l&apos;asterisco * sono obbligatori</p>

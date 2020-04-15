@@ -38,6 +38,10 @@
 			}
 		}
 
+		/**
+		 * Controlla se la data inserita è scritta nel formato gg-mm-aaaa
+		 * @param string $data 
+		 */
 		public function checkDateFormat($data){
 			if (isset($data) && !empty($data) && preg_match("/^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/",$data))
 				return true;
@@ -55,7 +59,12 @@
 			return $age >= 18;
 		}
 
-		public function validDate($data){
+		/**
+		 * Controlla se la data inserita è succissiva o ad oggi
+		 * @param string $data 
+		 */
+		public function validDate($dataString){
+			$data = date_create($dataString);
 			$oggi = date("Y-m-d");
 			if($data>$oggi){
 				return true;

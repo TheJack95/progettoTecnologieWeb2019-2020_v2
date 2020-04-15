@@ -1,3 +1,7 @@
+CREATE DATABASE IF NOT EXISTS concessionaria;
+
+USE concessionaria;
+
 CREATE TABLE IF NOT EXISTS Utenti(
     Email varchar(50),
     Password varchar(100),

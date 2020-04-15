@@ -1,3 +1,5 @@
+USE concessionaria;
+
 /* popolamento tabella Utenti */
 INSERT INTO Utenti() VALUE
 ('admin@admin.com', '$2y$10$FWWRA1aayii/Uzp0aq6Gq.uGPymgkB5xpf/rFIRbOA2dOHNWX2Xge', 'Admin', 'Admin', NULL, NULL, NULL, 1),

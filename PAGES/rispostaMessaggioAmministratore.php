@@ -7,11 +7,11 @@
     }
 
     if(isset($_SESSION["admin"]) && $_SESSION["admin"] == 1) {
-        $output = file_get_contents("../HTML/nuovoMessaggioAmministratore.html");
+        $output = file_get_contents("../HTML/rispostaMessaggioAmministratore.html");
 
         $output = str_replace("<header></header>",funzioniGenerali::header(),$output);
         $output = str_replace("<menu></menu>",funzioniGenerali::menu(),$output);
-        $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Area Personale &gt;&gt; Nuovo messaggio"),$output);
+        $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Area Amministratore &gt;&gt; NUOVO MESSAGGIO"),$output);
         $output = str_replace("<menuAmministratore></menuAmministratore>",funzioniAmministratore::menuAmm(),$output);
 
         if(isset($_SESSION["nuovoMessaggio"])){
