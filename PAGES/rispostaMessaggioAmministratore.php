@@ -6,6 +6,10 @@
         session_start();
     }
 
+    if(isset($_POST['rispondi'])) {
+        $_SESSION["destinatario"] = $_POST['rispondi'];
+    }
+
     if(isset($_SESSION["admin"]) && $_SESSION["admin"] == 1) {
         $output = file_get_contents("../HTML/rispostaMessaggioAmministratore.html");
 
@@ -19,9 +23,8 @@
         } else {
             $output = str_replace("<messaggio></messaggio>"," ",$output);
         }
-
+        
         $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
-
         $output = str_replace('<a class="" href="homeAmministratore.php">AREA AMMINISTRATORE</a>','<strong>AREA AMMINISTRATORE</strong>',$output);
 
         echo $output;

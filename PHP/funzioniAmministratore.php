@@ -50,7 +50,7 @@
 
     #funzione per la lettura dal database dei messaggi ricevuti
         public function selectMessaggiRicevuti() {
-            $query = 'SELECT Nome, Cognome, Email, NumeroTelefono, Messaggio FROM Messaggi ORDER BY IdMess DESC';
+            $query = 'SELECT IdMess, Nome, Cognome, Email, NumeroTelefono, Messaggio FROM Messaggi ORDER BY IdMess DESC';
             $queryResult = $this->connessioneAmministratore->esegui($query);
             $_POST = array();
             if($queryResult == false) {
@@ -59,6 +59,7 @@
                 $result = array();
                 while($row=mysqli_fetch_assoc($queryResult)) {
                     $messRicevuti = (Object) [
+                                "IdMess"=>$row['IdMess'],
                                 "Nome"=>$row['Nome'],
                                 "Cognome"=>$row['Cognome'],
                                 "Email"=>$row['Email'],
@@ -72,8 +73,8 @@
         }
 
     #funzione per la lettura dal database dei messaggi inviati
-        public function selectMessaggiInviati() {
-            $query = 'SELECT Email, EmailDestinatario, Oggetto, Messaggio FROM RisposteMessaggi ORDER BY IdRisp DESC';
+        public function selectMessaggiInviati($destinatario) {
+            $query = 'SELECT Oggetto, Messaggio FROM RisposteMessaggi WHERE Destinatario=\''.$destinatario.'\'';
             $queryResult = $this->connessioneAmministratore->esegui($query);
             $_POST = array();
             if($queryResult == false) {
@@ -82,8 +83,6 @@
                 $result = array();
                 while($row=mysqli_fetch_assoc($queryResult)) {
                     $messInviati = (Object) [
-                                "Email"=>$row['Email'],
-                                "EmailDestinatario"=>$row['EmailDestinatario'],
                                 "Oggetto"=>$row['Oggetto'],
                                 "Messaggio"=>$row['Messaggio']
                             ];
@@ -177,19 +176,7 @@
             }
         }
 
-    #funzione per l'inserimento nel database di un nuovo messaggio
-        public function insertRisposta() {
-            $mittente = $_POST['mittente'];
-            $destinatario = $_POST['destinatario'];
-            $oggetto = $_POST['oggetto'];
-            $testo = $_POST['testo'];
 
-            $insertRisposta = "INSERT INTO MessaggiRisposta() VALUES ('','$mittente','$destinatario','$oggetto','$testo')";
-            if ($this->connection->query($insertRisposta) === TRUE) {
-                return true;
-            } else {
-                return false;
-            }
-        }
+        
     }
 ?>
