@@ -15,13 +15,14 @@
 }
 
 .fotoVeicolo {
-	width: auto;
+	width: 50%;
 	height: auto;
 }
 
 .datiVeicolo {
-	width: 50%;
-	margin-left: 50px;
+	width: 45%;
+	margin-left: 5%;
+	margin-top: 5%;
 }
 
 .datiVeicolo ul {
@@ -48,7 +49,7 @@ input {
 }
 
 .titoloVeicolo {
-	font-size: 3em;
+	font-size: auto;
 	margin-bottom: 0.5em;
 }
 
@@ -87,6 +88,11 @@ input {
 
 	.containerVeicolo > *{
 		float: none;
+	}
+
+	.datiVeicolo {
+		width: 100%;
+		margin: 0;
 	}
 
 	.datiVeicolo ul {

@@ -76,7 +76,7 @@
          */
         public static function setMessaggio($messaggio, $errore){
 
-            $class  = $errore ? "errorMessage" : "messaggio";
+            $class  = $errore ? "errorMessage" : "successMessage";
             $breadcrumb  = $errore ? "Errore" : "Messaggio";
 
             $output = file_get_contents("../HTML/paginaVuota.html");

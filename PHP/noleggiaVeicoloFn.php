@@ -31,7 +31,7 @@ if($logged->status) {
                 $interval = date_diff($dataInizioNolo, $dataFineNolo);
                 $costoTotale = $interval->days*$costo;
     
-                $response = $conn->noleggia($utente, $datetime1, $datetime2, $targa, $costo);
+                $response = $conn->noleggia($utente, $dataInizioNolo, $dataFineNolo, $targa, $costo);
             } else {
                 $response->response = 'La data di fine noleggio deve essere successiva o uguale alla data di inizio. <a href="../PAGES/noleggioVeicolo.php?targaAuto='.$targa.'">Torna indietro</a>';
                 $response->status = false;

@@ -20,11 +20,12 @@
         <breadcrumb></breadcrumb>
         <menuAmministratore></menuAmministratore>
         <div class="corpoAmministratore">
-            <p>Inserisci qui le informazioni personali da modificare&period;</p>
             <messaggio></messaggio>
-            <form id="modificaInfo" class="formAmm" onsubmit="" action="" method="POST">
+            <p>Inserire qui le informazioni personali da modificare&period;</p>
+            <form id="modificaInfo" class="formAmm" action="../PHP/salvaInformazioniModificate.php" method="POST">
                 <fieldset>
                     <legend>Informazioni Personali</legend>
+                    <p><strong>Nota bene</strong>&colon; ogni campo deve essere compilato&period;<br />Nel caso in cui il campo venga lasciato vuoto&comma; le informazioni precedentemente inserite verranno eliminate&period;</p>
                 
                     <label for="nome">Nome</label>
                     <input type="text" name="nome" id="nome" class="" tabindex="12" />
@@ -32,16 +33,16 @@
                     <label for="cognome">Cognome</label>
                     <input type="text" name="cognome" id="cognome" class="" tabindex="13" />
 
-                    <label for="telefono">Telefono</label>
+                    <label for="telefono">Recapito telefonico</label>
                     <input type="text" name="telefono" id="telefono" class="" tabindex="14" />
 
-                    <label for="cellulare">Cellulare</label>
-                    <input type="text" name="cellulare" id="cellulare" class="" tabindex="15" />
-
                     <label for="indirizzo">Indirizzo</label>
-                    <input type="text" name="indirizzo" id="indirizzo" class="" tabindex="16" />
+                    <input type="text" name="indirizzo" id="indirizzo" class="" tabindex="15" />
 
-                    <input type="submit" id="modificaInfo" value="SALVA" tabindex="17" />
+                    <label for="nascita">Data di nascita</label>
+                    <input type="text" name="nascita" id="nascita" class="" tabindex="16" />
+
+                    <input type="submit" id="modificaInfo" value="SALVA MODIFICHE" tabindex="17" />
                 </fieldset>
             </form>
         </div>
