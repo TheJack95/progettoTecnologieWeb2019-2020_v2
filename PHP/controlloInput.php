@@ -2,7 +2,7 @@
 	class controlloInput {
 		public function validName($name){
 			if(isset($name) && !empty($name)){
-				if(preg_match("/^[a-zA-Z ]*$/",$name)){
+				if(preg_match("/^[a-zA-Z ]{3,18}$/",$name)){
 					return true;
 				}
 				else{
@@ -16,7 +16,7 @@
 
 		public function validFirstName($firstName){
 			if(isset($firstName)){
-				if(preg_match("/^[a-zA-Z ]*$/",$firstName)){
+				if(preg_match("/^[a-zA-Z ]{3,18}$/",$firstName)){
 					return true;
 				}
 				else{
@@ -40,7 +40,7 @@
 
 		/**
 		 * Controlla se la data inserita è scritta nel formato gg-mm-aaaa
-		 * @param string $data 
+		 * @param string $data
 		 */
 		public function checkDateFormat($data){
 			if (isset($data) && !empty($data) && preg_match("/^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/",$data))
@@ -61,7 +61,7 @@
 
 		/**
 		 * Controlla se la data inserita è succissiva o ad oggi
-		 * @param string $data 
+		 * @param string $data
 		 */
 		public function validDate($dataString){
 			$data = date_create($dataString);
@@ -90,6 +90,7 @@
 
 		public function validEmail($email){
 			if(isset($email) && !empty($email)){
+				$email = filter_var($email, FILTER_SANITIZE_EMAIL);
 				if(filter_var($email, FILTER_VALIDATE_EMAIL)){
 					return true;
 				}
@@ -105,6 +106,21 @@
 		public function validPhone($phone){
 			if(isset($phone) && !empty($phone)){
 				if(preg_match("/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/",$phone)){
+					return true;
+				}
+				else {
+					return false;
+				}
+			}
+			else{
+				return false;
+			}
+		}
+	}
+
+		public function validAddress($address){
+			if(isset($address) && !empty($address)){
+				if(preg_match("/^([a-zA-Z ]{3,11})\s([a-zA-Z ]+\s)+(\d{1,3}([\/][a-zA-Z ])?)$/",$address)){
 					return true;
 				}
 				else {
