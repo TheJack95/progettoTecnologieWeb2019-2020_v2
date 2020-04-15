@@ -12,10 +12,10 @@ if($logged->status) {
 	];
 
 	#controllo se i campi obbligatori sono stati inseriti e se sono validi
-	if(isset($_GET['targaAuto']) && isset($_GET['prezzoVendita'])) {
+	if(isset($_GET['idAuto']) && isset($_GET['prezzoVendita'])) {
 		$auto = new funzioniVeicoli();
 		$utente  = $_SESSION['user'];
-		$idAuto  = $_GET['targaAuto'];
+		$idAuto  = $_GET['idAuto'];
 		$prezzoVendita = intval($_GET['prezzoVendita']);
 
 		$response = $auto->richiediPreventivo($utente, $idAuto, $prezzoVendita);
