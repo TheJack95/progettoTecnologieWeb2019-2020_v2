@@ -116,7 +116,6 @@
 				return false;
 			}
 		}
-	}
 
 		public function validAddress($address){
 			if(isset($address) && !empty($address)){

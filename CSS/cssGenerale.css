@@ -9,11 +9,11 @@ html, body {
 	margin: auto;
 	padding: 0;
 	background-color: bisque;
+	height: -webkit-fill-available;
 }
 
 body {
 	background-color: #FAFAFA;
-    height: 100%;
 }
 
 .messaggio {
@@ -132,4 +132,11 @@ body {
 
 .clear{
     clear: left;
+}
+
+
+@media (max-width:1000px) {
+	html, body {
+		max-width: 95%;
+	}
 }

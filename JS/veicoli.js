@@ -31,7 +31,7 @@ function isDateValid(dataMag, dataMin) {
     let today = new Date();
     let dataMagDate = dateReverse(dataMag,"Date", "-");
     let dataMinDate = dateReverse(dataMin,"Date", "-");
-    return false && dataMinDate >= today && dataMagDate >= dataMinDate;
+    return dataMinDate >= today && dataMagDate >= dataMinDate;
 }
 
 var dataInizioChange = function(event) {
