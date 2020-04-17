@@ -44,7 +44,7 @@
                         }
         }
         if(count($requestR) == 0) {
-            $messaggiAmm .= "<p class='msgAmm'>Al momento non ci sono messaggi ricevuti&comma; riprova pi&ugrave; tardi&period;</p>";
+            $messaggiAmm .= "<p class='msgAmm'>Al momento non ci sono messaggi ricevuti&period;</p>";
         }
 
         $output = str_replace("<messaggiAmministratore></messaggiAmministratore>",$messaggiAmm,$output);

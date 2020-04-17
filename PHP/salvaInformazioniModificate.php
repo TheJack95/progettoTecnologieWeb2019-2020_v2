@@ -12,8 +12,8 @@
         $cognome = $_POST["cognome"];
         $telefono = $_POST["telefono"];
         $indirizzo = $_POST["indirizzo"];
-        if(isset($_POST["nascita"])) {
-            $nascita = controlloInput::FormatDate($nascita);
+        if(!empty($_POST["nascita"])) {
+            $nascita = date('Y-m-d',strtotime($_POST["nascita"]));
         }
 
         $connessioneDatabase = new database_connection;

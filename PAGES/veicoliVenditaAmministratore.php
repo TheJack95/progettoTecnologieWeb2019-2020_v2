@@ -46,8 +46,8 @@
 
         echo $output;
     } else {
-        $message = "ATTENZIONE&excl; Non hai i permessi per accedere all&apos;area dell&apos;amministratore<br />e sei stato reindirizzato alla pagina per l&apos;accesso&period; ACCEDI E RIPROVA&period;";
-        $_SESSION["errmessage"] = $message;
+        $errLogin = "ATTENZIONE&excl; Non hai i permessi per accedere all&apos;area dell&apos;amministratore&period;<br />Sei stato reindirizzato alla pagina per l&apos;accesso&period; ACCEDI E RIPROVA&period;";
+        $_SESSION["errmessage"] = $errLogin;
         header("location: ../PAGES/login.php");
     }
 ?>
