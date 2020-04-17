@@ -12,18 +12,33 @@
     $output = str_replace('   <p class="nomeSito"><a href="home.php">CONCESSIONARIA GREG</a></p>','   <p class="nomeSito"><a>CONCESSIONARIA GREG</a></p>',$output);
     $output = str_replace('<a href="home.php"><span xml:lang="en" lang="en">HOME</span></a>','<strong>HOME</strong>',$output);
 
-    /*$occasione = new database_connection;
-    $sql = "SELECT column FROM AutoVendita ORDER BY RAND() LIMIT 1";
+    $occasione = new database_connection;
+    $seed = date('Ymd');
+    $sql = "SELECT * FROM AutoVendita ORDER BY RAND($seed) LIMIT 1";
     $resultCheck = $occasione->esegui($sql);
 
     if($resultCheck == FALSE)
         $result = "<p class = \"erroMessage\">Non è possibile al momento possibile reperire l'occasione, riprova più tardi </p>";
     else{
         $row = mysqli_fetch_assoc($resultCheck);
-        $result ="<div class=\"occasioneGiorno\">
-                    <img src = ".$row->Immagine." alt = ".row->descrImmagine."
-
-    }
-    */
+        $sconto = $row['PrezzoVendita']*20/100;
+        $prezzoOccasione=$row['PrezzoVendita']-$sconto;
+        $result = 
+                   "<div id = \"occasioneGiorno\">
+                        <p class=\"titolo\">OCCASIONE DEL GIORNO</p>
+                        <img id = \"auto\" src = '".$row['Immagine']."' alt = '".$row['DescrImmagine']."'></img>
+                        <div id = \"contentOccasione\">
+                            
+                            <p class = \"titoloOccasione\">20% DI SCONTO SU:</p>
+                            <p class = \"titoloOccasione\"> " .$row['Marca']. " " .$row['Modello']. "</p>
+                            <p class = \"prezzo\"> PREZZO ORIGINALE: " .$row["PrezzoVendita"]. "&#8364</p>
+                            <p class = \"prezzo\"> PREZZO OCCASIONE: " .$prezzoOccasione. "&#8364</p>
+                            <a id = \"preventivo\" href=\"../PHP/acquistaVeicoloFn.php?idAuto=" .$row['IdAuto']. "&prezzoVendita=".$row['PrezzoVendita']."\">Richiedi preventivo</a>
+                        </div> 
+                    </div>";
+        }
+    
+    $output = str_replace('<occasione></occasione>',$result,$output);
+    
     echo $output;
 ?>

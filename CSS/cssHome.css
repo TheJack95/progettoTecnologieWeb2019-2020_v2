@@ -1,25 +1,74 @@
 .titolo{
     font-size: 1.5em;
-    margin-bottom : 0.5em;
-    margin-top: 0.5em;
+    margin-bottom : 1%;
+    margin-top: 1%;
+    font-weight: bolder;
+}
+
+.titoloOccasione{
+    font-size: 1.3em;
+    margin-top: 2%;
+    margin-bottom: 1%;
     font-weight: bold;
+
 }
 
 #immagineConcessionaria{
     float: right;
-    margin: 0.5em;
+    margin-left: 1%;
 }
 
 .containerText{
-    margin: 2%;
+    overflow: hidden;
+    margin-left: 1%;
+}
+
+.prezzo{
+    margin-top: 0.5%;
 }
 
 .text{
-    margin-bottom: 2em;
+    margin-bottom: 1%;
 }
 
-#occasione{
+#preventivo{
+    margin-top: 12%;
+    display: inline-block;
+}
+
+#occasioneGiorno{
     clear: both;
+    margin-bottom: 2%;
     text-align: center;
-    margin-top: 3em;
+    border: 1px solid black;
+    border-radius: 5%;
+    -webkit-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
+	-moz-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
+	box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
+    background: bisque;
+    width: 70%;
+    overflow: hidden;
+    margin-top: 2%;
+}
+
+#containerOccasione{
+    background: #F1AB00;
+    overflow: hidden;
+    
+
+}
+
+#linkPreventivo{
+    margin-top: 4%;
+}
+
+#contentOccasione{
+    margin-top: 10%;
+    text-align: left;
+}
+
+#auto{
+    float: left;
+    margin: 2%;
+    margin-right: 4%;
 }
