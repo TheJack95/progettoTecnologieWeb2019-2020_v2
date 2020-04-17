@@ -20,8 +20,13 @@
                         ."  <li>Cauzione&colon; <strong>".$response->Cauzione."</strong></li>"
                         ."  <li>Immagine&colon; <strong>".$response->Immagine."</strong></li>"
                         ."  <li>DescrImmagine&colon; <strong>".$response->DescrImmagine."</strong></li>"
-                        ."  <li><a class=\"tastoModifiche\" href=\"../PAGES/modificaVeicoloNoleggio.php\">MODIFICA</a></li>"
-                        ."</ul>";
+                        ."</ul>"
+                        ."  <form class=\"tastoModifiche\" action=\"../PAGES/modificaVeicoloNoleggio.php\" method=\"post\">
+                                <button type=\"submit\" name=\"modifica\" value=\"$response->Targa\">MODIFICA</button>
+                            </form>"
+                        ."  <form class=\"tastoModifiche\" action=\"../PAGES/eliminaVeicoloNoleggio.php\" method=\"post\">
+                                <button type=\"submit\" name=\"ELIMINAa\" value=\"$response->Targa\">ELIMINA</button>
+                            </form>";
         }
         if(count($request) == 0) {
             $veicoliN .= "<p class=\"msgAmm\">Al momento non sono disponibili le informazioni richieste&comma; riprova pi&ugrave; tardi&period;</p>";

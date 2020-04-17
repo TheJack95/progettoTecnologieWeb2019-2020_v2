@@ -13,6 +13,12 @@
         $output = str_replace("<menu></menu>",funzioniGenerali::menu(),$output);
         $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Area Amministratore &gt;&gt; NUOVO VEICOLO IN VENDITA"),$output);
         $output = str_replace("<menuAmministratore></menuAmministratore>",funzioniAmministratore::menuAmm(),$output);
+        if(isset($_SESSION["nuovoMessaggio"])){
+            $output = str_replace("<messaggio></messaggio>",$_SESSION["nuovoMessaggio"],$output);
+            unset($_SESSION["nuovoMessaggio"]);
+        } else {
+            $output = str_replace("<messaggio></messaggio>"," ",$output);
+        }
         $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
         
         echo $output;

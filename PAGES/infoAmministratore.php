@@ -11,9 +11,10 @@
         $informazioni = "";
 
         foreach($request as $response) {
+            $nascita = date('d/m/Y',strtotime($response->DataNascita));
             $informazioni .= "<p>Nome&colon; <strong>".$response->Nome."</strong></p>"."\n"
                             ."<p>Cognome&colon; <strong>".$response->Cognome."</strong></p>"."\n"
-                            ."<p>Data di nascita&colon; <strong>".$response->DataNascita."</strong></p>"."\n"
+                            ."<p>Data di nascita&colon; <strong>".$nascita."</strong></p>"."\n"
                             ."<p>Indirizzo&colon; <strong>".$response->Indirizzo."</strong></p>"."\n"
                             ."<p>Telefono&colon; <strong>".$response->Telefono."</strong></p>"."\n"
                             ."<p>Email&colon; <strong>".$response->Email."</strong></p>"."\n";

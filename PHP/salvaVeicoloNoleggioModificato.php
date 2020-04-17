@@ -6,39 +6,29 @@
     }
 
     if(isset($_SESSION["admin"]) && $_SESSION["admin"] == 1) {
-        $targa = $_POST["targa"];
+        $targa = $_SESSION["targa"];
         $marca = $_POST["marca"];
         $modello = $_POST["modello"];
         $cilindrata = $_POST["cilindrata"];
         $costo = $_POST["costo"];
         $cauzione = $_POST["cauzione"];
-        $immagine = "";
-        $descrizione = $_POST["descrizione"];
-        if(is_uploaded_file($_FILES["immagineAuto"]["tmp_name"])) {
-			$destination = "../Images/". basename($_FILES["immagineAuto"]["name"]);
-			if(move_uploaded_file($_FILES['immagineAuto']["tmp_name"], $destination)) {
-				$immagine = "../Images/". basename($_FILES["immagineAuto"]["name"]);
-			}
-		}
 
         $connessioneDatabase = new database_connection;
-        $insert = "INSERT INTO AutoNoleggio() VALUES ('$targa','$marca','$modello','$cilindrata','$costo','$cauzione','$immagine','$descrizione')";
-        if ($connessioneDatabase->esegui($insert) == TRUE) {
+        $update = "UPDATE AutoNoleggio SET Marca='$marca', Modello='$modello', Cilindrata='$cilindrata', CostoNoleggio='$costo', Cauzione='$cauzione' WHERE Targa='$targa'";
+        if ($connessioneDatabase->esegui($update) == TRUE) {
             unset($_POST["targa"]);
             unset($_POST["marca"]);
             unset($_POST["modello"]);
             unset($_POST["cilindrata"]);
             unset($_POST["costo"]);
             unset($_POST["cauzione"]);
-            unset($_FILES["immagine"]["tmp_name"]);
-            unset($_POST["descrizione"]);
-            $messaggio = "<p class='msgAmm'>Nuovo veicolo a noleggio inserito correttamente&period; Potresti non vedere subito il veicolo appena inserito&comma; eventualmente ricarica la pagina&period;</p>";
+            $messaggio = "<p class='msgAmm'>Informazioni sul veicolo a noleggio aggiornate correttamente&period; Potresti non vedere subito le modifiche appena inserite&comma; eventualmente ricarica la pagina&period;</p>";
             $_SESSION["nuovoMessaggio"] = $messaggio;
             header("location: ../PAGES/VeicoliNoleggioAmministratore.php");
         } else {
-            $messaggio = "<p class='msgErrAmm'>ATTENZIONE&excl; Non &egrave; possibile inserire il nuovo veicolo a noleggio per un problema del database&period; Riprova&period;</p>";
+            $messaggio = "<p class='msgErrAmm'>ATTENZIONE&excl; Non &egrave; possibile modificare le informazioni del veicolo a noleggio per un problema del database&period; Riprova pi&ugrave; tardi&period;</p>";
             $_SESSION["nuovoMessaggio"] = $messaggio;
-            header("location: ../PAGES/nuovoVeicoloNoleggio.php");
+            header("location: ../PAGES/modificaVeicoloNoleggio.php");
         }
     } else {
         $errLogin = "ATTENZIONE&excl; Non hai i permessi per accedere all&apos;area dell&apos;amministratore&period;<br />Sei stato reindirizzato alla pagina per l&apos;accesso&period; ACCEDI E RIPROVA&period;";

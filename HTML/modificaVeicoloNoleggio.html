@@ -20,29 +20,32 @@
         <breadcrumb></breadcrumb>
         <menuAmministratore></menuAmministratore>
         <div class="corpoAmministratore">
+            <p>Inserisci qui le informazioni sul veicolo a noleggio da modificare&period;</p>
             <messaggio></messaggio>
-            <p>Inserisci qui le informazioni sul veicolo da modificare&period;</p>
-            <messaggio></messaggio>
-            <form id="modificaVeicoloNoleggio" class="formAmm" onsubmit="" action="" method="POST">
+            <form id="modificaVeicoloNoleggio" class="formAmm" action="../PHP/salvaVeicoloNoleggioModificato.php" method="post">
                 <fieldset>
-                    <legend>Informazioni da modificare</legend>
+                    <legend>Informazioni Veicolo</legend>
+                    <p><strong>Nota bene</strong>&colon; ogni campo deve essere compilato&period; Nel caso in cui il campo venga lasciato vuoto&comma; le informazioni precedentemente inserite verranno eliminate&period;</p>
+
+                    <label for="targa">Targa</label>
+                    <input type="text" name="targa" id="targa" class="" tabindex="12" />
 
                     <label for="marca">Marca</label>
-                    <input type="text" name="marca" id="marca" class="" tabindex="12" />
+                    <input type="text" name="marca" id="marca" class="" tabindex="13" />
 
                     <label for="modello">Modello</label>
-                    <input type="text" name="modello" id="modello" class="" tabindex="13" />
+                    <input type="text" name="modello" id="modello" class="" tabindex="14" />
 
-                    <label for="cilindrata">Cilindrata</label>
-                    <input type="text" name="cilindrata" id="cilindrata" class="" tabindex="14" />
+                    <label for="cilindrata">Cilindrata in cc</label>
+                    <input type="text" name="cilindrata" id="cilindrata" class="" tabindex="15" />
 
-                    <label for="costo">Costo Giornaliero</label>
-                    <input type="text" name="costo" id="costo" class="" tabindex="15" />
+                    <label for="costo">Costo Giornaliero in &euro;</label>
+                    <input type="text" name="costo" id="costo" class="" tabindex="16" />
 
-                    <label for="cauzione">Cauzione</label>
-                    <input type="text" name="cauzione" id="cauzione" class="" tabindex="16" />
+                    <label for="cauzione">Cauzione in &euro;</label>
+                    <input type="text" name="cauzione" id="cauzione" class="" tabindex="17" />
 
-                    <input type="submit" id="modificheVeicoloNoleggio" value="SALVA" tabindex="17" />
+                    <input type="submit" id="salvaModificheVeicoloNoleggio" value="SALVA MODIFICHE" tabindex="18" />
                 </fieldset>
             </form>
         </div>

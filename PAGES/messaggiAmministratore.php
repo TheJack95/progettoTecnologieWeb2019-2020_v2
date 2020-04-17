@@ -38,7 +38,7 @@
                         }
                         if(count($requestI) == 0) {
                             $messaggiAmm .= "<form class=\"tastoModifiche\" action=\"../PAGES/rispostaMessaggioAmministratore.php\" method=\"POST\">
-                                            <button type=\"submit\" name=\"rispondi\" value=\"$responseR->IdMess\">RISPONDI</button>
+                                                <button type=\"submit\" name=\"rispondi\" value=\"$responseR->IdMess\">RISPONDI</button>
                                             </form>
                                             </div>";
                         }
