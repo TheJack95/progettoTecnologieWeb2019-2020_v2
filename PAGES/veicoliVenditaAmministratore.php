@@ -7,9 +7,20 @@
     }
 
     if(isset($_SESSION["admin"]) && $_SESSION["admin"] == 1) {
+        $output = file_get_contents("../HTML/veicoliVenditaAmministratore.html");
+
+        $output = str_replace("<header></header>",funzioniGenerali::header(),$output);
+        $output = str_replace("<menu></menu>",funzioniGenerali::menu(),$output);
+        $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Area Amministratore &gt;&gt; VEICOLI IN VENDITA"),$output);
+        $output = str_replace("<menuAmministratore></menuAmministratore>",funzioniAmministratore::menuAmm(),$output);
+        if(isset($_SESSION["nuovoMessaggio"])){
+            $output = str_replace("<messaggio></messaggio>",$_SESSION["nuovoMessaggio"],$output);
+            unset($_SESSION["nuovoMessaggio"]);
+        } else {
+            $output = str_replace("<messaggio></messaggio>"," ",$output);
+        }
         $request = (new funzioniAmministratore())->selectVeicoliVendita();
         $veicoliV = "";
-
         foreach($request as $response) {
             $veicoliV .= "<ul>"
                         ."  <li>Marca&colon; <strong>".$response->Marca."</strong></li>"
@@ -25,19 +36,6 @@
         if(count($request) == 0) {
             $veicoliV .= "<p class=\"msgAmm\">Al momento non sono disponibili le informazioni richieste&comma; riprova pi&ugrave; tardi&period;</p>";
         }
-
-        $output = file_get_contents("../HTML/veicoliVenditaAmministratore.html");
-
-        $output = str_replace("<header></header>",funzioniGenerali::header(),$output);
-        $output = str_replace("<menu></menu>",funzioniGenerali::menu(),$output);
-        $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Area Amministratore &gt;&gt; VEICOLI IN VENDITA"),$output);
-        $output = str_replace("<menuAmministratore></menuAmministratore>",funzioniAmministratore::menuAmm(),$output);
-        if(isset($_SESSION["nuovoMessaggio"])){
-            $output = str_replace("<messaggio></messaggio>",$_SESSION["nuovoMessaggio"],$output);
-            unset($_SESSION["nuovoMessaggio"]);
-        } else {
-            $output = str_replace("<messaggio></messaggio>"," ",$output);
-        }
         $output = str_replace("<veicoliVendita></veicoliVendita>",$veicoliV,$output);
         $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
 
@@ -46,8 +44,8 @@
 
         echo $output;
     } else {
-        $message = "ATTENZIONE&excl; Non hai i permessi per accedere all&apos;area dell&apos;amministratore<br />e sei stato reindirizzato alla pagina per l&apos;accesso&period; ACCEDI E RIPROVA&period;";
-        $_SESSION["errmessage"] = $message;
+        $errLogin = "ATTENZIONE&excl; Non hai i permessi per accedere all&apos;area dell&apos;amministratore&period;<br />Sei stato reindirizzato alla pagina per l&apos;accesso&period; ACCEDI E RIPROVA&period;";
+        $_SESSION["errmessage"] = $errLogin;
         header("location: ../PAGES/login.php");
     }
 ?>

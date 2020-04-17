@@ -20,29 +20,38 @@
         <breadcrumb></breadcrumb>
         <menuAmministratore></menuAmministratore>
         <div class="corpoAmministratore">
-            <p>Inserisci qui le informazioni sul veicolo a noleggio&period;</p>
+            <p>Inserisci qui le informazioni sul veicolo a noleggio da aggiungere&period;</p>
             <messaggio></messaggio>
-            <form id="nuovoVeicoloNoleggio" class="formAmm" action="../PHP/salvaNuovoVeicoloNoleggio.php" method="POST">
+            <form id="nuovoVeicoloNoleggio" class="formAmm" action="../PHP/salvaNuovoVeicoloNoleggio.php" method="post">
                 <fieldset>
-                    <legend>Informazioni sul veicolo a noleggio da aggiungere </legend>
-                    <p>I campi marcati con l&apos;asterisco * sono obbligatori</p>
+                    <legend>Informazioni Veicolo</legend>
+                    <p>Tutti i campi marcati con l&apos;asterisco &ast; sono obbligatori&period;</p>
 
-                    <label for="marca">Marca *</label>
-                    <input type="text" name="marca" id="marca" class="" tabindex="12" />
+                    <label for="targa">Targa &ast;</label>
+                    <input type="text" name="targa" id="targa" class="" tabindex="12" />
 
-                    <label for="modello">Modello *</label>
-                    <input type="text" name="modello" id="modello" class="" tabindex="13" />
+                    <label for="marca">Marca &ast;</label>
+                    <input type="text" name="marca" id="marca" class="" tabindex="13" />
 
-                    <label for="cilindrata">Cilindrata *</label>
-                    <input type="text" name="cilindrata" id="cilindrata" class="" tabindex="14" />
+                    <label for="modello">Modello &ast;</label>
+                    <input type="text" name="modello" id="modello" class="" tabindex="14" />
 
-                    <label for="costo">Costo Giornaliero *</label>
-                    <input type="text" name="costo" id="costo" class="" tabindex="15" />
+                    <label for="cilindrata">Cilindrata in cc &ast;</label>
+                    <input type="text" name="cilindrata" id="cilindrata" class="" tabindex="15" />
 
-                    <label for="cauzione">Cauzione *</label>
-                    <input type="text" name="cauzione" id="cauzione" class="" tabindex="16" />
+                    <label for="costo">Costo Giornaliero in &euro; &ast;</label>
+                    <input type="text" name="costo" id="costo" class="" tabindex="16" />
 
-                    <input type="submit" id="salvaNuovoVeicoloNoleggio" value="SALVA" tabindex="17" />
+                    <label for="cauzione">Cauzione in &euro; &ast;</label>
+                    <input type="text" name="cauzione" id="cauzione" class="" tabindex="17" />
+
+                    <label for="immagineAuto">Immagine &ast;</label>
+                    <input type="file" name="immagineAuto" id="immagineAuto" class="" tabindex="18" />
+
+                    <label for="descrizione">Descrizione dell&apos;immagine &ast;</label>
+                    <input type="text" name="descrizione" id="descrizione" class="" tabindex="19" />
+
+                    <input type="submit" id="salvaNuovoVeicoloNoleggio" value="SALVA" tabindex="20" />
                 </fieldset>
             </form>
         </div>

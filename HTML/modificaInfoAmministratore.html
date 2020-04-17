@@ -22,10 +22,10 @@
         <div class="corpoAmministratore">
             <messaggio></messaggio>
             <p>Inserire qui le informazioni personali da modificare&period;</p>
-            <form id="modificaInfo" class="formAmm" action="../PHP/salvaInformazioniModificate.php" method="POST">
+            <form id="modificaInfo" class="formAmm" action="../PHP/salvaInformazioniModificate.php" method="post">
                 <fieldset>
                     <legend>Informazioni Personali</legend>
-                    <p><strong>Nota bene</strong>&colon; ogni campo deve essere compilato&period;<br />Nel caso in cui il campo venga lasciato vuoto&comma; le informazioni precedentemente inserite verranno eliminate&period;</p>
+                    <p><strong>Nota bene</strong>&colon; ogni campo deve essere compilato&period; Nel caso in cui il campo venga lasciato vuoto&comma; le informazioni precedentemente inserite verranno eliminate&period;</p>
                 
                     <label for="nome">Nome</label>
                     <input type="text" name="nome" id="nome" class="" tabindex="12" />
@@ -39,7 +39,7 @@
                     <label for="indirizzo">Indirizzo</label>
                     <input type="text" name="indirizzo" id="indirizzo" class="" tabindex="15" />
 
-                    <label for="nascita">Data di nascita</label>
+                    <label for="nascita">Data di nascita<br />&lpar;nel formato gg-mm-aaaa&rpar;</label>
                     <input type="text" name="nascita" id="nascita" class="" tabindex="16" />
 
                     <input type="submit" id="modificaInfo" value="SALVA MODIFICHE" tabindex="17" />

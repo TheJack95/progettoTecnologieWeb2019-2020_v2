@@ -13,14 +13,12 @@
         $output = str_replace("<menu></menu>",funzioniGenerali::menu(),$output);
         $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Area Amministratore &gt;&gt; MESSAGGI"),$output);
         $output = str_replace("<menuAmministratore></menuAmministratore>",funzioniAmministratore::menuAmm(),$output);
-        
         if(isset($_SESSION["nuovoMessaggio"])){
             $output = str_replace("<messaggio></messaggio>",$_SESSION["nuovoMessaggio"],$output);
             unset($_SESSION["nuovoMessaggio"]);
         } else {
             $output = str_replace("<messaggio></messaggio>"," ",$output);
         }
-        
         $requestR = (new funzioniAmministratore())->selectMessaggiRicevuti();
         $messaggiAmm = "";
         foreach($requestR as $responseR) {
@@ -28,7 +26,6 @@
                         ."<p>Nome e cognome&colon; <strong>".$responseR->Nome." ".$responseR->Cognome."</strong></p>"."\n"
                         ."<p>Contatti&colon; <strong>".$responseR->NumeroTelefono." ".$responseR->Email."</strong></p>"."\n"
                         ."<p>Messsaggio&colon; <strong>".$responseR->Messaggio."</strong></p>"."\n";
-
                         $requestI = (new funzioniAmministratore())->selectMessaggiInviati($responseR->IdMess);
                         foreach($requestI as $responseI) {
                             $messaggiAmm .= "<p>Risposta&colon;</p>"."\n".
@@ -37,16 +34,15 @@
                                             "</div>";
                         }
                         if(count($requestI) == 0) {
-                            $messaggiAmm .= "<form class=\"tastoModifiche\" action=\"../PAGES/rispostaMessaggioAmministratore.php\" method=\"POST\">
-                                            <button type=\"submit\" name=\"rispondi\" value=\"$responseR->IdMess\">RISPONDI</button>
+                            $messaggiAmm .= "<form class=\"tastoModifiche\" action=\"../PAGES/rispostaMessaggioAmministratore.php\" method=\"post\">
+                                                <button type=\"submit\" name=\"rispondi\" value=\"$responseR->IdMess\">RISPONDI</button>
                                             </form>
                                             </div>";
                         }
         }
         if(count($requestR) == 0) {
-            $messaggiAmm .= "<p class='msgAmm'>Al momento non ci sono messaggi ricevuti&comma; riprova pi&ugrave; tardi&period;</p>";
+            $messaggiAmm .= "<p class='msgAmm'>Al momento non ci sono messaggi ricevuti&period;</p>";
         }
-
         $output = str_replace("<messaggiAmministratore></messaggiAmministratore>",$messaggiAmm,$output);
         $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
 

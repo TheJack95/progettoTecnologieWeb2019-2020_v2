@@ -15,23 +15,21 @@
 
         $output = str_replace("<header></header>",funzioniGenerali::header(),$output);
         $output = str_replace("<menu></menu>",funzioniGenerali::menu(),$output);
-        $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Area Amministratore &gt;&gt; NUOVO MESSAGGIO"),$output);
+        $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Area Amministratore &gt;&gt; NUOVA RISPOSTA"),$output);
         $output = str_replace("<menuAmministratore></menuAmministratore>",funzioniAmministratore::menuAmm(),$output);
-
         if(isset($_SESSION["nuovoMessaggio"])){
             $output = str_replace("<messaggio></messaggio>",$_SESSION["nuovoMessaggio"],$output);
             unset($_SESSION["nuovoMessaggio"]);
         } else {
             $output = str_replace("<messaggio></messaggio>"," ",$output);
         }
-        
         $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
         $output = str_replace('<a class="" href="homeAmministratore.php">AREA AMMINISTRATORE</a>','<strong>AREA AMMINISTRATORE</strong>',$output);
 
         echo $output;
     } else {
-        $message = "Attenzione&colon; non hai i permessi per accedere all&apos;area personale e sei stato reindirizzato alla pagina per accedere&excl;";
-        $_SESSION["errmessage"] = $message;
+        $errLogin = "ATTENZIONE&excl; Non hai i permessi per accedere all&apos;area dell&apos;amministratore&period;<br />Sei stato reindirizzato alla pagina per l&apos;accesso&period; ACCEDI E RIPROVA&period;";
+        $_SESSION["errmessage"] = $errLogin;
         header("location: ../PAGES/login.php");
     }
 ?>

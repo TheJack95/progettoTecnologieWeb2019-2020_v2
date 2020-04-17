@@ -12,13 +12,13 @@
         $cognome = $_POST["cognome"];
         $telefono = $_POST["telefono"];
         $indirizzo = $_POST["indirizzo"];
-        if(isset($_POST["nascita"])) {
-            $nascita = controlloInput::FormatDate($nascita);
+        if(!empty($_POST["nascita"])) {
+            $nascita = date('Y-m-d',strtotime($_POST["nascita"]));
         }
 
         $connessioneDatabase = new database_connection;
-        $updateInfo = "UPDATE Utenti SET Nome='$nome', Cognome='$cognome', Telefono='$telefono', Indirizzo='$indirizzo', DataNascita='$nascita' WHERE Email='$email'";
-        if ($connessioneDatabase->esegui($updateInfo) == TRUE) {
+        $update = "UPDATE Utenti SET Nome='$nome', Cognome='$cognome', Telefono='$telefono', Indirizzo='$indirizzo', DataNascita='$nascita' WHERE Email='$email'";
+        if ($connessioneDatabase->esegui($update) == TRUE) {
             $messaggio = "<p class='msgAmm'>Le informazioni sono state modificate correttamente&period;</p>";
             $_SESSION["nuovoMessaggio"] = $messaggio;
             header("location: ../PAGES/infoAmministratore.php");
