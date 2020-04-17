@@ -49,11 +49,9 @@ if($logged->status) {
 
     $output = funzioniGenerali::setMessaggio($response->response,!$response->status);
     $output = str_replace('<a href="home.php">','<a href="../PAGES/home.php">',$output);
-
+    
     echo $output;
 } else {
-    $logged->message = str_replace('<a href="home.php">','<a href="../PAGES/home.php">',$logged->message);
-    echo $logged->message;
-	//header("refresh:5; url= ../PAGES/login.php");
+    echo str_replace('<a href="home.php">','<a href="../PAGES/home.php">',$logged->message);
 }
 ?>

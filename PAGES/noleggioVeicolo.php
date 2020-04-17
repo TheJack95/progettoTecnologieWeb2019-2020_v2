@@ -6,10 +6,6 @@ require_once "../PHP/funzioniVeicoli.php";
 if(!isset($_SESSION))
     session_start();
 
-$_SESSION["logged"] = (Object) [
-    "status" => 2
-    ,"response" => ""
-];
 $logged = funzioniGenerali::checkSession();
 if($logged->status) {
 

@@ -86,7 +86,6 @@ if(isset($_SESSION["user"])) {
 } else {
 	$errmessage = "Attenzione: non hai effettuato il login. Verrai reindirizzato alla pagina di login.";
 	$_SESSION["errmessage"] = $errmessage;
-  header("location: ../PAGES/login.php");
 }
 
 ?>

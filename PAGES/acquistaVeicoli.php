@@ -32,7 +32,9 @@ foreach($rows as $row) {
 				.'				<p><strong>Prezzo di vendita:</strong> '.$row->PrezzoVendita.'</p>'
 				.'			</li>'
 				.'		</ul>'
-				.'		<a href="../PHP/acquistaVeicoloFn.php?idAuto='.$row->IdAuto.'&prezzoVendita='.$row->PrezzoVendita.'">Richiedi preventivo</a>'."\n"
+				.'		<form id="preventivoForm" action="../PHP/acquistaVeicoloFn.php" method="post">'."\n"
+                .'			<button type="submit" name="richiedipreventivo" value="'.$row->IdAuto.'" class="button">Richiedi preventivo</button>'."\n"
+                .'		</form>'."\n"
                 .'	</div>'."\n"
 				.'</div>';
 }
@@ -47,7 +49,7 @@ $filtri ='<form action="acquistaVeicoli.php" method="post">'."\n"
 		.'	<fieldset>'."\n"
 		.'		<label for="searchbar">Cerca veicoli</label>'."\n"
 		.'		<input type="text" id="searchbar" name="searchbar" tabindex="0" title="searchbar"/>'."\n"
-		.'		<input type="submit" name="applicafiltri" value="Cerca" class="button" tabindex="1"/>'."\n"
+		.'		<input type="submit" name="applicafiltri" value="Cerca" tabindex="1"/>'."\n"
 		.'	</fieldset>'."\n"
 		.'</form>';
 

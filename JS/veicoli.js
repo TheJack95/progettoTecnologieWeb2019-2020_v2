@@ -34,7 +34,7 @@ function isDateValid(dataMag, dataMin) {
     return dataMinDate >= today && dataMagDate >= dataMinDate;
 }
 
-var dataInizioChange = function(event) {
+function dataInizioChange(event) {
     if(event.target.value != "") {
         if(!regexDate.test(event.target.value)) {
             alert("Formato data inizio noleggio non valid0");
@@ -50,7 +50,7 @@ var dataInizioChange = function(event) {
     }
 }
 
-var dataFineChange = function(event) {
+function dataFineChange(event) {
     if(event.target.value != "") {
         if(!regexDate.test(event.target.value)) {
             alert("Formato data fine noleggio non valido");
@@ -66,7 +66,7 @@ var dataFineChange = function(event) {
     }
 }
 
-var checkDateNolo = function() {
+function checkDateNolo() {
     if(dataInizioNolo && dataFineNolo) {
         if(isDateValid(dataFineNolo, dataInizioNolo))
             return true; 
