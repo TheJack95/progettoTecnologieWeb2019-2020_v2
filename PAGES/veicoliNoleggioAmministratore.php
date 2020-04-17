@@ -24,8 +24,8 @@
                         ."  <form class=\"tastoModifiche\" action=\"../PAGES/modificaVeicoloNoleggio.php\" method=\"post\">
                                 <button type=\"submit\" name=\"modifica\" value=\"$response->Targa\">MODIFICA</button>
                             </form>"
-                        ."  <form class=\"tastoModifiche\" action=\"../PAGES/eliminaVeicoloNoleggio.php\" method=\"post\">
-                                <button type=\"submit\" name=\"ELIMINAa\" value=\"$response->Targa\">ELIMINA</button>
+                        ."  <form class=\"tastoModifiche\" action=\"../PHP/eliminaVeicoloNoleggio.php\" method=\"post\">
+                                <button type=\"submit\" name=\"elimina\" value=\"$response->Targa\">ELIMINA</button>
                             </form>";
         }
         if(count($request) == 0) {

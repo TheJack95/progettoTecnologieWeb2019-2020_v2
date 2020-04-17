@@ -16,12 +16,6 @@
         $connessioneDatabase = new database_connection;
         $update = "UPDATE AutoNoleggio SET Marca='$marca', Modello='$modello', Cilindrata='$cilindrata', CostoNoleggio='$costo', Cauzione='$cauzione' WHERE Targa='$targa'";
         if ($connessioneDatabase->esegui($update) == TRUE) {
-            unset($_POST["targa"]);
-            unset($_POST["marca"]);
-            unset($_POST["modello"]);
-            unset($_POST["cilindrata"]);
-            unset($_POST["costo"]);
-            unset($_POST["cauzione"]);
             $messaggio = "<p class='msgAmm'>Informazioni sul veicolo a noleggio aggiornate correttamente&period; Potresti non vedere subito le modifiche appena inserite&comma; eventualmente ricarica la pagina&period;</p>";
             $_SESSION["nuovoMessaggio"] = $messaggio;
             header("location: ../PAGES/VeicoliNoleggioAmministratore.php");
