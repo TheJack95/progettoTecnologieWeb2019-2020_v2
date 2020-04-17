@@ -7,9 +7,20 @@
     }
 
     if(isset($_SESSION["admin"]) && $_SESSION["admin"] == 1) {
+        $output = file_get_contents("../HTML/veicoliNoleggioAmministratore.html");
+
+        $output = str_replace("<header></header>",funzioniGenerali::header(),$output);
+        $output = str_replace("<menu></menu>",funzioniGenerali::menu(),$output);
+        $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Area Amministratore &gt;&gt; VEICOLI A NOLEGGIO"),$output);
+        $output = str_replace("<menuAmministratore></menuAmministratore>",funzioniAmministratore::menuAmm(),$output);
+        if(isset($_SESSION["nuovoMessaggio"])){
+            $output = str_replace("<messaggio></messaggio>",$_SESSION["nuovoMessaggio"],$output);
+            unset($_SESSION["nuovoMessaggio"]);
+        } else {
+            $output = str_replace("<messaggio></messaggio>"," ",$output);
+        }
         $request = (new funzioniAmministratore())->selectVeicoliNoleggio();
         $veicoliN = "";
-
         foreach($request as $response) {
             $veicoliN .= "<ul>"
                         ."  <li>Targa&colon; <strong>".$response->Targa."</strong></li>"
@@ -30,19 +41,6 @@
         }
         if(count($request) == 0) {
             $veicoliN .= "<p class=\"msgAmm\">Al momento non sono disponibili le informazioni richieste&comma; riprova pi&ugrave; tardi&period;</p>";
-        }
-
-        $output = file_get_contents("../HTML/veicoliNoleggioAmministratore.html");
-
-        $output = str_replace("<header></header>",funzioniGenerali::header(),$output);
-        $output = str_replace("<menu></menu>",funzioniGenerali::menu(),$output);
-        $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Area Amministratore &gt;&gt; VEICOLI A NOLEGGIO"),$output);
-        $output = str_replace("<menuAmministratore></menuAmministratore>",funzioniAmministratore::menuAmm(),$output);
-        if(isset($_SESSION["nuovoMessaggio"])){
-            $output = str_replace("<messaggio></messaggio>",$_SESSION["nuovoMessaggio"],$output);
-            unset($_SESSION["nuovoMessaggio"]);
-        } else {
-            $output = str_replace("<messaggio></messaggio>"," ",$output);
         }
         $output = str_replace("<veicoliNoleggio></veicoliNoleggio>",$veicoliN,$output);
         $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
