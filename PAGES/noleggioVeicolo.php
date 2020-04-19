@@ -29,6 +29,11 @@ if($logged->status) {
     $output = str_replace("_COSTONOLEGGIO_",$veicolo->CostoNoleggio,$output);
     $output = str_replace("_CAUZIONE_",$veicolo->Cauzione,$output);
 
+    if(isset($_SESSION["noleggioError"])) {
+        $output = str_replace("<!--ERRORMESSAGEPLACEHOLDER-->",'<p class="messaggio errorMessage">'.$_SESSION["noleggioError"].'</p>',$output);
+        unset($_SESSION["noleggioError"]);
+    }
+    
     echo $output;
 } else {
     $logged->message = str_replace('<a href="home.php">','<a href="../PAGES/home.php">',$logged->message);

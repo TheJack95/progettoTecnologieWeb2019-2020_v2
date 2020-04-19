@@ -104,7 +104,7 @@
             } else {
                 return (Object) [
                     "status" => false,
-                    "message" => funzioniGenerali::setMessaggio('Devi effettuare l&apos;accesso prima di procedere con l&apos;operazione. Vai alla pagina di <a href="../PAGES/login.php">login</a>', true)
+                    "message" => funzioniGenerali::setMessaggio('Devi effettuare l&apos;accesso prima di procedere con l&apos;operazione. Vai alla pagina di <a href="../PAGES/login.php">login</a> oppure <a href="../PAGES/home.php">torna alla home</a>', true)
                 ];
             }
         }

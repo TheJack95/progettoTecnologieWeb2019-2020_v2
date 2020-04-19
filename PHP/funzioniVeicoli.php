@@ -21,16 +21,16 @@ class funzioniVeicoli {
 
 		if(isset($_POST["searchbar"]) && $_POST["searchbar"] != "" ) {
 			$searchbar = $_POST["searchbar"];
-			$where  .= "Marca LIKE '$searchbar'
-						OR Modello LIKE '$searchbar'
-						OR Cilindrata LIKE '$searchbar' ";
+			$where  .= "Marca LIKE '%$searchbar%'
+						OR Modello LIKE '%$searchbar%'
+						OR Cilindrata LIKE '%$searchbar%' ";
 
 			if($table == "AutoVendita") {
-				$where  .= "OR KM LIKE '$searchbar'
-							OR PrezzoVendita LIKE '$searchbar' ";
+				$where  .= "OR KM LIKE '%$searchbar%'
+							OR PrezzoVendita LIKE '%$searchbar%' ";
 			} else {
-				$where  .= "OR CostoNoleggio LIKE '$searchbar'
-							OR Cauzione LIKE '$searchbar' ";
+				$where  .= "OR CostoNoleggio LIKE '%$searchbar%'
+							OR Cauzione LIKE '%$searchbar%' ";
 			}
 		}
 		

@@ -35,23 +35,6 @@ input {
 	height: 2em;
 }
 
-input[type="submit"] {
-	border: 1px solid #241d13;
-	cursor: pointer;
-	font-size: 1em;
-	font-weight: bold;
-	width: 5em;
-	border-radius: 4px;
-}
-
-.button {
-	border: 1px solid #241d13;
-	cursor: pointer;
-	font-size: 1em;
-	font-weight: bold;
-	border-radius: 4px;
-}
-
 .dataInput {
 	width: 25% !important;
 }

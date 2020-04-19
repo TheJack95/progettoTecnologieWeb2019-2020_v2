@@ -38,6 +38,10 @@ foreach($rows as $row) {
 				.'</div>';
 }
 
+if(count($rows) == 0) {
+	$veicoli = '<p> Nessun veicolo disponibile. </p>'; 
+}
+
 $output = str_replace("<auto></auto>",$veicoli,$output);
 
 $filtri ='<div>'."\n"
@@ -51,6 +55,7 @@ $filtri ='<div>'."\n"
 		.'				<label for="dataFine">Al</label>'."\n"
 		.'				<input type="text" name="dataFine" tabindex="9" title="datafinenolo" class="dataInput" />'."\n"
 		.'				<input type="submit" name="applicaFiltri" value="Cerca" internal-button" tabindex="10" />'."\n"
+		.'				<input type="submit" name="ricaricapagina" value="Ricarica pagina" tabindex="11"/>'."\n"
 		.'  	</fieldset>'."\n"
 		.'	</form>'."\n"
 		.'</div>';

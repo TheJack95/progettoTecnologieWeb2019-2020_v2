@@ -50,6 +50,7 @@ $filtri ='<form action="acquistaVeicoli.php" method="post">'."\n"
 		.'		<label for="searchbar">Cerca veicoli</label>'."\n"
 		.'		<input type="text" id="searchbar" name="searchbar" tabindex="0" title="searchbar"/>'."\n"
 		.'		<input type="submit" name="applicafiltri" value="Cerca" tabindex="1"/>'."\n"
+		.'		<input type="submit" name="ricaricapagina" value="Ricarica pagina" tabindex="3"/>'."\n"
 		.'	</fieldset>'."\n"
 		.'</form>';
 
