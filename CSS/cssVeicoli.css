@@ -36,7 +36,7 @@ input {
 }
 
 .dataInput {
-	width: 25% !important;
+	width: 25%;
 }
 
 .titoloVeicolo {
@@ -68,14 +68,22 @@ input {
 	}
 
 	input[type="text"] {
-		width: 100%;
 		border: 1px solid;
 	}
+
 	input[type="submit"] {
-		margin: 0.5em;
+		margin: 0.5em 0;
 		border: 1px solid black;
 		font-size: 1em;
 	}
+
+	input[type="text"],
+	input[type="submit"],
+	.button,
+	.dataInput {
+		width: 100%;
+	}
+
 
 	.containerVeicolo {
 		text-align: center;
