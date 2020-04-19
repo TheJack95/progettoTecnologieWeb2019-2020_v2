@@ -157,13 +157,13 @@ class funzioniVeicoli {
 		if($queryResult === false) {
 			return (Object) [
 				"status" => false
-				,"response" => "Errore nella comunicazione con il database"
+				,"response" => "Errore nella comunicazione con il database."
 				,"query" => $query
 			];
 		} else {
 			return (Object) [
 				"status" => true
-				,"response" => "Noleggio auto avvenuto correttamente"
+				,"response" => "Noleggio auto avvenuto correttamente."
 			];
 		}
 	}

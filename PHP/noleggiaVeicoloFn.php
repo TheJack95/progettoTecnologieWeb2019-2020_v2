@@ -48,7 +48,7 @@ if($logged->status) {
     }
     
     if($response->status) {
-        $output = funzioniGenerali::setMessaggio($response->response, false);
+        $output = funzioniGenerali::setMessaggio($response->response.' <a href="../PAGES/home.php">Torna alla home</a>', false);
         echo $output;
     } else {
         $_SESSION["noleggioError"] = $response->response;
