@@ -30,10 +30,15 @@ try {
         && controlloInput::validPass($pw)
         && controlloInput::validPass($pwRi)
         && $pw === $pwRi ) {
-          if(isset($nascita))
-            $nascitaFormatted = controlloInput::FormatDate($nascita);
 
-          if(controlloInput::checkDateFormat($nascitaFormatted)) {
+          if(isset($nascita)) {
+            $nascitaFormatted = controlloInput::FormatDate($nascita);
+          } else {
+      			$messaggio = "Non &egrave; possibile procedere alla registrazione perch&egrave; non sono presenti tutti i campi obbligatori.<br />Verifica di averli inseriti e riprova.";
+            $_SESSION["errmessage"] = $messaggio;
+      		}
+
+          if(controlloInput::checkDateFormat($nascita)) {
 						if(controlloInput::checkBirthdate($nascitaFormatted)) {
 							$passHash = password_hash($pw, PASSWORD_DEFAULT);
 
@@ -62,11 +67,11 @@ try {
               $_SESSION["errmessage"] = $messaggio;
             }
 					} else {
-						$response->response = "Inserisci la data nel formato yyyy-mm-dd o dd-mm-yyyy, prestando attenzioni a usare i trattini";
+						$messaggio = "Inserisci la data nel formato yyyy-mm-dd o dd-mm-yyyy, prestando attenzioni a usare i trattini";
             $_SESSION["errmessage"] = $messaggio;
           }
   		} else {
-  			$messaggio = "Non &egrave; possibile procedere alla registrazione perch&egrave; non sono presenti tutti i cambi obbligatori.<br />Verifica di averli inseriti e riprova.";
+  			$messaggio = "Non &egrave; possibile procedere alla registrazione perch&egrave; non sono presenti tutti i campi obbligatori.<br />Verifica di averli inseriti e riprova.";
         $_SESSION["errmessage"] = $messaggio;
   		}
     } else {

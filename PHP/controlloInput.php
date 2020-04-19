@@ -31,8 +31,8 @@
 		public function FormatDate($data){
 			if (isset($data) && !empty($data)){
 				$dataFormata = date_create($data);
-				$dataFormata->format('Y-m-d');
-				return $dataFormata;
+				$dataStringa = $dataFormata->format('Y-m-d');
+				return $dataStringa;
 			} else {
 				return $data;
 			}
