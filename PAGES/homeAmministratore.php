@@ -13,7 +13,12 @@
         $output = str_replace("<menu></menu>",funzioniGenerali::menu(),$output);
         $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Area Amministratore &gt;&gt; HOME AMMINISTRATORE"),$output);
         $output = str_replace("<menuAmministratore></menuAmministratore>",funzioniAmministratore::menuAmm(),$output);
-        $output = str_replace("<nome></nome>",$_SESSION["utente"],$output);
+        $request = (new funzioniAmministratore())->selectNome();
+        $nome = "";
+        foreach($request as $response) {
+            $nome .= " ".$response->Nome;
+        }
+        $output = str_replace("<nome></nome>",$nome,$output);
         $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
 
         $output = str_replace('<a class="" href="homeAmministratore.php">AREA AMMINISTRATORE</a>','<strong>AREA AMMINISTRATORE</strong>',$output);

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
     <head>
-        <title>Nuovo Messaggio &vert; Area Amministratore</title>
+        <title>Nuova Risposta &vert; Area Amministratore</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="title" content="homepage area personale amministratore" />
 		<meta name="description" content="homepage dell'area amministratore del sito" />
@@ -22,10 +22,10 @@
         <div class="corpoAmministratore">
             <p>Scrivi qui il messaggio di risposta da inviare&period;</p>
             <messaggio></messaggio>
-            <form id="rispostaMessaggioAmministartore" class="formAmm" action="../PHP/salvaRispostaAmministratore.php" method="post">
+            <form id="rispostaMessaggioAmministartore" class="formAmm" action="../PHP/salvaRispostaAmministratore.php" method="post" enctype="multipart/form-data">
                 <fieldset>
-                    <legend>Risposta al messaggio</legend>
-                    <p>Tutti i campi marcati con l&apos;asterisco &ast; sono obbligatori&period;</p>
+                    <legend>Messaggio</legend>
+                    <p><strong>Nota bene</strong>&colon; tutti i campi marcati con l&apos;asterisco &ast; sono obbligatori&period;</p>
 
                     <label for="oggetto">Oggetto *</label>
                     <input type="text" name="oggetto" id="oggetto" class="" tabindex="12" />

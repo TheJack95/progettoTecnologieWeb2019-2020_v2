@@ -22,6 +22,24 @@
         public function __construct() {
             $this->connessioneAmministratore = new database_connection();
         }
+
+    #funzione per la lettura da database del nome dell'utente
+        public function selectNome() {
+            $email = $_SESSION["user"];
+            $query = 'SELECT Nome FROM Utenti WHERE Email=\''.$email.'\'';
+            $queryResult = $this->connessioneAmministratore->esegui($query);
+            $_POST = array();
+            if($queryResult == false) {
+                return [];
+            } else {
+                $result = array();
+			    while($row=mysqli_fetch_assoc($queryResult)) {
+                    $nome = (Object) ["Nome"=>$row['Nome']];
+                    array_push($result,$nome);
+                }
+                return $result;
+            }
+        }
     
     #funzione per la lettura da database delle informazioni dell'utente
         public function selectInfoPersonali() {

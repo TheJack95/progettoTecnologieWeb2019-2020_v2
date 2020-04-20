@@ -26,19 +26,25 @@
                         ."<p>Nome e cognome&colon; <strong>".$responseR->Nome." ".$responseR->Cognome."</strong></p>"."\n"
                         ."<p>Contatti&colon; <strong>".$responseR->NumeroTelefono." ".$responseR->Email."</strong></p>"."\n"
                         ."<p>Messsaggio&colon; <strong>".$responseR->Messaggio."</strong></p>"."\n";
-                        $requestI = (new funzioniAmministratore())->selectMessaggiInviati($responseR->IdMess);
-                        foreach($requestI as $responseI) {
-                            $messaggiAmm .= "<p>Risposta&colon;</p>"."\n".
-                                            "<p>Oggetto&colon; <strong>".$responseI->Oggetto."</strong></p>"."\n".
-                                            "<p>Messsaggio&colon; <strong>".$responseI->Messaggio."</strong></p>"."\n".
-                                            "</div>";
-                        }
-                        if(count($requestI) == 0) {
-                            $messaggiAmm .= "<form class=\"tastoModifiche\" action=\"../PAGES/rispostaMessaggioAmministratore.php\" method=\"post\">
-                                                <button type=\"submit\" name=\"rispondi\" value=\"$responseR->IdMess\">RISPONDI</button>
-                                            </form>
-                                            </div>";
-                        }
+            $requestI = (new funzioniAmministratore())->selectMessaggiInviati($responseR->IdMess);
+            foreach($requestI as $responseI) {
+                $messaggiAmm .= "<p>Risposta&colon;</p>"."\n".
+                                "<p>Oggetto&colon; <strong>".$responseI->Oggetto."</strong></p>"."\n".
+                                "<p>Messsaggio&colon; <strong>".$responseI->Messaggio."</strong></p>"."\n";
+            }
+            if(count($requestI) == 0) {
+                $messaggiAmm .= "<form class=\"tastoModifiche\" action=\"../PAGES/rispostaMessaggioAmministratore.php\" method=\"post\">
+                                    <button type=\"submit\" name=\"rispondi\" value=\"$responseR->IdMess\">RISPONDI</button>
+                                    <button type=\"submit\" name=\"elimina\" value=\"$responseR->IdMess\">ELIMINA MESSAGGIO</button>
+                                </form>"."\n".
+                            "</div>";
+            } else {
+                $messaggiAmm .= "<form class=\"tastoModifiche\" action=\"../PAGES/rispostaMessaggioAmministratore.php\" method=\"post\">
+                                        <button type=\"submit\" name=\"rispondi\" value=\"$responseR->IdMess\">RISPONDI</button>
+                                        <button type=\"submit\" name=\"elimina\" value=\"$responseR->IdMess\">ELIMINA CONVERSAZIONE</button>
+                                </form>"."\n"
+                            ."</div>";
+            }
         }
         if(count($requestR) == 0) {
             $messaggiAmm .= "<p class='msgAmm'>Al momento non ci sono messaggi ricevuti&period;</p>";
