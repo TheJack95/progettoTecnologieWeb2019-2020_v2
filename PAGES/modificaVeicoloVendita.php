@@ -6,6 +6,10 @@
         session_start();
     }
 
+    if(isset($_POST['modifica'])) {
+        $_SESSION["idAuto"] = $_POST['modifica'];
+    }
+
     if(isset($_SESSION["admin"]) && $_SESSION["admin"] == 1) {
         $output = file_get_contents("../HTML/modificaVeicoloVendita.html");
         

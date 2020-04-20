@@ -1,5 +1,6 @@
 <?php
     require_once "../PHP/connessioneDB.php";
+    require_once "../PHP/funzioniAmministratore.php";
 
     if(!isset($_SESSION)) {
         session_start();
@@ -7,6 +8,14 @@
 
     if(isset($_SESSION["admin"]) && $_SESSION["admin"] == 1) {
         $targa = $_POST["elimina"];
+        $table = "noleggio";
+
+        $request = (new funzioniAmministratore())->selectImmagine($targa, $table);
+        $path = "";
+        foreach($request as $response) {
+            $path .= $response->Immagine;
+        }
+        unlink($path);
 
         $connessioneDatabase = new database_connection;
         $delete = "DELETE FROM AutoNoleggio WHERE Targa='$targa'";

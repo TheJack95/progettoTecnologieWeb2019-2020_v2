@@ -25,13 +25,18 @@
             $veicoliV .= "<ul>"
                         ."  <li>Marca&colon; <strong>".$response->Marca."</strong></li>"
                         ."  <li>Modello&colon; <strong>".$response->Modello."</strong></li>"
-                        ."  <li>KM&colon; <strong>".$response->KM."</strong></li>"
+                        ."  <li>Chilometri&colon; <strong>".$response->KM."</strong></li>"
                         ."  <li>Cilindrata&colon; <strong>".$response->Cilindrata."</strong></li>"
                         ."  <li>Prezzo&colon; <strong>".$response->PrezzoVendita."</strong></li>"
                         ."  <li>Immagine&colon; <strong>".$response->Immagine."</strong></li>"
                         ."  <li>DescrImmagine&colon; <strong>".$response->DescrImmagine."</strong></li>"
-                        ."  <li><a class=\"tastoModifiche\" href=\"../PAGES/modificaVeicoloNoleggio.php\">MODIFICA</a></li>"
-                        ."</ul>";
+                        ."</ul>"
+                        ."  <form class=\"tastoModifiche\" action=\"../PAGES/modificaVeicoloVendita.php\" method=\"post\">
+                                <button type=\"submit\" name=\"modifica\" value=\"$response->IdAuto\">MODIFICA</button>
+                            </form>"
+                        ."  <form class=\"tastoModifiche\" action=\"../PHP/eliminaVeicoloVendita.php\" method=\"post\">
+                                <button type=\"submit\" name=\"elimina\" value=\"$response->IdAuto\">ELIMINA</button>
+                            </form>";
         }
         if(count($request) == 0) {
             $veicoliV .= "<p class=\"msgAmm\">Al momento non sono disponibili le informazioni richieste&comma; riprova pi&ugrave; tardi&period;</p>";

@@ -138,7 +138,7 @@
 
     #funzione per la lettura da database dei veicoli in vendita
         public function selectVeicoliVendita() {
-            $query = 'SELECT Marca, Modello, KM, Cilindrata, PrezzoVendita, Immagine, DescrImmagine FROM AutoVendita GROUP BY Modello ORDER BY Marca ASC';
+            $query = 'SELECT IdAuto, Marca, Modello, KM, Cilindrata, PrezzoVendita, Immagine, DescrImmagine FROM AutoVendita GROUP BY Modello ORDER BY Marca ASC';
             $queryResult = $this->connessioneAmministratore->esegui($query);
             $_POST = array();
             if($queryResult == false) {
@@ -147,6 +147,7 @@
                 $result = array();
                 while($row=mysqli_fetch_assoc($queryResult)) {
                     $veicoloV = (Object) [
+                            "IdAuto"=>$row['IdAuto'],
                             "Marca"=>$row['Marca'],
                             "Modello"=>$row['Modello'],
                             "KM"=>$row['KM'],
@@ -161,36 +162,25 @@
             }
         }
 
-    #funzione per l'inserimento nel database di un nuovo veicolo a noleggio
-        public function insertVeicoloNoleggio() {
-            $targa = $_POST['targa'];
-            $marca = $_POST['marca'];
-            $modello = $_POST['modello'];
-            $cilindrata = $_POST['cilindrata'];
-            $costoNoleggio = $_POST['costoNoleggio'];
-            $cauzione = $_POST['cauzione'];
-            
-            $insertVeicoloNoleggio = "INSERT INTO AutoNoleggio() VALUES ('$targa','$marca','$modello','$cilindrata','$costoNoleggio','$cauzione')";
-            if($this->connection->query($insertVeicoloNoleggio) === TRUE){
-                return true;
-            } else{
-                return false;
+    #funzione per la lettura da database del path dell'immagine da rimuovere
+        public function selectImmagine($id, $table) {
+            if($table == "noleggio") {
+                $select = "SELECT Immagine FROM AutoNoleggio WHERE Targa='$id'";
             }
-        }
-
-    #funzione per l'inserimento nel database di un nuovo veicolo in vendita
-        public function insertVeicoloVendita() {
-            $marca = $_POST['marca'];
-            $modello = $_POST['modello'];
-            $km = $_POST['km'];
-            $cilindrata = $_POST['cilindrata'];
-            $prezzoVendita = $_POST['prezzoVendita'];
-            
-            $insertVeicoloVendita = "INSERT INTO AutoVendita() VALUES ('','$marca','$modello','$km','$cilindrata','$prezzoVendita')";
-            if($this->connection->query($insertVeicoloVendita) === TRUE){
-                return true;
-            } else{
-                return false;
+            if($table == "vendita") {
+                $select = "SELECT Immagine FROM AutoVendita WHERE IdAuto='$id'";
+            }
+            $queryResult = $this->connessioneAmministratore->esegui($select);
+            $_POST = array();
+            if($queryResult == false) {
+                return [];
+            } else {
+                $result = array();
+			    while($row=mysqli_fetch_assoc($queryResult)) {
+                    $immagine = (Object) ["Immagine"=>$row['Immagine']];
+                    array_push($result,$immagine);
+                }
+                return $result;
             }
         }
 

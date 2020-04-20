@@ -15,8 +15,8 @@
         $immagine = "";
         $descrizione = $_POST["descrizione"];
         if(is_uploaded_file($_FILES["immagineAuto"]["tmp_name"])) {
-			$destination = "../Images/". basename($_FILES["immagineAuto"]["name"]);
-			if(move_uploaded_file($_FILES['immagineAuto']["tmp_name"], $destination)) {
+			$path = "../Images/". basename($_FILES["immagineAuto"]["name"]);
+			if(move_uploaded_file($_FILES['immagineAuto']["tmp_name"], $path)) {
 				$immagine = "../Images/". basename($_FILES["immagineAuto"]["name"]);
 			}
 		}
