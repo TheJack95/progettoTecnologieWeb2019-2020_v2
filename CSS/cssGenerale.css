@@ -99,7 +99,7 @@ body {
 
 .fill-area-content {
     /* Needed for when the area gets squished too far and there is content that can't be displayed */
-    overflow: auto; 
+    overflow: auto;
 }
 
 #menu {
@@ -134,6 +134,14 @@ body {
     clear: left;
 }
 
+.valid{
+	border-color: #4CAF50;
+}
+
+.invalid{
+	border-color: #900;
+	background-color: #FDD;
+}
 
 .button {
 	border: 1px solid #241d13;

@@ -8,7 +8,7 @@ try {
   if(!isset($_SESSION))
       session_start();
 
-  $mail = $_POST["email"];
+  $mail = $_POST["mail"];
   $nome = $_POST["nome"];
   $cognome = $_POST["cognome"];
   $nascita = $_POST["nascita"];
@@ -51,7 +51,7 @@ try {
 										,Indirizzo
 										,DataNascita
 										,FlAdmin
-									) VALUES ('$mail','$passHash','$nome','$cognome','$cell','$indirizzo','$nascita','0')";
+									) VALUES ('$mail','$passHash','$nome','$cognome','$cel','$indirizzo','$nascita','0')";
 
               $databaseConnection = new database_connection();
 

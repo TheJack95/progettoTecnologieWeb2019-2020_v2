@@ -21,7 +21,7 @@
 		<breadcrumb></breadcrumb>
 
     <div class="main">
-            <div id="loginBox" class="outerBox login" >
+            <div class="formBox" >
                 <h1 class="titolo">Accedi al tuo account</h1>
                 <form id="loginForm" action="../PHP/accessoLogin.php" method="post">
                     <fieldset>
@@ -30,12 +30,12 @@
                         <loginError></loginError>
 
                         <label for="loginEmail">Email</label>
-                        <input type="text" id="loginEmail" name="mail" class="formText" tabindex="8" />
+                        <input type="text" id="mail" name="mail" class="mail" tabindex="8" />
 
                         <label for="inputPsw">Password</label>
-                        <input type="password" id="inputPsw" name="password" class="formText required" tabindex="9" />
+                        <input type="password" id="inputPsw" name="password" class="formText" tabindex="9" />
 
-                        <input type="submit" id="loginSubmit" value="Login"/>
+                        <input type="submit" class="bottoni" value="Login"/>
                     </fieldset>
 
                 </form>

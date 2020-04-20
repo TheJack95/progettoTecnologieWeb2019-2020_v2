@@ -6,13 +6,21 @@
   width: 6em;
   height: 2.5em;
   font-weight: bolder;
-  background-color: #F1AB00;
-  color: white;
+  background-color: #eaeaea;
+  color: #F1AB00;
   border: none;
   border-radius: 5%;
   box-shadow: 4% 5% gray;
   display: block;
   margin-top: 1.5em;
+  -webkit-text-fill-color: #F1AB00;
+  -webkit-text-stroke-width: 0.03em;
+  -webkit-text-stroke-color: black;
+}
+
+label {
+  display: block;
+  margin: 0.5em 0.4em 0.5em 1em;
 }
 
 .listaMenu {
