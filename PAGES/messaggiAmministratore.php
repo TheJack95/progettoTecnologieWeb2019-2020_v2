@@ -35,13 +35,17 @@
             if(count($requestI) == 0) {
                 $messaggiAmm .= "<form class=\"tastoModifiche\" action=\"../PAGES/rispostaMessaggioAmministratore.php\" method=\"post\">
                                     <button type=\"submit\" name=\"rispondi\" value=\"$responseR->IdMess\">RISPONDI</button>
-                                    <button type=\"submit\" name=\"elimina\" value=\"$responseR->IdMess\">ELIMINA MESSAGGIO</button>
+                                </form>"."\n".
+                                "<form class=\"tastoModifiche\" action=\"../PHP/eliminaMessaggiAmministratore.php\" method=\"post\">
+                                    <button type=\"submit\" name=\"eliminaMessaggio\" value=\"$responseR->IdMess\">ELIMINA MESSAGGIO</button>
                                 </form>"."\n".
                             "</div>";
             } else {
                 $messaggiAmm .= "<form class=\"tastoModifiche\" action=\"../PAGES/rispostaMessaggioAmministratore.php\" method=\"post\">
-                                        <button type=\"submit\" name=\"rispondi\" value=\"$responseR->IdMess\">RISPONDI</button>
-                                        <button type=\"submit\" name=\"elimina\" value=\"$responseR->IdMess\">ELIMINA CONVERSAZIONE</button>
+                                    <button type=\"submit\" name=\"rispondi\" value=\"$responseR->IdMess\">RISPONDI</button>
+                                </form>"."\n".
+                                "<form class=\"tastoModifiche\" action=\"../PHP/eliminaMessaggiAmministratore.php\" method=\"post\">
+                                    <button type=\"submit\" name=\"eliminaConversazione\" value=\"$responseR->IdMess\">ELIMINA CONVERSAZIONE</button>
                                 </form>"."\n"
                             ."</div>";
             }
