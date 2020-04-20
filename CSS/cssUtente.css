@@ -51,7 +51,32 @@ label {
   background-color: #eaeaea;
 }
 
+.dati {
+  border: 1px solid#616161;
+  -webkit-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
+  -moz-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
+  box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
+  padding: 1.2em;
+  margin: 2.5em;
+  overflow: auto;
+  width: inherit;
+  background-color: #eaeaea;
+}
+
+.messaggi {
+  border: 1px solid#616161;
+  -webkit-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
+  -moz-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
+  box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
+  padding: 1.2em;
+  margin: 2.5em;
+  overflow: auto;
+  width: inherit;
+  background-color: #eaeaea;
+}
+
 .azioniRapide{
+  display: block;
   border: 1px solid#616161;
   -webkit-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
   -moz-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);

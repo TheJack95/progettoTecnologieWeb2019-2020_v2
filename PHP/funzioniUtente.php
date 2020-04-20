@@ -18,7 +18,7 @@
           return null;
         } else{
           $row=mysqli_fetch_assoc($queryResult);
-          $contentItems ="<div id='content'>"."\n"
+          $contentItems ="<div class='dati'>"."\n"
                         ."	<h2>I tuoi dati personali</h2>"."\n"
                         ."	<div>"."\n"
                         ."		<div>"."\n"
