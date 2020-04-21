@@ -35,7 +35,7 @@
                             <p class = \"prezzo\"> PREZZO OCCASIONE: " .$prezzoOccasione. "&#8364;</p>
                             <form class=\"preventivoForm\" action=\"../PHP/acquistaVeicoloFn.php\" method=\"post\">
 							<fieldset>
-                				<button type=\"submit\" name=\"richiedipreventivo\" value=\"".$row['IdAuto']."\" class=\"button\" >Richiedi preventivo</button>
+                				<button type=\"submit\" name=\"richiedipreventivo\" value=\"".$row['IdAuto']."\" class=\"button\" id=\"preventivo\" >Richiedi preventivo</button>
 							</fieldset>
 						</form>
                         </div> 

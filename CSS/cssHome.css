@@ -16,6 +16,7 @@
 #immagineConcessionaria{
     float: right;
     margin-left: 1%;
+    width:50%;
 }
 
 .containerText{
@@ -32,7 +33,7 @@
 }
 
 #preventivo{
-    margin-top: 12%;
+    margin-top: 2%;
     display: inline-block;
 }
 
@@ -58,9 +59,6 @@
 
 }
 
-#linkPreventivo{
-    margin-top: 4%;
-}
 
 #contentOccasione{
     margin-top: 10%;
@@ -72,4 +70,71 @@
     margin: 2%;
     width: 50%;
     margin-right: 4%;
+}
+
+@media (max-width:1360px)
+{
+    body{
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width:1080px){
+    #immagineConcessionaria{
+        float: none;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .containerText{
+        margin-left: 0;
+    }
+
+    .text{
+        margin-left: 1%;
+    }
+
+    .button{
+        width: auto;
+    }
+
+    
+}
+
+@media (max-width:1000px){
+    #preventivo{
+        width: auto;
+    }
+}
+
+@media (max-width:730px){
+    #occasioneGiorno{
+        width:90%;
+    }
+}
+
+@media (max-width:580px){
+    .titoloOccasione{
+        font-size: 1.2em;
+    }
+
+    #auto{
+        float: none;
+    }
+
+    #occasioneGiorno{
+        text-align: center;
+    }
+
+    #contentOccasione{
+        text-align: center;
+        margin-top: 2%;
+    }
+}
+
+
+@media (max-width:340px){
+    .titolo{
+        font-size: 1.2em;
+    }
 }
