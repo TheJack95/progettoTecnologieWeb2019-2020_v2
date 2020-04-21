@@ -16,13 +16,13 @@
             unset($_SESSION["destinatario"]);
             unset( $_POST["oggetto"]);
             unset($_POST["testo"]);
-            $messaggio = "<p class='msgAmm'>Risposta al messaggio inviata correttamente&period;</p>";
+            $messaggio = "<p class='msgAmm msgSuccAmm'>Risposta al messaggio inviata correttamente</p>";
             $_SESSION["nuovoMessaggio"] = $messaggio;
             header("location: ../PAGES/messaggiAmministratore.php");
         } else {
             unset( $_POST["oggetto"]);
             unset($_POST["testo"]);
-            $messaggio = "<p class='msgErrAmm'>ATTENZIONE&excl; Non &egrave; possibile inviare la risposta al messaggio per un problema del database&period; Riprova&period;</p>";
+            $messaggio = "<p class='msgAmm msgErrAmm'>Non &egrave; possibile inviare la risposta al messaggio per un problema del database&period; Riprova&period;</p>";
             $_SESSION["nuovoMessaggio"] = $messaggio;
             header("location: ../PAGES/rispostaMessaggioAmministratore.php");
         }

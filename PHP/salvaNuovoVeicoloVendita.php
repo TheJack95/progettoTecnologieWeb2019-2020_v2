@@ -30,11 +30,11 @@
             unset($_POST["prezzo"]);
             unset($_FILES["immagineAuto"]["tmp_name"]);
             unset($_POST["descrizione"]);
-            $messaggio = "<p class='msgAmm'>Nuovo veicolo in vendita inserito correttamente&period; Potresti non vedere subito il veicolo appena inserito&comma; eventualmente ricarica la pagina&period;</p>";
+            $messaggio = "<p class='msgAmm msgSuccAmm'>Nuovo veicolo in vendita inserito correttamente&period; Potresti non vedere subito il veicolo appena inserito&comma; eventualmente ricarica la pagina&period;</p>";
             $_SESSION["nuovoMessaggio"] = $messaggio;
             header("location: ../PAGES/VeicoliVenditaAmministratore.php");
         } else {
-            $messaggio = "<p class='msgErrAmm'>ATTENZIONE&excl; Non &egrave; possibile inserire il nuovo veicolo in vendita per un problema del database&period; Riprova&period;</p>";
+            $messaggio = "<p class='msgAmm msgErrAmm'>Non &egrave; possibile inserire il nuovo veicolo in vendita per un problema del database&period; Riprova&period;</p>";
             $_SESSION["nuovoMessaggio"] = $messaggio;
             header("location: ../PAGES/nuovoVeicoloVendita.php");
         }
