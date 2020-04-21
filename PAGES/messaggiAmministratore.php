@@ -32,18 +32,26 @@
             }
             if(count($requestI) == 0) {
                 $messaggiAmm .= "<form class=\"formRispAmm\" action=\"../PAGES/rispostaMessaggioAmministratore.php\" method=\"post\">
-                                    <button type=\"submit\" name=\"rispondi\" class=\"noButt linkMod\" value=\"$responseR->IdMess\">RISPONDI</button>
+                                    <fieldset>
+                                        <button type=\"submit\" name=\"rispondi\" class=\"noButt linkMod\" value=\"$responseR->IdMess\">RISPONDI</button>
+                                    </fieldset>
                                 </form>"."\n".
                                 "<form class=\"formElimAmm\" action=\"../PHP/eliminaMessaggiAmministratore.php\" method=\"post\">
-                                    <button type=\"submit\" name=\"eliminaMessaggio\" class=\"noButt linkMod msgErrAmm\" value=\"$responseR->IdMess\">ELIMINA MESSAGGIO</button>
+                                    <fieldset>
+                                        <button type=\"submit\" name=\"eliminaMessaggio\" class=\"noButt linkMod msgErrAmm\" value=\"$responseR->IdMess\">ELIMINA MESSAGGIO</button>
+                                    </fieldset>
                                 </form>"."\n".
                             "</div>";
             } else {
                 $messaggiAmm .= "<form class=\"formRispAmm\" action=\"../PAGES/rispostaMessaggioAmministratore.php\" method=\"post\">\n
-                                    <button type=\"submit\" name=\"rispondi\" class=\"noButt linkMod\" value=\"$responseR->IdMess\">RISPONDI</button>\n
+                                    <fieldset>
+                                        <button type=\"submit\" name=\"rispondi\" class=\"noButt linkMod\" value=\"$responseR->IdMess\">RISPONDI</button>\n
+                                    </fieldset>
                                 </form>"."\n".
                                 "<form class=\"formElimAmm\" action=\"../PHP/eliminaMessaggiAmministratore.php\" method=\"post\">\n
-                                    <button type=\"submit\" name=\"eliminaConversazione\" class=\"noButt linkMod msgErrAmm\" value=\"$responseR->IdMess\">ELIMINA CONVERSAZIONE</button>\n
+                                    <fieldset>
+                                        <button type=\"submit\" name=\"eliminaConversazione\" class=\"noButt linkMod msgErrAmm\" value=\"$responseR->IdMess\">ELIMINA CONVERSAZIONE</button>\n
+                                    </fieldset>
                                 </form>"."\n"
                             ."</div>";
             }

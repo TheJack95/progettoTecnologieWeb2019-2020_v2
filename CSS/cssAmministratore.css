@@ -56,12 +56,24 @@
     display: inline-block;
 }
 
+.formRispAmm fieldset{
+    border: none;
+    padding: 0%;
+    margin: 0%
+}
+
 .formElimAmm {
     float: right;
     width: 50%;
     margin: 0;
     margin-top: 1%;
     padding: 0;
+}
+
+.formElimAmm fieldset{
+    border: none;
+    padding: 0%;
+    margin: 0%;
 }
 
 .h1Amm {
@@ -86,7 +98,7 @@
 
 .divAmm {
     padding: 1%;
-    margin: 1%;
+    margin: 2.5%;
     border-top: 0.5px solid grey;
     border-bottom: 0.5px solid grey;
 }
