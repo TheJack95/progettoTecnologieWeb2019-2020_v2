@@ -33,7 +33,7 @@ foreach($rows as $row) {
 				.'				<p><strong>Cauzione:</strong>'.$row->Cauzione.' &#8364;</p>'
 				.'			</li>'
 				.'		</ul>'
-				.'		<a href="noleggioVeicolo.php?targaAuto='.$row->Targa.'">Noleggia auto</a>'."\n"
+				.'		<a href="noleggioVeicolo.php?targaAuto='.$row->Targa.'" class="linkMod">Noleggia auto</a>'."\n"
 				.'	</div>'."\n"
 				.'</div>';
 }
@@ -48,12 +48,12 @@ $filtri ='<div>'."\n"
 		.'	<form action="noleggioVeicoli.php" method="post">'."\n"
 		.'  	<fieldset>'."\n"
 		.'				<label for="searchbar">Cerca veicoli</label>'."\n"
-		.'				<input type="text" name="searchbar" tabindex="7" title="searchbarinput" />'."\n"
+		.'				<input type="text" name="searchbar" tabindex="7" id="searchbar" />'."\n"
 		.'				<p>Filtra per data disponibilit&agrave; (formato gg-mm-aaaa)</p>'."\n"
 		.'				<label for="datainizio">Dal</label>'."\n"
-		.'				<input type="text" name="datainizio" tabindex="8" title="datainizionolo" class="dataInput" />'."\n"
+		.'				<input type="text" name="datainizio" tabindex="8" id="datainizio" class="dataInput" />'."\n"
 		.'				<label for="datafine">Al</label>'."\n"
-		.'				<input type="text" name="datafine" tabindex="9" title="datafinenolo" class="dataInput" />'."\n"
+		.'				<input type="text" name="datafine" tabindex="9" id="datafine" class="dataInput" />'."\n"
 		.'				<input type="submit" name="applicaFiltri" value="Cerca" tabindex="10" />'."\n"
 		.'				<input type="submit" name="ricaricapagina" value="Ricarica pagina" tabindex="11" />'."\n"
 		.'  	</fieldset>'."\n"

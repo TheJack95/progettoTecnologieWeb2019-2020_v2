@@ -85,26 +85,6 @@ class funzioniVeicoli {
 	public function getVeicoliNoleggio() {
 
 		$query = 'SELECT Targa, Marca, Modello, Cilindrata, CostoNoleggio, Cauzione, Immagine, DescrImmagine FROM AutoNoleggio WHERE 1';
-
-		if(isset($_POST["dataInizio"]) && isset($_POST["dataFine"]) && $_POST["dataInizio"] != "" && $_POST["dataFine"] != "") {
-
-			$dataInizio = $_POST["dataInizio"];
-			$dataFine = $_POST["dataFine"];
-
-			$query = "SELECT AutoNoleggio.Targa, Marca, Modello, Cilindrata, CostoNoleggio, Cauzione, Immagine, DescrImmagine FROM PrenotazioneNoleggio t1
-					INNER JOIN
-					(
-						SELECT PrenotazioneNoleggio.Targa, max(InizioNoleggio) maxData
-						FROM PrenotazioneNoleggio
-						GROUP BY PrenotazioneNoleggio.Targa
-					) AS tmp
-					ON t1.Targa = tmp.Targa
-					AND t1.InizioNoleggio = tmp.maxData
-					RIGHT JOIN AutoNoleggio on AutoNoleggio.Targa = t1.Targa
-					WHERE InizioNoleggio NOT BETWEEN DATE('$dataInizio') AND DATE('$dataFine')
-						AND FineNoleggio  NOT BETWEEN DATE('$dataInizio') AND DATE('$dataFine')
-						AND DATE('$dataInizio') NOT BETWEEN InizioNoleggio AND FineNoleggio";
-		}
 		
 		$where = $this->makeWhereClause("AutoNoleggio");
 
@@ -137,12 +117,27 @@ class funzioniVeicoli {
 	}
 
 	/**
-	* Funzione che controlla se un'auto &egrave; disponibile al momento dell'acquisto
-	* @param int $idAuto 
+	* Funzione che controlla se un'auto sia disponibile al momento del noleggio
+	* @param $targa 
 	* @return bool
 	*/
-	public function isAutoDisponobileDate(int $idAuto) {
+	public function isAutoDisponobileDate($targa, $dataInizio,  $dataFine) {
 
+		$dataInizioString = $dataInizio->format('Y-m-d');
+		$dataFineString = $dataFine->format('Y-m-d');
+		$query = "SELECT Targa
+				FROM PrenotazioneNoleggio
+				WHERE (InizioNoleggio BETWEEN DATE('$dataInizioString') AND DATE('$dataFineString')
+					OR FineNoleggio  BETWEEN DATE('$dataInizioString') AND DATE('$dataFineString')
+					OR DATE('$dataInizioString') BETWEEN InizioNoleggio AND FineNoleggio)
+					AND Targa = '$targa'";
+		$queryResult = $this->connVeicoli->esegui($query, false);
+
+		if($queryResult === false) {
+			return false;
+		} else {
+			return $queryResult->num_rows == 0;
+		}
 	}
 
 	/**

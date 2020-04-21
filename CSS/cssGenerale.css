@@ -153,12 +153,16 @@ body {
 
 
 input[type="submit"] {
-	border: 1px solid #241d13;
 	cursor: pointer;
 	font-size: 1em;
 	font-weight: bold;
 	width: auto;
-	border-radius: 4px;
+    height: 2.5em;
+    background-color: #F1AB00;
+    color: white;
+    border: none;
+    border-radius: 5%;
+    box-shadow: 4% 5% gray;
 }
 
 @media (max-width:1000px) {

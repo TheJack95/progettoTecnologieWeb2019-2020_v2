@@ -69,14 +69,6 @@ textarea{
 }
 
 #inviaMessaggio{
-    width: 6em;
-    height: 2.5em;
-    font-weight: bolder;
-    background-color: #F1AB00;
-    color: white;
-    border: none;
-    border-radius: 5%;
-    box-shadow: 4% 5% gray;
     display: block;
     margin-top: 1.5em;
 }
