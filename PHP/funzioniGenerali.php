@@ -59,7 +59,7 @@
          * Funzione per scrivere il footer
          */
         public static function footer() {
-            $footer_form =  '<div class="flexbox-item" id="footer">'."\n".
+            $footer_form =  '<div class="flexbox-footer" id="footer">'."\n".
                             '   <p>CONCESSIONARIA GREG - Tutti i diritti riservati - A cura di <span xml:lang="en" lang="en">Tecweb Group</span></p>'."\n".
                             '</div>';
             return $footer_form;

@@ -27,6 +27,7 @@ body {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 2.5em;
 	float: left;
+	color: #F1AB00;
 	font-style: italic;
 	text-align: center;
 }
@@ -97,6 +98,11 @@ body {
 
 .flexbox-item {
     padding: 8px;
+		background-color: black;
+}
+
+.flexbox-footer {
+	 padding: 8px;
 }
 
 .flexbox-item-grow {
