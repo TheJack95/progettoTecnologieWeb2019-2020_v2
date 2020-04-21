@@ -22,15 +22,13 @@
         $requestR = (new funzioniAmministratore())->selectMessaggiRicevuti();
         $messaggiAmm = "";
         foreach($requestR as $responseR) {
-            $messaggiAmm .= "<div class=''>"."\n"
-                        ."<p>Nome e cognome&colon; <strong>".$responseR->Nome." ".$responseR->Cognome."</strong></p>"."\n"
-                        ."<p>Contatti&colon; <strong>".$responseR->NumeroTelefono." ".$responseR->Email."</strong></p>"."\n"
-                        ."<p>Messsaggio&colon; <strong>".$responseR->Messaggio."</strong></p>"."\n";
+            $messaggiAmm .= "<div class='divAmm'>"."\n".
+                            "<p class='pAmm'><strong>Mittente</strong>&colon; ".$responseR->Nome." ".$responseR->Cognome." &lsqb;".$responseR->Email."&rsqb; &lsqb;".$responseR->NumeroTelefono."&rsqb;</p>"."\n".
+                            "<p class='pAmm'><strong>Messaggio</strong>&colon; ".$responseR->Messaggio."</p>"."\n";
             $requestI = (new funzioniAmministratore())->selectMessaggiInviati($responseR->IdMess);
             foreach($requestI as $responseI) {
-                $messaggiAmm .= "<p>Risposta&colon;</p>"."\n".
-                                "<p>Oggetto&colon; <strong>".$responseI->Oggetto."</strong></p>"."\n".
-                                "<p>Messsaggio&colon; <strong>".$responseI->Messaggio."</strong></p>"."\n";
+                $messaggiAmm .= "<p class='pAmm'><strong>Oggetto</strong>&colon; ".$responseI->Oggetto."</p>"."\n".
+                                "<p class='pAmm'><strong>Risposta</strong>&colon; ".$responseI->Messaggio."</p>"."\n";
             }
             if(count($requestI) == 0) {
                 $messaggiAmm .= "<form class=\"formRispAmm\" action=\"../PAGES/rispostaMessaggioAmministratore.php\" method=\"post\">
@@ -41,17 +39,17 @@
                                 </form>"."\n".
                             "</div>";
             } else {
-                $messaggiAmm .= "<form class=\"formRispAmm\" action=\"../PAGES/rispostaMessaggioAmministratore.php\" method=\"post\">
-                                    <button type=\"submit\" name=\"rispondi\" class=\"noButt linkMod\" value=\"$responseR->IdMess\">RISPONDI</button>
+                $messaggiAmm .= "<form class=\"formRispAmm\" action=\"../PAGES/rispostaMessaggioAmministratore.php\" method=\"post\">\n
+                                    <button type=\"submit\" name=\"rispondi\" class=\"noButt linkMod\" value=\"$responseR->IdMess\">RISPONDI</button>\n
                                 </form>"."\n".
-                                "<form class=\"formElimAmm\" action=\"../PHP/eliminaMessaggiAmministratore.php\" method=\"post\">
-                                    <button type=\"submit\" name=\"eliminaConversazione\" class=\"noButt linkMod msgErrAmm\" value=\"$responseR->IdMess\">ELIMINA CONVERSAZIONE</button>
+                                "<form class=\"formElimAmm\" action=\"../PHP/eliminaMessaggiAmministratore.php\" method=\"post\">\n
+                                    <button type=\"submit\" name=\"eliminaConversazione\" class=\"noButt linkMod msgErrAmm\" value=\"$responseR->IdMess\">ELIMINA CONVERSAZIONE</button>\n
                                 </form>"."\n"
                             ."</div>";
             }
         }
         if(count($requestR) == 0) {
-            $messaggiAmm .= "<p class='msgAmm'>Al momento non ci sono messaggi ricevuti&period;</p>";
+            $messaggiAmm .= "<p class='msgAmm'>Al momento non ci sono messaggi ricevuti</p>";
         }
         $output = str_replace("<messaggiAmministratore></messaggiAmministratore>",$messaggiAmm,$output);
         $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);

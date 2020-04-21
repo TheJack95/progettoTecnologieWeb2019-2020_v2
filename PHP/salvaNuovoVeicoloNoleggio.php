@@ -32,11 +32,11 @@
             unset($_POST["cauzione"]);
             unset($_FILES["immagine"]["tmp_name"]);
             unset($_POST["descrizione"]);
-            $messaggio = "<p class='msgAmm'>Nuovo veicolo a noleggio inserito correttamente&period; Potresti non vedere subito il veicolo appena inserito&comma; eventualmente ricarica la pagina&period;</p>";
+            $messaggio = "<p class='msgAmm msgSuccAmm'>Nuovo veicolo a noleggio inserito correttamente&period; Potresti non vedere subito il veicolo appena inserito&comma; eventualmente ricarica la pagina&period;</p>";
             $_SESSION["nuovoMessaggio"] = $messaggio;
             header("location: ../PAGES/VeicoliNoleggioAmministratore.php");
         } else {
-            $messaggio = "<p class='msgErrAmm'>ATTENZIONE&excl; Non &egrave; possibile inserire il nuovo veicolo a noleggio per un problema del database&period; Riprova&period;</p>";
+            $messaggio = "<p class='msgAmm msgErrAmm'>Non &egrave; possibile inserire il nuovo veicolo a noleggio per un problema del database&period; Riprova&period;</p>";
             $_SESSION["nuovoMessaggio"] = $messaggio;
             header("location: ../PAGES/nuovoVeicoloNoleggio.php");
         }

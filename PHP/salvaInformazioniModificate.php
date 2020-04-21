@@ -19,11 +19,11 @@
         $connessioneDatabase = new database_connection;
         $update = "UPDATE Utenti SET Nome='$nome', Cognome='$cognome', Telefono='$telefono', Indirizzo='$indirizzo', DataNascita='$nascita' WHERE Email='$email'";
         if ($connessioneDatabase->esegui($update) == TRUE) {
-            $messaggio = "<p class='msgAmm'>Le informazioni personali sono state modificate correttamente&period;</p>";
+            $messaggio = "<p class='msgAmm msgSuccAmm'>Le informazioni personali sono state modificate correttamente</p>";
             $_SESSION["nuovoMessaggio"] = $messaggio;
             header("location: ../PAGES/infoAmministratore.php");
         } else {
-            $messaggio = "<p class='msgErrAmm'>ATTENZIONE&excl; Non &egrave; possibile modificare le informazioni personali per un problema del database&period; Riprova pi&ugrave; tardi&period;</p>";
+            $messaggio = "<p class='msgAmm msgErrAmm'>Non &egrave; possibile modificare le informazioni personali per un problema del database&period; Riprova pi&ugrave; tardi</p>";
             $_SESSION["nuovoMessaggio"] = $messaggio;
             header("location: ../PAGES/modificaInfoAmministratore.php");
         }

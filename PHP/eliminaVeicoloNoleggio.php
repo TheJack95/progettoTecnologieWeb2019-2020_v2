@@ -20,11 +20,11 @@
         $connessioneDatabase = new database_connection;
         $delete = "DELETE FROM AutoNoleggio WHERE Targa='$targa'";
         if ($connessioneDatabase->esegui($delete) == TRUE) {
-            $messaggio = "<p class='msgAmm'>Veicolo a noleggio eliminato correttamente&period; Potresti vedere ancora il veicolo appena eliminato nella tua lista&comma; eventualmente ricarica la pagina&period;</p>";
+            $messaggio = "<p class='msgAmm msgSuccAmm'>Veicolo a noleggio eliminato correttamente&period; Potresti vedere ancora il veicolo appena eliminato nella tua lista&comma; eventualmente ricarica la pagina&period;</p>";
             $_SESSION["nuovoMessaggio"] = $messaggio;
             header("location: ../PAGES/VeicoliNoleggioAmministratore.php");
         } else {
-            $messaggio = "<p class='msgErrAmm'>ATTENZIONE&excl; Non &egrave; possibile eliminare il veicolo a noleggio per un problema del database&period; Riprova pi&ugrave; tardi&period;</p>";
+            $messaggio = "<p class='msgAmm msgErrAmm'>Non &egrave; possibile eliminare il veicolo a noleggio per un problema del database&period; Riprova pi&ugrave; tardi&period;</p>";
             $_SESSION["nuovoMessaggio"] = $messaggio;
             header("location: ../PAGES/VeicoliNoleggioAmministratore.php");
         }
