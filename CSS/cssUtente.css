@@ -74,6 +74,11 @@ label {
   background-color: #eaeaea;
 }
 
+.marcamodello {
+  font-size: 2em;
+  font-weight: bold;
+}
+
 .messaggi {
   border: 1px solid#616161;
   -webkit-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
