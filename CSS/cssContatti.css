@@ -1,7 +1,7 @@
 .titolo{
     font-size: 1.5em;
     margin-bottom : 0.5em;
-    margin-top: 0.5em;
+    margin-top: 1em;
     font-weight: bold;
     text-align: center;
 }
@@ -10,7 +10,6 @@
 #testo{
     margin-bottom: 1em;
     clear: both;
-    overflow: hidden;
 }
 
 
@@ -23,7 +22,7 @@
     position: relative;
     right: 10%;
     text-align: justify;
-    margin-bottom: 2em;
+    margin-bottom: 3em;
 }
 
 #indirizzo{
@@ -36,11 +35,20 @@
 
 ul{
     list-style: none;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    padding: 0;
+    text-align: center;
 }
 
-#mappa{
-    margin: 2em 0;
-    
+.nowrap{
+    white-space: nowrap;
+}
+
+
+iframe{
+    width: 100%;
+    margin-bottom: 3em;
 }
 
 label{
@@ -70,11 +78,52 @@ textarea{
 
 #inviaMessaggio{
     display: block;
-    margin-top: 1.5em;
+    margin-top: 2em;
 }
 
 
 
 #formMessaggio{
-    margin: 0 4em;
+    margin: 0 2em;
 }
+
+
+@media (max-width:1300px){
+    #contatti{
+        float: none;
+        position: static;
+        text-align: center;
+    }
+    
+    #indirizzo{
+        float: none;
+        position: static;
+        text-align: center;
+    }
+
+}
+
+@media (max-width:550px){
+    body{
+        font-size: 0.85em;
+    }
+
+}
+
+@media (max-width:500px){
+
+    #formMessaggio{
+        margin:0 0.5em;
+    }
+
+    input, textarea{
+        width: 90%;
+    }
+
+    label{
+        margin-left: 5%;
+    }
+
+
+}
+
