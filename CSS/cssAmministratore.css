@@ -45,20 +45,22 @@
     min-width: 90%;
     min-height: 5%;
     font-size: 1em;
+    text-decoration: underline;
 }
 
 .formRispAmm {
-    float: left;
     width: 50%;
     margin: 0;
+    margin-top: 1%;
     padding: 0;
-    clear: both;
+    display: inline-block;
 }
 
 .formElimAmm {
     float: right;
     width: 50%;
     margin: 0;
+    margin-top: 1%;
     padding: 0;
 }
 
@@ -80,6 +82,13 @@
 
 .pLinkHomeAmm {
     text-align: center;
+}
+
+.divAmm {
+    padding: 1%;
+    margin: 1%;
+    border-top: 0.5px solid grey;
+    border-bottom: 0.5px solid grey;
 }
 
 /* stile per i form */

@@ -23,15 +23,16 @@
         $informazioni = "";
         foreach($request as $response) {
             $nascita = date('d/m/Y',strtotime($response->DataNascita));
-            $informazioni .= "<p>Nome&colon; <strong>".$response->Nome."</strong></p>"."\n"
-                            ."<p>Cognome&colon; <strong>".$response->Cognome."</strong></p>"."\n"
-                            ."<p>Data di nascita&colon; <strong>".$nascita."</strong></p>"."\n"
-                            ."<p>Indirizzo&colon; <strong>".$response->Indirizzo."</strong></p>"."\n"
-                            ."<p>Telefono&colon; <strong>".$response->Telefono."</strong></p>"."\n"
-                            ."<p>Email&colon; <strong>".$response->Email."</strong></p>"."\n";
+            $informazioni .= "<div class=\"divAmm\""."\n"
+                            ."<p class=\"pAmm\">Nome completo&colon; <strong>".$response->Nome." ".$response->Cognome."</strong></p>"."\n"
+                            ."<p class=\"pAmm\">Data di nascita&colon; <strong>".$nascita."</strong></p>"."\n"
+                            ."<p class=\"pAmm\">Indirizzo&colon; <strong>".$response->Indirizzo."</strong></p>"."\n"
+                            ."<p class=\"pAmm\">Recapito telefonico&colon; <strong>".$response->Telefono."</strong></p>"."\n"
+                            ."<p class=\"pAmm\">Email&colon; <strong>".$response->Email."</strong></p>"."\n"
+                            ."</div>";
         }
         if(count($request) == 0) {
-            $informazioni .= "<p class=\"msgAmm\">Al momento non sono disponibili le informazioni richieste&comma; riprova pi&ugrave; tardi&period;</p>";
+            $informazioni .= "<p class=\"msgAmm msgErrAmm\">Al momento non sono disponibili le informazioni richieste&comma; riprova pi&ugrave; tardi&period;</p>";
         }
         $output = str_replace("<infoPersonali></infoPersonali>",$informazioni,$output);
         $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
