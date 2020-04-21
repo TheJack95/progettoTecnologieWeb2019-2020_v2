@@ -3,7 +3,7 @@
     #funzione per scrivere l'header
         public static function header() {
             $header_form = '<div class="flexbox-item" id="header">'."\n".
-                            '   <a href="home.php"><img class="logoHeader" src="" alt="logo concessionaria greg" /></a>'."\n".
+                            '   <a href="home.php"><img class="logoHeader" src="../Images/LogoGREG.png" alt="logo concessionaria greg" /></a>'."\n".
                             '   <p class="nomeSito"><a href="home.php">CONCESSIONARIA GREG</a></p>'."\n".
                             '</div>';
             return $header_form;
@@ -60,7 +60,6 @@
          */
         public static function footer() {
             $footer_form =  '<div class="flexbox-item" id="footer">'."\n".
-                            '   <img class="logoHeader" src="" alt="logo concessionaria greg" />'."\n".
                             '   <p>CONCESSIONARIA GREG - Tutti i diritti riservati - A cura di <span xml:lang="en" lang="en">Tecweb Group</span></p>'."\n".
                             '</div>';
             return $footer_form;
