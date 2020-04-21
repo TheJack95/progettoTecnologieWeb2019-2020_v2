@@ -22,19 +22,25 @@ if($logged->status) {
             
             $dataFineNolo = date_create($_POST['dataFineNolo']);
             $dataInizioNolo = date_create($_POST['dataInizioNolo']);  
+            $conn = new funzioniVeicoli();
+            if($conn->isAutoDisponobileDate($targa, $dataInizioNolo, $dataFineNolo)) {
 
-            if($dataFineNolo >= $dataInizioNolo) {
-                $conn = new funzioniVeicoli();
-                $auto = $conn->getVeicoloNoleggio($targa, false);
-                $utente  = $_SESSION['user'];
-                $costo = intval($auto->CostoNoleggio);
-                
-                $interval = date_diff($dataInizioNolo, $dataFineNolo);
-                $costoTotale = $interval->days*$costo;
-    
-                $response = $conn->noleggia($utente, $dataInizioNolo, $dataFineNolo, $targa, $costo);
+                if($dataFineNolo >= $dataInizioNolo) {
+        
+                    $auto = $conn->getVeicoloNoleggio($targa, false);
+                    $utente  = $_SESSION['user'];
+                    $costo = intval($auto->CostoNoleggio);
+                    
+                    $interval = date_diff($dataInizioNolo, $dataFineNolo);
+                    $costoTotale = $interval->days*$costo;
+        
+                    $response = $conn->noleggia($utente, $dataInizioNolo, $dataFineNolo, $targa, $costo);
+                } else {
+                    $response->response = 'La data di fine noleggio deve essere successiva o uguale alla data di inizio.';
+                    $response->status = false;
+                }
             } else {
-                $response->response = 'La data di fine noleggio deve essere successiva o uguale alla data di inizio.';
+                $response->response = 'Attenzione: l&apos;auto selezionata non &egrave; disponibile nelle date selezionate.';
                 $response->status = false;
             }
         } else {
