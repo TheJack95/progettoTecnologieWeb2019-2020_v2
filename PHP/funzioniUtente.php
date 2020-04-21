@@ -61,20 +61,22 @@
         return "<h3>Non ci sono acquisti da visualizzare</h3>";
       } else{
         while($row=mysqli_fetch_assoc($queryResult)) {
-          $queryAuto = 'SELECT Marca, Modello, KM, Cilindrata, Immagine FROM AutoVendita WHERE IdAuto=\''.$row['Automobile'].'\'';
+          $queryAuto = 'SELECT Marca, Modello, KM, Cilindrata, Immagine, DescrImmagine FROM AutoVendita WHERE IdAuto=\''.$row['Automobile'].'\'';
           $connessioneAuto = new database_connection();
           $queryAutoResult = $connessioneAuto->esegui($queryAuto);
           $rowAuto=mysqli_fetch_assoc($queryAutoResult);
           $contentItems.='<div class="preventivi">'."\n"
           				      .'	<div>'."\n"
-          							.'		<h4>Veicolo</h4>'."\n"
+          							.'	<img class="immagini" src="'.$rowAuto['Immagine'].'" alt="'.$rowAuto['DescrImmagine'].'"/>'."\n"
           							.'		<p>'.$rowAuto['Marca']." ".$rowAuto['Modello'].'</p>'."\n"
+          							.'	</div>'."\n"
+                        .'	<div>'."\n"
+          							.'		<h4>Chilometraggio</h4>'."\n"
+          							.'		<p>'.$rowAuto['KM'].'</p>'."\n"
           							.'	</div>'."\n"
           							.'	<div>'."\n"
           							.'		<h4>Prezzo</h4>'."\n"
           							.'		<p>'.$row['PrezzoVendita'].'</p>'."\n"
-          							.'	</div>'."\n"
-          							.'	<div>'."\n"
           							.'	</div>'."\n"
           							.'</div>';
         }
@@ -92,9 +94,15 @@
         return "<h3>Non ci sono noleggi da visualizzare</h3>";
       } else{
         while($row=mysqli_fetch_assoc($queryResult)) {
+          $queryAuto = 'SELECT Marca, Modello, Cauzione, Cilindrata, Immagine, DescrImmagine FROM AutoNoleggio WHERE Targa=\''.$row['Targa'].'\'';
+          $connessioneAuto = new database_connection();
+          $queryAutoResult = $connessioneAuto->esegui($queryAuto);
+          $rowAuto=mysqli_fetch_assoc($queryAutoResult);
 					$contentItems.='<div class="noleggi">'."\n"
           				      .'	<div>'."\n"
-          							.'		<h4>Veicolo</h4>'."\n"
+                        .'	<img class="immagini" src="'.$rowAuto['Immagine'].'" alt="'.$rowAuto['DescrImmagine'].'"/>'."\n"
+                        .'		<p>'.$rowAuto['Marca']." ".$rowAuto['Modello'].'</p>'."\n"
+                        .'		<h4>Targa</h4>'."\n"
           							.'		<p>'. $row['Targa'].'</p>'."\n"
           							.'	</div>'."\n"
           							.'	<div>'."\n"

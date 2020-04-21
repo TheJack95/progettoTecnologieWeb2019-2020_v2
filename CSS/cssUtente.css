@@ -27,6 +27,11 @@ label {
   padding: 0;
 }
 
+.immagini {
+  height: auto;
+  width: 100%;
+}
+
 .preventivi {
   border: 1px solid#616161;
   -webkit-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
@@ -35,8 +40,14 @@ label {
   padding: 1.2em;
   margin: 2.5em;
   overflow: auto;
-  width: inherit;
+  width: 65%;
   background-color: #eaeaea;
+}
+
+.preventivi::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
 .noleggi {

@@ -51,7 +51,7 @@ try {
 										,Indirizzo
 										,DataNascita
 										,FlAdmin
-									) VALUES ('$mail','$passHash','$nome','$cognome','$cel','$indirizzo','$nascita','0')";
+									) VALUES ('$mail','$passHash','$nome','$cognome','$cel','$indirizzo','$nascitaFormatted','0')";
 
               $databaseConnection = new database_connection();
 
