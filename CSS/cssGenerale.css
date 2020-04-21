@@ -18,8 +18,7 @@ body {
 .logoHeader {
 	float: left;
 	width: auto;
-	height: 2.6em;
-	height: 3em;
+	height: 3.3em;
 	padding: 0 5% 0 5%;
 }
 
@@ -72,7 +71,7 @@ body {
 	border-top: 3px double #000000;
 	border-bottom: 3px double #000000;
 	overflow: auto;
-	background-color: black;
+	background-color: #060807;
 }
 
 /* STILE DEL FOOTER */
