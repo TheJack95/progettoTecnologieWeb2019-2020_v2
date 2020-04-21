@@ -72,6 +72,7 @@ body {
 	border-top: 3px double #000000;
 	border-bottom: 3px double #000000;
 	overflow: auto;
+	background-color: black;
 }
 
 /* STILE DEL FOOTER */
@@ -98,12 +99,8 @@ body {
 
 .flexbox-item {
     padding: 8px;
-		background-color: black;
 }
 
-.flexbox-footer {
-	 padding: 8px;
-}
 
 .flexbox-item-grow {
     flex: 1; /* same as flex: 1 1 auto; */
