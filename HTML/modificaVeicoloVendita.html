@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
     <head>
-        <title>Modifica Veicolo Vendita &vert; Area Amministratore</title>
+        <title>Modifica Veicolo In Vendita &vert; Area Amministratore</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="title" content="modifica veicolo da vendere" />
 		<meta name="description" content="pagina per modifica veicolo da vendere" />
@@ -20,12 +20,12 @@
         <breadcrumb></breadcrumb>
         <menuAmministratore></menuAmministratore>
         <div class="corpoAmministratore">
-            <p>Inserisci qui le informazioni sul veicolo in vendita da modificare&period;</p>
             <messaggio></messaggio>
+            <p class="pAmm">Inserisci qui le informazioni sul veicolo in vendita da modificare&period;</p>
             <form id="modificaVeicoloVendita" class="formAmm" action="../PHP/salvaVeicoloVenditaModificato.php" method="post" enctype="multipart/form-data">
                 <fieldset>
                     <legend>Informazioni Veicolo</legend>
-                    <p><strong>Nota bene</strong>&colon; ogni campo deve essere compilato&period; Nel caso in cui il campo venga lasciato vuoto&comma; le informazioni precedentemente inserite verranno eliminate&period;</p>
+                    <p class="msgFormAmm">Ogni campo deve essere compilato&period; Nel caso in cui il campo venga lasciato vuoto&comma; le informazioni precedentemente inserite verranno eliminate&period;</p>
 
                     <label for="marca">Marca</label>
                     <input type="text" name="marca" id="marca" class="" tabindex="12" />

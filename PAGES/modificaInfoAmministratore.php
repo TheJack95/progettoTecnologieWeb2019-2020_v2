@@ -17,7 +17,7 @@
             $output = str_replace("<messaggio></messaggio>",$_SESSION["nuovoMessaggio"],$output);
             unset($_SESSION["nuovoMessaggio"]);
         } else {
-            $output = str_replace("<messaggio></messaggio>"," ",$output);
+            $output = str_replace("<messaggio></messaggio>","",$output);
         }
         $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
 

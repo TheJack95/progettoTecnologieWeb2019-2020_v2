@@ -33,19 +33,19 @@
                                 "<p>Messsaggio&colon; <strong>".$responseI->Messaggio."</strong></p>"."\n";
             }
             if(count($requestI) == 0) {
-                $messaggiAmm .= "<form class=\"tastoModifiche\" action=\"../PAGES/rispostaMessaggioAmministratore.php\" method=\"post\">
-                                    <button type=\"submit\" name=\"rispondi\" value=\"$responseR->IdMess\">RISPONDI</button>
+                $messaggiAmm .= "<form class=\"formRispAmm\" action=\"../PAGES/rispostaMessaggioAmministratore.php\" method=\"post\">
+                                    <button type=\"submit\" name=\"rispondi\" class=\"noButt linkMod\" value=\"$responseR->IdMess\">RISPONDI</button>
                                 </form>"."\n".
-                                "<form class=\"tastoModifiche\" action=\"../PHP/eliminaMessaggiAmministratore.php\" method=\"post\">
-                                    <button type=\"submit\" name=\"eliminaMessaggio\" value=\"$responseR->IdMess\">ELIMINA MESSAGGIO</button>
+                                "<form class=\"formElimAmm\" action=\"../PHP/eliminaMessaggiAmministratore.php\" method=\"post\">
+                                    <button type=\"submit\" name=\"eliminaMessaggio\" class=\"noButt linkMod msgErrAmm\" value=\"$responseR->IdMess\">ELIMINA MESSAGGIO</button>
                                 </form>"."\n".
                             "</div>";
             } else {
-                $messaggiAmm .= "<form class=\"tastoModifiche\" action=\"../PAGES/rispostaMessaggioAmministratore.php\" method=\"post\">
-                                    <button type=\"submit\" name=\"rispondi\" value=\"$responseR->IdMess\">RISPONDI</button>
+                $messaggiAmm .= "<form class=\"formRispAmm\" action=\"../PAGES/rispostaMessaggioAmministratore.php\" method=\"post\">
+                                    <button type=\"submit\" name=\"rispondi\" class=\"noButt linkMod\" value=\"$responseR->IdMess\">RISPONDI</button>
                                 </form>"."\n".
-                                "<form class=\"tastoModifiche\" action=\"../PHP/eliminaMessaggiAmministratore.php\" method=\"post\">
-                                    <button type=\"submit\" name=\"eliminaConversazione\" value=\"$responseR->IdMess\">ELIMINA CONVERSAZIONE</button>
+                                "<form class=\"formElimAmm\" action=\"../PHP/eliminaMessaggiAmministratore.php\" method=\"post\">
+                                    <button type=\"submit\" name=\"eliminaConversazione\" class=\"noButt linkMod msgErrAmm\" value=\"$responseR->IdMess\">ELIMINA CONVERSAZIONE</button>
                                 </form>"."\n"
                             ."</div>";
             }

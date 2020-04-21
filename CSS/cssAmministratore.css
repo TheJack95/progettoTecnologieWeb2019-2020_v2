@@ -1,74 +1,139 @@
+/* stile per il menu' verticale */
 #menuAmministratore {
-	float: left;
-    max-width: 27%;
+    float: left;
+    width: 26%;
     height: auto;
-	text-align: left;
+	text-align: justify;
 	font-size: 1em;
-	color: #FFF;
-    background: #FFC800;
-    margin: 0.3em;
+	color: #FFFFFF;
+    background: #F1AB00;
+    margin: 0.5% 0.5% 0.5% 1%;
 }
 
 #menuAmministratore ul {
-    margin-left: -2em;
+    padding: 0;
 }
 
 #menuAmministratore li {
     list-style: none;
-    margin: 0.2em;
-    padding: 0.8em;
+    padding: 4%;
 }
 
-.formAmm select,
-.formAmm input {
-    padding: 0.3em 0.1em 0.3em 0.1em;
-    border: 1px solid grey;
-    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3);
-    border-radius: 2px;  
+/* stile per il corpo */
+.corpoAmministratore {
+    float: right;
+    width: 71%;
+    height: auto;
+	text-align: left;
+    margin: 0.5% 1% 0.5% 0.5%;   
 }
 
-.formAmm label, select, input {
+.linkMod {
+    padding: 1%;
+    margin: 1%;
+    background-color: #F1AB00;
+    color: #FFFFFF;
+    border-radius: 4px;
+    font-weight: bolder;
     display: inline-block;
 }
 
+.noButt {
+    border: 1px solid #F1AB00;
+    text-decoration: none;
+    cursor: pointer;
+    min-width: 90%;
+    min-height: 5%;
+    font-size: 1em;
+}
+
+.formRispAmm {
+    float: left;
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    clear: both;
+}
+
+.formElimAmm {
+    float: right;
+    width: 50%;
+    margin: 0;
+    padding: 0;
+}
+
+.h1Amm {
+    text-align: justify;
+    padding: 0.3%;
+    font-size: 1.2em;
+}
+
+.pAmm {
+    text-align: justify;
+    padding: 0.3%;
+    font-size: 1em;
+}
+
+.pLinkAmm {
+    text-align: right;
+}
+
+.pLinkHomeAmm {
+    text-align: center;
+}
+
+/* stile per i form */
+.formAmm fieldset {
+    margin: 0.5%;
+    padding: 0.5%;
+    border-width: 2px;
+    border-style: groove;
+}
+
+.pFormAmm {
+    font-size: 0.9em;
+    text-align: center;
+    font-weight: bold;
+    margin: 1%;
+}
+
 .formAmm label {
-    width: 30%;
-    padding: 1em 0.4em 0 0;
+    display: inline-block;
+    font-size: 1em;
+    padding: 1%;
+    width: 25%;
     text-align: right;
 }
 
 .formAmm input[type="text"],
-.formAmm input[list="titleInput"],
-.formAmm input[type="date"],
-.formAmm input[type="email"],
-.formAmm input[type="password"],
-.formAmm input[type="number"],
 .formAmm input[type="file"],
-.formAmm input[type="submit"],
-.formAmm textarea,
-.formAmm select {
-    display: inline-block;
+.formAmm textarea {
+    font-size: 1em;
+    padding: 1%;
+    margin: 1%;
+    vertical-align: bottom;
+    border: 1px solid black;
+    border-radius: 4px;
     box-sizing: content-box;
-    width: 60%;
-    background-color:white;
+    width: 65%;
+    background-color: #FFFFFF;
 }
 
 .formAmm input[type="submit"] {
-    margin-top: 1em;
+    font-size: 1em;
     width: 40%;
-    height: 2em;
-    cursor: pointer;
-    font-weight: bold;
-    border: 1px solid #241d13;
+    padding: 1%;
+    margin: 1%;
+    background-color: #F1AB00;
+    border-color: #F1AB00;
+    color: #FFFFFF;
     border-radius: 4px;
+    font-weight: bolder;
+    cursor: pointer;
 }
 
-.formAmm fieldset {
-    margin: 1em;
-}
-
-.testoAmm {
-    margin: 0.5em;
+#modificaInfo {
+    text-align: center;
 }
 
 .msgAmm {
@@ -77,9 +142,34 @@
     padding: 0.2em;
     color: #000000;
     background-color: #FAFAFA;
-    max-width: 70%;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    margin-right: 2em;
+    margin: 1%;
+    padding: 1%;
     text-align: center;
 }
+
+.msgErrAmm {
+    border-color: #C13636;
+    background: #C13636;
+    color: #FFFFFF;
+}
+
+.msgSuccAmm {
+    border-color: #4CAF50;
+    background: #4CAF50;
+    color: #FFFFFF;
+}
+
+/*
+.pulsanteAmm {
+    width: 30%;
+    min-height: 20%;
+    background-color: #F1AB00;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 5%;
+    box-shadow: 4% 5% gray;
+    display: block;
+    margin-top: 1.5em;
+}
+*/
