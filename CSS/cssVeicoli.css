@@ -56,10 +56,13 @@ input {
     text-align: center;
 }
 
-#preventivoForm {
+.preventivoForm {
 	margin-top: 3em;
 }
 
+.preventivoForm > fieldset{
+	border: none;
+}
 
 @media (max-width:1000px) {
 

@@ -27,10 +27,10 @@ foreach($rows as $row) {
 				.'				<p><strong>Cilindrata:</strong>  '.$row->Cilindrata.'</p>'
 				.'			</li>'
 				.'			<li>'
-				.'				<p><strong>Costo noleggio:</strong>'.$row->CostoNoleggio.'</p>'
+				.'				<p><strong>Costo noleggio:</strong>'.$row->CostoNoleggio.' &#8364;</p>'
 				.'			</li>'
 				.'			<li>'
-				.'				<p><strong>Cauzione:</strong>'.$row->Cauzione.'</p>'
+				.'				<p><strong>Cauzione:</strong>'.$row->Cauzione.' &#8364;</p>'
 				.'			</li>'
 				.'		</ul>'
 				.'		<a href="noleggioVeicolo.php?targaAuto='.$row->Targa.'">Noleggia auto</a>'."\n"
@@ -48,14 +48,14 @@ $filtri ='<div>'."\n"
 		.'	<form action="noleggioVeicoli.php" method="post">'."\n"
 		.'  	<fieldset>'."\n"
 		.'				<label for="searchbar">Cerca veicoli</label>'."\n"
-		.'				<input type="text" name="searchbar" tabindex="7" title="searchbar"/>'."\n"
+		.'				<input type="text" name="searchbar" tabindex="7" title="searchbarinput" />'."\n"
 		.'				<p>Filtra per data disponibilit&agrave; (formato gg-mm-aaaa)</p>'."\n"
-		.'				<label for="dataInizio">Dal</label>'."\n"
-		.'				<input type="text" name="dataInizio" tabindex="8" title="datainizionolo" class="dataInput" />'."\n"
-		.'				<label for="dataFine">Al</label>'."\n"
-		.'				<input type="text" name="dataFine" tabindex="9" title="datafinenolo" class="dataInput" />'."\n"
-		.'				<input type="submit" name="applicaFiltri" value="Cerca" internal-button" tabindex="10" />'."\n"
-		.'				<input type="submit" name="ricaricapagina" value="Ricarica pagina" tabindex="11"/>'."\n"
+		.'				<label for="datainizio">Dal</label>'."\n"
+		.'				<input type="text" name="datainizio" tabindex="8" title="datainizionolo" class="dataInput" />'."\n"
+		.'				<label for="datafine">Al</label>'."\n"
+		.'				<input type="text" name="datafine" tabindex="9" title="datafinenolo" class="dataInput" />'."\n"
+		.'				<input type="submit" name="applicaFiltri" value="Cerca" tabindex="10" />'."\n"
+		.'				<input type="submit" name="ricaricapagina" value="Ricarica pagina" tabindex="11" />'."\n"
 		.'  	</fieldset>'."\n"
 		.'	</form>'."\n"
 		.'</div>';

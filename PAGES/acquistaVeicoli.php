@@ -29,12 +29,14 @@ foreach($rows as $row) {
 				.'				<p><strong>KM:</strong> '.$row->KM.'</p>'
 				.'			</li>'
 				.'			<li>'
-				.'				<p><strong>Prezzo di vendita:</strong> '.$row->PrezzoVendita.'</p>'
+				.'				<p><strong>Prezzo di vendita:</strong> '.$row->PrezzoVendita.' &#8364;</p>'
 				.'			</li>'
 				.'		</ul>'
-				.'		<form id="preventivoForm" action="../PHP/acquistaVeicoloFn.php" method="post">'."\n"
-                .'			<button type="submit" name="richiedipreventivo" value="'.$row->IdAuto.'" class="button">Richiedi preventivo</button>'."\n"
-                .'		</form>'."\n"
+				.'		<form class="preventivoForm" action="../PHP/acquistaVeicoloFn.php" method="post">'."\n"
+				.'			<fieldset>'."\n"
+                .'				<button type="submit" name="richiedipreventivo" value="'.$row->IdAuto.'" class="button" >Richiedi preventivo</button>'."\n"
+				.'			</fieldset>'."\n"
+				.'		</form>'."\n"
                 .'	</div>'."\n"
 				.'</div>';
 }

@@ -31,9 +31,9 @@
                             
                             <p class = \"titoloOccasione\">20% DI SCONTO SU:</p>
                             <p class = \"titoloOccasione\"> " .$row['Marca']. " " .$row['Modello']. "</p>
-                            <p class = \"prezzo\"> PREZZO ORIGINALE: " .$row["PrezzoVendita"]. "&#8364</p>
-                            <p class = \"prezzo\"> PREZZO OCCASIONE: " .$prezzoOccasione. "&#8364</p>
-                            <a id = \"preventivo\" href=\"../PHP/acquistaVeicoloFn.php?idAuto=" .$row['IdAuto']. "&prezzoVendita=".$row['PrezzoVendita']."\">Richiedi preventivo</a>
+                            <p class = \"prezzo\"> PREZZO ORIGINALE: " .$row["PrezzoVendita"]. "&#8364;</p>
+                            <p class = \"prezzo\"> PREZZO OCCASIONE: " .$prezzoOccasione. "&#8364;</p>
+                            <a id = \"preventivo\" href=\"../PHP/acquistaVeicoloFn.php?idAuto=" .$row['IdAuto']. "&amp;prezzoVendita=".$row['PrezzoVendita']."\">Richiedi preventivo</a>
                         </div> 
                     </div>";
         }
