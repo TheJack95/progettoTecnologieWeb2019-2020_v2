@@ -1,45 +1,45 @@
 .titolo{
     font-size: 1.5em;
-    margin-bottom : 1%;
-    margin-top: 1%;
+    margin-bottom : 0.5em;
+    margin-top: 2em;
     font-weight: bolder;
 }
 
 .titoloOccasione{
     font-size: 1.3em;
-    margin-top: 2%;
-    margin-bottom: 1%;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
     font-weight: bold;
 
 }
 
 #immagineConcessionaria{
     float: right;
-    margin-left: 1%;
+    margin-left: 0.5em;
     width:50%;
 }
 
 .containerText{
     overflow: hidden;
-    margin-left: 1%;
+    margin-left: 0.5em;
 }
 
 .prezzo{
-    margin-top: 0.5%;
+    margin-top: 0.5em;
 }
 
 .text{
-    margin-bottom: 1%;
+    margin-bottom: 2em;
 }
 
 #preventivo{
-    margin-top: 2%;
+    margin-top: 1em;
     display: inline-block;
 }
 
 #occasioneGiorno{
     clear: both;
-    margin-bottom: 2%;
+    margin-bottom: 1em;
     text-align: center;
     border: 1px solid black;
     border-radius: 5%;
@@ -49,7 +49,7 @@
     background: bisque;
     width: 70%;
     overflow: hidden;
-    margin-top: 2%;
+    margin-top: 1em;
 }
 
 #containerOccasione{
@@ -61,15 +61,15 @@
 
 
 #contentOccasione{
-    margin-top: 10%;
+    margin-top: 5em;
     text-align: left;
 }
 
 #auto{
     float: left;
-    margin: 2%;
+    margin: 1em;
     width: 50%;
-    margin-right: 4%;
+    margin-right: 2em;
 }
 
 @media (max-width:1360px)
@@ -91,7 +91,7 @@
     }
 
     .text{
-        margin-left: 1%;
+        margin-left: 0.5em;
     }
 
     .button{
@@ -128,7 +128,7 @@
 
     #contentOccasione{
         text-align: center;
-        margin-top: 2%;
+        margin-top: 1em;
     }
 }
 
