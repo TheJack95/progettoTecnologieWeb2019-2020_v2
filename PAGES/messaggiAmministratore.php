@@ -38,7 +38,7 @@
                                 </form>"."\n".
                                 "<form class=\"formElimAmm\" action=\"../PHP/eliminaMessaggiAmministratore.php\" method=\"post\">
                                     <fieldset>
-                                        <button type=\"submit\" name=\"eliminaMessaggio\" class=\"noButt linkMod msgErrAmm\" value=\"$responseR->IdMess\">ELIMINA MESSAGGIO</button>
+                                        <button type=\"submit\" name=\"eliminaMessaggio\" class=\"noButt linkMod\" value=\"$responseR->IdMess\">ELIMINA MESSAGGIO</button>
                                     </fieldset>
                                 </form>"."\n".
                             "</div>";
@@ -50,7 +50,7 @@
                                 </form>"."\n".
                                 "<form class=\"formElimAmm\" action=\"../PHP/eliminaMessaggiAmministratore.php\" method=\"post\">\n
                                     <fieldset>
-                                        <button type=\"submit\" name=\"eliminaConversazione\" class=\"noButt linkMod msgErrAmm\" value=\"$responseR->IdMess\">ELIMINA CONVERSAZIONE</button>\n
+                                        <button type=\"submit\" name=\"eliminaConversazione\" class=\"noButt linkMod\" value=\"$responseR->IdMess\">ELIMINA CONVERSAZIONE</button>\n
                                     </fieldset>
                                 </form>"."\n"
                             ."</div>";

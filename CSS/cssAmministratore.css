@@ -1,13 +1,21 @@
-/* stile per il menu' verticale */
+/* stile per il corpo */
+.corpoAmministratore {
+    background-color: #F1AB00;
+    margin: 1%;
+}
+
+/* stile per il menu' */
 #menuAmministratore {
     float: left;
-    width: 26%;
-    height: auto;
-	text-align: justify;
-	font-size: 1em;
-	color: #FFFFFF;
-    background: #F1AB00;
-    margin: 0.5% 0.5% 0.5% 1%;
+    width: 29%;
+    height: 100%;
+    text-align: justify;
+    font-size: 1.1em;
+    background-color: #F1AB00;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0.5%;
+    clear: both;
 }
 
 #menuAmministratore ul {
@@ -16,16 +24,17 @@
 
 #menuAmministratore li {
     list-style: none;
-    padding: 4%;
+    padding: 5%;
 }
 
-/* stile per il corpo */
-.corpoAmministratore {
+/* stile per il testo */
+.testoAmministratore {
     float: right;
-    width: 71%;
-    height: auto;
-	text-align: left;
-    margin: 0.5% 1% 0.5% 0.5%;   
+    width: 69%;
+    height: 100%;
+    text-align: left;
+    margin: 0;
+    padding: 0.5%;
 }
 
 .linkMod {
@@ -78,14 +87,14 @@
 
 .h1Amm {
     text-align: justify;
-    padding: 0.3%;
     font-size: 1.2em;
+    padding: 0.5%;
 }
 
 .pAmm {
     text-align: justify;
-    padding: 0.3%;
     font-size: 1em;
+    padding: 0.5%;
 }
 
 .pLinkAmm {
@@ -97,16 +106,16 @@
 }
 
 .divAmm {
-    padding: 1%;
-    margin: 2.5%;
     border-top: 0.5px solid grey;
     border-bottom: 0.5px solid grey;
+    margin: 3% 0% 3% 0%;
+    padding: 1%;
 }
 
 /* stile per i form */
 .formAmm fieldset {
-    margin: 0.5%;
-    padding: 0.5%;
+    margin: 1%;
+    padding: 1%;
     border-width: 2px;
     border-style: groove;
 }
@@ -158,9 +167,8 @@
 }
 
 .msgAmm {
-    border: 1px solid #000000;
+    border: 3px solid #000000;
     border-radius: 5px;
-    padding: 0.2em;
     color: #000000;
     background-color: #FAFAFA;
     margin: 1%;
@@ -170,27 +178,8 @@
 
 .msgErrAmm {
     border-color: #C13636;
-    background: #C13636;
-    color: #FFFFFF;
 }
 
 .msgSuccAmm {
     border-color: #4CAF50;
-    background: #4CAF50;
-    color: #FFFFFF;
 }
-
-/*
-.pulsanteAmm {
-    width: 30%;
-    min-height: 20%;
-    background-color: #F1AB00;
-    color: white;
-    text-align: center;
-    border: none;
-    border-radius: 5%;
-    box-shadow: 4% 5% gray;
-    display: block;
-    margin-top: 1.5em;
-}
-*/

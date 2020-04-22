@@ -18,33 +18,35 @@
         <header></header>
         <menu></menu>
         <breadcrumb></breadcrumb>
-        <menuAmministratore></menuAmministratore>
         <div class="corpoAmministratore">
-            <messaggio></messaggio>
-            <p class="pAmm">Inserisci qui le informazioni sul veicolo in vendita da modificare&period;</p>
-            <form id="modificaVeicoloVendita" class="formAmm" action="../PHP/salvaVeicoloVenditaModificato.php" method="post" enctype="multipart/form-data">
-                <fieldset>
-                    <legend>Informazioni Veicolo</legend>
-                    <p class="msgFormAmm">Ogni campo deve essere compilato&period; Nel caso in cui il campo venga lasciato vuoto&comma; le informazioni precedentemente inserite verranno eliminate&period;</p>
+            <menuAmministratore></menuAmministratore>
+            <div class="testoAmministratore">
+                <messaggio></messaggio>
+                <p class="pAmm">Inserisci qui le informazioni sul veicolo in vendita da modificare&period;</p>
+                <form id="modificaVeicoloVendita" class="formAmm" action="../PHP/salvaVeicoloVenditaModificato.php" method="post" enctype="multipart/form-data">
+                    <fieldset>
+                        <legend>Informazioni Veicolo</legend>
+                        <p class="msgFormAmm">Ogni campo deve essere compilato&period; Nel caso in cui il campo venga lasciato vuoto&comma; le informazioni precedentemente inserite verranno eliminate&period;</p>
 
-                    <label for="marca">Marca</label>
-                    <input type="text" name="marca" id="marca" class="" tabindex="12" />
+                        <label for="marca">Marca</label>
+                        <input type="text" name="marca" id="marca" class="" tabindex="12" />
 
-                    <label for="modello">Modello</label>
-                    <input type="text" name="modello" id="modello" class="" tabindex="13" />
+                        <label for="modello">Modello</label>
+                        <input type="text" name="modello" id="modello" class="" tabindex="13" />
 
-                    <label for="km">Chilometri</label>
-                    <input type="text" name="km" id="km" class="" tabindex="14" />
+                        <label for="km">Chilometri</label>
+                        <input type="text" name="km" id="km" class="" tabindex="14" />
 
-                    <label for="cilindrata">Cilindrata</label>
-                    <input type="text" name="cilindrata" id="cilindrata" class="" tabindex="15" />
+                        <label for="cilindrata">Cilindrata</label>
+                        <input type="text" name="cilindrata" id="cilindrata" class="" tabindex="15" />
 
-                    <label for="prezzo">Prezzo</label>
-                    <input type="text" name="prezzo" id="prezzo" class="" tabindex="16" />
+                        <label for="prezzo">Prezzo</label>
+                        <input type="text" name="prezzo" id="prezzo" class="" tabindex="16" />
 
-                    <input type="submit" id="modificheVeicoloVendita" value="SALVA MODIFICHE" tabindex="17" />
-                </fieldset>
-            </form>
+                        <input type="submit" id="modificheVeicoloVendita" value="SALVA MODIFICHE" tabindex="17" />
+                    </fieldset>
+                </form>
+            </div>
         </div>
         <footer></footer>
     </body>

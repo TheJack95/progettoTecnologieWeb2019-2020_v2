@@ -18,39 +18,41 @@
         <header></header>
         <menu></menu>
         <breadcrumb></breadcrumb>
-        <menuAmministratore></menuAmministratore>
-        <div class="corpoAmministratore">
-            <messaggio></messaggio>
-            <p class="pAmm">Inserisci qui le informazioni sul veicolo in vendita da aggiungere&period;</p>
-            <form id="nuovoVeicoloVendita" class="formAmm" action="../PHP/salvaNuovoVeicoloVendita.php" method="post" enctype="multipart/form-data">
-                <fieldset>
-                    <legend>Informazioni Veicolo</legend>
-                    <p>Tutti i campi marcati con l&apos;asterisco &ast; sono obbligatori&period;</p>
-                
-                    <label for="marca">Marca &ast;</label>
-                    <input type="text" name="marca" id="marca" class="" tabindex="12" />
+            <div class="corpoAmministratore">
+            <menuAmministratore></menuAmministratore>
+            <div class="testoAmministratore">
+                <messaggio></messaggio>
+                <p class="pAmm">Inserisci qui le informazioni sul veicolo in vendita da aggiungere&period;</p>
+                <form id="nuovoVeicoloVendita" class="formAmm" action="../PHP/salvaNuovoVeicoloVendita.php" method="post" enctype="multipart/form-data">
+                    <fieldset>
+                        <legend>Informazioni Veicolo</legend>
+                        <p>Tutti i campi marcati con l&apos;asterisco &ast; sono obbligatori&period;</p>
+                    
+                        <label for="marca">Marca &ast;</label>
+                        <input type="text" name="marca" id="marca" class="" tabindex="12" />
 
-                    <label for="modello">Modello &ast;</label>
-                    <input type="text" name="modello" id="modello" class="" tabindex="13" />
+                        <label for="modello">Modello &ast;</label>
+                        <input type="text" name="modello" id="modello" class="" tabindex="13" />
 
-                    <label for="km">Chilometri &ast;</label>
-                    <input type="text" name="km" id="km" class="" tabindex="14" />
+                        <label for="km">Chilometri &ast;</label>
+                        <input type="text" name="km" id="km" class="" tabindex="14" />
 
-                    <label for="cilindrata">Cilindrata in cc &ast;</label>
-                    <input type="text" name="cilindrata" id="cilindrata" class="" tabindex="15" />
+                        <label for="cilindrata">Cilindrata in cc &ast;</label>
+                        <input type="text" name="cilindrata" id="cilindrata" class="" tabindex="15" />
 
-                    <label for="prezzo">Prezzo in &euro; &ast;</label>
-                    <input type="text" name="prezzo" id="prezzo" class="" tabindex="16" />
+                        <label for="prezzo">Prezzo in &euro; &ast;</label>
+                        <input type="text" name="prezzo" id="prezzo" class="" tabindex="16" />
 
-                    <label for="immagineAuto">Immagine &ast;</label>
-                    <input type="file" name="immagineAuto" id="immagineAuto" class="" tabindex="17" />
+                        <label for="immagineAuto">Immagine &ast;</label>
+                        <input type="file" name="immagineAuto" id="immagineAuto" class="" tabindex="17" />
 
-                    <label for="descrizione">Descrizione dell&apos;immagine &ast;</label>
-                    <input type="text" name="descrizione" id="descrizione" class="" tabindex="18" />
+                        <label for="descrizione">Descrizione dell&apos;immagine &ast;</label>
+                        <input type="text" name="descrizione" id="descrizione" class="" tabindex="18" />
 
-                    <input type="submit" id="salvaNuovoVeicoloVendita" value="SALVA" tabindex="19" />
-                </fieldset>
-            </form>
+                        <input type="submit" id="salvaNuovoVeicoloVendita" value="SALVA" tabindex="19" />
+                    </fieldset>
+                </form>
+            </div>
         </div>
         <footer></footer>
     </body>

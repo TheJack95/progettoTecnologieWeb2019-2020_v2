@@ -32,7 +32,7 @@
                             ."</div>";
         }
         if(count($request) == 0) {
-            $informazioni .= "<p class=\"msgAmm msgErrAmm\">Al momento non sono disponibili le informazioni richieste&comma; riprova pi&ugrave; tardi&period;</p>";
+            $informazioni .= "<p class=\"msgAmm\">Al momento non sono disponibili le informazioni richieste&comma; riprova pi&ugrave; tardi&period;</p>";
         }
         $output = str_replace("<infoPersonali></infoPersonali>",$informazioni,$output);
         $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
