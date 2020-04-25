@@ -6,11 +6,11 @@
         public static function menuAmm() {
             $menuAmm_form = '<div id="menuAmministratore">'."\n".
                             '   <ul>'."\n".
-                            '       <li tabindex="7"><a href="homeAmministratore.php"><span xml:lang="en">HOME</span> AMMINISTRATORE</a></li>'."\n".
-                            '       <li tabindex="8"><a href="infoAmministratore.php">INFORMAZIONI PERSONALI</a></li>'."\n".
-                            '       <li tabindex="9"><a href="messaggiAmministratore.php">MESSAGGI</a></li>'."\n".
-                            '       <li tabindex="10"><a href="veicoliNoleggioAmministratore.php">VEICOLI A NOLEGGIO</a></li>'."\n".
-                            '       <li tabindex="11"><a href="veicoliVenditaAmministratore.php">VEICOLI IN VENDITA</a></li>'."\n".
+                            '       <li><a href="homeAmministratore.php" tabindex="7"><span xml:lang="en" lang="en">HOME</span> AMMINISTRATORE</a></li>'."\n".
+                            '       <li><a href="infoAmministratore.php" tabindex="8">INFORMAZIONI PERSONALI</a></li>'."\n".
+                            '       <li><a href="messaggiAmministratore.php" tabindex="9">MESSAGGI</a></li>'."\n".
+                            '       <li><a href="veicoliNoleggioAmministratore.php" tabindex="10">VEICOLI A NOLEGGIO</a></li>'."\n".
+                            '       <li><a href="veicoliVenditaAmministratore.php" tabindex="11">VEICOLI IN VENDITA</a></li>'."\n".
                             '   </ul>'."\n".
                             '</div>';
             return $menuAmm_form;
@@ -183,8 +183,7 @@
                 return $result;
             }
         }
-
-
-        
+    
+    #flag fine documento        
     }
 ?>
