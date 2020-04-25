@@ -12,11 +12,11 @@
             $connessioneDatabase = new database_connection;
             $delete = "DELETE FROM Messaggi WHERE IdMess='$idMessaggio'";
             if ($connessioneDatabase->esegui($delete) == TRUE) {
-                $messaggio = "<p class='msgAmm msgSuccAmm'>Messaggio eliminato correttamente&period; Potresti vedere ancora il messaggio appena eliminato nella tua lista&comma; eventualmente ricarica la pagina&period;</p>";
+                $messaggio = "<p class='messaggio successMessage'>Messaggio eliminato correttamente&period; Potresti vedere ancora il messaggio appena eliminato nella tua lista&comma; eventualmente ricarica la pagina&period;</p>";
                 $_SESSION["nuovoMessaggio"] = $messaggio;
                 header("location: ../PAGES/messaggiAmministratore.php");
             } else {
-                $messaggio = "<p class='msgAmm msgErrAmm'>Non &egrave; possibile eliminare il messaggio per un problema del database&period; Riprova pi&ugrave; tardi&period;</p>";
+                $messaggio = "<p class='messaggio errorMessage'>Non &egrave; possibile eliminare il messaggio per un problema del database&period; Riprova pi&ugrave; tardi&period;</p>";
                 $_SESSION["nuovoMessaggio"] = $messaggio;
                 header("location: ../PAGES/messaggiAmministratore.php");
             }
@@ -30,16 +30,16 @@
                 $connessioneDatabase2 = new database_connection;
                 $deleteM = "DELETE FROM Messaggi WHERE IdMess='$idMessaggio'";
                 if ($connessioneDatabase2->esegui($deleteM) == TRUE) {
-                    $messaggio = "<p class='msgAmm msgSuccAmm'>Conversazione eliminata correttamente&period; Potresti vedere ancora i messaggi appena eliminati nella tua lista&comma; eventualmente ricarica la pagina&period;</p>";
+                    $messaggio = "<p class='messaggio successMessage'>Conversazione eliminata correttamente&period; Potresti vedere ancora i messaggi appena eliminati nella tua lista&comma; eventualmente ricarica la pagina&period;</p>";
                     $_SESSION["nuovoMessaggio"] = $messaggio;
                     header("location: ../PAGES/messaggiAmministratore.php");
                 } else {
-                    $messaggio = "<p class='msgAmm msgErrAmm'>Non &egrave; possibile eliminare la conversazione per un problema del database&period; Riprova pi&ugrave; tardi&period;</p>";
+                    $messaggio = "<p class='messaggio errorMessage'>Non &egrave; possibile eliminare la conversazione per un problema del database&period; Riprova pi&ugrave; tardi&period;</p>";
                     $_SESSION["nuovoMessaggio"] = $messaggio;
                     header("location: ../PAGES/messaggiAmministratore.php");
                 }
             } else {
-                $messaggio = "<p class='msgAmm msgErrAmm'>Non &egrave; possibile eliminare la conversazione per un problema del database&period; Riprova pi&ugrave; tardi&period;</p>";
+                $messaggio = "<p class='messaggio errorMessage'>Non &egrave; possibile eliminare la conversazione per un problema del database&period; Riprova pi&ugrave; tardi&period;</p>";
                 $_SESSION["nuovoMessaggio"] = $messaggio;
                 header("location: ../PAGES/messaggiAmministratore.php");
             }

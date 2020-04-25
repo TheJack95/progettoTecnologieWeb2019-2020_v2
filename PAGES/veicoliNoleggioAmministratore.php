@@ -22,22 +22,20 @@
         $request = (new funzioniAmministratore())->selectVeicoliNoleggio();
         $veicoliN = "";
         foreach($request as $response) {
-            $veicoliN .= "<ul>"
-                        ."  <li>Targa&colon; <strong>".$response->Targa."</strong></li>"
-                        ."  <li>Marca&colon; <strong>".$response->Marca."</strong></li>"
-                        ."  <li>Modello&colon; <strong>".$response->Modello."</strong></li>"
-                        ."  <li>Cilindrata&colon; <strong>".$response->Cilindrata."</strong></li>"
-                        ."  <li>Costo Noleggio&colon; <strong>".$response->CostoNoleggio."</strong></li>"
-                        ."  <li>Cauzione&colon; <strong>".$response->Cauzione."</strong></li>"
-                        ."  <li>Immagine&colon; <strong>".$response->Immagine."</strong></li>"
-                        ."  <li>DescrImmagine&colon; <strong>".$response->DescrImmagine."</strong></li>"
-                        ."</ul>"
-                        ."  <form class=\"tastoModifiche\" action=\"../PAGES/modificaVeicoloNoleggio.php\" method=\"post\">
-                                <button type=\"submit\" name=\"modifica\" value=\"$response->Targa\">MODIFICA</button>
+            $veicoliN .= "<div class='divAmm'>"."\n"
+                        ."  <img class='imgAutoAmm' src='$response->Immagine' alt='$response->DescrImmagine' />"
+                        ."  <div class='datiAutoAmm'>"."\n"
+                        ."      <p class='pAmm'>&lsqb;<strong>".$response->Targa."</strong>&rsqb;</p>"
+                        ."      <p class='pAmm'>".$response->Marca." ".$response->Modello." - ".$response->Cilindrata." cm&sup3;</p>"
+                        ."      <p class='pAmm'>Costo&colon; &euro; ".$response->CostoNoleggio." &plus; cauzione &euro; ".$response->Cauzione."</p>"
+                        ."  </div>"."\n"
+                        ."  <form class=\"formRispAmm\" action=\"../PAGES/modificaVeicoloNoleggio.php\" method=\"post\">
+                                <button type=\"submit\" name=\"modifica\" class=\"noButt linkMod\" value=\"$response->Targa\">MODIFICA</button>
                             </form>"
-                        ."  <form class=\"tastoModifiche\" action=\"../PHP/eliminaVeicoloNoleggio.php\" method=\"post\">
-                                <button type=\"submit\" name=\"elimina\" value=\"$response->Targa\">ELIMINA</button>
-                            </form>";
+                        ."  <form class=\"formElimAmm\" action=\"../PHP/eliminaVeicoloNoleggio.php\" method=\"post\">
+                                <button type=\"submit\" name=\"elimina\" class=\"noButt linkMod\" value=\"$response->Targa\">ELIMINA</button>
+                            </form>"
+                        ."</div>";
         }
         if(count($request) == 0) {
             $veicoliN .= "<p class=\"msgAmm\">Al momento non sono disponibili le informazioni richieste&comma; riprova pi&ugrave; tardi&period;</p>";

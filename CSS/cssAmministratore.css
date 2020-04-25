@@ -112,6 +112,19 @@
     padding: 1%;
 }
 
+.imgAutoAmm {
+    margin-left: 15%;
+    margin-right: 15%;
+    width: 20%;
+    height: auto;
+    display: inline-block;
+}
+
+.datiAutoAmm {
+    float: right;
+    width: 50%;
+}
+
 /* stile per i form */
 .formAmm fieldset {
     margin: 1%;
@@ -167,19 +180,10 @@
 }
 
 .msgAmm {
-    border: 3px solid #000000;
+    border: 1.5px solid #000000;
     border-radius: 5px;
     color: #000000;
-    background-color: #FAFAFA;
     margin: 1%;
     padding: 1%;
     text-align: center;
-}
-
-.msgErrAmm {
-    border-color: #C13636;
-}
-
-.msgSuccAmm {
-    border-color: #4CAF50;
 }

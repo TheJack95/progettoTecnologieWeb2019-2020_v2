@@ -11,12 +11,12 @@
 
     #funzione per scrivere i breadcrumb
         public static function breadcrumb(...$sequenza){
-            $breadcrumb_form = '<div id="breadcrumb">'."\n".
+            $breadcrumb_form =  '<div id="breadcrumb">'."\n".
                                 '   <p>Ti trovi in ';
             foreach($sequenza as $element){
                 $breadcrumb_form .= "$element ";
             }
-            $breadcrumb_form .=     "</p>"."\n"
+            $breadcrumb_form .= '   </p>'."\n"
                                .'</div>'."\n";
 
             $breadcrumb_form .= "<noscript class=\"messaggio\">"."\n"
@@ -39,8 +39,8 @@
                                 '       <li><a href="acquistaVeicoli.php" tabindex="3">VEICOLI IN VENDITA</a></li>'."\n".
                                 '       <li><a href="contatti.php" tabindex="4">CONTATTI</a></li>'."\n";
             if(isset($_SESSION["admin"]) && $_SESSION["admin"] == 1) { //login effettuato come amministratore
-              $menu_form .=   '       <li><a class="" href="homeAmministratore.php" tabindex="5">AREA AMMINISTRATORE</a></li>'."\n".
-                              '       <li><a class="" href="../PHP/logout.php" tabindex="6">ESCI</a></li>'."\n";
+                $menu_form .=   '       <li><a class="" href="homeAmministratore.php" tabindex="5">AREA AMMINISTRATORE</a></li>'."\n".
+                                '       <li><a class="" href="../PHP/logout.php" tabindex="6">ESCI</a></li>'."\n";
             } elseif(isset($_SESSION["user"])) { //login effettuato come utente
                 $menu_form .=   '       <li><a class="" href="areaPrivata.php" tabindex="5">AREA PERSONALE</a></li>'."\n".
                                 '       <li><a class="" href="../PHP/logout.php" tabindex="6">ESCI</a></li>'."\n";

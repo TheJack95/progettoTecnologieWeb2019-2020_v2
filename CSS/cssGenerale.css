@@ -35,11 +35,11 @@ body {
 	text-align: center;
 	font-size: 1.1em;
 	color: #FFFFFF;
-	padding: 0.5em 0.5em;
-	margin: 0.5em;
-	border-radius: 6px 6px 6px 6px;
-	-moz-border-radius: 6px 6px 6px 6px;
-	-webkit-border-radius: 6px 6px 6px 6px;
+	padding: 1%;
+	margin: 1%;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 }
 
 .errorMessage {
@@ -73,6 +73,12 @@ body {
 	overflow: auto;
 	background-color: #060807;
 }
+
+#header a {
+	color: #F1AB00;
+	text-decoration-color: #F1AB00;
+}
+
 
 /* STILE DEL FOOTER */
 #footer {
