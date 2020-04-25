@@ -11,7 +11,7 @@
 
         $output = str_replace("<header></header>",funzioniGenerali::header(),$output);
         $output = str_replace("<menu></menu>",funzioniGenerali::menu(),$output);
-        $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Area Amministratore &gt;&gt; VEICOLI A NOLEGGIO"),$output);
+        $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Area Amministratore &gt;&gt; Veicoli a noleggio"),$output);
         $output = str_replace("<menuAmministratore></menuAmministratore>",funzioniAmministratore::menuAmm(),$output);
         if(isset($_SESSION["nuovoMessaggio"])){
             $output = str_replace("<messaggio></messaggio>",$_SESSION["nuovoMessaggio"],$output);
@@ -25,9 +25,9 @@
             $veicoliN .= "<div class='divAmm'>"."\n"
                         ."  <img class='imgAutoAmm' src='$response->Immagine' alt='$response->DescrImmagine' />"
                         ."  <div class='datiAutoAmm'>"."\n"
-                        ."      <p class='pAmm'>&lsqb;<strong>".$response->Targa."</strong>&rsqb;</p>"
-                        ."      <p class='pAmm'>".$response->Marca." ".$response->Modello." - ".$response->Cilindrata." cm&sup3;</p>"
-                        ."      <p class='pAmm'>Costo&colon; &euro; ".$response->CostoNoleggio." &plus; cauzione &euro; ".$response->Cauzione."</p>"
+                        ."      <p class='pAmm'><strong>".$response->Marca." ".$response->Modello."</strong> - ".$response->Targa."</p>"
+                        ."      <p class='pAmm'>".$response->Cilindrata." cm&sup3;</p>"
+                        ."      <p class='pAmm'>costo&colon; &euro; ".$response->CostoNoleggio." &plus; cauzione &euro; ".$response->Cauzione."</p>"
                         ."  </div>"."\n"
                         ."  <form class=\"formRispAmm\" action=\"../PAGES/modificaVeicoloNoleggio.php\" method=\"post\">
                                 <button type=\"submit\" name=\"modifica\" class=\"noButt linkMod\" value=\"$response->Targa\">MODIFICA</button>

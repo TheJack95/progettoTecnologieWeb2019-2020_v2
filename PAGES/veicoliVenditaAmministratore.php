@@ -11,7 +11,7 @@
 
         $output = str_replace("<header></header>",funzioniGenerali::header(),$output);
         $output = str_replace("<menu></menu>",funzioniGenerali::menu(),$output);
-        $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Area Amministratore &gt;&gt; VEICOLI IN VENDITA"),$output);
+        $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Area Amministratore &gt;&gt; Veicoli in vendita"),$output);
         $output = str_replace("<menuAmministratore></menuAmministratore>",funzioniAmministratore::menuAmm(),$output);
         if(isset($_SESSION["nuovoMessaggio"])){
             $output = str_replace("<messaggio></messaggio>",$_SESSION["nuovoMessaggio"],$output);
@@ -27,7 +27,7 @@
                         ."  <div class='datiAutoAmm'>"."\n"
                         ."      <p class='pAmm'><strong>".$response->Marca." ".$response->Modello."</strong></p>"
                         ."      <p class='pAmm'>".$response->Cilindrata." cm&sup3; - ".$response->KM." km</p>"
-                        ."      <p class='pAmm'>Prezzo&colon; &euro; ".$response->PrezzoVendita."</p>"
+                        ."      <p class='pAmm'>costo&colon; &euro; ".$response->PrezzoVendita."</p>"
                         ."  </div>"."\n"
                         ."  <form class=\"formRispAmm\" action=\"../PAGES/modificaVeicoloVendita.php\" method=\"post\">
                                 <button type=\"submit\" name=\"modifica\" class=\"noButt linkMod\" value=\"$response->IdAuto\">MODIFICA</button>

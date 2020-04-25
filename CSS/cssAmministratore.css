@@ -153,7 +153,7 @@
 .formAmm textarea {
     font-size: 1em;
     padding: 1%;
-    margin: 1%;
+    margin: 0.5%;
     vertical-align: bottom;
     border: 1px solid black;
     border-radius: 4px;
@@ -175,6 +175,11 @@
     cursor: pointer;
 }
 
+#nuovoVeicoloNoleggio,
+#nuovoVeicoloVendita,
+#modificaVeicoloVendita,
+#modificaVeicoloNoleggio,
+#rispostaMessaggioAmministartore,
 #modificaInfo {
     text-align: center;
 }
