@@ -39,9 +39,4 @@ if($logged->status) {
     $logged->message = str_replace('<a href="home.php">','<a href="../PAGES/home.php">',$logged->message);
     echo $logged->message;
 }
-
-
-
-
-
 ?>

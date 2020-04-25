@@ -12,8 +12,9 @@
 
     if(isset($_SESSION['errmessage'])) {
         $output = str_replace("<messaggio></messaggio>","<p class='messaggio errorMessage'>".$_SESSION['errmessage']."</p>",$output);
-    } else
+    } else {
         $output = str_replace("<messaggio></messaggio>","",$output);
+    }
 
     echo $output;
 

@@ -21,8 +21,8 @@
         $output = str_replace("<nome></nome>",$nome,$output);
         $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
 
-        $output = str_replace('<a class="" href="homeAmministratore.php">AREA AMMINISTRATORE</a>','<strong>AREA AMMINISTRATORE</strong>',$output);
-        $output = str_replace('<a href="homeAmministratore.php"><span xml:lang="en">HOME</span> AMMINISTRATORE</a>','<strong><span xml:lang="en">HOME</span> AMMINISTRATORE</strong>',$output);
+        $output = str_replace('<a class="" href="homeAmministratore.php" tabindex="5">AREA AMMINISTRATORE</a>','<strong>AREA AMMINISTRATORE</strong>',$output);
+        $output = str_replace('<a href="homeAmministratore.php" tabindex="7"><span xml:lang="en" lang="en">HOME</span> AMMINISTRATORE</a>','<strong><span xml:lang="en">HOME</span> AMMINISTRATORE</strong>',$output);
 
         echo $output;
     } else {

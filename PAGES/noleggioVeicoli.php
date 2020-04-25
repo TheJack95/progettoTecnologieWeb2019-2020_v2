@@ -61,7 +61,7 @@ $filtri ='<div>'."\n"
 		.'</div>';
 
 $output = str_replace("<filtriAuto></filtriAuto>",$filtri,$output);
-$output = str_replace('<a href="noleggioVeicoli.php">VEICOLI A NOLEGGIO</a>','<strong>VEICOLI A NOLEGGIO</strong>',$output);
+$output = str_replace('<a href="noleggioVeicoli.php" tabindex="2">VEICOLI A NOLEGGIO</a>','<strong>VEICOLI A NOLEGGIO</strong>',$output);
 
 echo $output;
 ?>

@@ -6,7 +6,7 @@ $output = str_replace("<header></header>",funzioniGenerali::header(),$output);
 $output = str_replace("<menu></menu>",funzioniGenerali::menu(),$output);
 $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Accedi"),$output);
 $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
-$output = str_replace('<a class="" href="login.php">ACCEDI</a>','<strong>ACCEDI</strong>',$output);
+$output = str_replace('<a class="" href="login.php" tabindex="5">ACCEDI</a>','<strong>ACCEDI</strong>',$output);
 
 if(!isset($_SESSION))
     session_start();
