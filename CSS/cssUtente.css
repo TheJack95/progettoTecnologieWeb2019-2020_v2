@@ -1,21 +1,18 @@
 .main {
   overflow: auto;
+  background-color: white;
 }
 
-.bottoni {
-  width: 6em;
-  height: 2.5em;
+.azioniRapide {
+  padding: 0.4em;
+  margin: 0.6em;
+  width: auto;
+  overflow: auto;
+  background-color: #F1AB00;
+  color: #FFFFFF;
+  border-radius: 4px;
   font-weight: bolder;
-  background-color: #eaeaea;
-  color: #F1AB00;
-  border: none;
-  border-radius: 5%;
-  box-shadow: 4% 5% gray;
   display: block;
-  margin-top: 1.5em;
-  -webkit-text-fill-color: #F1AB00;
-  -webkit-text-stroke-width: 0.03em;
-  -webkit-text-stroke-color: black;
 }
 
 label {
@@ -91,7 +88,7 @@ label {
   background-color: #eaeaea;
 }
 
-.azioniRapide{
+.linkRapidi{
   display: block;
   border: 1px solid#616161;
   -webkit-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
@@ -105,7 +102,7 @@ label {
 }
 
 #nav {
-    background-color: #eaeaea;
+    background-color: #eaeafa;
     padding: 1.2em;
     display: inline;
     width: 25%;
