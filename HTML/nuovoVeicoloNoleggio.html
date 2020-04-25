@@ -18,42 +18,44 @@
         <header></header>
         <menu></menu>
         <breadcrumb></breadcrumb>
-        <menuAmministratore></menuAmministratore>
         <div class="corpoAmministratore">
-            <messaggio></messaggio>
-            <p class="pAmm">Inserisci qui le informazioni sul veicolo a noleggio da aggiungere&period;</p>
-            <form id="nuovoVeicoloNoleggio" class="formAmm" action="../PHP/salvaNuovoVeicoloNoleggio.php" method="post" enctype="multipart/form-data">
-                <fieldset>
-                    <legend>Informazioni Veicolo</legend>
-                    <p class="pFormAmm">Tutti i campi marcati con l&apos;asterisco &ast; sono obbligatori&period;</p>
+            <menuAmministratore></menuAmministratore>
+            <div class="testoAmministratore">
+                <messaggio></messaggio>
+                <p class="pAmm">Inserisci qui le informazioni sul veicolo a noleggio da aggiungere&period;</p>
+                <form id="nuovoVeicoloNoleggio" class="formAmm" action="../PHP/salvaNuovoVeicoloNoleggio.php" method="post" enctype="multipart/form-data">
+                    <fieldset>
+                        <legend>Informazioni Veicolo</legend>
+                        <p class="pFormAmm">Tutti i campi marcati con l&apos;asterisco &ast; sono obbligatori&period;</p>
 
-                    <label for="targa">Targa &ast;</label>
-                    <input type="text" name="targa" id="targa" class="" tabindex="12" />
+                        <label for="targa">Targa &ast;</label>
+                        <input type="text" name="targa" id="targa" class="" tabindex="12" />
 
-                    <label for="marca">Marca &ast;</label>
-                    <input type="text" name="marca" id="marca" class="" tabindex="13" />
+                        <label for="marca">Marca &ast;</label>
+                        <input type="text" name="marca" id="marca" class="" tabindex="13" />
 
-                    <label for="modello">Modello &ast;</label>
-                    <input type="text" name="modello" id="modello" class="" tabindex="14" />
+                        <label for="modello">Modello &ast;</label>
+                        <input type="text" name="modello" id="modello" class="" tabindex="14" />
 
-                    <label for="cilindrata">Cilindrata in cc &ast;</label>
-                    <input type="text" name="cilindrata" id="cilindrata" class="" tabindex="15" />
+                        <label for="cilindrata">Cilindrata in cc &ast;</label>
+                        <input type="text" name="cilindrata" id="cilindrata" class="" tabindex="15" />
 
-                    <label for="costo">Costo Giornaliero in &euro; &ast;</label>
-                    <input type="text" name="costo" id="costo" class="" tabindex="16" />
+                        <label for="costo">Costo Giornaliero in &euro; &ast;</label>
+                        <input type="text" name="costo" id="costo" class="" tabindex="16" />
 
-                    <label for="cauzione">Cauzione in &euro; &ast;</label>
-                    <input type="text" name="cauzione" id="cauzione" class="" tabindex="17" />
+                        <label for="cauzione">Cauzione in &euro; &ast;</label>
+                        <input type="text" name="cauzione" id="cauzione" class="" tabindex="17" />
 
-                    <label for="immagineAuto">Immagine &ast;</label>
-                    <input type="file" name="immagineAuto" id="immagineAuto" class="" tabindex="18" />
+                        <label for="immagineAuto">Immagine &ast;</label>
+                        <input type="file" name="immagineAuto" id="immagineAuto" class="" tabindex="18" />
 
-                    <label for="descrizione">Descrizione dell&apos;immagine &ast;</label>
-                    <input type="text" name="descrizione" id="descrizione" class="" tabindex="19" />
+                        <label for="descrizione">Descrizione dell&apos;immagine &ast;</label>
+                        <input type="text" name="descrizione" id="descrizione" class="" tabindex="19" />
 
-                    <input type="submit" id="salvaNuovoVeicoloNoleggio" value="SALVA" tabindex="20" />
-                </fieldset>
-            </form>
+                        <input type="submit" id="salvaNuovoVeicoloNoleggio" value="SALVA" tabindex="20" />
+                    </fieldset>
+                </form>
+            </div>
         </div>
         <footer></footer>
     </body>

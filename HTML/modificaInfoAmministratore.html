@@ -18,34 +18,36 @@
         <header></header>
         <menu></menu>
         <breadcrumb></breadcrumb>
-        <menuAmministratore></menuAmministratore>
         <div class="corpoAmministratore">
-            <messaggio></messaggio>
-            <p class="pAmm">Inserire qui le informazioni personali da modificare&period;</p>
-            <p class="pAmm"><strong>Attenzione</strong>&colon; l&apos;indirizzo <span xml:lang="en" lang="en">email</span> con cui ci si &egrave; registrati non pu&ograve; essere modificato&period;</p>
-            <form id="modificaInfo" class="formAmm" action="../PHP/salvaInformazioniModificate.php" method="post" enctype="multipart/form-data">
-                <fieldset>
-                    <legend>Informazioni Personali</legend>
-                    <p class="pFormAmm">Ogni campo deve essere compilato&period; Nel caso in cui il campo venga lasciato vuoto&comma; le informazioni precedentemente inserite verranno eliminate&period;</p>
-                
-                    <label for="nome">Nome</label>
-                    <input type="text" name="nome" id="nome" class="" tabindex="12" />
+            <menuAmministratore></menuAmministratore>
+            <div class="testoAmministratore">
+                <messaggio></messaggio>
+                <p class="pAmm">Inserire qui le informazioni personali da modificare&period;</p>
+                <p class="pAmm"><strong>Attenzione</strong>&colon; l&apos;indirizzo <span xml:lang="en" lang="en">email</span> con cui ci si &egrave; registrati non pu&ograve; essere modificato&period;</p>
+                <form id="modificaInfo" class="formAmm" action="../PHP/salvaInformazioniModificate.php" method="post" enctype="multipart/form-data">
+                    <fieldset>
+                        <legend>Informazioni Personali</legend>
+                        <p class="pFormAmm">Ogni campo deve essere compilato&period; Nel caso in cui il campo venga lasciato vuoto&comma; le informazioni precedentemente inserite verranno eliminate&period;</p>
+                    
+                        <label for="nome">Nome</label>
+                        <input type="text" name="nome" id="nome" class="" tabindex="12" />
 
-                    <label for="cognome">Cognome</label>
-                    <input type="text" name="cognome" id="cognome" class="" tabindex="13" />
+                        <label for="cognome">Cognome</label>
+                        <input type="text" name="cognome" id="cognome" class="" tabindex="13" />
 
-                    <label for="telefono">Recapito telefonico</label>
-                    <input type="text" name="telefono" id="telefono" class="" tabindex="14" />
+                        <label for="telefono">Recapito telefonico</label>
+                        <input type="text" name="telefono" id="telefono" class="" tabindex="14" />
 
-                    <label for="indirizzo">Indirizzo</label>
-                    <input type="text" name="indirizzo" id="indirizzo" class="" tabindex="15" />
+                        <label for="indirizzo">Indirizzo</label>
+                        <input type="text" name="indirizzo" id="indirizzo" class="" tabindex="15" />
 
-                    <label for="nascita">Data di nascita<br />&lpar;gg-mm-aaaa&rpar;</label>
-                    <input type="text" name="nascita" id="nascita" class="" tabindex="16" />
+                        <label for="nascita">Data di nascita<br />&lpar;gg-mm-aaaa&rpar;</label>
+                        <input type="text" name="nascita" id="nascita" class="" tabindex="16" />
 
-                    <input type="submit" id="modificaInfo" value="SALVA MODIFICHE" tabindex="17" />
-                </fieldset>
-            </form>
+                        <input type="submit" id="modificaInfo" value="SALVA MODIFICHE" tabindex="17" />
+                    </fieldset>
+                </form>
+            </div>
         </div>
         <footer></footer>
     </body>
