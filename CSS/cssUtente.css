@@ -3,6 +3,22 @@
   background-color: white;
 }
 
+.inputArea {
+  width: 70%;
+  height: 2em;
+  display: block;
+}
+
+.nuovoAccount {
+  font-weight: bolder;
+  margin-top: 0.8em;
+}
+
+.bottoni {
+  display: block;
+  margin-top: 0.75em;
+}
+
 .azioniRapide {
   padding: 0.4em;
   margin: 0.6em;
@@ -17,7 +33,8 @@
 
 label {
   display: block;
-  margin: 0.5em 0.4em 0.5em 1em;
+  margin: 0.5em 0.5em;
+  margin-left: 15%;
 }
 
 .listaMenu {
@@ -89,16 +106,16 @@ label {
 }
 
 .linkRapidi{
-  display: block;
-  border: 1px solid#616161;
-  -webkit-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
-  -moz-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
-  box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
+  margin-left: 0.2em;
+  margin-top: 0.4em;
+  width: 20%;
   padding: 0.4em;
-  margin: 0.6em;
-  width: auto;
   overflow: auto;
-  background-color: #eaeaea;
+  background-color: #F1AB00;
+  color: #FFFFFF;
+  border-radius: 4px;
+  font-weight: bolder;
+  display: block;
 }
 
 #nav {

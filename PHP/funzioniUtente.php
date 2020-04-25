@@ -13,12 +13,12 @@
         $emailUtente = $_SESSION["user"];
         $query = 'SELECT Email, Nome, Cognome, Telefono, Indirizzo, DataNascita FROM Utenti WHERE Email=\''.$emailUtente.'\'';
         $queryResult = $this->dbConnection->esegui($query);
-        $contentItems = "";
+        $contentItems = '<h3 class="titolo">I MIEI DATI</h3>'."\n";
         if(mysqli_num_rows($queryResult)==0){
           return null;
         } else{
           $row=mysqli_fetch_assoc($queryResult);
-          $contentItems ="<div class='dati'>"."\n"
+          $contentItems.="<div class='dati'>"."\n"
                         ."	<h2>I tuoi dati personali</h2>"."\n"
                         ."	<div>"."\n"
                         ."		<div>"."\n"
@@ -56,7 +56,7 @@
       $emailUtente = $_SESSION["user"];
       $query = 'SELECT IdPrev, Automobile, PrezzoVendita FROM PreventivoAcquisto WHERE Utente=\''.$emailUtente.'\'';
       $queryResult = $this->dbConnection->esegui($query);
-      $contentItems = "";
+      $contentItems = '<h3 class="titolo">I MIEI PREVENTIVI</h3>'."\n";
       if(mysqli_num_rows($queryResult)==0){
         return "<h3>Non ci sono acquisti da visualizzare</h3>";
       } else{
@@ -89,7 +89,7 @@
       $emailUtente = $_SESSION["user"];
       $query = 'SELECT IdPrenot, Targa, CostoTotale, InizioNoleggio, FineNoleggio FROM PrenotazioneNoleggio WHERE Utente=\''.$emailUtente.'\'';
       $queryResult = $this->dbConnection->esegui($query);
-      $contentItems = "";
+      $contentItems = '<h3 class="titolo">I MIEI NOLEGGI</h3>'."\n";
       if(mysqli_num_rows($queryResult)==0){
         return "<h3>Non ci sono noleggi da visualizzare</h3>";
       } else{
@@ -130,7 +130,7 @@
       $emailUtente = $_SESSION["user"];
       $query = 'SELECT Messaggio, IdMess FROM Messaggi WHERE Email=\''.$emailUtente.'\'';
       $queryResult = $this->dbConnection->esegui($query);
-      $contentItems = "";
+      $contentItems = '<h3 class="titolo">I MIEI MESSAGGI</h3>'."\n";
       if(mysqli_num_rows($queryResult)==0){
         return "<h3>Non ci sono messaggi da visualizzare</h3>";
       } else{
