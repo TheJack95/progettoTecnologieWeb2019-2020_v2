@@ -74,9 +74,10 @@
 
 @media (max-width:1360px)
 {
-    body{
+    .containerText,#containerOccasione{
         font-size: 0.8em;
     }
+
 }
 
 @media (max-width:1180px){
