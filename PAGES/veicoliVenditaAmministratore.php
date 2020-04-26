@@ -23,22 +23,22 @@
         $veicoliV = "";
         foreach($request as $response) {
             $veicoliV .= "<div class='divAmm'>"."\n"
-                        ."  <img class='imgAutoAmm' src='$response->Immagine' alt='$response->DescrImmagine' />"
+                        ."  <img class='imgAutoAmm' src='$response->Immagine' alt='$response->DescrImmagine' />"."\n"
                         ."  <div class='datiAutoAmm'>"."\n"
-                        ."      <p class='pAmm'><strong>".$response->Marca." ".$response->Modello."</strong></p>"
-                        ."      <p class='pAmm'>".$response->Cilindrata." cm&sup3; - ".$response->KM." km</p>"
-                        ."      <p class='pAmm'>costo&colon; &euro; ".$response->PrezzoVendita."</p>"
+                        ."      <p class='pAmm'><strong>".$response->Marca." ".$response->Modello."</strong></p>"."\n"
+                        ."      <p class='pAmm'>".$response->Cilindrata." cm&sup3; - ".$response->KM." km</p>"."\n"
+                        ."      <p class='pAmm'>costo&colon; &euro; ".$response->PrezzoVendita."</p>"."\n"
                         ."  </div>"."\n"
-                        ."  <form class=\"formRispAmm\" action=\"../PAGES/modificaVeicoloVendita.php\" method=\"post\">
-                                <button type=\"submit\" name=\"modifica\" class=\"noButt linkMod\" value=\"$response->IdAuto\">MODIFICA</button>
-                            </form>"
-                        ."  <form class=\"formElimAmm\" action=\"../PHP/eliminaVeicoloVendita.php\" method=\"post\">
-                                <button type=\"submit\" name=\"elimina\" class=\"noButt linkMod\" value=\"$response->IdAuto\">ELIMINA</button>
-                            </form>"
+                        ."  <form class=\"formRispAmm\" action=\"../PAGES/modificaVeicoloVendita.php\" method=\"post\">"."\n"
+                        ."       <button type=\"submit\" name=\"modifica\" class=\"noButt linkMod\" value=\"$response->IdAuto\">MODIFICA</button>"."\n"
+                        ."  </form>"."\n"
+                        ."  <form class=\"formElimAmm\" action=\"../PHP/eliminaVeicoloVendita.php\" method=\"post\">"."\n"
+                        ."       <button type=\"submit\" name=\"elimina\" class=\"noButt linkMod\" value=\"$response->IdAuto\">ELIMINA</button>"."\n"
+                        ."  </form>"."\n"
                         ."</div>"."\n";
         }
         if(count($request) == 0) {
-            $veicoliV .= "<p class=\"msgAmm\">Al momento non sono disponibili le informazioni richieste&comma; riprova pi&ugrave; tardi&period;</p>";
+            $veicoliV .= "<p class=\"msgAmm\">Al momento non sono disponibili veicoli in vendita&period;</p>";
         }
         $output = str_replace("<veicoliVendita></veicoliVendita>",$veicoliV,$output);
         $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);

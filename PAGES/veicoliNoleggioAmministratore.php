@@ -29,16 +29,16 @@
                         ."      <p class='pAmm'>".$response->Cilindrata." cm&sup3;</p>"
                         ."      <p class='pAmm'>costo&colon; &euro; ".$response->CostoNoleggio." &plus; cauzione &euro; ".$response->Cauzione."</p>"
                         ."  </div>"."\n"
-                        ."  <form class=\"formRispAmm\" action=\"../PAGES/modificaVeicoloNoleggio.php\" method=\"post\">
-                                <button type=\"submit\" name=\"modifica\" class=\"noButt linkMod\" value=\"$response->Targa\">MODIFICA</button>
-                            </form>"
-                        ."  <form class=\"formElimAmm\" action=\"../PHP/eliminaVeicoloNoleggio.php\" method=\"post\">
-                                <button type=\"submit\" name=\"elimina\" class=\"noButt linkMod\" value=\"$response->Targa\">ELIMINA</button>
-                            </form>"
+                        ."  <form class=\"formRispAmm\" action=\"../PAGES/modificaVeicoloNoleggio.php\" method=\"post\">"."\n"
+                        ."      <button type=\"submit\" name=\"modifica\" class=\"noButt linkMod\" value=\"$response->Targa\">MODIFICA</button>"."\n"
+                        ."  </form>"
+                        ."  <form class=\"formElimAmm\" action=\"../PHP/eliminaVeicoloNoleggio.php\" method=\"post\">"."\n"
+                        ."      <button type=\"submit\" name=\"elimina\" class=\"noButt linkMod\" value=\"$response->Targa\">ELIMINA</button>"."\n"
+                        ."  </form>"
                         ."</div>";
         }
         if(count($request) == 0) {
-            $veicoliN .= "<p class=\"msgAmm\">Al momento non sono disponibili le informazioni richieste&comma; riprova pi&ugrave; tardi&period;</p>";
+            $veicoliN .= "<p class=\"msgAmm\">Al momento non sono disponibili veicoli a nolegggio&period;</p>";
         }
         $output = str_replace("<veicoliNoleggio></veicoliNoleggio>",$veicoliN,$output);
         $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
