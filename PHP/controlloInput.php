@@ -14,16 +14,14 @@
 			}
 		}
 
-		public function validFirstName($firstName){
-			if(isset($firstName)){
-				if(preg_match("/^[a-zA-Z ]{3,18}$/",$firstName)){
+		public function validTesto($testo){
+			if(isset($testo) && !empty($testo)){
+				if(preg_match("/^([a-zA-Z ]*[0-9]*[&,#,;,.,,]*)$/",$testo)){
 					return true;
-				}
-				else{
+				} else{
 					return false;
 				}
-			}
-			else{
+			} else{
 				return false;
 			}
 		}
@@ -130,5 +128,31 @@
 				return false;
 			}
 		}
+
+		public function validTarga($targa) {
+			if(isset($targa) && !empty($targa)) {
+				if(preg_match("/^[a-zA-Z]{2}[0-9]{3}[a-zA-Z]{2}$/",$targa)) {
+					return true;
+				} else {
+					return false;
+				}
+			} else {
+				return false;
+			}
+		}
+
+		public function validNumeri($cifra) {
+			if(isset($cifra) && !empty($cifra)) {
+				if(preg_match("/^[0-9]{2,6}$/",$cifra)) {
+					return true;
+				} else {
+					return false;
+				}
+			} else {
+				return false;
+			}
+		}
+
+	#flag fine documento
 	}
 ?>

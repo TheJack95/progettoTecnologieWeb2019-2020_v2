@@ -11,7 +11,7 @@
 
         $output = str_replace("<header></header>",funzioniGenerali::header(),$output);
         $output = str_replace("<menu></menu>",funzioniGenerali::menu(),$output);
-        $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Area Amministratore &gt;&gt; Riepilogo dei veicoli noleggiati"),$output);
+        $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Area Amministratore &gt;&gt; Prenotazioni veicoli a noleggio"),$output);
         $output = str_replace("<menuAmministratore></menuAmministratore>",funzioniAmministratore::menuAmm(),$output);
         if(isset($_SESSION["nuovoMessaggio"])){
             $output = str_replace("<messaggio></messaggio>",$_SESSION["nuovoMessaggio"],$output);
@@ -36,6 +36,7 @@
                                     ."      <p class='pAmm'>Noleggio dal ".$inizio." al ".$fine."</p>"."\n"
                                     ."      <form class='formModAmm' action='../PHP/eliminaPrenotazioneAmministratore.php' method='post'>"."\n"
                                     ."          <fieldset>"."\n"
+                                    ."              <legend></legend>"."\n"
                                     ."              <button type='submit' name='eliminaPrenotazione' class='noButt linkMod' value='$responseP->IdPrenot'>ELIMINA PRENOTAZIONE</button>"."\n"
                                     ."          </fieldset>"."\n"
                                     ."      </form>"."\n"

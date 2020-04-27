@@ -27,22 +27,22 @@
                         ."  <div class='datiAutoAmm'>"."\n"
                         ."      <p class='pAmm'><strong>".$response->Marca." ".$response->Modello."</strong> - ".$response->Targa."</p>"."\n"
                         ."      <p class='pAmm'>".$response->Cilindrata." cm&sup3;</p>"."\n"
-                        ."      <p class='pAmm'>costo&colon; &euro; ".$response->CostoNoleggio." &plus; cauzione &euro; ".$response->Cauzione."</p>"."\n"
-                        ."      <form class=\"formRispAmm\" action=\"../PAGES/modificaVeicoloNoleggio.php\" method=\"post\">"."\n"
+                        ."      <p class='pAmm'>Costo&colon; &euro; ".$response->CostoNoleggio." al giorno &plus; cauzione &euro; ".$response->Cauzione."</p>"."\n"
+                        ."      <form class='formRispAmm' action='../PAGES/modificaVeicoloNoleggio.php' method='post'>"."\n"
                         ."          <fieldset>"."\n"
-                        ."              <button type=\"submit\" name=\"modifica\" class=\"noButt linkMod\" value=\"$response->Targa\">MODIFICA</button>"."\n"
+                        ."              <button type='submit' name='modifica' class='noButt linkMod' value='$response->Targa'>MODIFICA VEICOLO</button>"."\n"
                         ."          </fieldset>"."\n"
                         ."      </form>"."\n"
-                        ."      <form class=\"formElimAmm\" action=\"../PHP/eliminaVeicoloNoleggio.php\" method=\"post\">"."\n"
+                        ."      <form class='formElimAmm' action='../PHP/eliminaVeicoloNoleggio.php' method='post'>"."\n"
                         ."          <fieldset>"."\n"
-                        ."              <button type=\"submit\" name=\"elimina\" class=\"noButt linkMod\" value=\"$response->Targa\">ELIMINA</button>"."\n"
+                        ."              <button type='submit' name='elimina' class='noButt linkMod' value='$response->Targa'>ELIMINA VEICOLO</button>"."\n"
                         ."          </fieldset>"."\n"
                         ."      </form>"."\n"
                         ."  </div>"."\n"
                         ."</div>";
         }
         if(count($request) == 0) {
-            $veicoliN .= "<p class=\"msgAmm\">Al momento non sono disponibili veicoli a nolegggio&period;</p>";
+            $veicoliN .= "<p class='msgAmm'>Al momento non sono disponibili veicoli a nolegggio&period;</p>";
         }
         $output = str_replace("<veicoliNoleggio></veicoliNoleggio>",$veicoliN,$output);
         $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
