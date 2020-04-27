@@ -10,7 +10,8 @@
                             '       <li><a href="infoAmministratore.php" tabindex="8">INFORMAZIONI PERSONALI</a></li>'."\n".
                             '       <li><a href="messaggiAmministratore.php" tabindex="9">MESSAGGI</a></li>'."\n".
                             '       <li><a href="veicoliNoleggioAmministratore.php" tabindex="10">VEICOLI A NOLEGGIO</a></li>'."\n".
-                            '       <li><a href="veicoliVenditaAmministratore.php" tabindex="11">VEICOLI IN VENDITA</a></li>'."\n".
+                            '       <li><a href="listaNoleggiAmministratore.php" tabindex="11">PRENOTAZIONI NOLEGGIO</a></li>'."\n".
+                            '       <li><a href="veicoliVenditaAmministratore.php" tabindex="12">VEICOLI IN VENDITA</a></li>'."\n".
                             '   </ul>'."\n".
                             '</div>';
             return $menuAmm_form;
@@ -42,8 +43,7 @@
         }
     
     #funzione per la lettura da database delle informazioni dell'utente
-        public function selectInfoPersonali() {
-            $email = $_SESSION["user"];
+        public function selectInfoPersonali($email) {
             $query = 'SELECT Email, Nome, Cognome, Telefono, Indirizzo, DataNascita FROM Utenti WHERE Email=\''.$email.'\'';
             $queryResult = $this->connessioneAmministratore->esegui($query);
             $_POST = array();
@@ -179,6 +179,51 @@
 			    while($row=mysqli_fetch_assoc($queryResult)) {
                     $immagine = (Object) ["Immagine"=>$row['Immagine']];
                     array_push($result,$immagine);
+                }
+                return $result;
+            }
+        }
+    
+    #funzione per la lettura da database delle prenotazioni dei veicoli a noleggio
+        public function selectPrenotazioniNoleggio() {
+            $query = 'SELECT IdPrenot, Utente, Targa, InizioNoleggio, FineNoleggio FROM PrenotazioneNoleggio ORDER BY IdPrenot DESC';
+            $queryResult = $this->connessioneAmministratore->esegui($query);
+            $_POST = array();
+            if($queryResult == false) {
+                return [];
+            } else {
+                $result = array();
+			    while($row=mysqli_fetch_assoc($queryResult)) {
+                    $prenotazione = (Object) [
+                                "IdPrenot"=>$row['IdPrenot'],
+                                "Utente"=>$row['Utente'],
+                                "Targa"=>$row['Targa'],
+                                "InizioNoleggio"=>$row['InizioNoleggio'],
+                                "FineNoleggio"=>$row['FineNoleggio']
+                            ];
+                    array_push($result,$prenotazione);
+                }
+                return $result;
+            }
+        }
+    
+    #funzione per la lettura da database delle informazioni sull'auto noleggiata
+        public function selectAutoNoleggiata($targa) {
+            $query = 'SELECT Marca, Modello, Immagine, DescrImmagine FROM AutoNoleggio WHERE Targa=\''.$targa.'\'';
+            $queryResult = $this->connessioneAmministratore->esegui($query);
+            $_POST = array();
+            if($queryResult == false) {
+                return [];
+            } else {
+                $result = array();
+			    while($row=mysqli_fetch_assoc($queryResult)) {
+                    $prenotazione = (Object) [
+                                    "Marca"=>$row['Marca'],
+                                    "Modello"=>$row['Modello'],
+                                    "Immagine"=>$row['Immagine'],
+                                    "DescrImmagine"=>$row['DescrImmagine']
+                                ];
+                    array_push($result,$prenotazione);
                 }
                 return $result;
             }

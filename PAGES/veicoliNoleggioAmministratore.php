@@ -23,18 +23,22 @@
         $veicoliN = "";
         foreach($request as $response) {
             $veicoliN .= "<div class='divAmm'>"."\n"
-                        ."  <img class='imgAutoAmm' src='$response->Immagine' alt='$response->DescrImmagine' />"
+                        ."  <img class='imgAutoAmm' src='$response->Immagine' alt='$response->DescrImmagine' />"."\n"
                         ."  <div class='datiAutoAmm'>"."\n"
-                        ."      <p class='pAmm'><strong>".$response->Marca." ".$response->Modello."</strong> - ".$response->Targa."</p>"
-                        ."      <p class='pAmm'>".$response->Cilindrata." cm&sup3;</p>"
-                        ."      <p class='pAmm'>costo&colon; &euro; ".$response->CostoNoleggio." &plus; cauzione &euro; ".$response->Cauzione."</p>"
+                        ."      <p class='pAmm'><strong>".$response->Marca." ".$response->Modello."</strong> - ".$response->Targa."</p>"."\n"
+                        ."      <p class='pAmm'>".$response->Cilindrata." cm&sup3;</p>"."\n"
+                        ."      <p class='pAmm'>costo&colon; &euro; ".$response->CostoNoleggio." &plus; cauzione &euro; ".$response->Cauzione."</p>"."\n"
+                        ."      <form class=\"formRispAmm\" action=\"../PAGES/modificaVeicoloNoleggio.php\" method=\"post\">"."\n"
+                        ."          <fieldset>"."\n"
+                        ."              <button type=\"submit\" name=\"modifica\" class=\"noButt linkMod\" value=\"$response->Targa\">MODIFICA</button>"."\n"
+                        ."          </fieldset>"."\n"
+                        ."      </form>"."\n"
+                        ."      <form class=\"formElimAmm\" action=\"../PHP/eliminaVeicoloNoleggio.php\" method=\"post\">"."\n"
+                        ."          <fieldset>"."\n"
+                        ."              <button type=\"submit\" name=\"elimina\" class=\"noButt linkMod\" value=\"$response->Targa\">ELIMINA</button>"."\n"
+                        ."          </fieldset>"."\n"
+                        ."      </form>"."\n"
                         ."  </div>"."\n"
-                        ."  <form class=\"formRispAmm\" action=\"../PAGES/modificaVeicoloNoleggio.php\" method=\"post\">"."\n"
-                        ."      <button type=\"submit\" name=\"modifica\" class=\"noButt linkMod\" value=\"$response->Targa\">MODIFICA</button>"."\n"
-                        ."  </form>"
-                        ."  <form class=\"formElimAmm\" action=\"../PHP/eliminaVeicoloNoleggio.php\" method=\"post\">"."\n"
-                        ."      <button type=\"submit\" name=\"elimina\" class=\"noButt linkMod\" value=\"$response->Targa\">ELIMINA</button>"."\n"
-                        ."  </form>"
                         ."</div>";
         }
         if(count($request) == 0) {

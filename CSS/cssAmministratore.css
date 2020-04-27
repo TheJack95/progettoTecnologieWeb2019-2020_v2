@@ -60,12 +60,14 @@
 .formRispAmm {
     width: 50%;
     margin: 0;
-    margin-top: 1%;
+    margin-top: 2%;
     padding: 0;
     display: inline-block;
 }
 
-.formRispAmm fieldset{
+.formRispAmm fieldset,
+.formElimAmm fieldset,
+.formModAmm fieldset {
     border: none;
     padding: 0%;
     margin: 0%
@@ -75,14 +77,16 @@
     float: right;
     width: 50%;
     margin: 0;
-    margin-top: 1%;
+    margin-top: 2%;
     padding: 0;
 }
 
-.formElimAmm fieldset{
-    border: none;
-    padding: 0%;
-    margin: 0%;
+.formModAmm {
+    width: 75%;
+    margin: 0;
+    margin-top: 2%;
+    padding: 0;
+    display: inline-block;
 }
 
 .h1Amm {
@@ -113,16 +117,16 @@
 }
 
 .imgAutoAmm {
-    margin-left: 15%;
-    margin-right: 15%;
-    width: 20%;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 25%;
     height: auto;
     display: inline-block;
 }
 
 .datiAutoAmm {
     float: right;
-    width: 50%;
+    width: 65%;
 }
 
 /* stile per i form */

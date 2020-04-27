@@ -19,7 +19,7 @@
         } else {
             $output = str_replace("<messaggio></messaggio>"," ",$output);
         }
-        $request = (new funzioniAmministratore())->selectInfoPersonali();
+        $request = (new funzioniAmministratore())->selectInfoPersonali($_SESSION["user"]);
         $informazioni = "";
         foreach($request as $response) {
             $nascita = date('d/m/Y',strtotime($response->DataNascita));
