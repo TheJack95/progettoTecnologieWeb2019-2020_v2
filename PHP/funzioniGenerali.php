@@ -31,8 +31,20 @@
         public static function menu(){
             if(!isset($_SESSION)) {
                 session_start();
-            }
-                $menu_form =    '<div id="menu">'."\n".
+			}
+
+				$menu_form ='<div id="burgerMenu" onclick="toggleMenu(this)">'."\n".
+							'	<div class="bar1"></div>'."\n".
+							'	<div class="bar2"></div>'."\n".
+							'	<div class="bar3"></div>'."\n".
+							'</div>'."\n";
+
+                $menu_form .=    '<div id="menu">'."\n".
+                                //'    <div id="menu" class="mobile_hidden">'."\n".
+                                //'        <ul role="menu">'."\n".
+                                //'            <li class="hidden" role="none"><a href="#content" role="menuitem">Vai al contenuto</a></li>'."\n".
+                                //'        </ul>'."\n".
+                                //'    </div>'."\n".
                                 '   <ul>'."\n".
                                 '       <li><a href="home.php" tabindex="1"><span xml:lang="en" lang="en">HOME</span></a></li>'."\n".
                                 '       <li><a href="noleggioVeicoli.php" tabindex="2">VEICOLI A NOLEGGIO</a></li>'."\n".
