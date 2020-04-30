@@ -103,6 +103,7 @@ textarea{
 
 }
 
+
 @media (max-width:550px){
     .containerInfo,#formMessaggio{
         font-size: 0.85em;
