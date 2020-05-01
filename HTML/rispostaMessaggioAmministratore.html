@@ -8,7 +8,7 @@
 		<meta name="keywords" content="home, area personale, area amministratore" />
 		<meta name="language" content="italian it" />
 		<meta name="author" content="Giulia Fiorese" />
-        <link rel="icon" type="images/svg" href="" />
+        <link rel="icon" type="images/svg" href="../Images/LogoGREG.png" />
 		<link rel="stylesheet" type="text/css" href="../CSS/cssAmministratore.css" />
         <link rel="stylesheet" type="text/css" href="../CSS/cssGenerale.css" />
 		<script type="text/javascript" src=""></script>
@@ -26,15 +26,15 @@
                 <form id="rispostaMessaggioAmministartore" class="formAmm" action="../PHP/salvaRispostaAmministratore.php" method="post" enctype="multipart/form-data">
                     <fieldset>
                         <legend>Messaggio</legend>
-                        <p><strong>Nota bene</strong>&colon; tutti i campi marcati con l&apos;asterisco &ast; sono obbligatori&period;</p>
+                        <p class="pFormAmm">Tutti i campi marcati con l&apos;asterisco &ast; sono obbligatori&period;</p>
 
                         <label for="oggetto">Oggetto &ast;</label>
-                        <input type="text" name="oggetto" id="oggetto" class="" tabindex="12" />
+                        <input type="text" name="oggetto" id="oggetto" tabindex="13" />
 
-                        <label for="testo">Testo &ast;</label>
-                        <textarea name="testo" id="testo" class="textbox" tabindex="13" cols="50" rows="5" ></textarea>
+                        <label for="testo">Messaggio &ast;</label>
+                        <textarea name="testo" id="testo" cols="50" rows="5" tabindex="14"></textarea>
 
-                        <input type="submit" id="salvaRispostaAmm" value="INVIA RISPOSTA" tabindex="14" />
+                        <input type="submit" id="salvaRispostaAmm" value="INVIA RISPOSTA" tabindex="15" />
                     </fieldset>
                 </form>
             </div>

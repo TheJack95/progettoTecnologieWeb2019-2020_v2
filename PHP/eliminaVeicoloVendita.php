@@ -20,11 +20,11 @@
         $connessioneDatabase = new database_connection;
         $delete = "DELETE FROM AutoVendita WHERE IdAuto='$idAuto'";
         if ($connessioneDatabase->esegui($delete) == TRUE) {
-            $messaggio = "<p class='msgAmm msgSuccAmm'>Veicolo in vendita eliminato correttamente&period; Potresti vedere ancora il veicolo appena eliminato nella tua lista&comma; eventualmente ricarica la pagina&period;</p>";
+            $messaggio = "<p class='messaggio successMessage'>Veicolo in vendita eliminato correttamente&period; Potresti vedere ancora il veicolo appena eliminato nella tua lista&comma; eventualmente ricarica la pagina&period;</p>";
             $_SESSION["nuovoMessaggio"] = $messaggio;
             header("location: ../PAGES/VeicoliVenditaAmministratore.php");
         } else {
-            $messaggio = "<p class='msgAmm msgErrAmm'>Non &egrave; possibile eliminare il veicolo a noleggio per un problema del database&period; Riprova pi&ugrave; tardi&period;</p>";
+            $messaggio = "<p class='messaggio errorMessage'>Non &egrave; possibile eliminare il veicolo a noleggio per un problema del database&period; Riprova pi&ugrave; tardi&period;</p>";
             $_SESSION["nuovoMessaggio"] = $messaggio;
             header("location: ../PAGES/VeicoliVenditaAmministratore.php");
         }

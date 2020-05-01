@@ -11,7 +11,7 @@
 
         $output = str_replace("<header></header>",funzioniGenerali::header(),$output);
         $output = str_replace("<menu></menu>",funzioniGenerali::menu(),$output);
-        $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Area Amministratore &gt;&gt; VEICOLI IN VENDITA"),$output);
+        $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Area Amministratore &gt;&gt; Veicoli in vendita"),$output);
         $output = str_replace("<menuAmministratore></menuAmministratore>",funzioniAmministratore::menuAmm(),$output);
         if(isset($_SESSION["nuovoMessaggio"])){
             $output = str_replace("<messaggio></messaggio>",$_SESSION["nuovoMessaggio"],$output);
@@ -22,30 +22,33 @@
         $request = (new funzioniAmministratore())->selectVeicoliVendita();
         $veicoliV = "";
         foreach($request as $response) {
-            $veicoliV .= "<ul>"
-                        ."  <li>Marca&colon; <strong>".$response->Marca."</strong></li>"
-                        ."  <li>Modello&colon; <strong>".$response->Modello."</strong></li>"
-                        ."  <li>Chilometri&colon; <strong>".$response->KM."</strong></li>"
-                        ."  <li>Cilindrata&colon; <strong>".$response->Cilindrata."</strong></li>"
-                        ."  <li>Prezzo&colon; <strong>".$response->PrezzoVendita."</strong></li>"
-                        ."  <li>Immagine&colon; <strong>".$response->Immagine."</strong></li>"
-                        ."  <li>DescrImmagine&colon; <strong>".$response->DescrImmagine."</strong></li>"
-                        ."</ul>"
-                        ."  <form class=\"tastoModifiche\" action=\"../PAGES/modificaVeicoloVendita.php\" method=\"post\">
-                                <button type=\"submit\" name=\"modifica\" value=\"$response->IdAuto\">MODIFICA</button>
-                            </form>"
-                        ."  <form class=\"tastoModifiche\" action=\"../PHP/eliminaVeicoloVendita.php\" method=\"post\">
-                                <button type=\"submit\" name=\"elimina\" value=\"$response->IdAuto\">ELIMINA</button>
-                            </form>";
+            $veicoliV .= "<div class='divAmm'>"."\n"
+                        ."  <img class='imgAutoAmm' src='$response->Immagine' alt='$response->DescrImmagine' />"."\n"
+                        ."  <div class='datiAutoAmm'>"."\n"
+                        ."      <p class='pAmm'><strong>".$response->Marca." ".$response->Modello."</strong></p>"."\n"
+                        ."      <p class='pAmm'>".$response->Cilindrata." cm&sup3; - ".$response->KM." km</p>"."\n"
+                        ."      <p class='pAmm'>costo&colon; &euro; ".$response->PrezzoVendita."</p>"."\n"
+                        ."      <form class=\"formRispAmm\" action=\"../PAGES/modificaVeicoloVendita.php\" method=\"post\">"."\n"
+                        ."          <fieldset>"."\n"
+                        ."              <button type=\"submit\" name=\"modifica\" class=\"noButt linkMod\" value=\"$response->IdAuto\">MODIFICA</button>"."\n"
+                        ."          </fieldset>"."\n"
+                        ."      </form>"."\n"
+                        ."      <form class=\"formElimAmm\" action=\"../PHP/eliminaVeicoloVendita.php\" method=\"post\">"."\n"
+                        ."          <fieldset>"."\n"
+                        ."              <button type=\"submit\" name=\"elimina\" class=\"noButt linkMod\" value=\"$response->IdAuto\">ELIMINA</button>"."\n"
+                        ."          </fieldset>"."\n"
+                        ."      </form>"."\n"
+                        ."  </div>"."\n"
+                        ."</div>"."\n";
         }
         if(count($request) == 0) {
-            $veicoliV .= "<p class=\"msgAmm\">Al momento non sono disponibili le informazioni richieste&comma; riprova pi&ugrave; tardi&period;</p>";
+            $veicoliV .= "<p class=\"msgAmm\">Al momento non sono disponibili veicoli in vendita&period;</p>";
         }
         $output = str_replace("<veicoliVendita></veicoliVendita>",$veicoliV,$output);
         $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
 
         $output = str_replace('<a class="" href="homeAmministratore.php" tabindex="5">AREA AMMINISTRATORE</a>','<strong>AREA AMMINISTRATORE</strong>',$output);
-        $output = str_replace('<a href="veicoliVenditaAmministratore.php" tabindex="11">VEICOLI IN VENDITA</a>','<strong>VEICOLI IN VENDITA</strong>',$output);
+        $output = str_replace('<a href="veicoliVenditaAmministratore.php" tabindex="12">VEICOLI IN VENDITA</a>','<strong>VEICOLI IN VENDITA</strong>',$output);
 
         echo $output;
     } else {

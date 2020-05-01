@@ -8,7 +8,7 @@
 		<meta name="keywords" content="modifica veicolo, veicolo noleggio, area personale, area amministratore" />
 		<meta name="language" content="italian it" />
 		<meta name="author" content="Giulia Fiorese" />
-        <link rel="icon" type="images/svg" href="" />
+        <link rel="icon" type="images/svg" href="../Images/LogoGREG.png" />
 		<link rel="stylesheet" type="text/css" href="../CSS/cssAmministratore.css" />
         <link rel="stylesheet" type="text/css" href="../CSS/cssGenerale.css" />
 		<script type="text/javascript" src=""></script>
@@ -23,28 +23,28 @@
             <div class="testoAmministratore">
                 <messaggio></messaggio>
                 <p class="pAmm">Inserisci qui le informazioni sul veicolo a noleggio da modificare&period;</p>
+                <p class="pAmm"><strong>Attenzione</strong>&colon; la targa del veicolo non pu&ograve; essere modificata&period;</p>
                 <form id="modificaVeicoloNoleggio" class="formAmm" action="../PHP/salvaVeicoloNoleggioModificato.php" method="post" enctype="multipart/form-data">
                     <fieldset>
                         <legend>Informazioni Veicolo</legend>
-                        <p class="msgFormAmm">Ogni campo deve essere compilato&period; Nel caso in cui il campo venga lasciato vuoto&comma; le informazioni precedentemente inserite verranno eliminate&period;</p>
-                        <p class="msgFormAmm"><strong>Nota bene</strong>&colon; la targa del veicolo non pu&ograve; essere modificata&period;</p>
+                        <p class="pFormAmm">Ogni campo deve essere compilato&period; Nel caso in cui il campo venga lasciato vuoto&comma; le informazioni precedentemente inserite verranno eliminate&period;</p>
 
                         <label for="marca">Marca</label>
-                        <input type="text" name="marca" id="marca" class="" tabindex="12" />
+                        <input type="text" name="marca" id="marca" tabindex="13" />
 
                         <label for="modello">Modello</label>
-                        <input type="text" name="modello" id="modello" class="" tabindex="13" />
+                        <input type="text" name="modello" id="modello" tabindex="14" />
 
-                        <label for="cilindrata">Cilindrata in cc</label>
-                        <input type="text" name="cilindrata" id="cilindrata" class="" tabindex="14" />
+                        <label for="cilindrata">Cilindrata in cm&sup3;</label>
+                        <input type="text" name="cilindrata" id="cilindrata" tabindex="15" />
 
-                        <label for="costo">Costo Giornaliero in &euro;</label>
-                        <input type="text" name="costo" id="costo" class="" tabindex="15" />
+                        <label for="costo">Costo al giorno in &euro;</label>
+                        <input type="text" name="costo" id="costo" tabindex="16" />
 
                         <label for="cauzione">Cauzione in &euro;</label>
-                        <input type="text" name="cauzione" id="cauzione" class="" tabindex="16" />
+                        <input type="text" name="cauzione" id="cauzione" tabindex="17" />
 
-                        <input type="submit" id="salvaModificheVeicoloNoleggio" value="SALVA MODIFICHE" tabindex="17" />
+                        <input type="submit" id="salvaModificheVeicoloNoleggio" value="SALVA MODIFICHE" tabindex="18" />
                     </fieldset>
                 </form>
             </div>

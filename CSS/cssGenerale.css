@@ -35,11 +35,11 @@ body {
 	text-align: center;
 	font-size: 1.1em;
 	color: #FFFFFF;
-	padding: 0.5em 0.5em;
-	margin: 0.5em;
-	border-radius: 6px 6px 6px 6px;
-	-moz-border-radius: 6px 6px 6px 6px;
-	-webkit-border-radius: 6px 6px 6px 6px;
+	padding: 1%;
+	margin: 1%;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 }
 
 .errorMessage {
@@ -73,6 +73,12 @@ body {
 	overflow: auto;
 	background-color: #060807;
 }
+
+#header a {
+	color: #F1AB00;
+	text-decoration-color: #F1AB00;
+}
+
 
 /* STILE DEL FOOTER */
 #footer {
@@ -183,8 +189,85 @@ input[type="submit"] {
     box-shadow: 4% 5% gray;
 }
 
+/* hamburher animation */
+/* PRESO DA https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_menu_icon_js */
+#burgerMenu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    padding: 1.4em 2em 1.4em 2em;
+    min-width: 48px;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 2.75em;
+    height: 0.31em;
+    background-color: white;
+    margin: 0.44em 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    -webkit-transform: translate(0em, 0.75em) rotate(-45deg);
+    -moz-transform: translate(0em, 0.75em) rotate(-45deg);
+    -ms-transform: translate(0em, 0.75em) rotate(-45deg);
+    -o-transform: translate(0em, 0.75em) rotate(-45deg);
+    transform: translate(0em, 0.75em) rotate(-45deg);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    -webkit-transform: translate(0em, -0.75em) rotate(45deg);
+    -moz-transform: translate(0em, -0.75em) rotate(45deg);
+    -ms-transform: translate(0em, -0.75em) rotate(45deg);
+    -o-transform: translate(0em, -0.75em) rotate(45deg);
+    transform: translate(0em, -0.75em) rotate(45deg);
+}
+
+.menuMobile {
+	display: block !important;
+}
+
 @media (max-width:1000px) {
 	html, body {
 		max-width: 95%;
+	}
+}
+
+@media (max-width:550px) {
+	#menu {
+		display: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	#menu ul {
+		margin: 0;
+		padding: 0;
+	}
+
+	#menu ul li {
+		display: block;
+		border-bottom: 2px solid black;
+		padding: 0.6em 0;
+		list-style-type: none;
+		text-align: center;
+	}
+
+	#burgerMenu {
+		display: block;
+	}
+
+	.nomeSito {
+		font-size: 100%;
+	}
+
+	.logoHeader {
+		height: 2em;
 	}
 }

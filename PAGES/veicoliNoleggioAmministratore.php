@@ -11,7 +11,7 @@
 
         $output = str_replace("<header></header>",funzioniGenerali::header(),$output);
         $output = str_replace("<menu></menu>",funzioniGenerali::menu(),$output);
-        $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Area Amministratore &gt;&gt; VEICOLI A NOLEGGIO"),$output);
+        $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Area Amministratore &gt;&gt; Veicoli a noleggio"),$output);
         $output = str_replace("<menuAmministratore></menuAmministratore>",funzioniAmministratore::menuAmm(),$output);
         if(isset($_SESSION["nuovoMessaggio"])){
             $output = str_replace("<messaggio></messaggio>",$_SESSION["nuovoMessaggio"],$output);
@@ -22,25 +22,27 @@
         $request = (new funzioniAmministratore())->selectVeicoliNoleggio();
         $veicoliN = "";
         foreach($request as $response) {
-            $veicoliN .= "<ul>"
-                        ."  <li>Targa&colon; <strong>".$response->Targa."</strong></li>"
-                        ."  <li>Marca&colon; <strong>".$response->Marca."</strong></li>"
-                        ."  <li>Modello&colon; <strong>".$response->Modello."</strong></li>"
-                        ."  <li>Cilindrata&colon; <strong>".$response->Cilindrata."</strong></li>"
-                        ."  <li>Costo Noleggio&colon; <strong>".$response->CostoNoleggio."</strong></li>"
-                        ."  <li>Cauzione&colon; <strong>".$response->Cauzione."</strong></li>"
-                        ."  <li>Immagine&colon; <strong>".$response->Immagine."</strong></li>"
-                        ."  <li>DescrImmagine&colon; <strong>".$response->DescrImmagine."</strong></li>"
-                        ."</ul>"
-                        ."  <form class=\"tastoModifiche\" action=\"../PAGES/modificaVeicoloNoleggio.php\" method=\"post\">
-                                <button type=\"submit\" name=\"modifica\" value=\"$response->Targa\">MODIFICA</button>
-                            </form>"
-                        ."  <form class=\"tastoModifiche\" action=\"../PHP/eliminaVeicoloNoleggio.php\" method=\"post\">
-                                <button type=\"submit\" name=\"elimina\" value=\"$response->Targa\">ELIMINA</button>
-                            </form>";
+            $veicoliN .= "<div class='divAmm'>"."\n"
+                        ."  <img class='imgAutoAmm' src='$response->Immagine' alt='$response->DescrImmagine' />"."\n"
+                        ."  <div class='datiAutoAmm'>"."\n"
+                        ."      <p class='pAmm'><strong>".$response->Marca." ".$response->Modello."</strong> - ".$response->Targa."</p>"."\n"
+                        ."      <p class='pAmm'>".$response->Cilindrata." cm&sup3;</p>"."\n"
+                        ."      <p class='pAmm'>costo&colon; &euro; ".$response->CostoNoleggio." &plus; cauzione &euro; ".$response->Cauzione."</p>"."\n"
+                        ."      <form class=\"formRispAmm\" action=\"../PAGES/modificaVeicoloNoleggio.php\" method=\"post\">"."\n"
+                        ."          <fieldset>"."\n"
+                        ."              <button type=\"submit\" name=\"modifica\" class=\"noButt linkMod\" value=\"$response->Targa\">MODIFICA</button>"."\n"
+                        ."          </fieldset>"."\n"
+                        ."      </form>"."\n"
+                        ."      <form class=\"formElimAmm\" action=\"../PHP/eliminaVeicoloNoleggio.php\" method=\"post\">"."\n"
+                        ."          <fieldset>"."\n"
+                        ."              <button type=\"submit\" name=\"elimina\" class=\"noButt linkMod\" value=\"$response->Targa\">ELIMINA</button>"."\n"
+                        ."          </fieldset>"."\n"
+                        ."      </form>"."\n"
+                        ."  </div>"."\n"
+                        ."</div>";
         }
         if(count($request) == 0) {
-            $veicoliN .= "<p class=\"msgAmm\">Al momento non sono disponibili le informazioni richieste&comma; riprova pi&ugrave; tardi&period;</p>";
+            $veicoliN .= "<p class=\"msgAmm\">Al momento non sono disponibili veicoli a nolegggio&period;</p>";
         }
         $output = str_replace("<veicoliNoleggio></veicoliNoleggio>",$veicoliN,$output);
         $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
