@@ -27,22 +27,22 @@
                         ."  <div class='datiAutoAmm'>"."\n"
                         ."      <p class='pAmm'><strong>".$response->Marca." ".$response->Modello."</strong></p>"."\n"
                         ."      <p class='pAmm'>".$response->Cilindrata." cm&sup3; - ".$response->KM." km</p>"."\n"
-                        ."      <p class='pAmm'>costo&colon; &euro; ".$response->PrezzoVendita."</p>"."\n"
-                        ."      <form class=\"formRispAmm\" action=\"../PAGES/modificaVeicoloVendita.php\" method=\"post\">"."\n"
+                        ."      <p class='pAmm'>Costo&colon; &euro; ".$response->PrezzoVendita." &plus; i&period;v&period;a&period;</p>"."\n"
+                        ."      <form class='formRispAmm' action='../PAGES/modificaVeicoloVendita.php' method='post'>"."\n"
                         ."          <fieldset>"."\n"
-                        ."              <button type=\"submit\" name=\"modifica\" class=\"noButt linkMod\" value=\"$response->IdAuto\">MODIFICA</button>"."\n"
+                        ."              <button type='submit' name='modifica' class='noButt linkMod' value='$response->IdAuto'>MODIFICA VEICOLO</button>"."\n"
                         ."          </fieldset>"."\n"
                         ."      </form>"."\n"
-                        ."      <form class=\"formElimAmm\" action=\"../PHP/eliminaVeicoloVendita.php\" method=\"post\">"."\n"
+                        ."      <form class='formElimAmm' action='../PHP/eliminaVeicoloVendita.php' method='post'>"."\n"
                         ."          <fieldset>"."\n"
-                        ."              <button type=\"submit\" name=\"elimina\" class=\"noButt linkMod\" value=\"$response->IdAuto\">ELIMINA</button>"."\n"
+                        ."              <button type='submit' name='elimina' class='noButt linkMod' value='$response->IdAuto'>ELIMINA VEICOLO</button>"."\n"
                         ."          </fieldset>"."\n"
                         ."      </form>"."\n"
                         ."  </div>"."\n"
                         ."</div>"."\n";
         }
         if(count($request) == 0) {
-            $veicoliV .= "<p class=\"msgAmm\">Al momento non sono disponibili veicoli in vendita&period;</p>";
+            $veicoliV .= "<p class='msgAmm'>Al momento non sono disponibili veicoli in vendita&period;</p>";
         }
         $output = str_replace("<veicoliVendita></veicoliVendita>",$veicoliV,$output);
         $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);

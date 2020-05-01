@@ -14,7 +14,7 @@
     background-color: #F1AB00;
     color: #FFFFFF;
     margin: 0;
-    padding: 0.5%;
+    padding: 0;
     clear: both;
 }
 
@@ -102,11 +102,13 @@
 }
 
 .pLinkAmm {
+    margin: 0;
     text-align: right;
 }
 
 .pLinkHomeAmm {
-    text-align: center;
+    margin-top: 1%;
+    text-align: left;
 }
 
 .divAmm {
