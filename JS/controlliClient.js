@@ -29,7 +29,7 @@ var checkForm = (function(idForm) {
         text += checkRegistrazione();
 
     if(inputsKO.length) {
-        text += "Input " + inputsKO + " non valido/i";
+        text += "Input " + inputsKO + "non valido/i";
         alert(text);
     }
 

@@ -1,0 +1,25 @@
+* {
+  background: transparent !important;
+  color: black !important;
+}
+
+body {
+  font-size: 12pt;
+}
+
+#header, #menu, #breadcrumb, .logoHeader, #footer, .flexbox-item {
+  display: none;
+}
+
+a[href]:after {
+  content: "(" attr(href) ")";
+}
+
+#nav {
+  display: none;
+}
+
+#content {
+  display: block;
+  width: 90%;
+}
