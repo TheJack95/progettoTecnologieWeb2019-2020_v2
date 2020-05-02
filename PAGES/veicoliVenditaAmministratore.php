@@ -48,7 +48,7 @@
         $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
 
         $output = str_replace('<a class="" href="homeAmministratore.php" tabindex="5">AREA AMMINISTRATORE</a>','<strong>AREA AMMINISTRATORE</strong>',$output);
-        $output = str_replace('<a href="veicoliVenditaAmministratore.php" tabindex="12">VEICOLI IN VENDITA</a>','&gt; VEICOLI IN VENDITA',$output);
+        $output = str_replace('<a href="veicoliVenditaAmministratore.php" tabindex="12">VEICOLI IN VENDITA</a>','&gt;VEICOLI IN VENDITA',$output);
 
         echo $output;
     } else {

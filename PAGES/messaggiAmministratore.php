@@ -63,7 +63,7 @@
         $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
 
         $output = str_replace('<a class="" href="homeAmministratore.php" tabindex="5">AREA AMMINISTRATORE</a>','<strong>AREA AMMINISTRATORE</strong>',$output);
-        $output = str_replace('<a href="messaggiAmministratore.php" tabindex="9">MESSAGGI</a>','&gt; MESSAGGI',$output);
+        $output = str_replace('<a href="messaggiAmministratore.php" tabindex="9">MESSAGGI</a>','&gt;MESSAGGI',$output);
 
         echo $output;
     } else {

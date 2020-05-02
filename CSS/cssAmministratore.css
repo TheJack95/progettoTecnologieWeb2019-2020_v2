@@ -1,10 +1,9 @@
-/* stile per il corpo */
+/* stile per i dispositivi desktop */
 .corpoAmministratore {
     background-color: #F1AB00;
     margin: 1%;
 }
 
-/* stile per il menu' */
 #menuAmministratore {
     float: left;
     width: 29%;
@@ -27,7 +26,6 @@
     padding: 5%;
 }
 
-/* stile per il testo */
 .testoAmministratore {
     float: right;
     width: 69%;
@@ -108,7 +106,7 @@
 
 .pLinkHomeAmm {
     margin-top: 1%;
-    text-align: left;
+    text-align: center;
 }
 
 .divAmm {
@@ -131,7 +129,6 @@
     width: 65%;
 }
 
-/* stile per i form */
 .formAmm fieldset {
     margin: 1%;
     padding: 1%;
@@ -152,15 +149,16 @@
     padding: 1%;
     width: 25%;
     text-align: right;
+    vertical-align: top;
 }
 
 .formAmm input[type="text"],
 .formAmm input[type="file"],
 .formAmm textarea {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
     font-size: 1em;
     padding: 1%;
     margin: 0.5%;
-    vertical-align: bottom;
     border: 1px solid black;
     border-radius: 4px;
     box-sizing: content-box;
@@ -197,4 +195,55 @@
     margin: 1%;
     padding: 1%;
     text-align: center;
+}
+
+/* stile per i dispositivi mobile */
+/* smartphone */
+@media (max-width: 700px) {
+    #menuAmministratore{
+        float: none;
+        width: 100%;
+        font-size: 1em;
+        background-color: white;
+    }
+
+    #menuAmministratore ul li{
+        margin: 1px;
+        padding: 3%;
+        background-color: #F1AB00;
+        border-radius: 5px;
+    }
+
+    .testoAmministratore{
+        float: none;
+        width: 100%;
+        background-color: white;
+    }
+
+    .formAmm input[type="text"],
+    .formAmm input[type="file"],
+    .formAmm textarea {
+        font-size: 1em;
+        padding: 1%;
+        margin: 0.5%;
+        vertical-align: bottom;
+        border: 1px solid black;
+        border-radius: 4px;
+        box-sizing: content-box;
+        width: 65%;
+        background-color: #FFFFFF;
+    }
+}
+
+/* tablet 
+@media (max-width: 1000px) {}
+*/
+
+/* stile per la stampa */
+@media print {
+    #menu,
+    #breadcrumb,
+    #menuAmministratore {
+        display: none;
+    }
 }
