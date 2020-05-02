@@ -22,11 +22,11 @@
         $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
 
         $output = str_replace('<a class="" href="homeAmministratore.php" tabindex="5">AREA AMMINISTRATORE</a>','<strong>AREA AMMINISTRATORE</strong>',$output);
-        $output = str_replace('<a href="homeAmministratore.php" tabindex="7"><span xml:lang="en" lang="en">HOME</span> AMMINISTRATORE</a>','<strong><span xml:lang="en">HOME</span> AMMINISTRATORE</strong>',$output);
+        $output = str_replace('<a href="homeAmministratore.php" tabindex="7"><span xml:lang="en" lang="en">HOME</span> AMMINISTRATORE</a>','&gt; <span xml:lang="en" lang="en">HOME</span> AMMINISTRATORE &lt;',$output);
 
         echo $output;
     } else {
-        $errLogin = "ATTENZIONE&excl; Non hai i permessi per accedere all&apos;area dell&apos;amministratore&period;<br />Sei stato reindirizzato alla pagina per l&apos;accesso&period; ACCEDI E RIPROVA&period;";
+        $errLogin = "ATTENZIONE&colon; non hai i permessi per accedere all&apos;area dell&apos;amministratore. Sei stato reindirizzato alla pagina per l&apos;accesso. Accedi e riprova";
         $_SESSION["errmessage"] = $errLogin;
         header("location: ../PAGES/login.php");
     }
