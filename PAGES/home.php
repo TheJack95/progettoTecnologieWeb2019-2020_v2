@@ -17,7 +17,7 @@
     $sql = "SELECT * FROM AutoVendita ORDER BY RAND($seed) LIMIT 1";
     $resultCheck = $occasione->esegui($sql);
 
-    if($resultCheck == FALSE)
+    if($resultCheck == false || mysqli_num_rows($resultCheck) == 0)
         $result = "<p class = \"erroMessage\">Non è possibile al momento possibile reperire l'occasione, riprova più tardi </p>";
     else{
         $row = mysqli_fetch_assoc($resultCheck);
