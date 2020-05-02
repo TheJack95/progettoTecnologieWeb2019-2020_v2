@@ -49,6 +49,7 @@ $output = str_replace("<auto></auto>",$veicoli,$output);
 
 $filtri ='<form action="acquistaVeicoli.php" method="post">'."\n"
 		.'	<fieldset>'."\n"
+		.'  	<legend>Filtri di ricerca</legend>'."\n"
 		.'		<label for="searchbar">Cerca veicoli</label>'."\n"
 		.'		<input type="text" id="searchbar" name="searchbar" tabindex="7" />'."\n"
 		.'		<input type="submit" name="applicafiltri" value="Cerca" tabindex="8" />'."\n"

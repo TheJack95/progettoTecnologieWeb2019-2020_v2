@@ -22,20 +22,20 @@ foreach($rows as $row) {
 				.'	<img class="fotoVeicolo" src="'.$row->Immagine.'" alt="'.$row->DescrImmagine.'"/>'."\n"
 				.'	<div class="datiVeicolo">'
 				.'		<h2 class="titoloVeicolo">'.$row->Marca." ".$row->Modello.'</h2>'."\n"
-				.'		<ul>'
-				.'			<li>'
-				.'				<p><strong>Cilindrata:</strong>  '.$row->Cilindrata.'</p>'
-				.'			</li>'
-				.'			<li>'
-				.'				<p><strong>Costo noleggio:</strong>'.$row->CostoNoleggio.' &#8364;</p>'
-				.'			</li>'
-				.'			<li>'
-				.'				<p><strong>Cauzione:</strong>'.$row->Cauzione.' &#8364;</p>'
-				.'			</li>'
-				.'		</ul>'
+				.'		<ul>'."\n"
+				.'			<li>'."\n"
+				.'				<p><strong>Cilindrata:</strong>  '.$row->Cilindrata.'</p>'."\n"
+				.'			</li>'."\n"
+				.'			<li>'."\n"
+				.'				<p><strong>Costo noleggio:</strong>'.$row->CostoNoleggio.' &#8364;</p>'."\n"
+				.'			</li>'."\n"
+				.'			<li>'."\n"
+				.'				<p><strong>Cauzione:</strong>'.$row->Cauzione.' &#8364;</p>'."\n"
+				.'			</li>'."\n"
+				.'		</ul>'."\n"
 				.'		<a href="noleggioVeicolo.php?targaAuto='.$row->Targa.'" class="linkMod">Noleggia auto</a>'."\n"
 				.'	</div>'."\n"
-				.'</div>';
+				.'</div>'."\n";
 }
 
 if(count($rows) == 0) {
@@ -47,15 +47,16 @@ $output = str_replace("<auto></auto>",$veicoli,$output);
 $filtri ='<div>'."\n"
 		.'	<form action="noleggioVeicoli.php" method="post">'."\n"
 		.'  	<fieldset>'."\n"
-		.'				<label for="searchbar">Cerca veicoli</label>'."\n"
-		.'				<input type="text" name="searchbar" tabindex="7" id="searchbar" />'."\n"
-		.'				<p>Filtra per data disponibilit&agrave; (formato gg-mm-aaaa)</p>'."\n"
-		.'				<label for="datainizio">Dal</label>'."\n"
-		.'				<input type="text" name="datainizio" tabindex="8" id="datainizio" class="dataInput" />'."\n"
-		.'				<label for="datafine">Al</label>'."\n"
-		.'				<input type="text" name="datafine" tabindex="9" id="datafine" class="dataInput" />'."\n"
-		.'				<input type="submit" name="applicaFiltri" value="Cerca" tabindex="10" />'."\n"
-		.'				<input type="submit" name="ricaricapagina" value="Ricarica pagina" tabindex="11" />'."\n"
+		.'  		<legend>Filtri di ricerca</legend>'."\n"
+		.'			<label for="searchbar">Cerca veicoli</label>'."\n"
+		.'			<input type="text" name="searchbar" tabindex="7" id="searchbar" />'."\n"
+		.'			<p>Filtra per data disponibilit&agrave; (formato gg-mm-aaaa)</p>'."\n"
+		.'			<label for="datainizio">Dal</label>'."\n"
+		.'			<input type="text" name="datainizio" tabindex="8" id="datainizio" class="dataInput" />'."\n"
+		.'			<label for="datafine">Al</label>'."\n"
+		.'			<input type="text" name="datafine" tabindex="9" id="datafine" class="dataInput" />'."\n"
+		.'			<input type="submit" name="applicaFiltri" value="Cerca" tabindex="10" />'."\n"
+		.'			<input type="submit" name="ricaricapagina" value="Ricarica pagina" tabindex="11" />'."\n"
 		.'  	</fieldset>'."\n"
 		.'	</form>'."\n"
 		.'</div>';
