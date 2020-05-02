@@ -52,7 +52,7 @@ label {
   -moz-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
   box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
   padding: 1.2em;
-  margin: 2.5em;
+  margin: 2em;
   overflow: auto;
   width: 80%;
   background-color: #eaeaea;
@@ -70,7 +70,7 @@ label {
   -moz-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
   box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
   padding: 1.2em;
-  margin: 2.5em;
+  margin: 2em;
   overflow: auto;
   width: 80%;
   background-color: #eaeaea;
@@ -82,10 +82,14 @@ label {
   -moz-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
   box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
   padding: 1.2em;
-  margin: 2.5em;
+  margin: 2em;
   overflow: auto;
   width: 80%;
   background-color: #eaeaea;
+}
+
+.dati div {
+  margin-top: 0.4em;
 }
 
 .marcamodello {
@@ -99,7 +103,7 @@ label {
   -moz-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
   box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
   padding: 1.2em;
-  margin: 2.5em;
+  margin: 2em;
   overflow: auto;
   width: 80%;
   background-color: #eaeaea;
@@ -174,10 +178,21 @@ hr {
 
 @media (max-width:700px) {
   #nav {
-      padding: 1em;
-      display: block;
-      width: 80%;
-      height:inherit;
-      overflow: auto;
+    padding: 1em;
+    display: block;
+    width: 85%;
+    height:inherit;
+    overflow: auto;
+  }
+
+  #content {
+    display: block;
+    width: auto;
+  }
+
+  .dati, .noleggi, .messaggi, .preventivi {
+    width: auto;
+    margin-top: 1.7em;
+    margin-bottom: 1.7em;
   }
 }
