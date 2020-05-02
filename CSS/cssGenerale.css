@@ -290,7 +290,7 @@ input[type="submit"] {
 		margin: 0;
 		padding: 0;
 	}
-	topFunction
+	/*topFunction*/
 	#menu ul li {
 		display: block;
 		border-bottom: 2px solid black;
