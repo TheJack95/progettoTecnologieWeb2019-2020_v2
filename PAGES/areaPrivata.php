@@ -22,13 +22,9 @@ if(isset($_SESSION["user"])) {
 				."	<h3 class='titoloMenu'>Menu Utente</h3>"."\n"
 				."	<ul class='listaMenu'>"."\n"
 				."	   <li><a href='areaPrivata.php?pageName=principale' tabindex='7'>Area Personale</a></li>"."\n"
-				."	   <hr/>"."\n"
 				."	   <li><a href='areaPrivata.php?pageName=datiPersonali' tabindex='8'>Dati Personali</a></li>"."\n"
-				."	   <hr/>"."\n"
 				."	   <li><a href='areaPrivata.php?pageName=preventivi' tabindex='9'>Preventivi</a></li>"."\n"
-				."	   <hr/>"."\n"
 				."	   <li><a href='areaPrivata.php?pageName=noleggi' tabindex='10'>Noleggi</a></li>"."\n"
-				."	   <hr/>"."\n"
 				."	   <li><a href='areaPrivata.php?pageName=messaggi' tabindex='11'>Messaggi</a></li>"."\n"
 				."	</ul>"."\n"
 				."</div>"."\n";
