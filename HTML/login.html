@@ -24,31 +24,33 @@
 		<breadcrumb></breadcrumb>
 
     <div class="main">
-            <div class="formBox" >
-                <h1 class="titolo">Accedi al tuo account</h1>
-                <form id="loginForm" onsubmit="return checkForm('loginForm');" action="../PHP/accessoLogin.php" method="post">
-                    <fieldset>
-                        <legend>Email e password</legend>
+      <div class="formBox" >
+          <h1 class="titolo">Accedi al tuo account</h1>
+          <form id="loginForm" onsubmit="return checkForm('loginForm');" action="../PHP/accessoLogin.php" method="post">
+              <fieldset>
+                  <legend>Email e password</legend>
 
-                        <loginError></loginError>
+                  <loginError></loginError>
 
-                        <label for="mail">Email</label>
-                        <input type="text" id="mail" name="mail" class="inputArea" tabindex="8" />
+                  <label for="mail">Email</label>
+                  <input type="text" id="mail" name="mail" class="inputArea" tabindex="8" />
 
-                        <label for="inputPsw">Password</label>
-                        <input type="password" id="inputPsw" name="password" class="inputArea" tabindex="9" />
+                  <label for="inputPsw">Password</label>
+                  <input type="password" id="inputPsw" name="password" class="inputArea" tabindex="9" />
 
-                        <input type="submit" class="bottoni" value="Login"/>
-                    </fieldset>
+                  <input type="submit" class="bottoni" value="Login"/>
+              </fieldset>
 
-                </form>
-                <div id="registrati">
-                    <p class="nuovoAccount">Non hai un account? <a class="linkRapidi" href="registrati.php">Registrati!</a></p>
-                </div>
+          </form>
+          <div id="registrati">
+              <p class="nuovoAccount">Non hai un account? <a class="linkRapidi" href="registrati.php">Registrati!</a></p>
+          </div>
 
-            </div>
-        </div>
-
+      </div>
+    </div>
+		<p>
+				<button onclick="topFunction()" class="hide" id="scrollUp">&#x2b06;</button>
+		</p>
     <footer></footer>
   </body>
 </html>
