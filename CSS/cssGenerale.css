@@ -261,8 +261,8 @@ input[type="submit"] {
 
 	#scrollUp{
         right:2px;
-        bottom:5px;
-    }
+		bottom:20px;
+	}
 }
 
 @media (max-width:750px){
