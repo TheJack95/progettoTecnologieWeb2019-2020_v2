@@ -167,6 +167,9 @@ hr {
 #nav li {
   list-style: none;
   text-align: center;
+  border-top: 0.0625em solid #b0b0b0;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 @media (max-width:700px) {
