@@ -1,17 +1,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
     <head>
-        <title>Nuovo Veicolo A Noleggio &vert; Area Amministratore</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="title" content="pagina per aggiunta di nuovo veicolo" />
 		<meta name="description" content="pagina per aggiunta di nuovo veicolo" />
 		<meta name="keywords" content="nuovo veicolo, aggiungi veicolo, area amministratore" />
 		<meta name="language" content="italian it" />
 		<meta name="author" content="Giulia Fiorese" />
+
+        <title>Nuovo Veicolo A Noleggio</title>
+
         <link rel="icon" type="images/svg" href="../Images/LogoGREG.png" />
 		<link rel="stylesheet" type="text/css" href="../CSS/cssAmministratore.css" />
         <link rel="stylesheet" type="text/css" href="../CSS/cssGenerale.css" />
-		<script type="text/javascript" src=""></script>
+        
+        <script type="text/javascript" src=""></script>
     </head>
 
     <body>
@@ -22,11 +25,11 @@
             <menuAmministratore></menuAmministratore>
             <div class="testoAmministratore">
                 <messaggio></messaggio>
-                <p class="pAmm">Inserisci qui le informazioni sul veicolo a noleggio da aggiungere&period;</p>
+                <p class="pAmm">Inserisci qui le informazioni sul veicolo a noleggio da aggiungere</p>
                 <form id="nuovoVeicoloNoleggio" class="formAmm" action="../PHP/salvaNuovoVeicoloNoleggio.php" method="post" enctype="multipart/form-data">
                     <fieldset>
                         <legend>Informazioni Veicolo</legend>
-                        <p class="pFormAmm">Tutti i campi marcati con l&apos;asterisco &ast; sono obbligatori&period;</p>
+                        <p class="pFormAmm">Tutti i campi marcati con l&apos;asterisco &ast; sono obbligatori</p>
 
                         <label for="targa">Targa &ast;</label>
                         <input type="text" name="targa" id="targa" tabindex="13" />

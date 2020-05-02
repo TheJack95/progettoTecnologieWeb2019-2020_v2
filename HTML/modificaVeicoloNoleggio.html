@@ -1,17 +1,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
     <head>
-        <title>Modifica Veicolo A Noleggio &vert; Area Amministratore</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="title" content="modifica veicolo a noleggio" />
 		<meta name="description" content="pagina per modifica veicolo a noleggio" />
 		<meta name="keywords" content="modifica veicolo, veicolo noleggio, area personale, area amministratore" />
 		<meta name="language" content="italian it" />
-		<meta name="author" content="Giulia Fiorese" />
+        <meta name="author" content="Giulia Fiorese" />
+        
+        <title>Modifica Veicolo A Noleggio</title>
+        
         <link rel="icon" type="images/svg" href="../Images/LogoGREG.png" />
 		<link rel="stylesheet" type="text/css" href="../CSS/cssAmministratore.css" />
         <link rel="stylesheet" type="text/css" href="../CSS/cssGenerale.css" />
-		<script type="text/javascript" src=""></script>
+        
+        <script type="text/javascript" src=""></script>
     </head>
 
     <body>
@@ -22,12 +25,12 @@
             <menuAmministratore></menuAmministratore>
             <div class="testoAmministratore">
                 <messaggio></messaggio>
-                <p class="pAmm">Inserisci qui le informazioni sul veicolo a noleggio da modificare&period;</p>
-                <p class="pAmm"><strong>Attenzione</strong>&colon; la targa del veicolo non pu&ograve; essere modificata&period;</p>
+                <p class="pAmm">Inserisci qui le informazioni sul veicolo a noleggio da modificare</p>
+                <p class="pAmm"><strong>Attenzione</strong>&colon; la targa del veicolo non pu&ograve; essere modificata</p>
                 <form id="modificaVeicoloNoleggio" class="formAmm" action="../PHP/salvaVeicoloNoleggioModificato.php" method="post" enctype="multipart/form-data">
                     <fieldset>
                         <legend>Informazioni Veicolo</legend>
-                        <p class="pFormAmm">Ogni campo deve essere compilato&period; Nel caso in cui il campo venga lasciato vuoto&comma; le informazioni precedentemente inserite verranno eliminate&period;</p>
+                        <p class="pFormAmm">Ogni campo deve essere compilato&colon; nel caso in cui il campo venga lasciato vuoto, le informazioni precedentemente inserite verranno eliminate</p>
 
                         <label for="marca">Marca</label>
                         <input type="text" name="marca" id="marca" tabindex="13" />

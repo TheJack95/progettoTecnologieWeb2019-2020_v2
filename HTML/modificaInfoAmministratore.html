@@ -1,17 +1,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
     <head>
-        <title>Modifica Informazioni Personali &vert; Area Amministratore</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="title" content="modifica informazioni personali amministratore" />
 		<meta name="description" content="pagina per modifica informazioni personali amministratore" />
 		<meta name="keywords" content="modifica, informazioni personali, area personale, area amministratore" />
 		<meta name="language" content="italian it" />
-		<meta name="author" content="Giulia Fiorese" />
+        <meta name="author" content="Giulia Fiorese" />
+        
+        <title>Modifica Informazioni Personali Amministratore</title>
+
         <link rel="icon" type="images/svg" href="../Images/LogoGREG.png" />
 		<link rel="stylesheet" type="text/css" href="../CSS/cssAmministratore.css" />
         <link rel="stylesheet" type="text/css" href="../CSS/cssGenerale.css" />
-		<script type="text/javascript" src="../JS/controlliClient.js"></script>
+        
+        <script type="text/javascript" src="../JS/controlliClient.js"></script>
     </head>
 
     <body>
@@ -22,12 +25,12 @@
             <menuAmministratore></menuAmministratore>
             <div class="testoAmministratore">
                 <messaggio></messaggio>
-                <p class="pAmm">Inserire qui le informazioni personali da modificare&period;</p>
-                <p class="pAmm"><strong>Attenzione</strong>&colon; l&apos;indirizzo <span xml:lang="en" lang="en">email</span> con cui ci si &egrave; registrati non pu&ograve; essere modificato&period;</p>
+                <p class="pAmm">Inserire qui le informazioni personali da modificare</p>
+                <p class="pAmm"><strong>Attenzione</strong>&colon; l&apos;indirizzo <span xml:lang="en" lang="en">email</span> con cui ci si &egrave; registrati non pu&ograve; essere modificato</p>
                 <form id="modificaInfo" onsubmit="return checkForm('modificaInfo');" class="formAmm" action="../PHP/salvaInformazioniModificate.php" method="post" enctype="multipart/form-data">
                     <fieldset>
                         <legend>Informazioni Personali</legend>
-                        <p class="pFormAmm">Ogni campo deve essere compilato&period; Nel caso in cui il campo venga lasciato vuoto&comma; le informazioni precedentemente inserite verranno eliminate&period;</p>
+                        <p class="pFormAmm">Ogni campo deve essere compilato&colon; nel caso in cui il campo venga lasciato vuoto, le informazioni precedentemente inserite verranno eliminate</p>
 
                         <label for="nome">Nome</label>
                         <input type="text" name="nome" id="nome" tabindex="13" />
@@ -41,7 +44,7 @@
                         <label for="indirizzo">Indirizzo</label>
                         <input type="text" name="indirizzo" id="indirizzo" tabindex="16" />
 
-                        <label for="nascita">Data di nascita<br />&lpar;gg-mm-aaaa&rpar;</label>
+                        <label for="nascita">Data di nascita &lpar;gg-mm-aaaa&rpar;</label>
                         <input type="text" name="nascita" id="nascita" tabindex="17" />
 
                         <input type="submit" id="salvaModificheInfo" value="SALVA MODIFICHE" tabindex="18" />
