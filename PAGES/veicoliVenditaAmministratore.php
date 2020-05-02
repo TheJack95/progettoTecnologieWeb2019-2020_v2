@@ -17,7 +17,7 @@
             $output = str_replace("<messaggio></messaggio>",$_SESSION["nuovoMessaggio"],$output);
             unset($_SESSION["nuovoMessaggio"]);
         } else {
-            $output = str_replace("<messaggio></messaggio>"," ",$output);
+            $output = str_replace("<messaggio></messaggio>","",$output);
         }
         $request = (new funzioniAmministratore())->selectVeicoliVendita();
         $veicoliV = "";
@@ -25,9 +25,9 @@
             $veicoliV .= "<div class='divAmm'>"."\n"
                         ."  <img class='imgAutoAmm' src='$response->Immagine' alt='$response->DescrImmagine' />"."\n"
                         ."  <div class='datiAutoAmm'>"."\n"
-                        ."      <p class='pAmm'><strong>".$response->Marca." ".$response->Modello."</strong></p>"."\n"
+                        ."      <p class='pAmm'>".$response->Marca." ".$response->Modello."</p>"."\n"
                         ."      <p class='pAmm'>".$response->Cilindrata." cm&sup3; - ".$response->KM." km</p>"."\n"
-                        ."      <p class='pAmm'>Costo&colon; &euro; ".$response->PrezzoVendita." &plus; i&period;v&period;a&period;</p>"."\n"
+                        ."      <p class='pAmm'>Costo&colon; &euro; ".$response->PrezzoVendita." &plus; i.v.a.</p>"."\n"
                         ."      <form class='formRispAmm' action='../PAGES/modificaVeicoloVendita.php' method='post'>"."\n"
                         ."          <fieldset>"."\n"
                         ."              <button type='submit' name='modifica' class='noButt linkMod' value='$response->IdAuto'>MODIFICA VEICOLO</button>"."\n"
@@ -42,17 +42,17 @@
                         ."</div>"."\n";
         }
         if(count($request) == 0) {
-            $veicoliV .= "<p class='msgAmm'>Al momento non sono disponibili veicoli in vendita&period;</p>";
+            $veicoliV .= "<p class='msgAmm'>Al momento non sono disponibili veicoli in vendita</p>";
         }
         $output = str_replace("<veicoliVendita></veicoliVendita>",$veicoliV,$output);
         $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
 
         $output = str_replace('<a class="" href="homeAmministratore.php" tabindex="5">AREA AMMINISTRATORE</a>','<strong>AREA AMMINISTRATORE</strong>',$output);
-        $output = str_replace('<a href="veicoliVenditaAmministratore.php" tabindex="12">VEICOLI IN VENDITA</a>','<strong>VEICOLI IN VENDITA</strong>',$output);
+        $output = str_replace('<a href="veicoliVenditaAmministratore.php" tabindex="12">VEICOLI IN VENDITA</a>','&gt; VEICOLI IN VENDITA',$output);
 
         echo $output;
     } else {
-        $errLogin = "ATTENZIONE&excl; Non hai i permessi per accedere all&apos;area dell&apos;amministratore&period;<br />Sei stato reindirizzato alla pagina per l&apos;accesso&period; ACCEDI E RIPROVA&period;";
+        $errLogin = "ATTENZIONE&colon; non hai i permessi per accedere all&apos;area dell&apos;amministratore. Sei stato reindirizzato alla pagina per l&apos;accesso. Accedi e riprova";
         $_SESSION["errmessage"] = $errLogin;
         header("location: ../PAGES/login.php");
     }

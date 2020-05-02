@@ -14,7 +14,7 @@
 		<link rel="stylesheet" type="text/css" href="../CSS/cssAmministratore.css" />
         <link rel="stylesheet" type="text/css" href="../CSS/cssGenerale.css" />
         
-        <script type="text/javascript" src=""></script>
+        <script type="text/javascript" src="../JS/controlliClient.js"></script>
     </head>
 
     <body>
@@ -26,7 +26,7 @@
             <div class="testoAmministratore">
                 <messaggio></messaggio>
                 <p class="pAmm">Inserisci qui le informazioni sul veicolo in vendita da aggiungere</p>
-                <form id="nuovoVeicoloVendita" class="formAmm" action="../PHP/salvaNuovoVeicoloVendita.php" method="post" enctype="multipart/form-data">
+                <form id="nuovoVeicoloVendita" onsubmit="return checkForm('modificaVeicoloVendita');" class="formAmm" action="../PHP/salvaNuovoVeicoloVendita.php" method="post" enctype="multipart/form-data">
                     <fieldset>
                         <legend>Informazioni Veicolo</legend>
                         <p class="pFormAmm">Tutti i campi marcati con l&apos;asterisco &ast; sono obbligatori</p>

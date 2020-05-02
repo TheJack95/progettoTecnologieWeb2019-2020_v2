@@ -15,35 +15,35 @@
             $marca = htmlentities($_POST["marca"],ENT_QUOTES,"UTF-8");
         } else {
             $valid = false;
-            $errori .= "<p class='messaggio errorMessage'>La marca inserita non &egrave; valida&colon; ricorda che non pu&ograve; essere vuota&period;</p>";
+            $errori .= "<p class='messaggio errorMessage'>La marca inserita non &egrave; valida&colon; ricorda che non pu&ograve; essere vuota</p>";
         }
         
         if(controlloInput::validTesto($_POST["modello"])) {
             $marca = htmlentities($_POST["modello"],ENT_QUOTES,"UTF-8");
         } else {
             $valid = false;
-            $errori .= "<p class='messaggio errorMessage'>Il modello inserito non &egrave; valido&colon; ricorda che non pu&ograve; essere vuoto&period;</p>";
+            $errori .= "<p class='messaggio errorMessage'>Il modello inserito non &egrave; valido&colon; ricorda che non pu&ograve; essere vuoto</p>";
         }
         
         if(controlloInput::validNumeri($_POST["km"])) {
             $costo = $_POST["km"];
         } else {
             $valid = false;
-            $errori .= "<p class='messaggio errorMessage'>Il chilometraggio inserito non &egrave; valido&colon; ricorda che non pu&ograve; essere vuoto e deve contenere solo numeri&period;</p>";
+            $errori .= "<p class='messaggio errorMessage'>Il chilometraggio inserito non &egrave; valido&colon; ricorda che non pu&ograve; essere vuoto e deve contenere solo numeri</p>";
         }
 
         if(controlloInput::validNumeri($_POST["cilindrata"])) {
             $cilindrata = $_POST["cilindrata"];
         } else {
             $valid = false;
-            $errori .= "<p class='messaggio errorMessage'>La cilindrata inserita non &egrave; valida&colon; ricorda che non pu&ograve; essere vuota e deve contenere solo numeri&period;</p>";
+            $errori .= "<p class='messaggio errorMessage'>La cilindrata inserita non &egrave; valida&colon; ricorda che non pu&ograve; essere vuota e deve contenere solo numeri</p>";
         }
         
         if(controlloInput::validNumeri($_POST["prezzo"])) {
             $costo = $_POST["prezzo"];
         } else {
             $valid = false;
-            $errori .= "<p class='messaggio errorMessage'>Il costo inserito non &egrave; valido&colon; ricorda che non pu&ograve; essere vuoto e deve contenere solo numeri&period;</p>";
+            $errori .= "<p class='messaggio errorMessage'>Il costo inserito non &egrave; valido&colon; ricorda che non pu&ograve; essere vuoto e deve contenere solo numeri</p>";
         }
         
         if(is_uploaded_file($_FILES["immagineAuto"]["tmp_name"])) {
@@ -54,18 +54,18 @@
                 }
             } else {
                 $valid = false;
-                $errori .= "<p class='messaggio errorMessage'>L&apos;immagine inserita non &egrave; valida&colon; ricorda che non pu&ograve; superare i 1000KB&period;</p>";
+                $errori .= "<p class='messaggio errorMessage'>L&apos;immagine inserita non &egrave; valida&colon; ricorda che non pu&ograve; superare i 1000KB</p>";
             }
         } else {
             $valid = false;
-            $errori .= "<p class='messaggio errorMessage'>L&apos;immagine non &egrave; stata inserita&period;</p>";
+            $errori .= "<p class='messaggio errorMessage'>L&apos;immagine non &egrave; stata inserita</p>";
         }
 
         if(controlloInput::validTesto($_POST["descrizione"])) {
             $descrizione = htmlentities($_POST["descrizione"],ENT_QUOTES,"UTF-8");
         } else {
             $valid = false;
-            $errori .= "<p class='messaggio errorMessage'>La descrizione dell&apos;immagine inserita non &egrave; valida&colon; ricorda che non pu&ograve; essere vuoto&period;</p>";
+            $errori .= "<p class='messaggio errorMessage'>La descrizione dell&apos;immagine inserita non &egrave; valida&colon; ricorda che non pu&ograve; essere vuota</p>";
         }
 
         if($valid == true) {
@@ -83,7 +83,7 @@
                 $_SESSION["nuovoMessaggio"] = $messaggio;
                 header("location: ../PAGES/VeicoliVenditaAmministratore.php");
             } else {
-                $messaggio = "<p class='messaggio errorMessage'>Non &egrave; possibile inserire il nuovo veicolo in vendita per un problema del database&period; Riprova&period;</p>";
+                $messaggio = "<p class='messaggio errorMessage'>Non &egrave; possibile inserire il nuovo veicolo in vendita per un problema del database. Riprova</p>";
                 $_SESSION["nuovoMessaggio"] = $messaggio;
                 header("location: ../PAGES/nuovoVeicoloVendita.php");
             }
@@ -92,7 +92,7 @@
             header("location: ../PAGES/nuovoVeicoloVendita.php");
         }
     } else {
-        $errLogin = "ATTENZIONE&excl; Non hai i permessi per accedere all&apos;area dell&apos;amministratore&period;<br />Sei stato reindirizzato alla pagina per l&apos;accesso&period; ACCEDI E RIPROVA&period;";
+        $errLogin = "ATTENZIONE&colon; non hai i permessi per accedere all&apos;area dell&apos;amministratore. Sei stato reindirizzato alla pagina per l&apos;accesso. Accedi e riprova";
         $_SESSION["errmessage"] = $errLogin;
         header("location: ../PAGES/login.php");
     }

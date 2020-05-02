@@ -17,7 +17,7 @@
             $output = str_replace("<messaggio></messaggio>",$_SESSION["nuovoMessaggio"],$output);
             unset($_SESSION["nuovoMessaggio"]);
         } else {
-            $output = str_replace("<messaggio></messaggio>"," ",$output);
+            $output = str_replace("<messaggio></messaggio>","",$output);
         }
         $request = (new funzioniAmministratore())->selectVeicoliNoleggio();
         $veicoliN = "";
@@ -25,7 +25,7 @@
             $veicoliN .= "<div class='divAmm'>"."\n"
                         ."  <img class='imgAutoAmm' src='$response->Immagine' alt='$response->DescrImmagine' />"."\n"
                         ."  <div class='datiAutoAmm'>"."\n"
-                        ."      <p class='pAmm'><strong>".$response->Marca." ".$response->Modello."</strong> - ".$response->Targa."</p>"."\n"
+                        ."      <p class='pAmm'>".$response->Marca." ".$response->Modello." - ".$response->Targa."</p>"."\n"
                         ."      <p class='pAmm'>".$response->Cilindrata." cm&sup3;</p>"."\n"
                         ."      <p class='pAmm'>Costo&colon; &euro; ".$response->CostoNoleggio." al giorno &plus; cauzione &euro; ".$response->Cauzione."</p>"."\n"
                         ."      <form class='formRispAmm' action='../PAGES/modificaVeicoloNoleggio.php' method='post'>"."\n"
@@ -42,17 +42,17 @@
                         ."</div>";
         }
         if(count($request) == 0) {
-            $veicoliN .= "<p class='msgAmm'>Al momento non sono disponibili veicoli a nolegggio&period;</p>";
+            $veicoliN .= "<p class='msgAmm'>Al momento non sono disponibili veicoli a nolegggio</p>";
         }
         $output = str_replace("<veicoliNoleggio></veicoliNoleggio>",$veicoliN,$output);
         $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
 
         $output = str_replace('<a class="" href="homeAmministratore.php" tabindex="5">AREA AMMINISTRATORE</a>','<strong>AREA AMMINISTRATORE</strong>',$output);
-        $output = str_replace('<a href="veicoliNoleggioAmministratore.php" tabindex="10">VEICOLI A NOLEGGIO</a>','<strong>VEICOLI A NOLEGGIO</strong>',$output);
+        $output = str_replace('<a href="veicoliNoleggioAmministratore.php" tabindex="10">VEICOLI A NOLEGGIO</a>','&gt; VEICOLI A NOLEGGIO',$output);
 
         echo $output;
     } else {
-        $errLogin = "ATTENZIONE&excl; Non hai i permessi per accedere all&apos;area dell&apos;amministratore&period;<br />Sei stato reindirizzato alla pagina per l&apos;accesso&period; ACCEDI E RIPROVA&period;";
+        $errLogin = "ATTENZIONE&colon; non hai i permessi per accedere all&apos;area dell&apos;amministratore. Sei stato reindirizzato alla pagina per l&apos;accesso. Accedi e riprova";
         $_SESSION["errmessage"] = $errLogin;
         header("location: ../PAGES/login.php");
     }

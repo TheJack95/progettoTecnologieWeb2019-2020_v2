@@ -16,16 +16,16 @@
         $connessioneDatabase = new database_connection;
         $update = "UPDATE AutoVendita SET Marca='$marca', Modello='$modello', Km='$km', Cilindrata='$cilindrata', PrezzoVendita='$prezzo' WHERE IdAuto='$idAuto'";
         if ($connessioneDatabase->esegui($update) == TRUE) {
-            $messaggio = "<p class='messaggio successMessage'>Informazioni sul veicolo in vendita aggiornate correttamente&period; Potresti non vedere subito le modifiche appena inserite&comma; eventualmente ricarica la pagina&period;</p>";
+            $messaggio = "<p class='messaggio successMessage'>Informazioni sul veicolo in vendita aggiornate correttamente</p>";
             $_SESSION["nuovoMessaggio"] = $messaggio;
             header("location: ../PAGES/VeicoliVenditaAmministratore.php");
         } else {
-            $messaggio = "<p class='messaggio errorMessage'>Non &egrave; possibile modificare le informazioni del veicolo in venduta per un problema del database&period; Riprova pi&ugrave; tardi&period;</p>";
+            $messaggio = "<p class='messaggio errorMessage'>Non &egrave; possibile modificare le informazioni del veicolo in venduta per un problema del database. Riprova</p>";
             $_SESSION["nuovoMessaggio"] = $messaggio;
             header("location: ../PAGES/modificaVeicoloVendita.php");
         }
     } else {
-        $errLogin = "ATTENZIONE&excl; Non hai i permessi per accedere all&apos;area dell&apos;amministratore&period;<br />Sei stato reindirizzato alla pagina per l&apos;accesso&period; ACCEDI E RIPROVA&period;";
+        $errLogin = "ATTENZIONE&colon; non hai i permessi per accedere all&apos;area dell&apos;amministratore. Sei stato reindirizzato alla pagina per l&apos;accesso. Accedi e riprova";
         $_SESSION["errmessage"] = $errLogin;
         header("location: ../PAGES/login.php");
     }

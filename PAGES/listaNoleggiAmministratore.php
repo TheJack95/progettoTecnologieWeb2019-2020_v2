@@ -31,8 +31,8 @@
                     $listaNoleggi .= "<div class='divAmm'>"."\n"
                                     ."  <img class='imgAutoAmm' src='$responseA->Immagine' alt='$responseA->DescrImmagine' />"."\n"
                                     ."  <div class='datiAutoAmm'>"."\n"
-                                    ."      <p class='pAmm'><strong>Cliente</strong>&colon; ".$responseI->Nome." ".$responseI->Cognome." &lsqb;".$responseP->Utente."&rsqb;</p>"."\n"
-                                    ."      <p class='pAmm'><strong>Veicolo</strong>&colon; ".$responseA->Marca." ".$responseA->Modello." - ".$responseP->Targa."</p>"."\n"
+                                    ."      <p class='pAmm'>Cliente&colon; ".$responseI->Nome." ".$responseI->Cognome." &lsqb;".$responseP->Utente."&rsqb;</p>"."\n"
+                                    ."      <p class='pAmm'>Veicolo&colon; ".$responseA->Marca." ".$responseA->Modello." - ".$responseP->Targa."</p>"."\n"
                                     ."      <p class='pAmm'>Noleggio dal ".$inizio." al ".$fine."</p>"."\n"
                                     ."      <form class='formModAmm' action='../PHP/eliminaPrenotazioneAmministratore.php' method='post'>"."\n"
                                     ."          <fieldset>"."\n"
@@ -46,17 +46,17 @@
             }
         }
         if(count($requestP) == 0) {
-            $listaNoleggi .= "<p class=\"msgAmm\">Al momento non ci sono prenotazioni per i veicoli a noleggio&period;</p>";
+            $listaNoleggi .= "<p class=\"msgAmm\">Al momento non ci sono prenotazioni per i veicoli a noleggio</p>";
         }
         $output = str_replace("<listaNoleggi></listaNoleggi>",$listaNoleggi,$output);
         $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
 
         $output = str_replace('<a class="" href="homeAmministratore.php" tabindex="5">AREA AMMINISTRATORE</a>','<strong>AREA AMMINISTRATORE</strong>',$output);
-        $output = str_replace('<a href="listaNoleggiAmministratore.php" tabindex="11">PRENOTAZIONI NOLEGGIO</a>','<strong>PRENOTAZIONI NOLEGGIO</strong>',$output);
+        $output = str_replace('<a href="listaNoleggiAmministratore.php" tabindex="11">PRENOTAZIONI NOLEGGIO</a>','&gt; PRENOTAZIONI NOLEGGIO',$output);
 
         echo $output;
     } else {
-        $errLogin = "ATTENZIONE&excl; Non hai i permessi per accedere all&apos;area dell&apos;amministratore&period;<br />Sei stato reindirizzato alla pagina per l&apos;accesso&period; ACCEDI E RIPROVA&period;";
+        $errLogin = "ATTENZIONE&colon; non hai i permessi per accedere all&apos;area dell&apos;amministratore. Sei stato reindirizzato alla pagina per l&apos;accesso. Accedi e riprova";
         $_SESSION["errmessage"] = $errLogin;
         header("location: ../PAGES/login.php");
     }

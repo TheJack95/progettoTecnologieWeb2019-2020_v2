@@ -34,13 +34,13 @@
                 unset($_POST["nascita"]);
                 header("location: ../PAGES/infoAmministratore.php");
             } else {
-                $messaggio .= "<p class='messaggio errorMessage'>Non &egrave; possibile modificare le informazioni personali per un problema del database&period; Riprova pi&ugrave; tardi</p>";
+                $messaggio .= "<p class='messaggio errorMessage'>Non &egrave; possibile modificare le informazioni personali per un problema del database. Riprova</p>";
                 $_SESSION["nuovoMessaggio"] = $messaggio;
                 header("location: ../PAGES/modificaInfoAmministratore.php");
             }
         }
     } else {
-        $errLogin = "ATTENZIONE&excl; Non hai i permessi per accedere alla pagina&period;<br />Sei stato reindirizzato alla pagina per l&apos;accesso&period; ACCEDI E RIPROVA&period;";
+        $errLogin = "ATTENZIONE&colon; non hai i permessi per accedere all&apos;area dell&apos;amministratore. Sei stato reindirizzato alla pagina per l&apos;accesso. Accedi e riprova";
         $_SESSION["errmessage"] = $errLogin;
         header("location: ../PAGES/login.php");
     }

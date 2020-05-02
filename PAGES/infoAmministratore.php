@@ -28,25 +28,25 @@
                 $nascita = "";
             }
             $informazioni .= "<div class='divAmm'>"."\n"
-                            ."  <p class='pAmm'>Nome completo&colon; <strong>".$response->Nome." ".$response->Cognome."</strong></p>"."\n"
-                            ."  <p class='pAmm'>Data di nascita&colon; <strong>".$nascita."</strong></p>"."\n"
-                            ."  <p class='pAmm'>Indirizzo&colon; <strong>".$response->Indirizzo."</strong></p>"."\n"
-                            ."  <p class='pAmm'>Recapito telefonico&colon; <strong>".$response->Telefono."</strong></p>"."\n"
-                            ."  <p class='pAmm'>Email&colon; <strong>".$response->Email."</strong></p>"."\n"
+                            ."  <p class='pAmm'>Nome completo&colon; ".$response->Nome." ".$response->Cognome."</p>"."\n"
+                            ."  <p class='pAmm'>Data di nascita&colon; ".$nascita."</p>"."\n"
+                            ."  <p class='pAmm'>Indirizzo&colon; ".$response->Indirizzo."</p>"."\n"
+                            ."  <p class='pAmm'>Recapito telefonico&colon; ".$response->Telefono."</p>"."\n"
+                            ."  <p class='pAmm'>Email&colon; ".$response->Email."</p>"."\n"
                             ."</div>";
         }
         if(count($request) == 0) {
-            $informazioni .= "<p class='msgAmm'>Al momento non sono disponibili le informazioni personali richieste&comma; riprova pi&ugrave; tardi</p>";
+            $informazioni .= "<p class='msgAmm'>Al momento non sono disponibili le informazioni personali richieste, riprova pi&ugrave; tardi</p>";
         }
         $output = str_replace("<infoPersonali></infoPersonali>",$informazioni,$output);
         $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
 
         $output = str_replace('<a class="" href="homeAmministratore.php" tabindex="5">AREA AMMINISTRATORE</a>','<strong>AREA AMMINISTRATORE</strong>',$output);
-        $output = str_replace('<a href="infoAmministratore.php" tabindex="8">INFORMAZIONI PERSONALI</a>','<strong>INFORMAZIONI PERSONALI</strong>',$output);
+        $output = str_replace('<a href="infoAmministratore.php" tabindex="8">INFORMAZIONI PERSONALI</a>','&gt; INFORMAZIONI PERSONALI',$output);
 
         echo $output;
     } else {
-        $errLogin = "ATTENZIONE&excl; Non hai i permessi per accedere all&apos;area dell&apos;amministratore&period;<br />Sei stato reindirizzato alla pagina per l&apos;accesso&period; ACCEDI E RIPROVA&period;";
+        $errLogin = "ATTENZIONE&colon; non hai i permessi per accedere all&apos;area dell&apos;amministratore. Sei stato reindirizzato alla pagina per l&apos;accesso. Accedi e riprova";
         $_SESSION["errmessage"] = $errLogin;
         header("location: ../PAGES/login.php");
     }

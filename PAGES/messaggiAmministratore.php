@@ -17,18 +17,18 @@
             $output = str_replace("<messaggio></messaggio>",$_SESSION["nuovoMessaggio"],$output);
             unset($_SESSION["nuovoMessaggio"]);
         } else {
-            $output = str_replace("<messaggio></messaggio>"," ",$output);
+            $output = str_replace("<messaggio></messaggio>","",$output);
         }
         $requestR = (new funzioniAmministratore())->selectMessaggiRicevuti();
         $messaggiAmm = "";
         foreach($requestR as $responseR) {
             $messaggiAmm .= "<div class='divAmm'>"."\n".
-                            "<p class='pAmm'><strong>Mittente</strong>&colon; ".$responseR->Nome." ".$responseR->Cognome." &lsqb;".$responseR->Email."&rsqb; &lsqb;".$responseR->NumeroTelefono."&rsqb;</p>"."\n".
-                            "<p class='pAmm'><strong>Messaggio</strong>&colon; ".$responseR->Messaggio."</p>"."\n";
+                            "<p class='pAmm'>Mittente&colon; ".$responseR->Nome." ".$responseR->Cognome." &lsqb;".$responseR->Email."&rsqb; &lsqb;".$responseR->NumeroTelefono."&rsqb;</p>"."\n".
+                            "<p class='pAmm'>Messaggio&colon; ".$responseR->Messaggio."</p>"."\n";
             $requestI = (new funzioniAmministratore())->selectMessaggiInviati($responseR->IdMess);
             foreach($requestI as $responseI) {
-                $messaggiAmm .= "<p class='pAmm'><strong>Oggetto</strong>&colon; ".$responseI->Oggetto."</p>"."\n".
-                                "<p class='pAmm'><strong>Risposta</strong>&colon; ".$responseI->Messaggio."</p>"."\n";
+                $messaggiAmm .= "<p class='pAmm'>Oggetto&colon; ".$responseI->Oggetto."</p>"."\n".
+                                "<p class='pAmm'>Risposta&colon; ".$responseI->Messaggio."</p>"."\n";
             }
             if(count($requestI) == 0) {
                 $messaggiAmm .= "<form class=\"formRispAmm\" action=\"../PAGES/rispostaMessaggioAmministratore.php\" method=\"post\">
@@ -63,11 +63,11 @@
         $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
 
         $output = str_replace('<a class="" href="homeAmministratore.php" tabindex="5">AREA AMMINISTRATORE</a>','<strong>AREA AMMINISTRATORE</strong>',$output);
-        $output = str_replace('<a href="messaggiAmministratore.php" tabindex="9">MESSAGGI</a>','<strong>MESSAGGI</strong>',$output);
+        $output = str_replace('<a href="messaggiAmministratore.php" tabindex="9">MESSAGGI</a>','&gt; MESSAGGI',$output);
 
         echo $output;
     } else {
-        $errLogin = "ATTENZIONE&excl; Non hai i permessi per accedere all&apos;area dell&apos;amministratore&period;<br />Sei stato reindirizzato alla pagina per l&apos;accesso&period; ACCEDI E RIPROVA&period;";
+        $errLogin = "ATTENZIONE&colon; non hai i permessi per accedere all&apos;area dell&apos;amministratore. Sei stato reindirizzato alla pagina per l&apos;accesso. Accedi e riprova";
         $_SESSION["errmessage"] = $errLogin;
         header("location: ../PAGES/login.php");
     }
