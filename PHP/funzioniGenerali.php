@@ -3,7 +3,7 @@
     #funzione per scrivere l'header
         public static function header() {
             $header_form = '<div class="flexbox-item" id="header">'."\n".
-                            '   <a href="home.php"><img class="logoHeader" src="../Images/LogoGREG.png" alt="logo concessionaria greg"/></a>'."\n".
+                            '   <a href="home.php"><img class="logoHeader" src="../Images/LogoGREG.png" alt="logo concessionaria greg" /></a>'."\n".
                             '   <p class="nomeSito"><a href="home.php">CONCESSIONARIA GREG</a></p>'."\n".
                             '</div>';
             return $header_form;
