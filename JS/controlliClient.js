@@ -55,5 +55,5 @@ function checkRegistrazione() {
 }
 
 function validInput(input, regex) {
-    return input.value != "" && regex.test(input.value)
+    return input.value != "" && regex.test(input.value);
 }

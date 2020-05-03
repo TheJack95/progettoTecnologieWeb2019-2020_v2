@@ -50,6 +50,10 @@ body {
 	background: #4CAF50;
 }
 
+.hidden {
+	font-size: 0;
+}
+
 /* BREADCRUMBS */
 #breadcrumb {
 	background: #F1F1F1;

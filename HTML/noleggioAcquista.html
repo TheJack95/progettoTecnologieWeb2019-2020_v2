@@ -3,6 +3,7 @@
 
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Script-Type" content="text/javascript" />
 		<title>Auto in vendita e a noleggio</title>
 		<meta name="title" content="Auto per il noleggio o l'acquisto" />
 		<meta name="description" content="pagina riguardante tutte le auto acquistabili o noleggiabili" />
@@ -17,6 +18,9 @@
 		<link rel="stylesheet" type="text/css" href="../CSS/cssGenerale.css" />
 		<link rel="stylesheet" type="text/css" href="../CSS/cssVeicoli.css" />
 		<link rel="stylesheet" type="text/css" href="../CSS/cssAmministratore.css" />
+		<link rel="stylesheet" type="text/css" href="../CSS/cssPrint.css" media="print" />
+		<link rel="stylesheet" type="text/css" href="../CSS/cssPrintVeicoli.css" media="print" />
+
 		<script src="../JS/generale.js" type="text/javascript"></script> 
 	</head>
 
@@ -25,17 +29,18 @@
 
 		<menu></menu>
 		<breadcrumb></breadcrumb>
+		<div id="mainContent">
+			<div id="filtri">
+				<filtriAuto></filtriAuto>
+			</div>
+			<div class="main">
+				<auto></auto>
+			</div>
 
-		<filtriAuto></filtriAuto>
-
-		<div class="main">
-			<auto></auto>
+			<p>
+				<button onclick="topFunction()" class="hide" id="scrollUp">&#x2b06;</button>
+			</p>
 		</div>
-
-		<p>
-			<button onclick="topFunction()" class="hide" id="scrollUp">&#x2b06;</button>
-		</p>
-
 		<footer></footer>
 	</body>
 </html>

@@ -198,13 +198,14 @@
 }
 
 /* stile per i dispositivi mobile */
-/* smartphone */
-@media (max-width: 700px) {
+@media(max-width: 1000px){
     #menuAmministratore{
         float: none;
         width: 100%;
         font-size: 1em;
         background-color: white;
+        padding-bottom: 4%;
+        border-bottom: 5px double black;
     }
 
     #menuAmministratore ul li{
@@ -220,30 +221,44 @@
         background-color: white;
     }
 
+    .divAmm {
+        height: 15vh;
+        border-top: 0.5px solid grey;;
+        border-bottom: 0.5px solid grey;
+        margin: 1%;
+        padding-bottom: 3%;
+    }
+
+    .noButt{
+        font-size: 0.8em;
+    }
+
+    .pAmm, .formAmm label{
+        font-size: 0.8em;
+    }
+
+    .pLinkAmm{
+        font-size: 0.9em;
+        text-align: center;
+        margin: 5%;
+    }
+
+    .formAmm label {
+        width: 100%;
+        text-align: center;
+    }
+
     .formAmm input[type="text"],
     .formAmm input[type="file"],
     .formAmm textarea {
-        font-size: 1em;
-        padding: 1%;
-        margin: 0.5%;
-        vertical-align: bottom;
-        border: 1px solid black;
-        border-radius: 4px;
-        box-sizing: content-box;
-        width: 65%;
-        background-color: #FFFFFF;
+        font-size: 0.8em;
     }
-}
 
-/* tablet 
-@media (max-width: 1000px) {}
-*/
+    .formAmm input[type="submit"] {
+        font-size: 0.8em;
+    }
 
-/* stile per la stampa */
-@media print {
-    #menu,
-    #breadcrumb,
-    #menuAmministratore {
-        display: none;
+    .imgAutoAmm {
+        max-height: 50%;
     }
 }

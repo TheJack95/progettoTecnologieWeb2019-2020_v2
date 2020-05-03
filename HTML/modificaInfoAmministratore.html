@@ -2,26 +2,26 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
 		<meta name="title" content="modifica informazioni personali amministratore" />
 		<meta name="description" content="pagina per modifica informazioni personali amministratore" />
 		<meta name="keywords" content="modifica, informazioni personali, area personale, area amministratore" />
 		<meta name="language" content="italian it" />
         <meta name="author" content="Giulia Fiorese" />
-        
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Modifica Informazioni Personali Amministratore</title>
-
         <link rel="icon" type="images/svg" href="../Images/LogoGREG.png" />
 		<link rel="stylesheet" type="text/css" href="../CSS/cssAmministratore.css" />
         <link rel="stylesheet" type="text/css" href="../CSS/cssGenerale.css" />
-        
         <script type="text/javascript" src="../JS/controlliClient.js"></script>
+        <script type="text/javascript" src="../JS/generale.js"></script>
     </head>
 
     <body>
         <header></header>
         <menu></menu>
         <breadcrumb></breadcrumb>
-        <div class="corpoAmministratore">
+        <div id="mainContent" class="corpoAmministratore">
             <menuAmministratore></menuAmministratore>
             <div class="testoAmministratore">
                 <messaggio></messaggio>
@@ -44,7 +44,7 @@
                         <label for="indirizzo">Indirizzo</label>
                         <input type="text" name="indirizzo" id="indirizzo" tabindex="16" />
 
-                        <label for="nascita">Data di nascita<br />&lpar;gg-mm-aaaa&rpar;</label>
+                        <label for="nascita">Data di nascita &lpar;gg-mm-aaaa&rpar;</label>
                         <input type="text" name="nascita" id="nascita" tabindex="17" />
 
                         <input type="submit" id="salvaModificheInfo" value="SALVA MODIFICHE" tabindex="18" />
