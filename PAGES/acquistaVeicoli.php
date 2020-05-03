@@ -23,7 +23,7 @@ foreach($rows as $row) {
 				.'		<h2 class="titoloVeicolo">'.$row->Marca. " " .$row->Modello.'</h2>'."\n"
                 .'	    <ul>'
                 .'          <li>'
-				.'				<p><strong>Cilindrata:</strong> '.$row->Cilindrata.'</p>'
+				.'				<p><strong>Cilindrata:</strong> '.$row->Cilindrata.' cm&sup3; </p>'
 				.'			</li>'
 				.'			<li>'
 				.'				<p><strong>KM:</strong> '.$row->KM.'</p>'
@@ -32,9 +32,9 @@ foreach($rows as $row) {
 				.'				<p><strong>Prezzo di vendita:</strong> '.$row->PrezzoVendita.' &#8364;</p>'
 				.'			</li>'
 				.'		</ul>'
-				.'		<form class="preventivoForm" action="../PHP/acquistaVeicoloFn.php" method="post">'."\n"
+				.'		<form id="prevForm" class="preventivoForm" action="../PHP/acquistaVeicoloFn.php" method="post">'."\n"
 				.'			<fieldset>'."\n"
-                .'				<button type="submit" name="richiedipreventivo" value="'.$row->IdAuto.'" class="button" >Richiedi preventivo</button>'."\n"
+                .'				<button type="submit" name="richiedipreventivo" value="'.$row->IdAuto.'" class="button linkMod" >Richiedi preventivo</button>'."\n"
 				.'			</fieldset>'."\n"
 				.'		</form>'."\n"
                 .'	</div>'."\n"

@@ -2,7 +2,9 @@
     class funzioniGenerali {
     #funzione per scrivere l'header
         public static function header() {
-            $header_form = '<div class="flexbox-item" id="header">'."\n".
+            $header_form =  '<div class="flexbox-item" id="header">'."\n".
+                            '   <a class="hidden" href="#mainContent">Vai al contenuto</a>'."\n".
+                            '   <a class="hidden" href="#menu">Vai al menu</a>'."\n".
                             '   <a href="home.php"><img class="logoHeader" src="../Images/LogoGREG.png" alt="logo concessionaria greg" /></a>'."\n".
                             '   <p class="nomeSito"><a href="home.php">CONCESSIONARIA GREG</a></p>'."\n".
                             '</div>';
@@ -40,11 +42,6 @@
 							'</div>'."\n";
 
                 $menu_form .=    '<div id="menu">'."\n".
-                                //'    <div id="menu" class="mobile_hidden">'."\n".
-                                //'        <ul role="menu">'."\n".
-                                //'            <li class="hidden" role="none"><a href="#content" role="menuitem">Vai al contenuto</a></li>'."\n".
-                                //'        </ul>'."\n".
-                                //'    </div>'."\n".
                                 '   <ul>'."\n".
                                 '       <li><a href="home.php" tabindex="1"><span xml:lang="en" lang="en">HOME</span></a></li>'."\n".
                                 '       <li><a href="noleggioVeicoli.php" tabindex="2">VEICOLI A NOLEGGIO</a></li>'."\n".

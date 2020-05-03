@@ -1,3 +1,8 @@
+html, body {
+	max-width: 95% !important;
+  }
+  
+
 .containerVeicolo{
 	padding: 1%;
 	margin: 3%;
@@ -40,7 +45,7 @@ input {
 }
 
 .titoloVeicolo {
-	font-size: auto;
+	font-size: 2em;
 	margin-bottom: 0.5em;
 }
 
