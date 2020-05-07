@@ -19,10 +19,13 @@ var checkForm = (function(idForm) {
     let inputsKO = "";
 
     for(let i = 0; elements && elements.length > i; ++i) {
-        if(elements[i].type != "submit" && elements[i].type != "file" && !validInput(elements[i], regex[elements[i].name] )) {
+      let nomeTag = elements[i].name;
+      if (typeof regex[nomeTag] !== 'undefined'){
+        if(elements[i].type != "submit" && elements[i].type != "file" && !validInput(elements[i], regex[nomeTag])) {
             inputsKO += elements[i].name + ", ";
             elements[i].className += " invalid";
         }
+      }
     }
 
     if(idForm == "registrationForm")
