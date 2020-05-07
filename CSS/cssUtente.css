@@ -1,4 +1,4 @@
-.main {
+.mainContent {
   overflow: auto;
   background-color: white;
 }
@@ -188,6 +188,10 @@ hr {
   #content {
     display: block;
     width: auto;
+  }
+
+  .linkRapidi {
+    width: 35%;
   }
 
   .dati, .noleggi, .messaggi, .preventivi {
