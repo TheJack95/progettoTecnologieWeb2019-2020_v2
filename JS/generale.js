@@ -15,7 +15,17 @@ function scrollFunction() {
     }
 }
 
-function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0; 
+function topFunctionMouse() {
+    
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+}
+
+function topFunctionKey(e) {
+    if(event.which == 13 || event.keyCode == 13){
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+    else
+        return false;
 }
