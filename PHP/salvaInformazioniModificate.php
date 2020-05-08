@@ -27,20 +27,15 @@
             if ($connessioneDatabase->esegui($update) == TRUE) {
                 $messaggio .= "<p class='messaggio successMessage'>Le informazioni personali sono state modificate correttamente</p>";
                 $_SESSION["nuovoMessaggio"] = $messaggio;
-                unset($_POST["nome"]);
-                unset($_POST["cognome"]);
-                unset($_POST["telefono"]);
-                unset($_POST["indirizzo"]);
-                unset($_POST["nascita"]);
                 header("location: ../PAGES/infoAmministratore.php");
             } else {
-                $messaggio .= "<p class='messaggio errorMessage'>Non &egrave; possibile modificare le informazioni personali per un problema del database. Riprova</p>";
+                $messaggio .= "<p class='messaggio errorMessage'>Non &egrave; possibile modificare le informazioni personali per un problema del database&#46; Riprova pi&ugrave; tardi&#46;</p>";
                 $_SESSION["nuovoMessaggio"] = $messaggio;
                 header("location: ../PAGES/modificaInfoAmministratore.php");
             }
         }
     } else {
-        $errLogin = "ATTENZIONE&colon; non hai i permessi per accedere all&apos;area dell&apos;amministratore. Sei stato reindirizzato alla pagina per l&apos;accesso. Accedi e riprova";
+        $errLogin = "Attenzione&#58; non hai i permessi per accedere all&#39;area dell&#39;amministratore&#46; Sei stato reindirizzato alla pagina per l&#39;accesso&#46; Accedi e riprova";
         $_SESSION["errmessage"] = $errLogin;
         header("location: ../PAGES/login.php");
     }

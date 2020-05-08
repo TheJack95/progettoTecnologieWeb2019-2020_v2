@@ -9,7 +9,7 @@
 		<meta name="language" content="italian it" />
 		<meta name="author" content="Giulia Fiorese" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Modifica Veicolo In Vendita</title>
+        <title>Modifica Veicolo In Vendita &#124; Area Amministratore</title>
         <link rel="icon" type="images/svg" href="../Images/LogoGREG.png" />
 		<link rel="stylesheet" type="text/css" href="../CSS/cssGenerale.css"/>
 		<link rel="stylesheet" type="text/css" href="../CSS/cssAmministratore.css"/>
@@ -27,11 +27,11 @@
             <menuAmministratore></menuAmministratore>
             <div class="testoAmministratore">
                 <messaggio></messaggio>
-                <p class="pAmm">Inserisci qui le informazioni sul veicolo in vendita da modificare</p>
+                <p class="pAmm">Inserisci qui le informazioni sul veicolo in vendita da modificare&#46;</p>
                 <form id="modificaVeicoloVendita" onsubmit="return checkForm('modificaVeicoloVendita');" class="formAmm" action="../PHP/salvaVeicoloVenditaModificato.php" method="post" enctype="multipart/form-data">
                     <fieldset>
                         <legend>Informazioni Veicolo</legend>
-                        <p class="pFormAmm">Ogni campo deve essere compilato&colon; nel caso in cui il campo venga lasciato vuoto, le informazioni precedentemente inserite verranno eliminate</p>
+                        <p class="pFormAmm">Ogni campo deve essere compilato&#58; nel caso in cui il campo venga lasciato vuoto&#44; le informazioni precedentemente inserite verranno eliminate&#46;</p>
 
                         <label for="marca">Marca</label>
                         <input type="text" name="marca" id="marca" tabindex="13" />
@@ -42,16 +42,17 @@
                         <label for="km">Chilometri</label>
                         <input type="text" name="km" id="km" tabindex="15" />
 
-                        <label for="cilindrata">Cilindrata in cm&sup3;</label>
+                        <label for="cilindrata">Cilindrata in cm&#179;</label>
                         <input type="text" name="cilindrata" id="cilindrata" tabindex="16" />
 
-                        <label for="prezzo">Costo in &euro;</label>
+                        <label for="prezzo">Costo in &#8364;</label>
                         <input type="text" name="prezzo" id="prezzo" tabindex="17" />
 
-                        <input type="submit" id="salvaModificheVeicoloVendita" value="SALVA MODIFICHE" tabindex="18" />
+                        <input type="submit" id="salvaModificheVeicoloVendita" value="Salva modifiche" tabindex="18" />
                     </fieldset>
                 </form>
             </div>
+            <p><button onclick="topFunction()" class="hide" id="scrollUp">&#9650;</button></p>
         </div>
         <footer></footer>
     </body>

@@ -68,3 +68,7 @@ html, body {
 .formElimAmm {
     float: none;
 }
+
+#scrollUp {
+    display: none;
+}

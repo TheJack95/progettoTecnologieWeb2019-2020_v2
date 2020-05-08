@@ -11,7 +11,7 @@
 
         $output = str_replace("<header></header>",funzioniGenerali::header(),$output);
         $output = str_replace("<menu></menu>",funzioniGenerali::menu(),$output);
-        $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Area Amministratore &gt;&gt; Prenotazioni veicoli a noleggio"),$output);
+        $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Area Amministratore &#62;&#62; Prenotazioni veicoli a noleggio"),$output);
         $output = str_replace("<menuAmministratore></menuAmministratore>",funzioniAmministratore::menuAmm(),$output);
         if(isset($_SESSION["nuovoMessaggio"])){
             $output = str_replace("<messaggio></messaggio>",$_SESSION["nuovoMessaggio"],$output);
@@ -31,13 +31,13 @@
                     $listaNoleggi .= "<div class='divAmm'>"."\n"
                                     ."  <img class='imgAutoAmm' src='$responseA->Immagine' alt='$responseA->DescrImmagine' />"."\n"
                                     ."  <div class='datiAutoAmm'>"."\n"
-                                    ."      <p class='pAmm'>Cliente&colon; ".$responseI->Nome." ".$responseI->Cognome." &lsqb;".$responseP->Utente."&rsqb;</p>"."\n"
-                                    ."      <p class='pAmm'>Veicolo&colon; ".$responseA->Marca." ".$responseA->Modello." - ".$responseP->Targa."</p>"."\n"
+                                    ."      <p class='pAmm'>Cliente&#58; ".$responseI->Nome." ".$responseI->Cognome." &#91;".$responseP->Utente."&#93;</p>"."\n"
+                                    ."      <p class='pAmm'>Veicolo&#58; ".$responseA->Marca." ".$responseA->Modello." &#8722; ".$responseP->Targa."</p>"."\n"
                                     ."      <p class='pAmm'>Noleggio dal ".$inizio." al ".$fine."</p>"."\n"
                                     ."      <form class='formModAmm' action='../PHP/eliminaPrenotazioneAmministratore.php' method='post'>"."\n"
                                     ."          <fieldset>"."\n"
                                     ."              <legend></legend>"."\n"
-                                    ."              <button type='submit' name='eliminaPrenotazione' class='noButt linkMod' value='$responseP->IdPrenot'>ELIMINA PRENOTAZIONE</button>"."\n"
+                                    ."              <button type='submit' name='eliminaPrenotazione' class='noButt linkMod' value='$responseP->IdPrenot'>Elimina prenotazione</button>"."\n"
                                     ."          </fieldset>"."\n"
                                     ."      </form>"."\n"
                                     ."  </div>"."\n"
@@ -46,17 +46,17 @@
             }
         }
         if(count($requestP) == 0) {
-            $listaNoleggi .= "<p class=\"msgAmm\">Al momento non ci sono prenotazioni per i veicoli a noleggio</p>";
+            $listaNoleggi .= "<p class=\"msgAmm\">Al momento non ci sono prenotazioni per i veicoli a noleggio&#46;</p>";
         }
         $output = str_replace("<listaNoleggi></listaNoleggi>",$listaNoleggi,$output);
         $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
 
         $output = str_replace('<a class="" href="homeAmministratore.php" tabindex="5">AREA AMMINISTRATORE</a>','<strong>AREA AMMINISTRATORE</strong>',$output);
-        $output = str_replace('<a href="listaNoleggiAmministratore.php" tabindex="11">PRENOTAZIONI NOLEGGIO</a>','&gt;PRENOTAZIONI NOLEGGIO',$output);
+        $output = str_replace('<a href="listaNoleggiAmministratore.php" tabindex="11">PRENOTAZIONI NOLEGGIO</a>','&#62;PRENOTAZIONI NOLEGGIO',$output);
 
         echo $output;
     } else {
-        $errLogin = "ATTENZIONE&colon; non hai i permessi per accedere all&apos;area dell&apos;amministratore. Sei stato reindirizzato alla pagina per l&apos;accesso. Accedi e riprova";
+        $errLogin = "Attenzione&#58; non hai i permessi per accedere all&#39;area dell&39;amministratore&#46; Sei stato reindirizzato alla pagina per l&#39;accesso&#46; Accedi e riprova";
         $_SESSION["errmessage"] = $errLogin;
         header("location: ../PAGES/login.php");
     }

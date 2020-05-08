@@ -8,7 +8,7 @@ body {
     font-size: 12pt;
 }
 
-#header, #menu, #menuAmministratore, #breadcrumb, #footer {
+#header, #menu, #menuAmministratore, #breadcrumb, #footer, #scrollUp, .linkMod, .noButt, .pLinkAmm {
     display: none;
 }
 
@@ -20,9 +20,4 @@ body {
 
 .h1Amm {
     text-align: center;
-}
-
-.linkMod, .noButt, .pLinkAmm {
-    display: none;
-
 }
