@@ -4,6 +4,10 @@
     text-decoration-color: #000000 !important;
 }
 
+html, body {
+    max-width: 100% !important;
+}
+
 body {
     font-size: 12pt;
 }

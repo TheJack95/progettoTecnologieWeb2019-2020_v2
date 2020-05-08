@@ -16,7 +16,7 @@
 
 		public function validTesto($testo) {
 			if(isset($testo) && !empty($testo)) {
-				if(preg_match("/^[a-zA-Z0-9&,#,;,.,, ]+$/",$testo)) {
+				if(preg_match("/^[a-zA-Z0-9 ,&,#,;,.,,]+$/",$testo)) {
 					return true;
 				} else {
 					return false;
@@ -153,6 +153,6 @@
 			}
 		}
 
-	#flag fine documento
+
 	}
 ?>

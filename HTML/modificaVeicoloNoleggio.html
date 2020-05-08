@@ -28,25 +28,25 @@
             <div class="testoAmministratore">
                 <messaggio></messaggio>
                 <p class="pAmm">Inserisci qui le informazioni sul veicolo a noleggio da modificare&#46;</p>
-                <p class="pAmm">Attenzione&#58; la targa del veicolo non pu&ograve; essere modificata&#46;</p>
+                <p class="pAmm">Attenzione&#58; la targa e l&#39;immagine del veicolo non possono essere modificate&#46;</p>
                 <form id="modificaVeicoloNoleggio" onsubmit="return checkForm('modificaVeicoloNoleggio');" class="formAmm" action="../PHP/salvaVeicoloNoleggioModificato.php" method="post" enctype="multipart/form-data">
                     <fieldset>
                         <legend>Informazioni Veicolo</legend>
-                        <p class="pFormAmm">Ogni campo deve essere compilato&#58; nel caso in cui il campo venga lasciato vuoto&#44; le informazioni precedentemente inserite verranno eliminate&#46;</p>
+                        <p class="pFormAmm">Tutti i campi marcati con l&#39;asterisco &#42; sono obbligatori&#46;</p>
 
-                        <label for="marca">Marca</label>
+                        <label for="marca">Marca &#42;</label>
                         <input type="text" name="marca" id="marca" tabindex="13"/>
 
-                        <label for="modello">Modello</label>
+                        <label for="modello">Modello &#42;</label>
                         <input type="text" name="modello" id="modello" tabindex="14"/>
 
-                        <label for="cilindrata">Cilindrata in cm&#179;</label>
+                        <label for="cilindrata">Cilindrata in cm&#179; &#42;</label>
                         <input type="text" name="cilindrata" id="cilindrata" tabindex="15"/>
 
-                        <label for="costo">Costo al giorno in &#8364;</label>
+                        <label for="costo">Costo al giorno in &#8364; &#42;</label>
                         <input type="text" name="costo" id="costo" tabindex="16"/>
 
-                        <label for="cauzione">Cauzione in &#8364;</label>
+                        <label for="cauzione">Cauzione in &#8364; &#42;</label>
                         <input type="text" name="cauzione" id="cauzione" tabindex="17"/>
 
                         <input type="submit" id="salvaModificheVeicoloNoleggio" value="Salva modifiche" tabindex="18" />

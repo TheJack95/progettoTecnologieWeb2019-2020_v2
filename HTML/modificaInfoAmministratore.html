@@ -28,25 +28,25 @@
             <div class="testoAmministratore">
                 <messaggio></messaggio>
                 <p class="pAmm">Inserire qui le informazioni personali da modificare&#46;</p>
-                <p class="pAmm">Attenzione&#58; l&#39;indirizzo <span xml:lang="en" lang="en">email</span> con cui ci si &egrave; registrati non pu&ograve; essere modificato e la data di nascita deve essere nel formato gg&#8722;mm&#8722;aaaa</p>
+                <p class="pAmm">Attenzione&#58; l&#39;indirizzo <span xml:lang="en" lang="en">email</span> con cui ci si &egrave; registrati e la <span xml:lang="en" lang="en">password</span> non possono essere modificati&#46; Inoltre la data di nascita deve essere nel formato gg&#8722;mm&#8722;aaaa</p>
                 <form id="modificaInfo" onsubmit="return checkForm('modificaInfo');" class="formAmm" action="../PHP/salvaInformazioniModificate.php" method="post" enctype="multipart/form-data">
                     <fieldset>
                         <legend>Informazioni Personali</legend>
-                        <p class="pFormAmm">Ogni campo deve essere compilato&#58; nel caso in cui il campo venga lasciato vuoto&#44; le informazioni precedentemente inserite verranno eliminate&#46;</p>
+                        <p class="pFormAmm">Tutti i campi marcati con l&#39;asterisco &#42; sono obbligatori&#46;</p>
 
-                        <label for="nome">Nome</label>
+                        <label for="nome">Nome &#42;</label>
                         <input type="text" name="nome" id="nome" tabindex="13" />
 
-                        <label for="cognome">Cognome</label>
+                        <label for="cognome">Cognome &#42;</label>
                         <input type="text" name="cognome" id="cognome" tabindex="14" />
 
-                        <label for="telefono">Recapito telefonico</label>
+                        <label for="telefono">Recapito telefonico &#42;</label>
                         <input type="text" name="telefono" id="telefono" tabindex="15" />
 
-                        <label for="indirizzo">Indirizzo</label>
+                        <label for="indirizzo">Indirizzo &#42;</label>
                         <input type="text" name="indirizzo" id="indirizzo" tabindex="16" />
 
-                        <label for="nascita">Data di nascita &#40;gg&#8722;mm&#8722;aaaa&#41;</label>
+                        <label for="nascita">Data di nascita &#40;gg&#8722;mm&#8722;aaaa&#41; &#42;</label>
                         <input type="text" name="nascita" id="nascita" tabindex="17" />
 
                         <input type="submit" id="salvaModificheInfo" value="Salva modifiche" tabindex="18" />

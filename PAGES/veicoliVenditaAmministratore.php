@@ -26,7 +26,7 @@
                         ."  <img class='imgAutoAmm' src='$response->Immagine' alt='$response->DescrImmagine' />"."\n"
                         ."  <div class='datiAutoAmm'>"."\n"
                         ."      <p class='pAmm'>".$response->Marca." ".$response->Modello."</p>"."\n"
-                        ."      <p class='pAmm'>".$response->Cilindrata." cm&#179; - ".$response->KM." km</p>"."\n"
+                        ."      <p class='pAmm'>".$response->Cilindrata." cm&#179; &#8722; ".$response->KM." km</p>"."\n"
                         ."      <p class='pAmm'>Costo&#58; &#8364; ".$response->PrezzoVendita." &#43; i&#46;v&#46;a&#46;</p>"."\n"
                         ."      <form class='formRispAmm' action='../PAGES/modificaVeicoloVendita.php' method='post'>"."\n"
                         ."          <fieldset>"."\n"

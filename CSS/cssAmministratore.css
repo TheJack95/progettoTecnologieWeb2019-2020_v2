@@ -48,17 +48,18 @@
     border: 1px solid #F1AB00;
     text-decoration: none;
     cursor: pointer;
-    min-width: 90%;
+    width: 100%;
     min-height: 5%;
     font-size: 1em;
     text-decoration: underline;
 }
 
 .formRispAmm {
-    width: 50%;
+    width: 49%;
     margin: 0;
     margin-top: 2%;
     padding: 0;
+    padding-right: 1%;
     display: inline-block;
 }
 
@@ -70,10 +71,11 @@
 
 .formElimAmm {
     float: right;
-    width: 50%;
+    width: 49%;
     margin: 0;
     margin-top: 2%;
     padding: 0;
+    padding-left: 1%;
 }
 
 .formModAmm {

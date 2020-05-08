@@ -1,5 +1,5 @@
 html, body {
-    max-width: 100% !important;
+    max-width: 95% !important;
 }
 
 .corpoAmministratore {
@@ -63,6 +63,7 @@ html, body {
     width: 100%;
     margin-top: 1%;
     text-align: center;
+    padding: 0;
 }
 
 .formElimAmm {
