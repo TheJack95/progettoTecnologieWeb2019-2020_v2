@@ -14,14 +14,14 @@
 			}
 		}
 
-		public function validTesto($testo){
-			if(isset($testo) && !empty($testo)){
-				if(preg_match("/^([a-zA-Z ]*[0-9]*[&,#,;,.,,]*)$/",$testo)){
+		public function validTesto($testo) {
+			if(isset($testo) && !empty($testo)) {
+				if(preg_match("/^[a-zA-Z0-9&,#,;,.,, ]+$/",$testo)) {
 					return true;
-				} else{
+				} else {
 					return false;
 				}
-			} else{
+			} else {
 				return false;
 			}
 		}
@@ -143,7 +143,7 @@
 
 		public function validNumeri($cifra) {
 			if(isset($cifra) && !empty($cifra)) {
-				if(preg_match("/^[0-9]{2,6}$/",$cifra)) {
+				if(preg_match("/^[0-9]{1,7}$/",$cifra)) {
 					return true;
 				} else {
 					return false;

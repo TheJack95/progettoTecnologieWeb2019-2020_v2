@@ -26,7 +26,7 @@
         }
         
         if(controlloInput::validTesto($_POST["modello"])) {
-            $marca = htmlentities($_POST["modello"],ENT_QUOTES,"UTF-8");
+            $modello = htmlentities($_POST["modello"],ENT_QUOTES,"UTF-8");
         } else {
             $valid = false;
             $errori .= "<p class='messaggio errorMessage'>Il modello inserito non &egrave; valido&colon; ricorda che non pu&ograve; essere vuoto</p>";
