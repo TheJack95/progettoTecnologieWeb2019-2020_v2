@@ -72,6 +72,10 @@
     margin-right: 2em;
 }
 
+fieldset{
+    border: none;
+}
+
 @media (max-width:1360px)
 {
     .containerText,#containerOccasione{
