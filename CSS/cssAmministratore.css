@@ -1,17 +1,18 @@
 .corpoAmministratore {
     background-color: #F1AB00;
-    margin: 1%;
+    margin: 0;
 }
 
 #menuAmministratore {
     float: left;
-    width: 29%;
+    width: 25%;
     height: 100%;
     text-align: justify;
     font-size: 1.1em;
     background-color: #F1AB00;
     color: #FFFFFF;
-    margin: 0;
+    margin: 1%;
+    margin-right: 0.5%;
     padding: 0;
     clear: both;
 }
@@ -27,11 +28,12 @@
 
 .testoAmministratore {
     float: right;
-    width: 69%;
+    width: 72%;
     height: 100%;
     text-align: left;
-    margin: 0;
-    padding: 0.5%;
+    margin: 1%;
+    margin-left: 0.5%;
+    padding: 0;
 }
 
 .linkMod {
