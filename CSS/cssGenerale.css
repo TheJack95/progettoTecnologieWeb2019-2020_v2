@@ -254,11 +254,11 @@ input[type="submit"] {
 
 }
 
-@media (max-width:470px){
+/*@media (max-width:470px){
     #scrollUp{
         display: none;
     }
-}
+}*/
 
 @media (max-width:550px) {
 	#menu {

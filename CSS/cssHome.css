@@ -1,8 +1,10 @@
+
 .titolo{
     font-size: 1.5em;
     margin-bottom : 0.5em;
     margin-top: 2em;
     font-weight: bolder;
+    text-align: center;
 }
 
 .titoloOccasione{
@@ -30,6 +32,7 @@
 
 .text{
     margin-bottom: 2em;
+    font-size: 0.9em;
 }
 
 #preventivo{
@@ -76,15 +79,7 @@ fieldset{
     border: none;
 }
 
-@media (max-width:1360px)
-{
-    .containerText,#containerOccasione{
-        font-size: 0.8em;
-    }
-
-}
-
-@media (max-width:1180px){
+@media(max-width:1490px){
     #immagineConcessionaria{
         float: none;
         width: 100%;
@@ -93,11 +88,24 @@ fieldset{
 
     .containerText{
         margin-left: 0;
+        font-size: 1.1em;
     }
 
     .text{
         margin-left: 0.5em;
     }
+}
+
+@media (max-width:1360px)
+{
+    
+    #containerOccasione{
+        font-size: 0.8em;
+    }
+
+}
+
+@media (max-width:1180px){
 
     .button{
         width: auto;
