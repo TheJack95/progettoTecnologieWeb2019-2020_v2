@@ -9,6 +9,8 @@ body {
 
 #header {
   font-size: 140%;
+  display: block;
+  width: 100%;
   text-align: center;
   margin-bottom: 0.7em;
   border-top: white;
