@@ -15,42 +15,42 @@
             $targa = $_POST["targa"];
         } else {
             $valid = false;
-            $errori .= "<p class='messaggio errorMessage'>La targa inserita non &egrave; valida&colon; ricorda che non pu&ograve; essere vuota e deve avere sette caratteri</p>";
+            $errori .= "<p class='messaggio errorMessage'>La targa inserita non &egrave; valida&#58; ricorda che non pu&ograve; essere vuota e deve avere esattamente sette caratteri&#46;</p>";
         }
         
         if(controlloInput::validTesto($_POST["marca"])) {
             $marca = htmlentities($_POST["marca"],ENT_QUOTES,"UTF-8");
         } else {
             $valid = false;
-            $errori .= "<p class='messaggio errorMessage'>La marca inserita non &egrave; valida&colon; ricorda che non pu&ograve; essere vuota</p>";
+            $errori .= "<p class='messaggio errorMessage'>La marca inserita non &egrave; valida&#58; ricorda che non pu&ograve; essere vuota&#46;</p>";
         }
         
         if(controlloInput::validTesto($_POST["modello"])) {
-            $marca = htmlentities($_POST["modello"],ENT_QUOTES,"UTF-8");
+            $modello = htmlentities($_POST["modello"],ENT_QUOTES,"UTF-8");
         } else {
             $valid = false;
-            $errori .= "<p class='messaggio errorMessage'>Il modello inserito non &egrave; valido&colon; ricorda che non pu&ograve; essere vuoto</p>";
+            $errori .= "<p class='messaggio errorMessage'>Il modello inserito non &egrave; valido&#58; ricorda che non pu&ograve; essere vuoto&#46;</p>";
         }
         
         if(controlloInput::validNumeri($_POST["cilindrata"])) {
             $cilindrata = $_POST["cilindrata"];
         } else {
             $valid = false;
-            $errori .= "<p class='messaggio errorMessage'>La cilindrata inserita non &egrave; valida&colon; ricorda che non pu&ograve; essere vuota e deve contenere solo numeri</p>";
+            $errori .= "<p class='messaggio errorMessage'>La cilindrata inserita non &egrave; valida&#58; ricorda che non pu&ograve; essere vuota e che pu&ograve; contenere solo numeri&#46;</p>";
         }
         
         if(controlloInput::validNumeri($_POST["costo"])) {
             $costo = $_POST["costo"];
         } else {
             $valid = false;
-            $errori .= "<p class='messaggio errorMessage'>Il costo inserito non &egrave; valido&colon; ricorda che non pu&ograve; essere vuoto e deve contenere solo numeri</p>";
+            $errori .= "<p class='messaggio errorMessage'>Il costo inserito non &egrave; valido&#58; ricorda che non pu&ograve; essere vuoto e che pu&ograve contenere solo numeri&#46;</p>";
         }
         
         if(controlloInput::validNumeri($_POST["cauzione"])) {
             $cauzione = $_POST["cauzione"];
         } else {
             $valid = false;
-            $errori .= "<p class='messaggio errorMessage'>La cauzione inserita non &egrave; valida&colon; ricorda che non pu&ograve; essere vuota e deve contenere solo numeri</p>";
+            $errori .= "<p class='messaggio errorMessage'>La cauzione inserita non &egrave; valida&#58; ricorda che non pu&ograve; essere vuota e che pu&ograve; contenere solo numeri&#46;</p>";
         }
 
         if(is_uploaded_file($_FILES["immagineAuto"]["tmp_name"])) {
@@ -61,37 +61,29 @@
                 }
             } else {
                 $valid = false;
-                $errori .= "<p class='messaggio errorMessage'>L&apos;immagine inserita non &egrave; valida&colon; ricorda che non pu&ograve; superare i 1000KB</p>";
+                $errori .= "<p class='messaggio errorMessage'>L&#39;immagine inserita non &egrave; valida&#58; ricorda che non pu&ograve; superare i 1000KB&#46;</p>";
             }
         } else {
             $valid = false;
-            $errori .= "<p class='messaggio errorMessage'>L&apos;immagine non &egrave; stata inserita</p>";
+            $errori .= "<p class='messaggio errorMessage'>L&#39;immagine non &egrave; stata inserita&#46;</p>";
         }
 
         if(controlloInput::validTesto($_POST["descrizione"])) {
             $descrizione = htmlentities($_POST["descrizione"],ENT_QUOTES,"UTF-8");
         } else {
             $valid = false;
-            $errori .= "<p class='messaggio errorMessage'>La descrizione dell&apos;immagine inserita non &egrave; valida&colon; ricorda che non pu&ograve; essere vuota</p>";
+            $errori .= "<p class='messaggio errorMessage'>La descrizione dell&#39;immagine inserita non &egrave; valida&#58; ricorda che non pu&ograve; essere vuota&#46;</p>";
         }
 
         if($valid == true) {
             $connessioneDatabase = new database_connection;
             $insert = "INSERT INTO AutoNoleggio() VALUES ('$targa','$marca','$modello','$cilindrata','$costo','$cauzione','$immagine','$descrizione')";
             if ($connessioneDatabase->esegui($insert) == TRUE) {
-                unset($_POST["targa"]);
-                unset($_POST["marca"]);
-                unset($_POST["modello"]);
-                unset($_POST["cilindrata"]);
-                unset($_POST["costo"]);
-                unset($_POST["cauzione"]);
-                unset($_FILES["immagine"]["tmp_name"]);
-                unset($_POST["descrizione"]);
                 $messaggio = "<p class='messaggio successMessage'>Nuovo veicolo a noleggio inserito correttamente</p>";
                 $_SESSION["nuovoMessaggio"] = $messaggio;
                 header("location: ../PAGES/VeicoliNoleggioAmministratore.php");
             } else {
-                $messaggio = "<p class='messaggio errorMessage'>Non &egrave; possibile inserire il nuovo veicolo a noleggio per un problema del database, riprova</p>";
+                $messaggio = "<p class='messaggio errorMessage'>Non &egrave; possibile inserire il nuovo veicolo a noleggio per un problema del database&#46; Riprova pi&ugrave; tardi&#46;</p>";
                 $_SESSION["nuovoMessaggio"] = $messaggio;
                 header("location: ../PAGES/nuovoVeicoloNoleggio.php");
             }
@@ -100,7 +92,7 @@
             header("location: ../PAGES/nuovoVeicoloNoleggio.php");
         }
     } else {
-        $errLogin = "ATTENZIONE&colon; non hai i permessi per accedere all&apos;area dell&apos;amministratore. Sei stato reindirizzato alla pagina per l&apos;accesso. Accedi e riprova";
+        $errLogin = "Attenzione&#58; non hai i permessi per accedere all&#39;area dell&#39;amministratore&#46; Sei stato reindirizzato alla pagina per l&#39;accesso&#46; Accedi e riprova";
         $_SESSION["errmessage"] = $errLogin;
         header("location: ../PAGES/login.php");
     }

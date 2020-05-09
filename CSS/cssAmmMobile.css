@@ -1,0 +1,75 @@
+html, body {
+    max-width: 95% !important;
+}
+
+.corpoAmministratore {
+    margin: 0;
+}
+
+#menuAmministratore{
+    float: none;
+    width: 100%;
+    font-size: 1em;
+    background-color: white;
+    border-bottom: 5px double black;
+}
+
+#menuAmministratore ul li{
+    margin: 0.5%;
+    padding: 3%;
+    background-color: #F1AB00;
+    border-radius: 5px;
+}
+
+.testoAmministratore{
+    float: none;
+    width: 100%;
+    background-color: white;
+}
+
+.linkMod {
+    font-size: 1em;
+    width: 70%;
+    text-align: center;
+}
+
+.divAmm {
+    margin: 1%;
+    padding: 0.5%;
+    text-align: center;
+}
+
+.pAmm, .pLinkAmm, .h1Amm, .formAmm label {
+    text-align: center;
+}
+
+.formAmm label, .formAmm input[type="text"], .formAmm input[type="file"], .formAmm input[type="submit"], .formAmm textarea {
+    font-size: 1em;
+    width: 90%;
+}
+
+.imgAutoAmm {
+    padding: 1%;
+    width: 50%;
+}
+
+.datiAutoAmm {
+    float: none;
+    width: 80%;
+    padding-left: 1%;
+}
+
+.formRispAmm, .formElimAmm, .formModAmm {
+    width: 100%;
+    margin-top: 1%;
+    text-align: center;
+    padding: 0;
+}
+
+.formElimAmm {
+    float: none;
+}
+
+#scrollUp {
+    display: none;
+}

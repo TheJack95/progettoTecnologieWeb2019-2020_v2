@@ -8,18 +8,21 @@
     if(isset($_SESSION["admin"]) && $_SESSION["admin"] == 1) {
         $errori = "";
         $valid = true;
+
         if(isset($_POST["oggetto"]) && !empty($_POST["oggetto"])) {
             $oggetto = htmlentities($_POST["oggetto"], ENT_QUOTES, "UTF-8");
         } else {
             $valid = false;
-            $errori .= "<p class='messaggio errorMessage'>L&apos;oggetto inserito non &egrave; valido&colon; ricorda che non pu&ograve; essere vuoto</p>";
+            $errori .= "<p class='messaggio errorMessage'>L&#39;oggetto inserito non &egrave; valido&#58; ricorda che non pu&ograve; essere vuoto&#46;</p>";
         }
+        
         if(isset($_POST["testo"]) && !empty($_POST["testo"])) {
             $testo = htmlentities($_POST["testo"], ENT_QUOTES, "UTF-8");
         } else {
             $valid = false;
-            $errori .= "<p class='messaggio errorMessage'>Il messaggio inserito non &egrave; valido&colon; ricorda che non pu&ograve; essere vuoto</p>";
+            $errori .= "<p class='messaggio errorMessage'>Il messaggio inserito non &egrave; valido&#58; ricorda che non pu&ograve; essere vuoto&#46;</p>";
         }
+        
         if($valid == true) {
             $destinatario = $_SESSION["destinatario"];
 
@@ -33,7 +36,7 @@
                 $_SESSION["nuovoMessaggio"] = $messaggio;
                 header("location: ../PAGES/messaggiAmministratore.php");
             } else {
-                $messaggio = "<p class='messaggio errorMessage'>Non &egrave; possibile inviare la risposta al messaggio per un problema del database. Riprova</p>";
+                $messaggio = "<p class='messaggio errorMessage'>Non &egrave; possibile inviare la risposta al messaggio per un problema del database&#46; Riprova pi&ugrave; tardi&#46;</p>";
                 $_SESSION["nuovoMessaggio"] = $messaggio;
                 header("location: ../PAGES/rispostaMessaggioAmministratore.php");
             }
@@ -42,7 +45,7 @@
             header("location: ../PAGES/rispostaMessaggioAmministratore.php");
         }
     } else {
-        $errLogin = "ATTENZIONE&colon; non hai i permessi per accedere all&apos;area dell&apos;amministratore. Sei stato reindirizzato alla pagina per l&apos;accesso. Accedi e riprova";
+        $errLogin = "Attenzione&#58; non hai i permessi per accedere all&#39;area dell&#39;amministratore&#46; Sei stato reindirizzato alla pagina per l&#39;accesso&#46; Accedi e riprova";
         $_SESSION["errmessage"] = $errLogin;
         header("location: ../PAGES/login.php");
     }

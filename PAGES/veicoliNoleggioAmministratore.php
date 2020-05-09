@@ -11,7 +11,7 @@
 
         $output = str_replace("<header></header>",funzioniGenerali::header(),$output);
         $output = str_replace("<menu></menu>",funzioniGenerali::menu(),$output);
-        $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Area Amministratore &gt;&gt; Veicoli a noleggio"),$output);
+        $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Area Amministratore &#62;&#62; Veicoli a noleggio"),$output);
         $output = str_replace("<menuAmministratore></menuAmministratore>",funzioniAmministratore::menuAmm(),$output);
         if(isset($_SESSION["nuovoMessaggio"])){
             $output = str_replace("<messaggio></messaggio>",$_SESSION["nuovoMessaggio"],$output);
@@ -25,34 +25,34 @@
             $veicoliN .= "<div class='divAmm'>"."\n"
                         ."  <img class='imgAutoAmm' src='$response->Immagine' alt='$response->DescrImmagine' />"."\n"
                         ."  <div class='datiAutoAmm'>"."\n"
-                        ."      <p class='pAmm'>".$response->Marca." ".$response->Modello." - ".$response->Targa."</p>"."\n"
-                        ."      <p class='pAmm'>".$response->Cilindrata." cm&sup3;</p>"."\n"
-                        ."      <p class='pAmm'>Costo&colon; &euro; ".$response->CostoNoleggio." al giorno &plus; cauzione &euro; ".$response->Cauzione."</p>"."\n"
+                        ."      <p class='pAmm'>".$response->Marca." ".$response->Modello." &#8722; ".$response->Targa."</p>"."\n"
+                        ."      <p class='pAmm'>".$response->Cilindrata." cm&#179;</p>"."\n"
+                        ."      <p class='pAmm'>Costo&#58; &#8364; ".$response->CostoNoleggio." al giorno &#43; cauzione &#8364; ".$response->Cauzione."</p>"."\n"
                         ."      <form class='formRispAmm' action='../PAGES/modificaVeicoloNoleggio.php' method='post'>"."\n"
                         ."          <fieldset>"."\n"
-                        ."              <button type='submit' name='modifica' class='noButt linkMod' value='$response->Targa'>MODIFICA VEICOLO</button>"."\n"
+                        ."              <button type='submit' name='modifica' class='noButt linkMod' value='$response->Targa'>Modifica veicolo</button>"."\n"
                         ."          </fieldset>"."\n"
                         ."      </form>"."\n"
                         ."      <form class='formElimAmm' action='../PHP/eliminaVeicoloNoleggio.php' method='post'>"."\n"
                         ."          <fieldset>"."\n"
-                        ."              <button type='submit' name='elimina' class='noButt linkMod' value='$response->Targa'>ELIMINA VEICOLO</button>"."\n"
+                        ."              <button type='submit' name='elimina' class='noButt linkMod' value='$response->Targa'>Elimina veicolo</button>"."\n"
                         ."          </fieldset>"."\n"
                         ."      </form>"."\n"
                         ."  </div>"."\n"
                         ."</div>";
         }
         if(count($request) == 0) {
-            $veicoliN .= "<p class='msgAmm'>Al momento non sono disponibili veicoli a nolegggio</p>";
+            $veicoliN .= "<p class='msgAmm'>Al momento non sono disponibili veicoli a nolegggio&#46;</p>";
         }
         $output = str_replace("<veicoliNoleggio></veicoliNoleggio>",$veicoliN,$output);
         $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
 
         $output = str_replace('<a class="" href="homeAmministratore.php" tabindex="5">AREA AMMINISTRATORE</a>','<strong>AREA AMMINISTRATORE</strong>',$output);
-        $output = str_replace('<a href="veicoliNoleggioAmministratore.php" tabindex="10">VEICOLI A NOLEGGIO</a>','&gt;VEICOLI A NOLEGGIO',$output);
+        $output = str_replace('<a href="veicoliNoleggioAmministratore.php" tabindex="10">VEICOLI A NOLEGGIO</a>','&#62;VEICOLI A NOLEGGIO',$output);
 
         echo $output;
     } else {
-        $errLogin = "ATTENZIONE&colon; non hai i permessi per accedere all&apos;area dell&apos;amministratore. Sei stato reindirizzato alla pagina per l&apos;accesso. Accedi e riprova";
+        $errLogin = "Attenzione&#58; non hai i permessi per accedere all&#39;area dell&#39;amministratore&#46; Sei stato reindirizzato alla pagina per l&#39;accesso&#46; Accedi e riprova";
         $_SESSION["errmessage"] = $errLogin;
         header("location: ../PAGES/login.php");
     }

@@ -1,0 +1,27 @@
+* {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    text-decoration-color: #000000 !important;
+}
+
+html, body {
+    max-width: 100% !important;
+}
+
+body {
+    font-size: 12pt;
+}
+
+#header, #menu, #menuAmministratore, #breadcrumb, #footer, #scrollUp, .linkMod, .noButt, .pLinkAmm {
+    display: none;
+}
+
+.testoAmministratore {
+    float: none;
+    width: 100%;
+    margin: 1%;
+}
+
+.h1Amm {
+    text-align: center;
+}

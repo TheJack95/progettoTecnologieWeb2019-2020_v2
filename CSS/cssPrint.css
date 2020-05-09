@@ -7,7 +7,7 @@ body {
   font-size: 12pt;
 }
 
-#header, #menu, #breadcrumb, .logoHeader, #footer {
+#header, #menu, #breadcrumb, #footer {
   display: none;
 }
 

@@ -9,10 +9,12 @@
 		<meta name="language" content="italian it" />
         <meta name="author" content="Giulia Fiorese" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Modifica Informazioni Personali Amministratore</title>
+        <title>Modifica Informazioni Personali &#124; Area Amministratore</title>
         <link rel="icon" type="images/svg" href="../Images/LogoGREG.png" />
-		<link rel="stylesheet" type="text/css" href="../CSS/cssAmministratore.css" />
-        <link rel="stylesheet" type="text/css" href="../CSS/cssGenerale.css" />
+		<link rel="stylesheet" type="text/css" href="../CSS/cssGenerale.css"/>
+		<link rel="stylesheet" type="text/css" href="../CSS/cssAmministratore.css"/>
+        <link rel="stylesheet" type="text/css" media="handheld, screen and (max-width:1000px), only screen and (max-device-width:1000px)" href="../CSS/cssAmmMobile.css"/>
+        <link rel="stylesheet" type="text/css" media="print" href="../CSS/cssAmmPrint.css"/>
         <script type="text/javascript" src="../JS/controlliClient.js"></script>
         <script type="text/javascript" src="../JS/generale.js"></script>
     </head>
@@ -25,32 +27,33 @@
             <menuAmministratore></menuAmministratore>
             <div class="testoAmministratore">
                 <messaggio></messaggio>
-                <p class="pAmm">Inserire qui le informazioni personali da modificare</p>
-                <p class="pAmm">Attenzione&colon; l&apos;indirizzo <span xml:lang="en" lang="en">email</span> con cui ci si &egrave; registrati non pu&ograve; essere modificato e la data di nascita deve essere nel formato gg-mm-aaaa</p>
+                <p class="pAmm">Inserire qui le informazioni personali da modificare&#46;</p>
+                <p class="pAmm">Attenzione&#58; l&#39;indirizzo <span xml:lang="en" lang="en">email</span> con cui ci si &egrave; registrati e la <span xml:lang="en" lang="en">password</span> non possono essere modificati&#46; Inoltre la data di nascita deve essere nel formato gg&#8722;mm&#8722;aaaa</p>
                 <form id="modificaInfo" onsubmit="return checkForm('modificaInfo');" class="formAmm" action="../PHP/salvaInformazioniModificate.php" method="post" enctype="multipart/form-data">
                     <fieldset>
                         <legend>Informazioni Personali</legend>
-                        <p class="pFormAmm">Ogni campo deve essere compilato&colon; nel caso in cui il campo venga lasciato vuoto, le informazioni precedentemente inserite verranno eliminate</p>
+                        <p class="pFormAmm">Tutti i campi marcati con l&#39;asterisco &#42; sono obbligatori&#46;</p>
 
-                        <label for="nome">Nome</label>
+                        <label for="nome">Nome &#42;</label>
                         <input type="text" name="nome" id="nome" tabindex="13" />
 
-                        <label for="cognome">Cognome</label>
+                        <label for="cognome">Cognome &#42;</label>
                         <input type="text" name="cognome" id="cognome" tabindex="14" />
 
-                        <label for="telefono">Recapito telefonico</label>
+                        <label for="telefono">Recapito telefonico &#42;</label>
                         <input type="text" name="telefono" id="telefono" tabindex="15" />
 
-                        <label for="indirizzo">Indirizzo</label>
+                        <label for="indirizzo">Indirizzo &#42;</label>
                         <input type="text" name="indirizzo" id="indirizzo" tabindex="16" />
 
-                        <label for="nascita">Data di nascita &lpar;gg-mm-aaaa&rpar;</label>
+                        <label for="nascita">Data di nascita &#40;gg&#8722;mm&#8722;aaaa&#41; &#42;</label>
                         <input type="text" name="nascita" id="nascita" tabindex="17" />
 
-                        <input type="submit" id="salvaModificheInfo" value="SALVA MODIFICHE" tabindex="18" />
+                        <input type="submit" id="salvaModificheInfo" value="Salva modifiche" tabindex="18" />
                     </fieldset>
                 </form>
             </div>
+            <button aria-label="Torna in cima" onclick="topFunctionMouse()" onkeypress="topFunctionKey(event)" class="hide" id="scrollUp">&#9650;</button>
         </div>
         <footer></footer>
     </body>

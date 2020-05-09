@@ -9,10 +9,12 @@
 		<meta name="language" content="italian it" />
 		<meta name="author" content="Giulia Fiorese" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Nuovo Veicolo A Noleggio</title>
+        <title>Nuovo Veicolo A Noleggio &#124; Area Amministratore</title>
         <link rel="icon" type="images/svg" href="../Images/LogoGREG.png" />
-		<link rel="stylesheet" type="text/css" href="../CSS/cssAmministratore.css" />
-        <link rel="stylesheet" type="text/css" href="../CSS/cssGenerale.css" />
+		<link rel="stylesheet" type="text/css" href="../CSS/cssGenerale.css"/>
+		<link rel="stylesheet" type="text/css" href="../CSS/cssAmministratore.css"/>
+        <link rel="stylesheet" type="text/css" media="handheld, screen and (max-width:1000px), only screen and (max-device-width:1000px)" href="../CSS/cssAmmMobile.css"/>
+        <link rel="stylesheet" type="text/css" media="print" href="../CSS/cssAmmPrint.css"/>
         <script type="text/javascript" src="../JS/controlliClient.js"></script>
         <script type="text/javascript" src="../JS/generale.js"></script>
     </head>
@@ -25,40 +27,41 @@
             <menuAmministratore></menuAmministratore>
             <div class="testoAmministratore">
                 <messaggio></messaggio>
-                <p class="pAmm">Inserisci qui le informazioni sul veicolo a noleggio da aggiungere</p>
+                <p class="pAmm">Inserisci qui le informazioni sul veicolo a noleggio da aggiungere&#46;</p>
                 <form id="nuovoVeicoloNoleggio" onsubmit="return checkForm('modificaVeicoloVendita');" class="formAmm" action="../PHP/salvaNuovoVeicoloNoleggio.php" method="post" enctype="multipart/form-data">
                     <fieldset>
                         <legend>Informazioni Veicolo</legend>
-                        <p class="pFormAmm">Tutti i campi marcati con l&apos;asterisco &ast; sono obbligatori</p>
+                        <p class="pFormAmm">Tutti i campi marcati con l&#39;asterisco &#42; sono obbligatori&#46;</p>
 
-                        <label for="targa">Targa &ast;</label>
+                        <label for="targa">Targa &#42;</label>
                         <input type="text" name="targa" id="targa" tabindex="13" />
 
-                        <label for="marca">Marca &ast;</label>
+                        <label for="marca">Marca &#42;</label>
                         <input type="text" name="marca" id="marca" tabindex="14" />
 
-                        <label for="modello">Modello &ast;</label>
+                        <label for="modello">Modello &#42;</label>
                         <input type="text" name="modello" id="modello" tabindex="15" />
 
-                        <label for="cilindrata">Cilindrata in cm&sup3; &ast;</label>
+                        <label for="cilindrata">Cilindrata in cm&sup3; &#42;</label>
                         <input type="text" name="cilindrata" id="cilindrata" tabindex="16" />
 
-                        <label for="costo">Costo al giorno in &euro; &ast;</label>
+                        <label for="costo">Costo al giorno in &#8364; &#42;</label>
                         <input type="text" name="costo" id="costo" tabindex="17" />
 
-                        <label for="cauzione">Cauzione in &euro; &ast;</label>
+                        <label for="cauzione">Cauzione in &#8364; &#42;</label>
                         <input type="text" name="cauzione" id="cauzione" tabindex="18" />
 
-                        <label for="immagineAuto">Immagine &ast;</label>
+                        <label for="immagineAuto">Immagine &#42;</label>
                         <input type="file" name="immagineAuto" id="immagineAuto" tabindex="19" />
 
-                        <label for="descrizione">Breve descrizione &ast;</label>
+                        <label for="descrizione">Descrizione immagine &#42;</label>
                         <input type="text" name="descrizione" id="descrizione" tabindex="20" />
 
-                        <input type="submit" id="salvaNuovoVeicoloNoleggio" value="SALVA VEICOLO" tabindex="21" />
+                        <input type="submit" id="salvaNuovoVeicoloNoleggio" value="Salva veicolo" tabindex="21" />
                     </fieldset>
                 </form>
             </div>
+            <button aria-label="Torna in cima" onclick="topFunctionMouse()" onkeypress="topFunctionKey(event)" class="hide" id="scrollUp">&#9650;</button>
         </div>
         <footer></footer>
     </body>

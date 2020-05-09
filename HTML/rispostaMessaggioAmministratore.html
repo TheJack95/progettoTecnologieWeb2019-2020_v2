@@ -9,10 +9,12 @@
 		<meta name="language" content="italian it" />
 		<meta name="author" content="Giulia Fiorese" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Nuova Risposta Amministratore</title>
+        <title>Nuova Risposta Messaggio &#124; Area Amministratore</title>
         <link rel="icon" type="images/svg" href="../Images/LogoGREG.png" />
-		<link rel="stylesheet" type="text/css" href="../CSS/cssAmministratore.css" />
-        <link rel="stylesheet" type="text/css" href="../CSS/cssGenerale.css" />
+		<link rel="stylesheet" type="text/css" href="../CSS/cssGenerale.css"/>
+		<link rel="stylesheet" type="text/css" href="../CSS/cssAmministratore.css"/>
+        <link rel="stylesheet" type="text/css" media="handheld, screen and (max-width:1000px), only screen and (max-device-width:1000px)" href="../CSS/cssAmmMobile.css"/>
+        <link rel="stylesheet" type="text/css" media="print" href="../CSS/cssAmmPrint.css"/>
         <script type="text/javascript" src="../JS/controlliClient.js"></script>
         <script type="text/javascript" src="../JS/generale.js"></script>
     </head>
@@ -25,19 +27,19 @@
             <menuAmministratore></menuAmministratore>
             <div class="testoAmministratore">
                 <messaggio></messaggio>
-                <p class="pAmm">Scrivi qui il messaggio di risposta da inviare</p>
+                <p class="pAmm">Scrivi qui il messaggio di risposta da inviare&#46;</p>
                 <form id="rispostaMessaggioAmministartore" onsubmit="return checkForm('rispostaMessaggioAmministartore');" class="formAmm" action="../PHP/salvaRispostaAmministratore.php" method="post" enctype="multipart/form-data">
                     <fieldset>
                         <legend>Messaggio</legend>
-                        <p class="pFormAmm">Tutti i campi marcati con l&apos;asterisco &ast; sono obbligatori</p>
+                        <p class="pFormAmm">Tutti i campi marcati con l&#39;asterisco &#42; sono obbligatori&#46;</p>
 
-                        <label for="oggetto">Oggetto &ast;</label>
+                        <label for="oggetto">Oggetto &#42;</label>
                         <input type="text" name="oggetto" id="oggetto" tabindex="13" />
 
-                        <label for="testo">Messaggio &ast;</label>
+                        <label for="testo">Messaggio &#42;</label>
                         <textarea name="testo" id="testo" cols="50" rows="5" tabindex="14"></textarea>
 
-                        <input type="submit" id="salvaRispostaAmm" value="INVIA RISPOSTA" tabindex="15" />
+                        <input type="submit" id="salvaRispostaAmm" value="Invia risposta" tabindex="15" />
                     </fieldset>
                 </form>
             </div>

@@ -9,10 +9,12 @@
 		<meta name="language" content="italian it" />
         <meta name="author" content="Giulia Fiorese" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Messaggi Amministratore</title>
+        <title>Messaggi &#124; Area Amministratore</title>
         <link rel="icon" type="images/svg" href="../Images/LogoGREG.png" />
-		<link rel="stylesheet" type="text/css" href="../CSS/cssAmministratore.css" />
-        <link rel="stylesheet" type="text/css" href="../CSS/cssGenerale.css" />
+		<link rel="stylesheet" type="text/css" href="../CSS/cssGenerale.css"/>
+		<link rel="stylesheet" type="text/css" href="../CSS/cssAmministratore.css"/>
+        <link rel="stylesheet" type="text/css" media="handheld, screen and (max-width:1000px), only screen and (max-device-width:1000px)" href="../CSS/cssAmmMobile.css"/>
+        <link rel="stylesheet" type="text/css" media="print" href="../CSS/cssAmmPrint.css"/>
         <script type="text/javascript" src="../JS/generale.js"></script>
     </head>
 
@@ -27,6 +29,7 @@
                 <h1 class="h1Amm">Lista dei messaggi ricevuti e delle risposte inviate</h1>
                 <messaggiAmministratore></messaggiAmministratore>
             </div>
+            <button aria-label="Torna in cima" onclick="topFunctionMouse()" onkeypress="topFunctionKey(event)" class="hide" id="scrollUp">&#9650;</button>
         </div>
         <footer></footer>
     </body>

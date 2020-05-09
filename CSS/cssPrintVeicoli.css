@@ -1,3 +1,7 @@
+html, body {
+	max-width: 95% !important;
+}
+  
 .containerVeicolo{
 	padding: 0;
 	border: none;
@@ -25,7 +29,7 @@
 .datiVeicolo {
 	width: 45%;
 	margin-left: 5%;
-	margin-top: 5%;
+	margin-top: 0;
 }
 
 .hidePrint {
@@ -34,4 +38,8 @@
 
 .dataInput {
 	width: 25% !important;
+}
+
+#costoTot {
+	text-align: center;
 }
