@@ -27,38 +27,36 @@
 	</head>
 
 	<body>
-		<div class="flexbox-parent">
+		<div>
 			<header></header>
 			<menu></menu>
             <breadcrumb></breadcrumb>
                 
-            <div id="mainContent" class="flexbox-item fill-area content flexbox-item-grow">
-                <div class="fill-area-content flexbox-item-grow">
-                    <form action="../PHP/noleggiaVeicoloFn.php?targaAuto=_TARGA_" onsubmit="return checkDateNolo();" method="post">
-						<fieldset>
-							<legend>Inserisci date del noleggio, nel formato gg-mm-aaaa</legend>
-							<label for="dataInizioNolo">Dal</label>
-							<input type="text" name="dataInizioNolo" onchange="dataInizioChange(event);" class="dataInput"  tabindex="7" />
-							<label for="dataFineNolo">Al</label>
-							<input name="dataFineNolo" type="text" onchange="dataFineChange(event);" class="dataInput" tabindex="8" />
-							<input type="submit" name="targa" title="'_TARGA_'" value="Prenota" tabindex="9" class="hidePrint" />
-						</fieldset>
-					</form>
+            <div id="mainContent">
+				<form action="../PHP/noleggiaVeicoloFn.php?targaAuto=_TARGA_" onsubmit="return checkDateNolo();" method="post">
+					<fieldset>
+						<legend>Inserisci date del noleggio, nel formato gg-mm-aaaa</legend>
+						<label for="dataInizioNolo">Dal</label>
+						<input type="text" name="dataInizioNolo" onchange="dataInizioChange(event);" class="dataInput"  tabindex="7" />
+						<label for="dataFineNolo">Al</label>
+						<input name="dataFineNolo" type="text" onchange="dataFineChange(event);" class="dataInput" tabindex="8" />
+						<input type="submit" name="targa" title="'_TARGA_'" value="Prenota" tabindex="9" class="hidePrint" />
+					</fieldset>
+				</form>
 
-					<!--ERRORMESSAGEPLACEHOLDER-->
+				<!--ERRORMESSAGEPLACEHOLDER-->
 
-					<div class="containerVeicolo">
-						<img class="fotoVeicolo" src='_IMMAGINE_' alt='_DESCRAUTO_'/>
-						<div class="datiVeicolo">
-							<h2>_MARCAMODELLO_</h2>
-							<ul>
-								<li><p><strong>Cilindrata:</strong>  _CILINDRATA_ cm&sup3;</p></li>
-								<li><p><strong>Costo noleggio (al giorno):</strong> <span id="costoNolo"> _COSTONOLEGGIO_ &#8364;</span></p></li>
-								<li><p><strong>Cauzione:</strong> _CAUZIONE_ &#8364;</p></li>
-							</ul>
-						</div>
-						<h3 id="costoTot">COSTO TOTALE: 0</h3>
+				<div class="containerVeicolo">
+					<img class="fotoVeicolo" src='_IMMAGINE_' alt='_DESCRAUTO_'/>
+					<div class="datiVeicolo">
+						<h2>_MARCAMODELLO_</h2>
+						<ul>
+							<li><p><strong>Cilindrata:</strong>  _CILINDRATA_ cm&sup3;</p></li>
+							<li><p><strong>Costo noleggio (al giorno):</strong> <span id="costoNolo"> _COSTONOLEGGIO_ &#8364;</span></p></li>
+							<li><p><strong>Cauzione:</strong> _CAUZIONE_ &#8364;</p></li>
+						</ul>
 					</div>
+					<h3 id="costoTot">COSTO TOTALE: 0</h3>
 				</div>
 			</div>
 			

@@ -83,7 +83,7 @@ function checkDateNolo() {
 
 function calcolaCosto(ggNolo) {
     let costoGG = parseFloat(document.getElementById('costoNolo').innerText);
-    let costoTot = ggNolo * costoGG;
+    let costoTot = parseInt(ggNolo * costoGG);
     
     document.getElementById('costoTot').innerHTML = "COSTO TOT: € " + costoTot;
 }

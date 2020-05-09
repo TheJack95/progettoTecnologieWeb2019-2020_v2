@@ -64,6 +64,11 @@ input {
 	border: none;
 }
 
+#filtri {
+	margin: 5px;
+	margin-top: 0;
+}
+
 @media (max-width:1000px) {
 
 	form {

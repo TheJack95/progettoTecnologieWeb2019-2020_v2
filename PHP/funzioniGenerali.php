@@ -2,7 +2,7 @@
     class funzioniGenerali {
     #funzione per scrivere l'header
         public static function header() {
-            $header_form =  '<div class="flexbox-item" id="header">'."\n".
+            $header_form =  '<div id="header">'."\n".
                             '   <a class="hidden" href="#mainContent">Vai al contenuto</a>'."\n".
                             '   <a class="hidden" href="#menu">Vai al menu</a>'."\n".
                             '   <a href="home.php"><img class="logoHeader" src="../Images/LogoGREG.png" alt="logo concessionaria greg" /></a>'."\n".
@@ -66,7 +66,7 @@
          * Funzione per scrivere il footer
          */
         public static function footer() {
-            $footer_form =  '<div class="flexbox-item" id="footer">'."\n".
+            $footer_form =  '<div id="footer">'."\n".
                             '   <p>CONCESSIONARIA GREG - Tutti i diritti riservati - A cura di <span xml:lang="en" lang="en">Tecweb Group</span></p>'."\n".
                             '</div>';
             return $footer_form;
