@@ -49,24 +49,24 @@ if(isset($_SESSION["user"])) {
 				$breadcrumb = "";
 				break;
 			case "preventivi":
-				$breadcrumb = " >> Veicoli acquistati";
+				$breadcrumb = " &gt; Veicoli acquistati";
 				$contentItems = "<div id='content'>"."\n"
 									.$Profilo->getPreventivi()
 								."</div>"."\n";
 				break;
 			case "noleggi":
-				$breadcrumb = " >> Veicoli noleggiati";
+				$breadcrumb = " &gt; Veicoli noleggiati";
 				$contentItems = "<div id='content'>"."\n"
 								.$Profilo->getNoleggi()
 								."</div>"."\n";
 				break;
 			case "messaggi":
 				$contentItems = "<div id='content'>"."\n".$Profilo->getMessaggi()."\n"."</div>"."\n";
-				$breadcrumb = " >> Messaggi";
+				$breadcrumb = " &gt; Messaggi";
 				break;
 			case "datiPersonali":
 				$contentItems = "<div id='content'>"."\n".$Profilo->getDati()."\n"."</div>"."\n";
-				$breadcrumb = " >> I tuoi dati";
+				$breadcrumb = " &gt; I tuoi dati";
 				break;
 			default:
 				$breadcrumb = "";
