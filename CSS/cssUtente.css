@@ -129,6 +129,8 @@ label {
     width: 25%;
     height:inherit;
     float: left;
+    margin-left: 1em;
+    margin-bottom: 1em;
 }
 
 #content {
@@ -151,6 +153,7 @@ label {
 .titolo {
     font-weight: bold;
     font-size: 1.6em;
+    margin-top: 0.6em;
     margin-bottom: 1.2em;
     text-align: center;
 }

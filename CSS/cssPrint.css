@@ -7,7 +7,19 @@ body {
   font-size: 12pt;
 }
 
-#header, #menu, #breadcrumb, #footer {
+#header {
+  font-size: 130%;
+  text-align: center;
+  margin-bottom: 0.7em;
+  border-top: white;
+  border-bottom: white;
+}
+
+#header a[href]:after {
+  content: "";
+}
+
+#menu, #breadcrumb, #footer, .logoHeader {
   display: none;
 }
 
