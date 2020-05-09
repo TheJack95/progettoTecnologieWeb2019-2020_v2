@@ -6,12 +6,12 @@
         public static function menuAmm() {
             $menuAmm_form = '<div id="menuAmministratore">'."\n".
                             '   <ul>'."\n".
-                            '       <li><a href="homeAmministratore.php" tabindex="7"><span xml:lang="en" lang="en">HOME</span> AMMINISTRATORE</a></li>'."\n".
-                            '       <li><a href="infoAmministratore.php" tabindex="8">INFORMAZIONI PERSONALI</a></li>'."\n".
-                            '       <li><a href="messaggiAmministratore.php" tabindex="9">MESSAGGI</a></li>'."\n".
-                            '       <li><a href="veicoliNoleggioAmministratore.php" tabindex="10">VEICOLI A NOLEGGIO</a></li>'."\n".
-                            '       <li><a href="listaNoleggiAmministratore.php" tabindex="11">PRENOTAZIONI NOLEGGIO</a></li>'."\n".
-                            '       <li><a href="veicoliVenditaAmministratore.php" tabindex="12">VEICOLI IN VENDITA</a></li>'."\n".
+                            '       <li><a href="homeAmministratore.php" tabindex="7"><span xml:lang="en" lang="en">Home</span> amministratore</a></li>'."\n".
+                            '       <li><a href="infoAmministratore.php" tabindex="8">Informazioni personali</a></li>'."\n".
+                            '       <li><a href="messaggiAmministratore.php" tabindex="9">Messaggi</a></li>'."\n".
+                            '       <li><a href="veicoliNoleggioAmministratore.php" tabindex="10">Veicoli a noleggio</a></li>'."\n".
+                            '       <li><a href="listaNoleggiAmministratore.php" tabindex="11">Prenotazioni veicoli</a></li>'."\n".
+                            '       <li><a href="veicoliVenditaAmministratore.php" tabindex="12">Veicoli in vendita</a></li>'."\n".
                             '   </ul>'."\n".
                             '</div>';
             return $menuAmm_form;
