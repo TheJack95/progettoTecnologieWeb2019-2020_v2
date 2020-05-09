@@ -8,7 +8,7 @@
     $output = str_replace("<menu></menu>",funzioniGenerali::menu(),$output);
     $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Homepage"),$output);
     $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
-    $output = str_replace('<a href="home.php"><img class="logoHeader" src="../Images/LogoGREG.png" alt="logo concessionaria greg"/></a>','<img class="logoHeader" src="../Images/LogoGREG.png" alt="logo concessionaria greg" />',$output);
+    $output = str_replace('<a href="home.php"><img class="logoHeader" src="../Images/LogoGREG.png" alt="logo concessionaria greg" /></a>','<img class="logoHeader" src="../Images/LogoGREG.png" alt="logo concessionaria greg" />',$output);
     $output = str_replace('<p class="nomeSito"><a href="home.php">CONCESSIONARIA GREG</a></p>','<p class="nomeSito">CONCESSIONARIA GREG</p>',$output);
     $output = str_replace('<a href="home.php" tabindex="1"><span xml:lang="en" lang="en">HOME</span></a>','<strong>HOME</strong>',$output);
 
