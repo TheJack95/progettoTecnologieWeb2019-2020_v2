@@ -1,3 +1,7 @@
+html, body {
+    width: 100% !important;
+}
+
 .corpoAmministratore {
     background-color: #F1AB00;
     margin: 0;
