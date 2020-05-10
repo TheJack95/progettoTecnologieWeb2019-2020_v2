@@ -30,8 +30,6 @@
             $insertRisposta = "INSERT INTO RisposteMessaggi() VALUES ('','$destinatario','$oggetto','$testo')";
             if ($connessioneDatabase->esegui($insertRisposta) == TRUE) {
                 unset($_SESSION["destinatario"]);
-                unset( $_POST["oggetto"]);
-                unset($_POST["testo"]);
                 $messaggio = "<p class='messaggio successMessage'>Risposta al messaggio inviata correttamente</p>";
                 $_SESSION["nuovoMessaggio"] = $messaggio;
                 header("location: ../PAGES/messaggiAmministratore.php");
