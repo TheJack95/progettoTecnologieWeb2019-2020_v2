@@ -1,0 +1,9 @@
+\section{Comportamento}
+Il comportamento del sito, ovvero i meccanismi di risposta all'interazione con l'utente, è suddiviso in script JavaScript (chiamati a lato client) e funzioni PHP (gestite a lato server).
+    \subsection{JavaScript}
+        L'utilizzo di JavaScript è stato utilizzato per la validazione dei dati inseriti in input dall'utente lato client e per la visualizzazione del menù con dispositivi mobile o schermi di piccole dimensioni.
+        I controlli JS vengono eseguiti anche tramite PHP a lato server, in modo tale da mantenere la completa accesibilità del sito anche nel caso in cui JavaScript non fosse disponibile perché disabilitato o non supportato dal browser.
+    \subsection{PHP}
+        La componente PHP risulta sicuramente come la più corposa del sito in quanto viene utilizzata non solo per i controlli (necessari ogniqualvolta JavaScript non sia disponibile), ma anche per la generazione di gran parte delle pagine, la generazione delle parti comuni a tutte le pagine e le interazioni con il database. La suddivisione in diversi file e classi rispecchia quanto appena detto: modulesInit racchiude le funzioni per la generazione delle pagine XHTML e per i controlli sull'input, sqlInteractions contiene le funzioni di base per l'interazione con il database, mentre le interazioni più complesse sono definite in file separati.
+       
+\pagebreak

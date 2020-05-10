@@ -1,0 +1,45 @@
+\section{Analisi}
+
+    \subsection{Utenza}
+        L'utenza del sito non può essere inquadrata in un target specifico poiché destinata al pubblico della Concessionaria GREG il quale non presenta restrizioni o interesse per gruppi definiti. Ciò si traduce nell'esigenza di un sito dalla facile e immediata comprensione e nella piena ottemperanza dei canoni di accessibilità.
+
+    \subsection{Attori}
+        Abbiamo individuato tre tipi di attori:
+        \begin{itemize}
+            \item \textbf{Utente non registrato:} 
+            \item \textbf{Utente registrato:} 
+            \item \textbf{Admin:} è
+        \end{itemize}
+        Nella relazione useremo il termine "utente generico" per indicare un utente registrato che non è amministratore.
+
+    \subsection{Pagine del sito}
+        In questa sezione sono presentate le varie pagine del sito, con le caratteristiche e le funzionalità che devono avere.
+        \subsubsection{Home}
+            La homepage del sito, la prima a cui l'utente accede, deve contenere le 5 W e presenta una breve descrizione del parco.
+            Prevede 3 sezioni:
+            \begin{enumerate}
+                \item il testo semplice con le informazioni generiche (5W+descrizione);
+                \item una sezione che mostra il prossimo evento del parco;
+                \item una sezione con alcune regole da rispettare nel parco.
+            \end{enumerate}
+            Se si desidera raggiungere la homepage mentre si sta visitando una pagina interna del sito, è possibile cliccare sulla voce home del menù oppure sul titolo/logo presente nell'header.
+
+            \subsubsection{Informazioni}
+            L’utente generico accede alla pagina info cliccando la sezione info presente nella navbar, vi è inoltre la possibilità di venire indirizzati direttamente alla sezione contatti della pagina cliccando sul link contatti che viene visualizzata passando il cursore sulla sezione info. La pagina offre informazioni e servizi utili all’utente come:
+            L’indirizzo del parco, la mappa con le indicazioni per raggiungere il parco importata da Google Maps, nonostante non sia supportata da XHTML 1.0 Strict è stato scelto di tenerla dato che è compatibile con la maggior parte dei browser e fornisce un servizio non indifferente all’utente che visita la pagina.
+            \begin{itemize}
+                \item Un indirizzo email;
+                \item Un numero di telefono;
+                \item Un numero di fax;
+                \item Una mappa con le indicazioni per raggiungere il parco importata da Google Maps, nonostante non sia supportata da XHTML 1.0 Strict è stato scelto di tenerla dato che è compatibile con la maggior parte dei browser e fornisce un servizio non indifferente all’ utente che visita la pagina;
+                \item Un form che l’utente può utilizzare per mandare messaggi al personale del parco.
+            \end{itemize}
+            Il form è composto dai campi nome, cognome, email e messaggio da completare obbligatoriamente oltre ad un campo telefono opzionale, dopo essere stato inoltrato il form esegue uno script php per inviare il messaggio in una sezione dedicata del database. Il form è utilizzabile anche da utenti non registrati.
+
+        
+        \subsubsection{Area Privata}
+            L'area privata è diversa a seconda del tipo di utente che ha effettuato. Definiamo "Area personale" l'area privata di un utente generico registrato e loggato; definiamo "Area amministratore" l'area privata di un utente amministratore.
+            \paragraph{Area personale} Un utente generico che accede alla sua area privata, come prima pagina vedrà le azioni rapide che può eseguire, come leggere i messaggi, fare acquisti o contattare l'amministratore. Attraverso il "Pannello Gestione" potrà navigare all'interno dell'area privata e accedere alle sottosezioni presenti, ovvero i messaggi, i proprio acquisti (biglietti ed eventi) e visualizzare i propri dati personali.
+            \paragraph{Area amministratore} L'area privata dell'utente amministratore presenta due importanti funzionalità: l'inserimento e la cancellazione di un auto. Per l'inserimento è sufficiente cliccare sui pulsanti presenti nelle "Azioni Rapide", mentre nelle sottosezioni dell'area amministrazione l'amministrazione può consultare ed eliminare i dati presenti nel database. Può inoltre consultare gli acquisti e i messaggi di tutti gli utenti registrati.
+
+\pagebreak
