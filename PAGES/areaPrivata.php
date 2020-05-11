@@ -37,7 +37,6 @@ if(isset($_SESSION["user"])) {
 				."	<a class='azioniRapide' href='contatti.php#formMessaggio' tabindex='14'>Contatta l'Amministratore</a>"."\n"
 				."</div>"."\n";
 
-	$output = str_replace("<sideNav></sideNav>",$sideNav, $output);
 
 	if(isset($_GET["pageName"])) {
 
@@ -47,15 +46,18 @@ if(isset($_SESSION["user"])) {
 		switch($pageName) {
 			case "principale":
 				$breadcrumb = "";
+				$sideNav = str_replace("<a href='areaPrivata.php?pageName=principale' tabindex='7'>Area Personale</a>",' &#62; Area Personale',$sideNav);
 				break;
 			case "preventivi":
 				$breadcrumb = " &gt; Veicoli acquistati";
+				$sideNav = str_replace("<a href='areaPrivata.php?pageName=preventivi' tabindex='9'>Preventivi</a>",' &#62; Preventivi',$sideNav);
 				$contentItems = "<div id='content'>"."\n"
 									.$Profilo->getPreventivi()
 								."</div>"."\n";
 				break;
 			case "noleggi":
 				$breadcrumb = " &gt; Veicoli noleggiati";
+				$sideNav = str_replace("<a href='areaPrivata.php?pageName=noleggi' tabindex='10'>Noleggi</a>",' &#62; Noleggi',$sideNav);
 				$contentItems = "<div id='content'>"."\n"
 								.$Profilo->getNoleggi()
 								."</div>"."\n";
@@ -63,10 +65,12 @@ if(isset($_SESSION["user"])) {
 			case "messaggi":
 				$contentItems = "<div id='content'>"."\n".$Profilo->getMessaggi()."\n"."</div>"."\n";
 				$breadcrumb = " &gt; Messaggi";
+				$sideNav = str_replace("<a href='areaPrivata.php?pageName=messaggi' tabindex='11'>Messaggi</a>",' &#62; Messaggi',$sideNav);
 				break;
 			case "datiPersonali":
 				$contentItems = "<div id='content'>"."\n".$Profilo->getDati()."\n"."</div>"."\n";
 				$breadcrumb = " &gt; I tuoi dati";
+				$sideNav = str_replace("<a href='areaPrivata.php?pageName=datiPersonali' tabindex='8'>Dati Personali</a>",' &#62; Dati Personali',$sideNav);
 				break;
 			default:
 				$breadcrumb = "";
@@ -74,6 +78,7 @@ if(isset($_SESSION["user"])) {
 		}
 	}
 
+	$output = str_replace("<sideNav></sideNav>",$sideNav, $output);
 	$output = str_replace("<contentItems></contentItems>",$contentItems, $output);
 	$output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Area Personale$breadcrumb"),$output);
 	$output = str_replace('<a class="" href="areaPrivata.php" tabindex="5">AREA PERSONALE</a>','<strong>AREA PERSONALE</strong>',$output);

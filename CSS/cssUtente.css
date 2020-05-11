@@ -177,6 +177,7 @@ hr {
   border-top: 0.0625em solid #b0b0b0;
   padding-top: 1em;
   padding-bottom: 1em;
+  font-weight: bold;
 }
 
 @media (max-width:800px) {
@@ -194,6 +195,7 @@ hr {
     padding-top: 0.7em;
     padding-bottom: 0.7em;
     font-size: 120%;
+
   }
 
   .titolo {
