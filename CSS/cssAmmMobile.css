@@ -1,3 +1,7 @@
+html, body {
+    width: 100% !important;
+}
+
 #mainContent, .corpoAmministratore, #mainContent.corpoAmministratore {
     margin: 0;
     padding: 0;
