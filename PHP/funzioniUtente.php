@@ -72,11 +72,11 @@
           							.'	</div>'."\n"
                         .'	<div>'."\n"
           							.'		<h4>Chilometraggio</h4>'."\n"
-          							.'		<p>'.$rowAuto['KM'].'</p>'."\n"
+          							.'		<p>'.$rowAuto['KM'].' km</p>'."\n"
           							.'	</div>'."\n"
           							.'	<div>'."\n"
           							.'		<h4>Prezzo</h4>'."\n"
-          							.'		<p>'.$row['PrezzoVendita'].'</p>'."\n"
+          							.'		<p>'.$row['PrezzoVendita'].' &euro;</p>'."\n"
           							.'	</div>'."\n"
           							.'</div>';
         }
@@ -107,7 +107,7 @@
           							.'	</div>'."\n"
           							.'	<div>'."\n"
           							.'		<h4>Costo totale</h4>'."\n"
-          							.'		<p>'.$row['CostoTotale'].'</p>'."\n"
+          							.'		<p>'.$row['CostoTotale'].' &euro;</p>'."\n"
           							.'	</div>'."\n"
                         .'	<div>'."\n"
           							.'		<h4>Inizio noleggio</h4>'."\n"
@@ -135,12 +135,30 @@
         return "<h3>Non ci sono messaggi da visualizzare</h3>";
       } else{
         while($row=mysqli_fetch_assoc($queryResult)) {
-					$contentItems.='<div class="messaggi">'."\n"
-                        .'	<div class="testoMessaggio">'."\n"
-                        .'		<h4>Messaggio N° '.$row['IdMess'].'</h4>'."\n"
-                        .'		<p>'.$row['Messaggio'].'</p>'."\n"
-                        .'	</div>'."\n"
-                        .'</div>';
+          $queryMessaggi = 'SELECT Messaggio, IdRisp, Oggetto FROM RisposteMessaggi WHERE Destinatario=\''.$row['IdMess'].'\'';
+          $connessioneMessaggi = new database_connection();
+          $risposteResult = $connessioneMessaggi->esegui($queryMessaggi);
+          $rowMessaggi =mysqli_fetch_assoc($risposteResult);
+          if(mysqli_num_rows($risposteResult)==0){
+            $contentItems.='<div class="messaggi">'."\n"
+                          .'	<div class="testoMessaggio">'."\n"
+                          .'		<h4>Messaggio N° '.$row['IdMess'].'</h4>'."\n"
+                          .'		<p>'.$row['Messaggio'].'</p>'."\n"
+                          .'	</div>'."\n"
+                          .'</div>';
+          } else{
+            $contentItems.='<div class="messaggi">'."\n"
+                          .'	<div class="testoMessaggio">'."\n"
+                          .'		<h4>Messaggio N° '.$row['IdMess'].'</h4>'."\n"
+                          .'		<p>'.$row['Messaggio'].'</p>'."\n"
+                          .'	</div>'."\n"
+                          .'	<div class="testoMessaggio">'."\n"
+                          .'		<h4>Risposta dell&apos;amministratore </h4>'."\n"
+                          .'    <div>Oggetto&colon; '.$rowMessaggi['Oggetto'].'</div>'."\n"
+                          .'		<p>'.$rowMessaggi['Messaggio'].'</p>'."\n"
+                          .'	</div>'."\n"
+                          .'</div>';
+          }
         }
         return $contentItems;
       }

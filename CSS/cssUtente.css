@@ -76,6 +76,11 @@ label {
   background-color: #eaeaea;
 }
 
+h4 {
+  margin-top: 0.8em;
+  margin-bottom: 0.4em;
+}
+
 .dati {
   border: 1px solid#616161;
   -webkit-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
