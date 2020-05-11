@@ -19,7 +19,8 @@ class database_connection {
 
     public function esegui($query, $chiudiConn = true) {
         if($this->connessione) {
-            $result = mysqli_query($this->connessione, $query);
+            $result = mysqli_query($this->connessione, $query); // or die("Invalid query: " . mysqli_error($this->connessione));
+            //echo var_dump($result);
             if($chiudiConn)
                 mysqli_close($this->connessione);
             return $result;
