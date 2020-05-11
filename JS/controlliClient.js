@@ -4,12 +4,23 @@ regex["mail"] = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 regex["nome"] = /^[a-zA-Z]*$/;
 regex["cognome"] = /^[a-zA-Z]*$/;
 regex["messaggio"] = /^[a-zA-Z0-9]*$/;
-regex["numeroTelefono"] = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+regex["numeroTelefono"] = /^([\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6})*$/;
 regex["password"] = /^[a-zA-Z0-9]+$/;
 regex["indirizzo"] = /^([a-zA-Z ]{3,11})\s([a-zA-Z ]+\s)+(\d{1,3}([\/][a-zA-Z ])?)$/;
 regex["nascita"] = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
 regex["data"] = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
-regex["prezzo"] = /^[[0-9]{1,2}(.)[0-9]{1,2}$/;
+regex["oggetto"] = /^[a-zA-Z0-9€?$@&#()'!,+\-;:=_.\s]*$/;
+regex["testo"] = /^[a-zA-Z0-9€?$@&#()'!,+\-;:=_.\s]*$/;
+regex["marca"] = /^[a-zA-Z0-9€?$@&#()'!,+\-;:=_.\s]*$/;
+regex["modello"] = /^[a-zA-Z0-9€?$@&#()'!,+\-;:=_.\s]*$/;
+regex["km"] = /^[0-9]{1,7}$/;
+regex["cilindrata"] = /^[0-9]{1,7}$/;
+regex["prezzo"] = /^[0-9]{1,7}$/;
+regex["descrizione"] = /^[a-zA-Z0-9€?$@&#()'!,+\-;:=_.\s]*$/;
+regex["targa"] = /^[a-zA-Z]{2}[0-9]{3}[a-zA-Z]{2}$/;
+regex["costo"] = /^[0-9]{1,7}$/;
+regex["cauzione"] = /^[0-9]{1,7}$/;
+regex["telefono"] = /^([\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6})*$/;
 
 
 var checkForm = (function(idForm) {
