@@ -25,8 +25,8 @@
             $errori .= "<p class='messaggio errorMessage'>Il modello inserito non &egrave; valido&#58; ricorda che non pu&ograve; essere vuoto&#46;</p>";
         }
         
-        if(controlloInput::validNumeri($_POST["km"])) {
-            $costo = $_POST["km"];
+        if(controlloInput::validNumeri($_POST["chilometri"])) {
+            $km = $_POST["chilometri"];
         } else {
             $valid = false;
             $errori .= "<p class='messaggio errorMessage'>Il chilometraggio inserito non &egrave; valido&#58; ricorda che non pu&ograve; essere vuoto e che pu&ograve; contenere solo numeri&#46;</p>";
