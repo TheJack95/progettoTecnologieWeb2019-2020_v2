@@ -1,5 +1,6 @@
 //espressioni regolari
 const regex = [];
+regex["email"] = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 regex["mail"] = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 regex["nome"] = /^[a-zA-Z ]{3,30}$/;
 regex["cognome"] = /^[a-zA-Z ]{3,30}$/;
@@ -25,7 +26,7 @@ regex["telefono"] = /^([\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6})*
 
 var checkForm = (function(idForm) {
     let text = "";
-    let elements = document.forms[idForm].getElementsByTagName("input");
+    let elements = document.forms[idForm].querySelectorAll("input,textarea");
 
     let inputsKO = "";
 
