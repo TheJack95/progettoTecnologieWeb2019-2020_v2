@@ -72,10 +72,18 @@ if(isset($_SESSION["user"])) {
 				$breadcrumb = " &gt; I tuoi dati";
 				$sideNav = str_replace("<a href='areaPrivata.php?pageName=datiPersonali' tabindex='8'>Dati Personali</a>",' &#62; Dati Personali',$sideNav);
 				break;
+			case "setDatiPersonali":
+				$contentItems = "<div id='content'>"."\n".$Profilo->setDati()."\n"."</div>"."\n";
+				$breadcrumb = " &gt; Modifica i tuoi dati";
+				$sideNav = str_replace("<a href='areaPrivata.php?pageName=datiPersonali' tabindex='8'>Dati Personali</a>",' &#62; Dati Personali',$sideNav);
+				break;
 			default:
 				$breadcrumb = "";
 				break;
 		}
+	} else {
+			$breadcrumb = "";
+			$sideNav = str_replace("<a href='areaPrivata.php?pageName=principale' tabindex='7'>Area Personale</a>",' &#62; Area Personale',$sideNav);
 	}
 
 	$output = str_replace("<sideNav></sideNav>",$sideNav, $output);

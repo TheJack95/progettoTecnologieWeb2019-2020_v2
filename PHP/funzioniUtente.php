@@ -46,6 +46,51 @@
                         ."			<span id='email'>".$row['Indirizzo']."</span>"."\n"
                         ."		</div>"."\n"
                         ."	</div>"."\n"
+                        ."  <a class='linkRapidi' href='areaPrivata.php?pageName=setDatiPersonali'>Modifica</a>"."\n"
+                        ."</div>"."\n";
+            }
+            return $contentItems;
+    }
+
+    #modifica dati utente
+    public function setDati(){
+        $emailUtente = $_SESSION["user"];
+        $query = 'SELECT Email, Nome, Cognome, Telefono, Indirizzo, DataNascita FROM Utenti WHERE Email=\''.$emailUtente.'\'';
+        $queryResult = $this->dbConnection->esegui($query);
+        $contentItems = '<h3 class="titolo">MODIFICA I TUOI DATI</h3>'."\n";
+        if(mysqli_num_rows($queryResult)==0){
+          return null;
+        } else{
+          $row=mysqli_fetch_assoc($queryResult);
+          $contentItems.="<div class='dati'>"."\n"
+                        ."	<h2>I tuoi dati personali</h2>"."\n"
+                        ."	<div>"."\n"
+                        ."		<div>"."\n"
+                        ."			<span>Nome:</span>"."\n"
+                        ."			<span id='nome'>".$row['Nome']."</span>"."\n"
+                        ."		</div>"."\n"
+                        ."		<div>"."\n"
+                        ."			<span>Cognome:</span>"."\n"
+                        ."			<span id='cognome'>".$row['Cognome']."</span>"."\n"
+                        ."		</div>"."\n"
+                        ."		<div>"."\n"
+                        ."			<span>Data di nascita:</span>"."\n"
+                        ."			<span id='data'>".$row['DataNascita']."</span>"."\n"
+                        ."		</div>"."\n"
+                        ."		<div>"."\n"
+                        ."			<span>E-mail:</span>"."\n"
+                        ."			<span id='email'>".$row['Email']."</span>"."\n"
+                        ."		</div>"."\n"
+                        ."		<div>"."\n"
+                        ."			<span>Numero di telefono:</span>"."\n"
+                        ."			<span id='telefono'>".$row['Telefono']."</span>"."\n"
+                        ."		</div>"."\n"
+                        ."		<div>"."\n"
+                        ."			<span>Indirizzo:</span>"."\n"
+                        ."			<span id='email'>".$row['Indirizzo']."</span>"."\n"
+                        ."		</div>"."\n"
+                        ."	</div>"."\n"
+                        ."  <a class='linkRapidi' href='areaPrivata.php?pageName=setDatiPersonali'>Modifica</a>"."\n"
                         ."</div>"."\n";
             }
             return $contentItems;
