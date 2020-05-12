@@ -12,7 +12,21 @@ body {
     font-size: 12pt;
 }
 
-#header, #menu, #menuAmministratore, #breadcrumb, #footer, #scrollUp, .linkMod, .noButt, .pLinkAmm {
+#header {
+    font-size: 140%;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.7em;
+    border-top: white;
+    border-bottom: white;
+}
+  
+#header a {
+    text-align: center;
+}
+  
+.logoHeader, #menu, #menuAmministratore, #breadcrumb, #footer, #scrollUp, .linkMod, .noButt, .pLinkAmm {
     display: none;
 }
 
