@@ -1,4 +1,5 @@
 <?php
+    require_once "../PHP/controlloInput.php";
     require_once "../PHP/connessioneDB.php";
 
     if(!isset($_SESSION)) {
