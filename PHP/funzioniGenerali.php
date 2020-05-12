@@ -48,13 +48,13 @@
                                 '       <li><a href="acquistaVeicoli.php" tabindex="3">VEICOLI IN VENDITA</a></li>'."\n".
                                 '       <li><a href="contatti.php" tabindex="4">CONTATTI</a></li>'."\n";
             if(isset($_SESSION["admin"]) && $_SESSION["admin"] == 1) { //login effettuato come amministratore
-                $menu_form .=   '       <li><a class="" href="homeAmministratore.php" tabindex="5">AREA AMMINISTRATORE</a></li>'."\n".
-                                '       <li><a class="" href="../PHP/logout.php" tabindex="6">ESCI</a></li>'."\n";
+                $menu_form .=   '       <li><a href="homeAmministratore.php" tabindex="5">AREA AMMINISTRATORE</a></li>'."\n".
+                                '       <li><a href="../PHP/logout.php" tabindex="6">ESCI</a></li>'."\n";
             } elseif(isset($_SESSION["user"])) { //login effettuato come utente
-                $menu_form .=   '       <li><a class="" href="areaPrivata.php" tabindex="5">AREA PERSONALE</a></li>'."\n".
-                                '       <li><a class="" href="../PHP/logout.php" tabindex="6">ESCI</a></li>'."\n";
+                $menu_form .=   '       <li><a href="areaPrivata.php" tabindex="5">AREA PERSONALE</a></li>'."\n".
+                                '       <li><a href="../PHP/logout.php" tabindex="6">ESCI</a></li>'."\n";
             } else { //non ho fatto il login oppure qualcosa e' andato storto
-                $menu_form .=   '       <li><a class="" href="login.php" tabindex="5">ACCEDI</a></li>'."\n";
+                $menu_form .=   '       <li><a href="login.php" tabindex="5">ACCEDI</a></li>'."\n";
             }
                 $menu_form .=   '   </ul>'."\n".
                                 '</div>';
@@ -67,7 +67,7 @@
          */
         public static function footer() {
             $footer_form =  '<div id="footer">'."\n".
-                            '   <p>CONCESSIONARIA GREG - Tutti i diritti riservati - A cura di <span xml:lang="en" lang="en">Tecweb Group</span></p>'."\n".
+                            '   <p>CONCESSIONARIA GREG &#8722; Tutti i diritti riservati &#8722; A cura di <span xml:lang="en" lang="en">Tecweb Group</span></p>'."\n".
                             '</div>';
             return $footer_form;
         }
@@ -110,7 +110,7 @@
             } else {
                 return (Object) [
                     "status" => false,
-                    "message" => funzioniGenerali::setMessaggio('Devi effettuare l&apos;accesso prima di procedere con l&apos;operazione. Vai alla pagina di <a href="../PAGES/login.php">login</a> oppure <a href="../PAGES/home.php">torna alla home</a>', true)
+                    "message" => funzioniGenerali::setMessaggio('Devi effettuare l&#39;accesso prima di procedere con l&#39;operazione. Vai alla pagina di <a href="../PAGES/login.php">login</a> oppure <a href="../PAGES/home.php">torna alla home</a>', true)
                 ];
             }
         }
