@@ -25,6 +25,11 @@ body {
   content: "";
 }
 
+.nomeSito{
+  font-size: 2em;
+  font-weight: bolder;
+}
+
 #menu, #breadcrumb, #footer, .logoHeader, #scrollUp {
   display: none;
 }
