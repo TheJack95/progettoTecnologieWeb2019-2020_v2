@@ -25,7 +25,7 @@ body {
   content: "";
 }
 
-#menu, #breadcrumb, #footer, .logoHeader {
+#menu, #breadcrumb, #footer, .logoHeader, #scrollUp {
   display: none;
 }
 
