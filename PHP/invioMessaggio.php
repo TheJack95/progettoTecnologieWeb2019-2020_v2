@@ -16,16 +16,16 @@
     
     
 
-    if(controlloInput::validName($nome) && controlloInput::validName($cognome) && controlloInput::validEmail($email) && (controlloInput::validPhone($telefono) || empty($telefono)) && !empty($messaggio) ){
+    if(controlloInput::validName($nome) && controlloInput::validName($cognome) && controlloInput::validEmail($email) && controlloInput::validPhone($telefono) && !empty($messaggio) ){
     
         $conn = new database_connection;
         if($conn->esegui("INSERT INTO Messaggi (Nome,Cognome,Email,NumeroTelefono,Messaggio) VALUES ('$nome','$cognome','$email','$telefono','$messaggio')") == TRUE)
-            $errore = "<p class=\"successMessage\"> Messaggio inserito con successo </p>";
+            $errore = "<p class=\"messaggio\" class=\"successMessage\"> Messaggio inserito con successo </p>";
         else
-            $errore = "<p class=\"errorMessage\"> Si &egrave; verificato un errore di connessione, se il problema persiste riprova piu tardi. </p>"; 
+            $errore = "<p class=\"messaggio\" class=\"errorMessage\"> Si &egrave; verificato un errore di connessione, se il problema persiste riprova piu tardi. </p>"; 
     }
     else
-        $errore = "<p class=\"errorMessage\"> Non &egrave; possibile procedere all&apos;invio del messaggio perch&egrave; non sono stati inseriti tutti i cambi obbligatori in modo corretto o il numero di telefono inserito non &egrave; valido. Ricorda che il campo telefono deve contenere un numero telefonico valido o essere vuoto </p>";
+        $errore = "<p class=\"messaggio\" class=\"errorMessage\"> Non &egrave; possibile procedere all&apos;invio del messaggio perch&egrave; non sono stati inseriti tutti i campi obbligatori in modo corretto. Ricorda che il campo telefono deve contenere un numero telefonico valido </p>";
     
     $_SESSION['response'] = $errore;
     
