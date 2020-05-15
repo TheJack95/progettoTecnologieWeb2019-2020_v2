@@ -95,6 +95,24 @@ h4 {
 
 .dati div {
   margin-top: 0.4em;
+  margin-bottom: 0.3em;
+}
+
+.dati fieldset {
+  border: none;
+}
+
+.dati input {
+  height: 2em;
+  display: block;
+  width: 75%;
+  margin-top: 0.3em;
+  margin-bottom: 1.2em;
+}
+
+.dati label {
+  display: inline;
+  margin: 0;
 }
 
 .marcamodello {

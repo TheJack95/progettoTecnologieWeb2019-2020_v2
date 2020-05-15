@@ -10,6 +10,23 @@ $output = str_replace("<header></header>",funzioniGenerali::header(),$output);
 $output = str_replace("<menu></menu>",funzioniGenerali::menu(),$output);
 $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
 
+if(isset($_SESSION["errorMessage"])) {
+
+    $errorMessage = $_SESSION["errorMessage"];
+    $output = str_replace("<tagErrore></tagErrore>",$errorMessage,$output);
+    unset($_SESSION["errorMessage"]);
+
+} elseif(isset($_SESSION["successMessage"])) {
+
+    $errorMessage = $_SESSION["successMessage"];
+    $output = str_replace("<tagErrore></tagErrore>",$errorMessage,$output);
+    unset($_SESSION["successMessage"]);
+
+} else {
+
+    $output = str_replace("<tagErrore></tagErrore>","<p></p>",$output);
+}
+
 if(isset($_SESSION["user"])) {
 
 	$contentItems = "";
