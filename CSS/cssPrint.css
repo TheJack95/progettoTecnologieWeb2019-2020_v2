@@ -25,7 +25,12 @@ body {
   content: "";
 }
 
-#menu, #breadcrumb, #footer, .logoHeader {
+.nomeSito{
+  font-size: 2em;
+  font-weight: bolder;
+}
+
+#menu, #breadcrumb, #footer, .logoHeader, #scrollUp {
   display: none;
 }
 

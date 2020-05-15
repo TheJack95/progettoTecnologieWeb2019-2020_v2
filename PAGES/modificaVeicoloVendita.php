@@ -6,13 +6,12 @@
         session_start();
     }
 
-    if(isset($_POST['modifica'])) {
-        $_SESSION["idAuto"] = $_POST['modifica'];
-    }
-
     if(isset($_SESSION["admin"]) && $_SESSION["admin"] == 1) {
+        if(isset($_POST['modifica'])) {
+            $_SESSION["idAuto"] = $_POST['modifica'];
+        }
+    
         $output = file_get_contents("../HTML/modificaVeicoloVendita.html");
-        
         $output = str_replace("<header></header>",funzioniGenerali::header(),$output);
         $output = str_replace("<menu></menu>",funzioniGenerali::menu(),$output);
         $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("Area Amministratore &#62;&#62; Modifica veicolo in vendita"),$output);
@@ -24,9 +23,7 @@
             $output = str_replace("<messaggio></messaggio>","",$output);
         }
         $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
-
-        $output = str_replace('<a class="" href="homeAmministratore.php" tabindex="5">AREA AMMINISTRATORE</a>','<strong>AREA AMMINISTRATORE</strong>',$output);
-
+        $output = str_replace('<a href="homeAmministratore.php" tabindex="5">AREA AMMINISTRATORE</a>','<strong>AREA AMMINISTRATORE</strong>',$output);
         echo $output;
     } else {
         $errLogin = "Attenzione&#58; non hai i permessi per accedere all&#39;area dell&#39;amministratore&#46; Sei stato reindirizzato alla pagina per l&#39;accesso&#46; Accedi e riprova";

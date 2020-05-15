@@ -1,0 +1,13 @@
+.containerInfo{
+    page-break-after: always;
+}
+
+#mainContent{
+    font-size: 1.7em;
+}
+
+#mappa{
+    display: none;
+}
+
+

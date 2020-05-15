@@ -14,7 +14,10 @@
         <link rel="icon" type="images/svg" href="../Images/LogoGREG.png" />
         <link rel="stylesheet" type="text/css" href="../CSS/cssGenerale.css" />
         <link rel="stylesheet" type="text/css" href="../CSS/cssContatti.css" />
+        <link rel="stylesheet" type="text/css" href="../CSS/cssPrint.css" media="print" />
+        <link rel="stylesheet" type="text/css" href="../CSS/cssPrintContatti.css" media="print" />
         <script type="text/javascript" src="../JS/generale.js"></script>
+        <script type="text/javascript" src="../JS/controlloIframe.js"></script>
         <script type="text/javascript" src="../JS/controlliClient.js"></script>
 
 	</head>
@@ -24,9 +27,9 @@
         <menu></menu>
         <breadcrumb></breadcrumb>
 
-        <div="content">
+        <div id="mainContent">
             <div class="containerInfo">
-                <div id="mappa">
+                <div id="mappa" class="no-js">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2801.041923095581!2d11.884345815518582!3d45.40849417910036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477eda586ea23ad3%3A0xf4caaf73601b8ca!2sVia%20Paolotti%2C%2035121%20Padova%20PD!5e0!3m2!1sit!2sit!4v1585019531129!5m2!1sit!2sit" title="Mappa" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                 </div>
 
@@ -68,7 +71,7 @@
                         <label for="email">* Email</label>
                         <input type="text" name="email" class="textbox" id="email" tabindex="9" />
 
-                        <label for="numeroTelefono">Numero telefono</label>
+                        <label for="numeroTelefono">* Numero telefono</label>
                         <input type="text" name="numeroTelefono" class="textbox" id="numeroTelefono" tabindex="10" />
 
                         <label for="messaggio">* Messaggio</label>

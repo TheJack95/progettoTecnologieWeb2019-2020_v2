@@ -227,8 +227,6 @@
                 }
                 return $result;
             }
-        }
-    
-    #flag fine documento        
+        }      
     }
 ?>
