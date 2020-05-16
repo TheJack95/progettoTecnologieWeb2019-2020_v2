@@ -132,6 +132,10 @@ h4 {
   background-color: #eaeaea;
 }
 
+.formBox {
+  margin: 3%;
+}
+
 .linkRapidi{
   margin-left: 0.2em;
   margin-top: 0.4em;
@@ -229,6 +233,10 @@ hr {
     display: block;
     padding: 0.3em;
     width: 90%;
+  }
+
+  .formBox {
+    margin: 6%;
   }
 
   .linkRapidi {
