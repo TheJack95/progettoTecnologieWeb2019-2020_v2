@@ -62,7 +62,7 @@
         } else{
           $row=mysqli_fetch_assoc($queryResult);
           $contentItems.="<div class='dati'>"."\n"
-                        ." <form id='setDati' onsubmit='return checkForm('setDati');' action='../PHP/setDatiUtente.php' method='post'>"."\n"
+                        ." <form id='setDati' onsubmit='return checkForm(".'"setDati"'.");' action='../PHP/setDatiUtente.php' method='post'>"."\n"
                         ."  <fieldset>"."\n"
                         ."	 <div>"."\n"
                         ."		<div>"."\n"
