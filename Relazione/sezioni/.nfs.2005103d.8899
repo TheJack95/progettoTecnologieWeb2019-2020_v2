@@ -4,7 +4,7 @@
         L'utenza del sito non può essere inquadrata in un target specifico poiché destinata al pubblico della Concessionaria GREG il quale non presenta restrizioni o interesse per gruppi definiti. Ciò si traduce nell'esigenza di un sito dalla facile e immediata comprensione e nella piena ottemperanza dei canoni di accessibilità.
 
     \subsection{Casi d'uso}
-
+        
         \subsubsection{Utente generico}
         L’utente viene definito generico nel momento in cui può solo navigare all’interno del sito, senza alcun permesso di accedere all’area riservata, richiere preventivi o effettuale noleggio di automobili.
         L’utente generico dispone dei seguenti casi d’uso:
@@ -12,7 +12,7 @@
             \item Visualizzazione pagina "Home";
             \item Visualizzazione pagina "Veicoli a noleggio";
             \item Visualizzazione pagina "Veicoli in vendita";
-            \item Ricerca veicoli nelle due pagine precedenti;
+            \item Ricerca veicoli nelle deu pagine precedenti;
             \item Visualizzazione pagina "Contatti";
             \item Invio messaggi attraverso form nella pagina "Contatti";
             \item Visualizzazione pagina "Login";
@@ -39,8 +39,6 @@
         \end{itemize}
 
         \subsubsection{Utente amministratore}
-
-        \subsubsection{Dettaglio casi d'uso}
 
         \paragraph{Visualizzazione pagina "Veicoli a noleggio"}
         In questa pagina vengono visualizzati i veicoli disponibili per il noleggio. L'utente può esegueguire una ricerca attraverso l'apposita sezione "Filtri di ricerca". Nel caso in cui l'utente provasse a noleggiare un veicolo, non essendo autenticato, gli verrà mostrato un messaggio d'errore.
@@ -78,13 +76,13 @@
             \end{itemize}
             Il form è composto dai campi nome, cognome, email e messaggio da completare obbligatoriamente oltre ad un campo telefono opzionale, dopo essere stato inoltrato il form esegue uno script php per inviare il messaggio in una sezione dedicata del database. Il form è utilizzabile anche da utenti non registrati.
 
-        \subsubsection{Acquisto e noleggio veicoli}
+        \subsection{Acquisto e noleggio veicoli}
         In queste due
 
         \subsubsection{Area Privata}
             L'area privata è diversa a seconda del tipo di utente che ha effettuato. Definiamo "Area personale" l'area privata di un utente generico registrato e loggato; definiamo "Area amministratore" l'area privata di un utente amministratore.
-            \paragraph{Area personale} Un utente generico che accede alla sua area privata, come prima pagina vedrà le azioni rapide che può eseguire, come leggere i messaggi, fare acquisti o contattare l'amministratore. Attraverso il "Menu Utente" potrà navigare all'interno dell'area privata e accedere alle 4 sottosezioni presenti: la pagina dei messaggi in cui visualizzare le conversazioni con l'amministratore, lo storico dei noleggi e dei preventivi richiesti, la pagina di visualizzazione e  modifica dei dati personali.
+            \paragraph{Area personale} Un utente generico che accede alla sua area privata, come prima pagina vedrà le azioni rapide che può eseguire, come leggere i messaggi, fare acquisti o contattare l'amministratore. Attraverso il "Pannello Gestione" potrà navigare all'interno dell'area privata e accedere alle sottosezioni presenti, ovvero i messaggi, i proprio acquisti (biglietti ed eventi) e visualizzare i propri dati personali.
             \paragraph{Area amministratore} L'area privata dell'utente amministratore presenta due importanti funzionalità: l'inserimento e la cancellazione di un auto. Per l'inserimento è sufficiente cliccare sui pulsanti presenti nelle "Azioni Rapide", mentre nelle sottosezioni dell'area amministrazione l'amministrazione può consultare ed eliminare i dati presenti nel database. Può inoltre consultare gli acquisti e i messaggi di tutti gli utenti registrati.
 
-
+        
 \pagebreak
