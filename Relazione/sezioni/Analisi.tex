@@ -39,7 +39,19 @@
         \end{itemize}
 
         \subsubsection{Utente amministratore}
-
+        Il sistema riconosce l’amministratore tramite il flag presente e modificabile solo dal database.
+        L’accesso avviene tramite login classica con email e password.
+        L’utente autenticato come amministratore dispone degli stessi casi casi d’uso dell'utente generico con l'aggiunta delle seguenti funzionalità
+        \begin{itemize}
+            \item Accesso all'area presonale dell'amministratore;
+            \item Vedere e modificare le proprie informazioni personali;
+            \item Visualizzare la lista dei veicoli a noleggio e in vendita;
+            \item Visualizzare ed eliminare le prenotazioni dei veicoli a noleggio;
+            \item Aggiungere, modificare ed eliminare un veicolo;
+            \item Visualizzare la lista completa dei messaggi e delle eventuali risposte inviate;
+            \item Rispondere ai messaggi ricevuti.
+        \end{itemize}
+        
         \paragraph{Visualizzazione pagina "Veicoli a noleggio"}
         In questa pagina vengono visualizzati i veicoli disponibili per il noleggio. L'utente può esegueguire una ricerca attraverso l'apposita sezione "Filtri di ricerca". Nel caso in cui l'utente provasse a noleggiare un veicolo, non essendo autenticato, gli verrà mostrato un messaggio d'errore.
 
