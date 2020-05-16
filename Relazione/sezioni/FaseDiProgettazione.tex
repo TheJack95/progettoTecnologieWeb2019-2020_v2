@@ -7,20 +7,24 @@
         \item Home;
         \item Auto a noleggio;
         \item Auto in vendita;
-        \item Eventi;
-        \item Informazioni;
+        \item Contatti;
         \item Pagina di Login;
         \item Pagina di Registrazione;
         \item Area privata (utente generico):
             \begin{itemize}
                 \item Area personale;
-                \item Messaggi Personali;
-                \item Dati Personali.
+                \item Dati Personali;
+                \item Preventivi;
+                \item Noleggi;
+                \item Messaggi.
             \end{itemize}
             \item Area privata (utente amministratore):
                 \begin{itemize}
-                    \item Area amministratore;
-                    \item Messaggi.
+                    \item Home amministratore;
+                    \item Messaggi;
+                    \item Veicoli a noleggio;
+                    \item Veicoli in vendita;
+                    \item Prenotazione veicoli.
                 \end{itemize}
     \end{itemize}
 
@@ -28,13 +32,17 @@
     Viene riportata la rappresentazione del database, realizzata in fase di progettazione, durante la quale si è discussa la necessità di avere le diverse tabelle e per ogni tabella i necessari attributi, per poi utilizzarli al meglio.
     \begin{figure}[H]
         \centering
-        \includegraphics[width=15cm]{./img/database.png}
+        \includegraphics[width=14cm]{./img/database.png}
         \caption{Schema del database}  \label{fig:xray}
     \end{figure}
     Il database è composto dalle seguenti tabelle:
     \begin{itemize}
         \item \textbf{Utenti:} contiene i dati e le credenziali degli utenti registrati, la password è stata codificata con la funzione \textit{password\_hash} di PHP;
         \item \textbf{Messaggi:} contiene i messaggi inviati dagli utenti;
+        \item \textbf{AutoVendita:} contiene le auto in vendita;
+        \item \textbf{AutoNoleggio:} contiene le auto a noleggio;
+        \item \textbf{PreventivoAcquisto:} contiene gli acquisti delle auto effettuati dagli utenti;
+        \item \textbf{PrenotazioneNoleggio:} contiene i noleggi delle auto effettuati dagli utenti;
     \end{itemize}
 
     \subsection{Accessibilità}

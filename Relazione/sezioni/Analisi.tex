@@ -19,7 +19,38 @@
             \item Visualizzazione pagina "Registrazione";
             \item Possibilità di registrarsi;
         \end{itemize}
-        \subsubsection{Utente non registrato}
+
+        \subsubsection{Utente registrato}
+        L’utente viene definito registrato nel momento in cui ha effettuato la registrazione; dispone dei degli stessi casi casi d’uso dell'utente generico con l'aggiunte della possibilità di effettuare il login.
+
+        \subsubsection{Utente autenticato}
+        L’utente viene definito autenticato nel momento in cui ha effettuato l'accesso al site con le proprie credenziali.
+        L’utente autenticato dispone dei degli stessi casi casi d’uso dell'utente generico con l'aggiunte dei seguenti
+        \begin{itemize}
+            \item Accesso all'area presonale
+            \begin{itemize}
+                \item Visualizzazione pagina "Dati Personali";
+                \item Visualizzazione pagina "Preventivi";
+                \item Visualizzazione pagina "Noleggi";
+                \item Visualizzazione pagina "Messaggi";
+            \end{itemize}
+            \item Acquisto di un veicolo;
+            \item Noleggio di un veicolo;
+        \end{itemize}
+
+        \subsubsection{Utente amministratore}
+
+        \paragraph{Visualizzazione pagina "Veicoli a noleggio"}
+        In questa pagina vengono visualizzati i veicoli disponibili per il noleggio. L'utente può esegueguire una ricerca attraverso l'apposita sezione "Filtri di ricerca". Nel caso in cui l'utente provasse a noleggiare un veicolo, non essendo autenticato, gli verrà mostrato un messaggio d'errore.
+
+        \paragraph{Visualizzazione pagina "Veicoli in vendita"}
+        In questa pagina vengono visualizzati i veicoli disponibili per l'acquisto. L'utente può esegueguire una ricerca attraverso l'apposita sezione "Filtri di ricerca". Nel caso in cui l'utente provasse ad acquistare un veicolo, non essendo autenticato, gli verrà mostrato un messaggio d'errore.
+
+        \paragraph{Acquisto di un veicolo}
+        L'utente autenticato può acquistare un veicolo visitando la pagina "Veicoli in vendita" e cliccando l'apposito pulsante posto in corrispondenza del veicolo desiderato.
+
+        \paragraph{Noleggio di un veicolo}
+        L'utente autenticato può noleggiare un veicolo visitando la pagina "Veicoli a noleggio" e cliccando l'apposito pulsante posto in corrispondenza del veicolo desiderato. Verrà rendindirizzato in una pagina in cui dovrà inserire le date di inizio e fine del pediodo di noleggio; in caso di date incoerenti o indisponibilità del veicolo, all'utente verrà mostrato un messaggio d'errore.
 
     \subsection{Pagine del sito}
         In questa sezione sono presentate le varie pagine del sito, con le caratteristiche e le funzionalità che devono avere.
@@ -45,10 +76,13 @@
             \end{itemize}
             Il form è composto dai campi nome, cognome, email e messaggio da completare obbligatoriamente oltre ad un campo telefono opzionale, dopo essere stato inoltrato il form esegue uno script php per inviare il messaggio in una sezione dedicata del database. Il form è utilizzabile anche da utenti non registrati.
 
-        
+        \subsection{Acquisto e noleggio veicoli}
+        In queste due
+
         \subsubsection{Area Privata}
             L'area privata è diversa a seconda del tipo di utente che ha effettuato. Definiamo "Area personale" l'area privata di un utente generico registrato e loggato; definiamo "Area amministratore" l'area privata di un utente amministratore.
             \paragraph{Area personale} Un utente generico che accede alla sua area privata, come prima pagina vedrà le azioni rapide che può eseguire, come leggere i messaggi, fare acquisti o contattare l'amministratore. Attraverso il "Pannello Gestione" potrà navigare all'interno dell'area privata e accedere alle sottosezioni presenti, ovvero i messaggi, i proprio acquisti (biglietti ed eventi) e visualizzare i propri dati personali.
             \paragraph{Area amministratore} L'area privata dell'utente amministratore presenta due importanti funzionalità: l'inserimento e la cancellazione di un auto. Per l'inserimento è sufficiente cliccare sui pulsanti presenti nelle "Azioni Rapide", mentre nelle sottosezioni dell'area amministrazione l'amministrazione può consultare ed eliminare i dati presenti nel database. Può inoltre consultare gli acquisti e i messaggi di tutti gli utenti registrati.
 
+        
 \pagebreak

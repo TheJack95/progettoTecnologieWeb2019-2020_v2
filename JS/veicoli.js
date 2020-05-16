@@ -1,7 +1,7 @@
 var dataInizioNolo = null;
 var dataFineNolo = null;
 
-const regexDate = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
+var regexDate = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
 
 /**
  * Converte la data da gg-mm-aaaa a aaaa-mm-gg
@@ -10,16 +10,22 @@ const regexDate = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/
  * @param {string} separator il separatore nella data es. - o / 
  */
 function dateReverse(data, type, separator) {
-    let dataSplitted = data.split(separator);
+    var dataSplitted = data.split(separator);
+    var date = null;
     switch (type) {
         case "Date":
-            return new Date(dataSplitted[2],dataSplitted[1]-1,dataSplitted[0]);
+            date = new Date(dataSplitted[2],dataSplitted[1]-1,dataSplitted[0]);
+            break;
         case "string":
-            return dataSplitted[2] + separator + dataSplitted[1] + separator + dataSplitted[0];
+            date =  dataSplitted[2] + separator + dataSplitted[1] + separator + dataSplitted[0];
+            break;
         default:
             console.error("Tipo " + type + " non ammesso");
-            return "Invalid input 'type'";
+            date = "Invalid input 'type'";
+            break;
     }
+
+    return date;
 }
 
 /**
@@ -28,9 +34,9 @@ function dateReverse(data, type, separator) {
  * @param {string} dataMin data minore in string
  */
 function isDateValid(dataMag, dataMin) {
-    let today = new Date();
-    let dataMagDate = dateReverse(dataMag,"Date", "-");
-    let dataMinDate = dateReverse(dataMin,"Date", "-");
+    var today = new Date();
+    var dataMagDate = dateReverse(dataMag,"Date", "-");
+    var dataMinDate = dateReverse(dataMin,"Date", "-");
     return dataMinDate >= today && dataMagDate >= dataMinDate;
 }
 
@@ -42,7 +48,7 @@ function dataInizioChange(event) {
             dataInizioNolo = event.target.value;
         }
         if(dataFineNolo != null) {
-            let ggNolo = (dateReverse(dataFineNolo,"Date", "-") - dateReverse(dataInizioNolo,"Date", "-"))/86400000;
+            var ggNolo = (dateReverse(dataFineNolo,"Date", "-") - dateReverse(dataInizioNolo,"Date", "-"))/86400000;
             calcolaCosto(ggNolo);
         }
     } else {
@@ -57,7 +63,7 @@ function dataFineChange(event) {
         } else {
             dataFineNolo = event.target.value;
             if(dataInizioNolo != null) {
-                let ggNolo = parseInt((dateReverse(dataFineNolo,"Date", "-") - dateReverse(dataInizioNolo,"Date", "-"))/86400000);
+                var ggNolo = parseInt((dateReverse(dataFineNolo,"Date", "-") - dateReverse(dataInizioNolo,"Date", "-"))/86400000);
                 calcolaCosto(ggNolo);
             }
         }
@@ -82,8 +88,8 @@ function checkDateNolo() {
 }
 
 function calcolaCosto(ggNolo) {
-    let costoGG = parseFloat(document.getElementById('costoNolo').innerText);
-    let costoTot = parseInt(ggNolo * costoGG);
+    var costoGG = parseFloat(document.getElementById('costoNolo').innerText);
+    var costoTot = parseInt(ggNolo * costoGG);
     
     document.getElementById('costoTot').innerHTML = "COSTO TOT: € " + costoTot;
 }
