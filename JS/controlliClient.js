@@ -1,5 +1,5 @@
 //espressioni regolari
-const regex = [];
+var regex = [];
 regex["email"] = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 regex["mail"] = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 regex["nome"] = /^[a-zA-Z ]{3,30}$/;
@@ -24,13 +24,13 @@ regex["telefono"] = /^([\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6})*
 
 
 var checkForm = function(idForm) {
-    let text = "";
-    let elements = document.forms[idForm].querySelectorAll("input,textarea");
+    var text = "";
+    var elements = document.forms[idForm].querySelectorAll("input,textarea");
 
-    let inputsKO = "";
+    var inputsKO = "";
 
-    for(let i = 0; elements && elements.length > i; ++i) {
-      let nomeTag = elements[i].name;
+    for(var i = 0; elements && elements.length > i; ++i) {
+      var nomeTag = elements[i].name;
       if (typeof regex[nomeTag] !== 'undefined'){
         if(elements[i].type != "submit" && elements[i].type != "file" && !validInput(elements[i], regex[nomeTag])) {
             inputsKO += elements[i].name + "\n";
@@ -51,14 +51,14 @@ var checkForm = function(idForm) {
 };
 
 function checkRegistrazione() {
-    let text = "";
+    var text = "";
 
     if(document.getElementById("password").value != document.getElementById("ripetiPassword").value) {
         text += "Le password non coincidono.\n";
     }
 
-    let diff_ms = Date.now() - new Date(document.getElementById("nascita").value);
-    let age_dt = new Date(diff_ms);
+    var diff_ms = Date.now() - new Date(document.getElementById("nascita").value);
+    var age_dt = new Date(diff_ms);
 
     if(Math.abs(age_dt.getUTCFullYear() - 1970 < 18)) {
         text += "Devi essere maggiorenne per poterti iscrivere.\n";

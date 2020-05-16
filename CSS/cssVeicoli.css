@@ -81,7 +81,6 @@ input {
 
 	input[type="submit"] {
 		margin: 0.5em 0;
-		border: 1px solid black;
 		font-size: 1em;
 	}
 
@@ -89,7 +88,7 @@ input {
 	input[type="submit"],
 	.button,
 	.dataInput {
-		width: 100%;
+		width: 90%;
 	}
 
 
