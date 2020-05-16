@@ -6,6 +6,7 @@ PHP/.DS_Store
 JS/.DS_Store
 Images/.DS_Store
 HTML/.DS_Store
+.nfs.*
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
