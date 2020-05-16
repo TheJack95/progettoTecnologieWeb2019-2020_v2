@@ -5,11 +5,10 @@ L’accesso avviene tramite login classica con mail e password, il sistema ricon
 L’amministratore può (in aggiunta a tutto ciò che può fare un utente non registrato):
 - vedere e modificare le proprie informazioni personali
 - visualizzare la lista dei veicoli a noleggio e in vendita
+- visualizzare ed eliminare le prenotazioni dei veicoli a noleggio
 - aggiungere, modificare ed eliminare un veicolo
-- visualizzare la lista completa dei messaggi (suddivisi in “da leggere”, “già letti”, “inviati”)
+- visualizzare la lista completa dei messaggi e delle eventuali risposte inviate
 - rispondere ai messaggi ricevuti
-- creare preventivi.
 
 Extra:
-- inviare messaggi,
-- modificare la password.
+- modifica della password
