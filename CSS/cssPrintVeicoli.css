@@ -17,7 +17,7 @@ html, body {
 	float: left;
 }
 
-#filtri, #prevForm {
+#filtri {
   display: none;
 }
 

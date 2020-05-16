@@ -32,7 +32,7 @@ foreach($rows as $row) {
 				.'				<p><strong>Prezzo di vendita:</strong> '.$row->PrezzoVendita.' &#8364;</p>'
 				.'			</li>'
 				.'		</ul>'
-				.'		<form id="prevForm" class="preventivoForm" action="../PHP/acquistaVeicoloFn.php" method="post">'."\n"
+				.'		<form class="preventivoForm hidePrint" action="../PHP/acquistaVeicoloFn.php" method="post">'."\n"
 				.'			<fieldset>'."\n"
                 .'				<button type="submit" name="richiedipreventivo" value="'.$row->IdAuto.'" class="button linkMod" >Richiedi preventivo</button>'."\n"
 				.'			</fieldset>'."\n"
