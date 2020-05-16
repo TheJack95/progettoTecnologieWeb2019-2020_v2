@@ -142,6 +142,7 @@ body {
 	font-size: 1em;
 	font-weight: bold;
 	border-radius: 4px;
+	background-color: #F1AB00;
 }
 
 
@@ -204,7 +205,7 @@ input[type="submit"] {
 
 #scrollUp{
 	position: fixed; 
-	bottom: 30px; 
+	bottom: 50px; 
 	right: 10px; 
 	z-index: 99; 
 	border: none; 
