@@ -205,7 +205,7 @@ input[type="submit"] {
 
 #scrollUp{
 	position: fixed; 
-	bottom: 50px; 
+	bottom: 10px; 
 	right: 10px; 
 	z-index: 99; 
 	border: none; 
@@ -231,7 +231,7 @@ input[type="submit"] {
 
 	#scrollUp{
         right:2px;
-		bottom:20px;
+		bottom:50px;
 	}
 }
 
