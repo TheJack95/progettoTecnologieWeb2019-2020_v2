@@ -25,8 +25,8 @@ body {
 #header a {
     text-align: center;
 }
-  
-.logoHeader, #menu, #menuAmministratore, #breadcrumb, #footer, #scrollUp, .linkMod, .noButt, .pLinkAmm {
+
+.linkHidden, .logoHeader, #menu, #menuAmministratore, #breadcrumb, #footer, #scrollUp, .linkMod, .noButt, .pLinkAmm {
     display: none;
 }
 

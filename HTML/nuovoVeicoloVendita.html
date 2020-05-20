@@ -24,8 +24,9 @@
         <menu></menu>
         <breadcrumb></breadcrumb>
         <div id="mainContent" class="corpoAmministratore">
+            <a href="#veroContenuto" tabindex="7" class="linkHidden">Salta men&ugrave; amministratore</a>
             <menuAmministratore></menuAmministratore>
-            <div class="testoAmministratore">
+            <div id="veroContenuto" class="testoAmministratore">
                 <messaggio></messaggio>
                 <p class="pAmm">Inserisci qui le informazioni sul veicolo in vendita da aggiungere&#46;</p>
                 <form id="nuovoVeicoloVendita" onsubmit="return checkForm('nuovoVeicoloVendita');" class="formAmm" action="../PHP/salvaNuovoVeicoloVendita.php" method="post" enctype="multipart/form-data">
