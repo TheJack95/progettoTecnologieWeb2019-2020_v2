@@ -8,15 +8,11 @@ html, body {
 	max-width: 85%;
 	margin: auto;
 	padding: 0;
-	background-color: #FFE4C4;
+	background-color: bisque;
 }
 
 body {
 	background-color: #FAFAFA;
-}
-
-a:visited {
-	color: #000086;
 }
 
 .logoHeader {
@@ -50,12 +46,12 @@ a:visited {
 }
 
 .errorMessage {
-	background: #C00000;
+	background: #C13636;
 	color: #FFFFFF;
 }
 
 .successMessage {
-	background: #377F3A;
+	background: #4CAF50;
 	color: #FFFFFF;
 }
 
@@ -109,7 +105,7 @@ a:visited {
 	width: 100%;
 	text-align: center;
 	font-size: 1.1em;
-	color: #000000;
+	color: #FFF;
 	padding-top: 0.5em;
 	padding-bottom: 0.5em;
 	background: #F1AB00;
@@ -129,7 +125,7 @@ a:visited {
 
 .main {
 	padding: 1em;
-	background-color: #F1AB00;
+	background-color: #f1ab00;
 }
 
 .clear{
@@ -137,12 +133,12 @@ a:visited {
 }
 
 .valid{
-	border-color: #377F3A;
+	border-color: #4CAF50;
 }
 
 .invalid{
-	border-color: #C00000;
-	background-color: #FFE4C4;
+	border-color: #900;
+	background-color: #FDD;
 }
 
 .button {
@@ -161,7 +157,7 @@ input[type="submit"] {
 	width: auto;
     height: 2.5em;
     background-color: #F1AB00;
-    color: #000000;
+    color: white;
     border: none;
     border-radius: 5%;
 }
@@ -182,7 +178,7 @@ input[type="submit"] {
 .bar1, .bar2, .bar3 {
     width: 2.75em;
     height: 0.31em;
-    background-color: #FFFFFF;
+    background-color: white;
     margin: 0.44em 0;
     transition: 0.4s;
 }
@@ -218,8 +214,8 @@ input[type="submit"] {
 	z-index: 99; 
 	border: none; 
 	outline: none; 
-	background-color: #C00000; 
-	color: #FFFFFF; 
+	background-color: red; 
+	color: white; 
 	cursor: pointer; 
 	padding: 0;
 	border-radius: 2px; 
@@ -281,7 +277,7 @@ input[type="submit"] {
 	/*topFunction*/
 	#menu ul li {
 		display: block;
-		border-bottom: 2px solid #000000;
+		border-bottom: 2px solid black;
 		padding: 0.6em 0;
 		list-style-type: none;
 		text-align: center;

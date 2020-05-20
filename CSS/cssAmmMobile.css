@@ -5,15 +5,15 @@ html, body {
 #mainContent, .corpoAmministratore, #mainContent.corpoAmministratore {
     margin: 0;
     padding: 0;
-    background-color: #FFFFFF;
+    background-color: white;
 }
 
 #menuAmministratore{
     float: none;
     width: 100%;
     font-size: 1em;
-    background-color: #FFFFFF;
-    border-bottom: 5px double #000000;
+    background-color: white;
+    border-bottom: 5px double black;
     margin: 0;
     padding: 0;
 }
@@ -28,7 +28,7 @@ html, body {
 .testoAmministratore{
     float: none;
     width: 100%;
-    background-color: #FFFFFF;
+    background-color: white;
     margin: 0;
     padding: 0;
 }

@@ -44,12 +44,12 @@
     clear: both;
     margin-bottom: 1em;
     text-align: center;
-    border: 1px solid #000000;
+    border: 1px solid black;
     border-radius: 5%;
     -webkit-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
 	-moz-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
 	box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
-    background: #FFE4C4;
+    background: bisque;
     width: 70%;
     overflow: hidden;
     margin-top: 1em;

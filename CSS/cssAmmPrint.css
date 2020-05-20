@@ -18,8 +18,8 @@ body {
     width: 100%;
     text-align: center;
     margin-bottom: 0.7em;
-    border-top: #FFFFFF;
-    border-bottom: #FFFFFF;
+    border-top: white;
+    border-bottom: white;
 }
   
 #header a {
