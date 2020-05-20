@@ -41,6 +41,10 @@ body {
 	-webkit-border-radius: 5px;
 }
 
+.js {
+	font-size: 0.5em;
+}
+
 .errorMessage {
 	background: #C13636;
 	color: #FFFFFF;

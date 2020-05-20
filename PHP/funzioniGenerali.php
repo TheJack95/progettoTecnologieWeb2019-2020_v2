@@ -21,7 +21,7 @@
             $breadcrumb_form .= '   </p>'."\n"
                                .'</div>'."\n";
 
-            $breadcrumb_form .= "<noscript class=\"messaggio\">"."\n"
+            $breadcrumb_form .= "<noscript class=\"messaggio js\">"."\n"
                                 ."    <h1>"."\n"
                                 ."        Il tuo browser non supporta JavaScript oppure &egrave; stato disabilitato. Alcune funzionalit&agrave; potrebbero non funzionare correttamente."."\n"
                                 ."    </h1>"."\n"
