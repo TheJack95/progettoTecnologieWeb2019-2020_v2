@@ -36,7 +36,7 @@
                                     ."      <p class='pAmm'>Noleggio dal ".$inizio." al ".$fine."</p>"."\n"
                                     ."      <form class='formModAmm' action='../PHP/eliminaPrenotazioneAmministratore.php' method='post'>"."\n"
                                     ."          <fieldset>"."\n"
-                                    ."              <legend></legend>"."\n"
+                                    ."              <legend>Elimina prenotazione</legend>"."\n"
                                     ."              <button type='submit' name='eliminaPrenotazione' class='noButt linkMod' value='$responseP->IdPrenot'>Elimina prenotazione</button>"."\n"
                                     ."          </fieldset>"."\n"
                                     ."      </form>"."\n"

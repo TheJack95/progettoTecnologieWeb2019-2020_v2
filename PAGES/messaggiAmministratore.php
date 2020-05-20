@@ -21,11 +21,13 @@
             if(count($requestI) == 0) {
                 $messaggiAmm .= "<form class=\"formRispAmm\" action=\"../PAGES/rispostaMessaggioAmministratore.php\" method=\"post\">
                                     <fieldset>
+                                        <legend>Rispondi al messaggio</legend>
                                         <button type=\"submit\" name=\"rispondi\" class=\"noButt linkMod\" value=\"$responseR->IdMess\">Rispondi</button>
                                     </fieldset>
                                 </form>"."\n".
                                 "<form class=\"formElimAmm\" action=\"../PHP/eliminaMessaggiAmministratore.php\" method=\"post\">
                                     <fieldset>
+                                        <legend>Elimina messaggio</legend>
                                         <button type=\"submit\" name=\"eliminaMessaggio\" class=\"noButt linkMod\" value=\"$responseR->IdMess\">Elimina messaggio</button>
                                     </fieldset>
                                 </form>"."\n".
@@ -33,11 +35,13 @@
             } else {
                 $messaggiAmm .= "<form class=\"formRispAmm\" action=\"../PAGES/rispostaMessaggioAmministratore.php\" method=\"post\">\n
                                     <fieldset>
+                                        <legend>Rispondi alla conversazione</legend>
                                         <button type=\"submit\" name=\"rispondi\" class=\"noButt linkMod\" value=\"$responseR->IdMess\">Rispondi</button>\n
                                     </fieldset>
                                 </form>"."\n".
                                 "<form class=\"formElimAmm\" action=\"../PHP/eliminaMessaggiAmministratore.php\" method=\"post\">\n
                                     <fieldset>
+                                        <legend>Elimina conversazione</legend>
                                         <button type=\"submit\" name=\"eliminaConversazione\" class=\"noButt linkMod\" value=\"$responseR->IdMess\">Elimina conversazione</button>\n
                                     </fieldset>
                                 </form>"."\n"

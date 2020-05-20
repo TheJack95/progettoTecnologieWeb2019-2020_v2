@@ -76,6 +76,10 @@
     margin: 0;
 }
 
+.formRispAmm legend, .formElimAmm legend, .formModAmm legend {
+    display: none;
+}
+
 .formElimAmm {
     float: right;
     width: 49%;
