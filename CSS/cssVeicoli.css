@@ -75,6 +75,10 @@ input {
 		text-align: center;
 	}
 
+	form label{
+		margin: 5%;
+	}
+
 	input[type="text"] {
 		border: 1px solid;
 	}
