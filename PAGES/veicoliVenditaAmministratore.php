@@ -48,8 +48,8 @@
         }
         $output = str_replace("<veicoliVendita></veicoliVendita>",$veicoliV,$output);
         $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
-        $output = str_replace('<a href="homeAmministratore.php" tabindex="5">AREA AMMINISTRATORE</a>','<strong>AREA AMMINISTRATORE</strong>',$output);
-        $output = str_replace('<a href="veicoliVenditaAmministratore.php" tabindex="12">Lista veicoli in vendita</a>','&#62; Lista veicoli in vendita',$output);
+        $output = str_replace('<a href="homeAmministratore.php" tabindex="7">AREA AMMINISTRATORE</a>','<strong>AREA AMMINISTRATORE</strong>',$output);
+        $output = str_replace('<a href="veicoliVenditaAmministratore.php" tabindex="15">Lista veicoli in vendita</a>','&#62; Lista veicoli in vendita',$output);
         echo $output;
     } else {
         $errLogin = "Attenzione&#58; non hai i permessi per accedere all&#39;area dell&#39;amministratore&#46; Sei stato reindirizzato alla pagina per l&#39;accesso&#46; Accedi e riprova";

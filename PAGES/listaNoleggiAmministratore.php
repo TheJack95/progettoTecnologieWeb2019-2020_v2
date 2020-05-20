@@ -51,8 +51,8 @@
         $output = str_replace("<listaNoleggi></listaNoleggi>",$listaNoleggi,$output);
         $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
 
-        $output = str_replace('<a href="homeAmministratore.php" tabindex="5">AREA AMMINISTRATORE</a>','<strong>AREA AMMINISTRATORE</strong>',$output);
-        $output = str_replace('<a href="listaNoleggiAmministratore.php" tabindex="11">Prenotazioni veicoli</a>','&#62; Prenotazioni veicoli',$output);
+        $output = str_replace('<a href="homeAmministratore.php" tabindex="7">AREA AMMINISTRATORE</a>','<strong>AREA AMMINISTRATORE</strong>',$output);
+        $output = str_replace('<a href="listaNoleggiAmministratore.php" tabindex="14">Prenotazioni veicoli</a>','&#62; Prenotazioni veicoli',$output);
 
         echo $output;
     } else {

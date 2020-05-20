@@ -10,7 +10,7 @@
     $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
     $output = str_replace('<a href="home.php"><img class="logoHeader" src="../Images/LogoGREG.png" alt="logo concessionaria greg" /></a>','<img class="logoHeader" src="../Images/LogoGREG.png" alt="logo concessionaria greg" />',$output);
     $output = str_replace('<p class="nomeSito"><a href="home.php">CONCESSIONARIA GREG</a></p>','<p class="nomeSito">CONCESSIONARIA GREG</p>',$output);
-    $output = str_replace('<a href="home.php" tabindex="1"><span xml:lang="en" lang="en">HOME</span></a>','<strong>HOME</strong>',$output);
+    $output = str_replace('<a href="home.php" tabindex="3"><span xml:lang="en" lang="en">HOME</span></a>','<strong>HOME</strong>',$output);
 
     $occasione = new database_connection;
     $seed = date('Ymd');
@@ -34,8 +34,9 @@
                             <p class = \"prezzo\"> PREZZO ORIGINALE: " .$row["PrezzoVendita"]. "&#8364;</p>
                             <p class = \"prezzo\"> PREZZO OCCASIONE: " .$prezzoOccasione. "&#8364;</p>
                             <form class=\"preventivoForm\" action=\"../PHP/acquistaVeicoloFn.php\" method=\"post\">
-							<fieldset>
-                				<button type=\"submit\" name=\"richiedipreventivo\" value=\"".$row['IdAuto']."\" class=\"button\" id=\"preventivo\" >Richiedi preventivo</button>
+                            <fieldset>
+                                <legend></legend>
+                				<button type=\"submit\" name=\"richiedipreventivo\" value=\"".$row['IdAuto']."\" class=\"button\" id=\"preventivo\" tabindex=\"9\">Richiedi preventivo</button>
 							</fieldset>
 						</form>
                         </div> 

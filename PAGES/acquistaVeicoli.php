@@ -52,16 +52,15 @@ $filtri ='<form action="acquistaVeicoli.php" method="post">'."\n"
 		.'	<fieldset>'."\n"
 		.'  	<legend>Filtri di ricerca</legend>'."\n"
 		.'		<label for="searchbar">Cerca veicoli</label>'."\n"
-		.'		<input type="text" id="searchbar" name="searchbar" tabindex="7" />'."\n"
-		.'		<input type="submit" name="applicafiltri" value="Cerca" tabindex="8" />'."\n"
-		.'		<input type="submit" name="ricaricapagina" value="Ricarica pagina" tabindex="9" />'."\n"
+		.'		<input type="text" id="searchbar" name="searchbar" tabindex="9" />'."\n"
+		.'		<input type="submit" name="applicafiltri" value="Cerca" tabindex="10" />'."\n"
+		.'		<input type="submit" name="ricaricapagina" value="Ricarica pagina" tabindex="11" />'."\n"
 		.'	</fieldset>'."\n"
 		.'</form>';
 
 $output = str_replace("<filtriAuto></filtriAuto>",$filtri,$output);
-$output = str_replace('<a href="acquistaVeicoli.php" tabindex="3">VEICOLI IN VENDITA</a>','<strong>VEICOLI IN VENDITA</strong>',$output);
+$output = str_replace('<a href="acquistaVeicoli.php" tabindex="5">VEICOLI IN VENDITA</a>','<strong>VEICOLI IN VENDITA</strong>',$output);
 
 echo $output;
 
 ?>
-

@@ -3,8 +3,8 @@
     #funzione per scrivere l'header
         public static function header() {
             $header_form =  '<div id="header">'."\n".
-                            '   <a class="hidden" href="#mainContent">Vai al contenuto</a>'."\n".
-                            '   <a class="hidden" href="#menu">Vai al menu</a>'."\n".
+                            '   <a class="hidden" href="#mainContent" tabindex="1">Vai al contenuto</a>'."\n".
+                            '   <a class="hidden" href="#menu" tabindex="2">Vai al menu</a>'."\n".
                             '   <a href="home.php"><img class="logoHeader" src="../Images/LogoGREG.png" alt="logo concessionaria greg" /></a>'."\n".
                             '   <p class="nomeSito"><a href="home.php">CONCESSIONARIA GREG</a></p>'."\n".
                             '</div>';
@@ -43,18 +43,18 @@
 
                 $menu_form .=    '<div id="menu">'."\n".
                                 '   <ul>'."\n".
-                                '       <li><a href="home.php" tabindex="1"><span xml:lang="en" lang="en">HOME</span></a></li>'."\n".
-                                '       <li><a href="noleggioVeicoli.php" tabindex="2">VEICOLI A NOLEGGIO</a></li>'."\n".
-                                '       <li><a href="acquistaVeicoli.php" tabindex="3">VEICOLI IN VENDITA</a></li>'."\n".
-                                '       <li><a href="contatti.php" tabindex="4">CONTATTI</a></li>'."\n";
+                                '       <li><a href="home.php" tabindex="3"><span xml:lang="en" lang="en">HOME</span></a></li>'."\n".
+                                '       <li><a href="noleggioVeicoli.php" tabindex="4">VEICOLI A NOLEGGIO</a></li>'."\n".
+                                '       <li><a href="acquistaVeicoli.php" tabindex="5">VEICOLI IN VENDITA</a></li>'."\n".
+                                '       <li><a href="contatti.php" tabindex="6">CONTATTI</a></li>'."\n";
             if(isset($_SESSION["admin"]) && $_SESSION["admin"] == 1) { //login effettuato come amministratore
-                $menu_form .=   '       <li><a href="homeAmministratore.php" tabindex="5">AREA AMMINISTRATORE</a></li>'."\n".
-                                '       <li><a href="../PHP/logout.php" tabindex="6">ESCI</a></li>'."\n";
+                $menu_form .=   '       <li><a href="homeAmministratore.php" tabindex="7">AREA AMMINISTRATORE</a></li>'."\n".
+                                '       <li><a href="../PHP/logout.php" tabindex="8">ESCI</a></li>'."\n";
             } elseif(isset($_SESSION["user"])) { //login effettuato come utente
-                $menu_form .=   '       <li><a href="areaPrivata.php" tabindex="5">AREA PERSONALE</a></li>'."\n".
-                                '       <li><a href="../PHP/logout.php" tabindex="6">ESCI</a></li>'."\n";
+                $menu_form .=   '       <li><a href="areaPrivata.php" tabindex="7">AREA PERSONALE</a></li>'."\n".
+                                '       <li><a href="../PHP/logout.php" tabindex="8">ESCI</a></li>'."\n";
             } else { //non ho fatto il login oppure qualcosa e' andato storto
-                $menu_form .=   '       <li><a href="login.php" tabindex="5">ACCEDI</a></li>'."\n";
+                $menu_form .=   '       <li><a href="login.php" tabindex="7">ACCEDI</a></li>'."\n";
             }
                 $menu_form .=   '   </ul>'."\n".
                                 '</div>';
