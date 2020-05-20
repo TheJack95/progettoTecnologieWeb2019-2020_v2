@@ -8,11 +8,15 @@ html, body {
 	max-width: 85%;
 	margin: auto;
 	padding: 0;
-	background-color: bisque;
+	background-color: #FFE4C4;
 }
 
 body {
 	background-color: #FAFAFA;
+}
+
+a:visited {
+	color: #000086;
 }
 
 .logoHeader {
@@ -46,12 +50,12 @@ body {
 }
 
 .errorMessage {
-	background: #C13636;
+	background: #C00000;
 	color: #FFFFFF;
 }
 
 .successMessage {
-	background: #4CAF50;
+	background: #377F3A;
 	color: #FFFFFF;
 }
 
@@ -105,7 +109,7 @@ body {
 	width: 100%;
 	text-align: center;
 	font-size: 1.1em;
-	color: #FFF;
+	color: #000000;
 	padding-top: 0.5em;
 	padding-bottom: 0.5em;
 	background: #F1AB00;
@@ -125,7 +129,7 @@ body {
 
 .main {
 	padding: 1em;
-	background-color: #f1ab00;
+	background-color: #F1AB00;
 }
 
 .clear{
@@ -133,12 +137,12 @@ body {
 }
 
 .valid{
-	border-color: #4CAF50;
+	border-color: #377F3A;
 }
 
 .invalid{
-	border-color: #900;
-	background-color: #FDD;
+	border-color: #C00000;
+	background-color: #FFE4C4;
 }
 
 .button {
@@ -157,7 +161,7 @@ input[type="submit"] {
 	width: auto;
     height: 2.5em;
     background-color: #F1AB00;
-    color: white;
+    color: #000000;
     border: none;
     border-radius: 5%;
 }
@@ -178,7 +182,7 @@ input[type="submit"] {
 .bar1, .bar2, .bar3 {
     width: 2.75em;
     height: 0.31em;
-    background-color: white;
+    background-color: #FFFFFF;
     margin: 0.44em 0;
     transition: 0.4s;
 }
@@ -214,8 +218,8 @@ input[type="submit"] {
 	z-index: 99; 
 	border: none; 
 	outline: none; 
-	background-color: red; 
-	color: white; 
+	background-color: #C00000; 
+	color: #FFFFFF; 
 	cursor: pointer; 
 	padding: 0;
 	border-radius: 2px; 
@@ -277,7 +281,7 @@ input[type="submit"] {
 	/*topFunction*/
 	#menu ul li {
 		display: block;
-		border-bottom: 2px solid black;
+		border-bottom: 2px solid #000000;
 		padding: 0.6em 0;
 		list-style-type: none;
 		text-align: center;

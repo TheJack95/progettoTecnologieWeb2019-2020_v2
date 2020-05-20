@@ -1,6 +1,6 @@
 * {
   background: transparent !important;
-  color: black !important;
+  color: #000000 !important;
 }
 
 body {
@@ -13,8 +13,8 @@ body {
   width: 100%;
   text-align: center;
   margin-bottom: 0.7em;
-  border-top: white;
-  border-bottom: white;
+  border-top: #FFFFFF;
+  border-bottom: #FFFFFF;
 }
 
 #header a {
