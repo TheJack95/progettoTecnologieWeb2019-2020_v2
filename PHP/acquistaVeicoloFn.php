@@ -12,14 +12,13 @@ if($logged->status) {
 	];
 
 	#controllo se i campi obbligatori sono stati inseriti e se sono validi
-	if(isset($_POST['richiedipreventivo'])) {
+	if(isset($_GET['idAuto'])) {
 		$conn = new funzioniVeicoli();
-		$auto = $conn->getVeicoloAcquista($_POST['richiedipreventivo'], false);
+		$auto = $conn->getVeicoloAcquista($_GET['idAuto'], false);
 		$utente  = $_SESSION['user'];
-		$idAuto  = $auto->idAuto;
 		$prezzoVendita = intval($auto->PrezzoVendita);
 
-		$response = $conn->richiediPreventivo($utente, $idAuto, $prezzoVendita);
+		$response = $conn->richiediPreventivo($utente, $_GET['idAuto'], $prezzoVendita);
 
 	} else {
 		$response->response = 'Errore imprevisto, riprovare. Se il problema persiste contatta l&apos;amministratore.';
