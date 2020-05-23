@@ -33,10 +33,10 @@
         In questa pagina vengono visualizzati i veicoli disponibili per il noleggio. L'utente può esegueguire una ricerca attraverso l'apposita sezione "Filtri di ricerca". Nel caso in cui l'utente provasse a noleggiare un veicolo, non essendo autenticato, gli verrà mostrato un messaggio d'errore.
 
         \paragraph{Visualizzazione pagina "Veicoli in vendita"}
-        In questa pagina vengono visualizzati i veicoli disponibili per l'acquisto. L'utente può esegueguire una ricerca attraverso l'apposita sezione "Filtri di ricerca". Nel caso in cui l'utente provasse ad acquistare un veicolo, non essendo autenticato, gli verrà mostrato un messaggio d'errore.
+        In questa pagina vengono visualizzati i veicoli disponibili per l'acquisto. L'utente può esegueguire una ricerca attraverso l'apposita sezione "Filtri di ricerca". Nel caso in cui l'utente provasse a richiedere un preventivo per un veicolo, non essendo autenticato, gli verrà mostrato un messaggio d'errore.
 
         \paragraph{Visualizzazione pagina "Contatti"}
-        L’utente generico accede alla pagina Contatti cliccando la sezione Contatti presente nella navbar, essa è l'unica pagina che è stata dichiarata come HTML 5 nel sito dato che al suo interno si trova una mappa importata da google maps. La pagina offre informazioni e servizi utili all’utente come:
+        L’utente generico accede alla pagina Contatti cliccando la sezione Contatti presente nella navbar; questa è l'unica pagina che è stata dichiarata come HTML 5 nel sito dato che al suo interno si trova una mappa importata da google maps. La pagina offre informazioni e servizi utili all’utente come:
         \begin{itemize}
             \item Un indirizzo email;
             \item Un numero di telefono;
@@ -44,18 +44,20 @@
             \item Una mappa con le indicazioni per raggiungere la concessionaria importata da Google Maps;
             \item Un form che l’utente può utilizzare per mandare messaggi al personale della concessionaria.
         \end{itemize}
-        Il form è composto dai campi nome, cognome, email, numero telefono e messaggio tutti da completare obbligatoriamente, dopo essere stato inoltrato il form esegue uno script php per inviare il messaggio in una sezione dedicata del database. Il form è utilizzabile anche da utenti non registrati.
+        Il form è composto dai campi nome, cognome, email, numero telefono e messaggio tutti da completare obbligatoriamente, dopo essere stato inoltrato il form esegue uno script php per inviare il messaggio in una sezione dedicata del database. Il form è utilizzabile anche da utenti non registrati. \\
+        \textbf{Nota:} nel caso in cui un utente non registrato effettuasse la registrazione con la stessa mail con cui ha inviato dei messaggi, questi saranno presenti nella sua area privata.
 
         \subsubsection{Utente registrato}
-        L’utente viene definito registrato nel momento in cui ha effettuato la registrazione; dispone dei degli stessi casi casi d’uso dell'utente generico con l'aggiunte della possibilità di effettuare il login.
+        L’utente viene definito registrato nel momento in cui ha effettuato la registrazione; dispone dei degli stessi casi  d’uso dell'utente generico con l'aggiunte della possibilità di effettuare il login.
 
         \subsubsection{Utente autenticato}
-        L’utente viene definito autenticato nel momento in cui ha effettuato l'accesso al site con le proprie credenziali.
+        L’utente viene definito autenticato nel momento in cui ha effettuato l'accesso al sito con le proprie credenziali.
         L’utente autenticato dispone dei degli stessi casi casi d’uso dell'utente generico con l'aggiunte dei seguenti
         \begin{itemize}
             \item Accesso all'area presonale
             \begin{itemize}
                 \item Visualizzazione pagina "Dati Personali";
+                \item Modificare i dati personali;
                 \item Visualizzazione pagina "Preventivi";
                 \item Visualizzazione pagina "Noleggi";
                 \item Visualizzazione pagina "Messaggi";
@@ -86,7 +88,6 @@
             \item Rispondere ai messaggi ricevuti.
         \end{itemize}
 
-        \paragraph{Area amministratore} L'area privata dell'utente amministratore presenta due importanti funzionalità: l'inserimento e la cancellazione di un auto. Per l'inserimento è sufficiente cliccare sui pulsanti presenti nelle "Azioni Rapide", mentre nelle sottosezioni dell'area amministrazione l'amministrazione può consultare ed eliminare i dati presenti nel database. Può inoltre consultare gli acquisti e i messaggi di tutti gli utenti registrati.
-
-
+        \paragraph{Area amministratore} L'area privata dell'utente amministratore presenta due importanti funzionalità: l'inserimento e la cancellazione di un auto. Per l'inserimento è sufficiente cliccare sui pulsanti presenti nelle "Azioni Rapide", mentre nelle sottosezioni dell'area amministrazione l'amministrazione può consultare ed eliminare i dati presenti nel database. Può inoltre consultare gli acquisti e i messaggi di tutti gli utenti registrati. \\
+        \textbf{Note:} questa parte del sito, nonostante sia molto simili per funzionalità all'area personale di un utente generico, presenta dei colori diversi proprio per contraddistinguerla.  
 \pagebreak
