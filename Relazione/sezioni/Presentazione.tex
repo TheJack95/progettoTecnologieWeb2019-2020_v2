@@ -1,17 +1,29 @@
 \section{Presentazione}
-    Per la realizzazione del sito abbiamo utilizzato il linguaggio CSS utilizzando quasi esclusivamente misure  relative come em e percentuali, cercando di ridurre al minimo l'utilizzo di misure statiche come i px per creare un design fluido e che sia facilmente usufruibile da mobile.
-    Per i colori invece nel sito vi è un predominante utilizzo del classico testo nero su sfondo bianco ma vi sono anche molte sezioni con testo bianco su sfondo verde, come nel menu, che risultano facilmente leggibili e non eccessivamente contrastanti all' occhio.
+    Per la realizzazione del sito abbiamo utilizzato il linguaggio CSS usufruendo quasi esclusivamente di misure relative come em e percentuali e cercando di ridurre al minimo l'utilizzo di misure statiche come i px per creare un design fluido e che sia facilmente usufruibile da mobile.
     Così facendo siamo riusciti ad ottenere un sito accessibile su ogni dispositivo, grazie anche all' utilizzo di media query che vanno a rendere il design del sito scalabile e accessibile.
     
     \subsection{Presentazione Generale}
-    Tutte le pagine presentano il logo del parco in cima alla pagina con la possibilità di cliccarlo per venire reindirizzati alla home, appeno sotto di esso si può trovare il menu. Il menu è strutturato nella forma classica con una visualizzazione orrizontale di tutte le voci principali, passando poi il cursore sulle voci animali ed informazioni verranno visualizzate ulteriori opzioni, la presentazione del menu cambiera quando utilizzato da mobile(vedere sezione "Differenze mobile vs desktop"). In fondo alla pagina si potra infine trovare il footer che ha il principale compito di contenere la dicitura per il copyright.
+    Tutte le pagine presentano il logo della concessionaria in cima alla pagina con la possibilità di cliccarlo per venire reindirizzati alla home, appeno sotto di esso si può trovare il menu. Il menu è strutturato nella forma classica con una visualizzazione orrizontale di tutte le voci principali, la presentazione del menu cambiera quando utilizzato da mobile(vedere sezione "Differenze mobile vs desktop"). In fondo alla pagina si potra infine trovare il footer che ha il principale compito di contenere la dicitura per il copyright.
 
     \subsection{Principali differenze mobile vs desktop}
-    Le seguenti sezioni delinearanno le differenze più importanti che si possono osservare su mobile rispetto alla versione desktop.
+    Le seguenti sezioni delinearanno le differenze più importanti che si possono osservare nella struttura delle pagine mobile rispetto alla loro controparte desktop, queste modifiche sono state implementate con l'intento di garantire una visualizzazione facile e pulita del sito da mobile.
 
-    \subsubsection{Menu mobile}
-    Su mobile il menu viene interamento nascosto eccetto la voce "Home" che resta visualizzata come da desktop, per visualizzare il resto del menu invece bastera cliccare sul burger menu in alto a destra e tutte le voci rimanenti compariranno in un menu a tendina.
+        \subsubsection{Menu mobile}
+        Le voci del menu saranno nascoste, per visualizzarle bastera cliccare sul burger menu in alto a destra ed esse compariranno in un menu a tendina.
 
-    \subsubsection{Home mobile}
-    Nella Home la sezione "Prossimi eventi al Parco Faunistico Euganeo" e l'immagine non vengono più visualizzati al fianco ma sotto la sezione "CHI SIAMO", questo garantisce una lettura della pagina più semplice è pulita per l'utente.	   
+        \subsubsection{Home mobile}
+        Nella Home l'immagine della concessionaria non viene più visualizzata affianco al testo ma sopra di esso.
+
+        \subsubsection{Veicoli a noleggio e Veicoli in vendita mobile}
+        I vari filtri di ricerca per le auto verranno visualizzati in blocchi quindi ognuno occupera un intera riga inclusi il bottone per il submit è quello per ricaricare la pagina.
+
+        \subsubsection{Area personale ed Area amministratore}
+        Il menu utente ed il menu amministratore non saranno più alla sinistra del contenuto ma sopra di esso.
+    
+    \subsection{CSS Print}
+        Il compito di gestire la presentazione delle pagine durante la stampa è stato affidato al file cssPrint.css, esso elimina tutti gli elementi visivi non necessari durante una stampa come il logo, il footer, i menu, i colori di background e le immagini che non hanno valore informativo.
+        Vi sono inoltre alcune pagine a cui sono stati dedicati dei fogli di stile per gestire situazione di stampa a loro specifiche come ad esempio i pagebreak ma la struttura generale viene sempre dettata da cssPrint.css.
+
+
+
 \pagebreak
