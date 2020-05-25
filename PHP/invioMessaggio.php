@@ -25,7 +25,7 @@
             $errore = "<p class=\"messaggio errorMessage\"> Si &egrave; verificato un errore di connessione, se il problema persiste riprova piu tardi. </p>"; 
     }
     else
-        $errore = "<p class=\"messaggio errorMessage\"> Non &egrave; possibile procedere all&apos;invio del messaggio perch&egrave; non sono stati inseriti tutti i campi obbligatori in modo corretto. Ricorda che il campo telefono deve contenere un numero telefonico valido </p>";
+        $errore = "<p class=\"messaggio errorMessage\"> Non &egrave; possibile procedere all&apos;invio del messaggio perch&egrave; non sono stati inseriti tutti i campi obbligatori in modo corretto. Ricorda che il campo telefono deve contenere un numero telefonico valido ed i campi nome e cognome devono contenere almento 3 lettere. </p>";
     
     $_SESSION['response'] = $errore;
     
