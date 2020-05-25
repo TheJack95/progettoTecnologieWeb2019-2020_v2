@@ -1,24 +1,10 @@
-*** INCONTRI ***
-
-martedì 17/03 idea generale e divisione compiti
-venerdì 20/03 discussione sulle analisi, sui requisiti e le features
-martedì 24/03 sviluppo collettivo delle parti comuni: menù, breadcrums, header, footer
-sabato 28/03 discussione eventuali problemi e progressione sviluppo php
-venerdì 03/04 completamento pagine php e funzioni
-mercoledì 08/04 
-
-PROSSIMI INCONTRI: sabato pomeriggio
-
-DA PREPARARE:   sviluppo controlli in JavaScript
-                CSS generale
-
 *** ATTENZIONE ***
 
 - nel CSS usare em (scala in base al parente più vicino) per i font, per gli oggetti la %
 
 - tutte le pagine devono rispettare lo standard XHTML 1.0 STRICT
 - solo le pagine che hanno (VERAMENTE) bisogno di tag html5 si faranno in HTML5, sempre rispettando lo standard XHTML5
-- il calcolo del costo totale può essere fatto solo in JS - che si fa?
+- il calcolo del costo totale può essere fatto solo in JS
 
 *** DIVISIONE DELLO SVILUPPO ***
 
@@ -29,7 +15,7 @@ Erik: database, homepage, contatti
 
 *** SCELTE DI PROGETTO ***
 
-- HTML5 puro (che vengono validate da XHTML5)
+- XHTML 1.0 (pagina HTML5 validata da XHTML5)
 - PHP che crea le pagine
 - DB in forma normale
 - CSS3 puro
@@ -37,8 +23,9 @@ Erik: database, homepage, contatti
 *** STRUMENTI ***
 
 GitHub
-Skype
+Zoom
 Telegram
-Visual Studio (Code)
+Visual Studio Code
 Atom
-per il DB?
+XAMPP
+PHP My Admin
