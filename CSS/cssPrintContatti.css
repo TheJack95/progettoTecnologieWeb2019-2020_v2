@@ -5,3 +5,7 @@
 #formMessaggio,#testo{
     display: none;
 }
+
+.messaggio{
+    display:none;
+}
