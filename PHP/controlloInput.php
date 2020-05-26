@@ -16,7 +16,7 @@
 
 		public function validTesto($testo) {
 			if(isset($testo) && !empty($testo)) {
-				if(preg_match("/^[a-zA-Z0-9€?$@&#()'!,+\-;:=_.\s]*$/",$testo)) {
+				if(preg_match("/^[a-zA-Z0-9€?$@&#()'!,+\-;:=_.\s]{10,}$/",$testo)) {
 					return true;
 				} else {
 					return false;
