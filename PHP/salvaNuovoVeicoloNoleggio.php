@@ -68,7 +68,7 @@
             $errori .= "<p class='messaggio errorMessage'>L&#39;immagine non &egrave; stata inserita&#46;</p>";
         }
 
-        if(controlloInput::validTesto($_POST["descrizione"])) {
+        if(controlloInput::validDescr($_POST["descrizione"])) {
             $descrizione = htmlentities($_POST["descrizione"],ENT_QUOTES,"UTF-8");
         } else {
             $valid = false;

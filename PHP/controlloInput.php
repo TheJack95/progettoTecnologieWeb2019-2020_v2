@@ -16,7 +16,19 @@
 
 		public function validTesto($testo) {
 			if(isset($testo) && !empty($testo)) {
-				if(preg_match("/^[a-zA-Z0-9€?$@&#()'!,+\-;:=_.\s]*$/",$testo)) {
+				if(preg_match("/^[a-zA-Z0-9€?$@&#()'!,+\-;:=_.\s]{20,}$/",$testo)) {
+					return true;
+				} else {
+					return false;
+				}
+			} else {
+				return false;
+			}
+		}
+
+		public function validDescr($testo) {
+			if(isset($testo) && !empty($testo)) {
+				if(preg_match("/^[a-zA-Z0-9€?$@&#()'!,+\-;:=_.\s]{10,}$/",$testo)) {
 					return true;
 				} else {
 					return false;
