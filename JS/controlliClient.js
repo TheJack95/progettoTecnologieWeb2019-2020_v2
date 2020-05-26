@@ -45,6 +45,8 @@ var checkForm = function(idForm) {
     if(inputsKO.length) {
         text += "I seguenti campi non sono validi:\n" + inputsKO;
         alert(text);
+    } else if(text.length) {
+        alert(text);
     }
 
     return text.length == 0;
