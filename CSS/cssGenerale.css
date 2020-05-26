@@ -298,4 +298,11 @@ input[type="submit"] {
 	.logoHeader {
 		height: 2em;
 	}
+
+	@media (max-width:380px) {
+		#burgerMenu {
+			margin-right: 5px;
+		}		
+
+	}
 }
