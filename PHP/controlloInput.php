@@ -2,7 +2,7 @@
 	class controlloInput {
 		public function validName($name){
 			if(isset($name) && !empty($name)){
-				if(preg_match("/^[a-zA-Z ]{3,30}$/",$name)){
+				if(preg_match("/^[a-zA-Z ]{3,50}$/",$name)){
 					return true;
 				}
 				else{
@@ -86,7 +86,7 @@
 
 		public function validPass($pass){
 			if(isset($pass) && !empty($pass)){
-				if(preg_match("/^[a-zA-Z0-9]+$/",$pass)){
+				if(preg_match("/^[a-zA-Z0-9]{8,}$/",$pass)){
 					return true;
 				}
 				else{
@@ -155,7 +155,7 @@
 
 		public function validNumeri($cifra) {
 			if(isset($cifra) && !empty($cifra)) {
-				if(preg_match("/^[0-9]{1,7}$/",$cifra)) {
+				if(preg_match("/^[0-9]{2,}$/",$cifra)) {
 					return true;
 				} else {
 					return false;
