@@ -141,26 +141,52 @@ class funzioniVeicoli {
 	}
 
 	/**
+	* Funzione che controlla se un utente ha già richiesto un preventivo per la stessa auto
+	* Ritorna true se l'utente ha già richiesto un preventivo per la stessa auto
+	* @param $idAuto 
+	* @param $utente 
+	* @return bool
+	*/
+	public function preventivoGiaRichiesto($idAuto, $utente) {
+		$query = "SELECT IdPrev
+				FROM PreventivoAcquisto
+				WHERE Automobile = '$idAuto' AND Utente  = '$utente'";
+		$queryResult = $this->connVeicoli->esegui($query, false);
+
+		if($queryResult === false) {
+			return false;
+		} else {
+			return $queryResult->num_rows;
+		}
+	}
+
+	/**
 	* Funzione per prenotare l'auto
 	* @return Object status: true/false, response: messaggio di risposta
 	*/
 	public function noleggia(string $utente, $dataInizioNolo, $dataFineNolo,string $targa, int $costo, $chiudiConn = true) {
+
+		$response = (Object) [
+			"status" => false
+			,"response" => ""
+			,"query" => ""
+		];
+
 		$dataInizioString = $dataInizioNolo->format('Y-m-d');
 		$dataFineString = $dataFineNolo->format('Y-m-d');
+		
 		$query = "INSERT INTO PrenotazioneNoleggio VALUES(null,'$utente', '$targa', '$dataInizioString', '$dataFineString', $costo)";
 		$queryResult = $this->connVeicoli->esegui($query, $chiudiConn);
+		
 		if($queryResult === false) {
-			return (Object) [
-				"status" => false
-				,"response" => "Errore nella comunicazione con il database."
-				,"query" => $query
-			];
+			$response->response = "Errore nella comunicazione con il database.";
+			$response->query = $query;
 		} else {
-			return (Object) [
-				"status" => true
-				,"response" => "Noleggio auto avvenuto correttamente."
-			];
+			$response->status = true;
+			$response->response = "Noleggio auto avvenuto correttamente.";
 		}
+		
+		return $response;
 	}
 
 	/**
@@ -168,19 +194,31 @@ class funzioniVeicoli {
 	* @return Object status: true/false, response: messaggio di risposta
 	*/
 	public function richiediPreventivo(string $utente, string $idAuto, string $prezzoVendita, $chiudiConn = true) {
-		$query = "INSERT INTO PreventivoAcquisto VALUES(null,'$utente', $idAuto, '$prezzoVendita')";
-		$queryResult = $this->connVeicoli->esegui($query);
-		if($queryResult === false) {
-			return (Object) [
-				"status" => false
-				,"response" => "Errore nella comunicazione con il database."
-			];
+		
+		$response = (Object) [
+			"status" => false
+			,"response" => ""
+		];
+
+		$autoGiaRichiesta = $this->preventivoGiaRichiesto($_GET['idAuto'], $_SESSION['user']);
+		if($autoGiaRichiesta === 0) {
+			$query = "INSERT INTO PreventivoAcquisto VALUES(null,'$utente', $idAuto, '$prezzoVendita')";
+			$queryResult = $this->connVeicoli->esegui($query);
+			if($queryResult === false) {
+				$response->response = "Errore nella comunicazione con il database.";
+			} else {
+				$response->status = true;
+				$response->response = "Preventivo richiesto correttamente ";
+			}
 		} else {
-			return (Object) [
-				"status" => true
-				,"response" => "Preventivo richiesto correttamente."
-			];
+			if($autoGiaRichiesta === false) {
+				$response->response = 'Errore imprevisto, riprovare. Se il problema persiste contatta l&apos;amministratore.';
+			} else {
+				$response->response = 'Attenzione, hai gi&agrave; richiesto un preventivo per quest&apos;auto. Attendi la risposta dell&apos;amministratore';
+			}
 		}
+		
+		return $response;
 	}
 
 	/**

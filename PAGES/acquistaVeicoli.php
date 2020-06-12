@@ -13,6 +13,14 @@ $output = str_replace("<breadcrumb></breadcrumb>",funzioniGenerali::breadcrumb("
 
 $output = str_replace("<footer></footer>",funzioniGenerali::footer(),$output);
 
+if(!isset($_SESSION))
+	session_start();
+
+if(isset($_SESSION["messaggioAcquisto"])) {
+	$output = str_replace("<!--MESSAGEPLACEHOLDER-->",$_SESSION["messaggioAcquisto"],$output);
+	unset($_SESSION["messaggioAcquisto"]);
+}
+
 $rows = (new funzioniVeicoli())->getVeicoliAcquista();
 $veicoli = "";
 
