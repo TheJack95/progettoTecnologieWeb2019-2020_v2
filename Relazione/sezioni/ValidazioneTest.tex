@@ -30,9 +30,11 @@ Sono stati effettuati test manuali anche per la versione mobile utilizzando diff
 L’usabilità del sito web rimane invariata, essendo quest’ultimo responsive, anche se presenta layout o comportamenti differenti per cause che dipendono dal sistema operativo. Per tale motivo la fase di test sui dispositivi mobile è stata eseguita minuziosamente e parallelamente alla fase di test per il desktop.
 
 \subsection{Test per l'accessibilità}
-% A partire dalla struttura in HTML si è cercato di rendere più efficiente la navigazione del sito tramite l'inserimento gli attributi "tabindex", per dare un ordine prioritario alle tabulazioni e permettere di saltare agevolmente sezioni della pagina tramite l'utilizzo di ancore. Tutte le immagini sono state marcate con appositi tag alt per la comprensione delle immagini anche a chi non può vedere. Inoltre ogni link è distinguibile dagli altri elementi tramite la sottolineatura e viene visualizzato in colori diversi in se ancora da visitare o già visitato. Un ulteriore aiuto viene fornito dai breadcrumb, che permette all'utente di capire in che parte del sito si trova.
-Per quanto riguarda l'accessibilità per alcune categorie di utenza con relative difficoltà visive si è scelto di mantenere sempre un alto contrasto tra il colore di sfondo ed il colore delle scritte, per non intaccare la leggibilità delle ultime.
-In particolare sono stati eseguiti dei test di cui si riportano di seguito alcune immagini di viste delle pagine del sito realizzato con la simulazione di diverse tipologie di daltonismo. Tali immagini sono state generate con l'utilizzo del simulatore Coblis, disponibile online al link \url{https://www.color-blindness.com/coblis-color-blindness-simulator/}.
+A partire dalla struttura in HTML si è cercato di rendere più efficiente la navigazione del sito, per permettere a tutte le categorie di visitatori di accedere a tutti i contenuti nel miglior modo possibile.
+
+Un occhio di riguardo si è avuto per tutte quelle persone che presentano difficoltà visive. Si è scelto di mantenere sempre un alto contrasto tra il colore di sfondo ed il colore delle scritte, per non intaccare la leggibilità delle ultime, sono stati inseriti gli attributi tabindex, gli span di lingua, gli attributi alt per facilitare la lettura dei contenuti con l'uso di screen reader.\\
+
+In particolare sono stati eseguiti dei test che simulano la visione con diverse tipologie di daltonismo. Le immagini, di seguito riportate, sono state generate con l'utilizzo del simulatore Coblis, disponibile online al link \url{https://www.color-blindness.com/coblis-color-blindness-simulator/}.
 
 \captionof{figure}{Homepage del sito}
 \includegraphics[width=8pc]{./img/homepage-normal.png} \includegraphics[width=8pc]{./img/homepage-protanopia.png} \includegraphics[width=8pc]{./img/homepage-deuteranopia.png} \includegraphics[width=8pc]{./img/homepage-tritanopia.png}\\
