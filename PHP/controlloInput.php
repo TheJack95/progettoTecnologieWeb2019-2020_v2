@@ -2,7 +2,7 @@
 	class controlloInput {
 		public static function validName($name){
 			if(isset($name) && !empty($name)){
-				if(preg_match("/^[a-zA-Z ]{3,50}$/",$name)){
+				if(preg_match("/^[a-zA-ZÀ-ÖØ-öø-ÿ ]{3,50}$/",$name)){
 					return true;
 				}
 				else{
@@ -16,7 +16,7 @@
 
 		public static function validTesto($testo) {
 			if(isset($testo) && !empty($testo)) {
-				if(preg_match("/^[a-zA-Z0-9€?$@&#()'!,+\-;:=_.\s]{20,}$/",$testo)) {
+				if(preg_match("/^[a-zA-ZÀ-ÖØ-öø-ÿ0-9€?$@&#()'!,+\-;:=_.\s]{20,}$/",$testo)) {
 					return true;
 				} else {
 					return false;
@@ -28,7 +28,7 @@
 
 		public static function validTestoCorto($testoCorto) {
 			if(isset($testoCorto) && !empty($testoCorto)) {
-				if(preg_match("/^[a-zA-Z0-9€?$@&#()'!,+\-;:=_.\s]{3,}$/",$testoCorto)) {
+				if(preg_match("/^[a-zA-ZÀ-ÖØ-öø-ÿ0-9€?$@&#()'!,+\-;:=_.\s]{3,}$/",$testoCorto)) {
 					return true;
 				} else {
 					return false;
@@ -40,7 +40,7 @@
 
 		public static function validDescr($descr) {
 			if(isset($descr) && !empty($descr)) {
-				if(preg_match("/^[a-zA-Z0-9€?$@&#()'!,+\-;:=_.\s]{10,}$/",$descr)) {
+				if(preg_match("/^[a-zA-ZÀ-ÖØ-öø-ÿ0-9€?$@&#()'!,+\-;:=_.\s]{10,}$/",$descr)) {
 					return true;
 				} else {
 					return false;
@@ -141,7 +141,7 @@
 
 		public static function validAddress($address){
 			if(isset($address) && !empty($address)){
-				if(preg_match("/^([a-zA-Z ]{3,11})\s([a-zA-Z ]+\s)+(\d{1,3}([\/][a-zA-Z ])?)$/",$address)){
+				if(preg_match("/^([a-zA-ZÀ-ÖØ-öø-ÿ ]{3,11})\s([a-zA-ZÀ-ÖØ-öø-ÿ ]+\s)+(\d{1,3}([\/][a-zA-ZÀ-ÖØ-öø-ÿ ])?)$/",$address)){
 					return true;
 				}
 				else {
