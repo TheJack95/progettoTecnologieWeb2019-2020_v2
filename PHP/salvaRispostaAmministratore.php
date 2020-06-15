@@ -11,7 +11,7 @@
         $valid = true;
 
         $oggetto = htmlentities($_POST["oggetto"], ENT_QUOTES, "UTF-8");
-        if(controlloInput::validTesto($oggetto) == false) {
+        if(controlloInput::validTestoCorto($oggetto) == false) {
             $valid = false;
             $errori .= "<p class='messaggio errorMessage'>L&#39;oggetto inserito non &egrave; valido&#58; ricorda che non pu&ograve; essere vuoto&#46;</p>";
         }
