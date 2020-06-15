@@ -18,35 +18,35 @@
             $errori .= "<p class='messaggio errorMessage'>La targa inserita non &egrave; valida&#58; ricorda che non pu&ograve; essere vuota e deve avere esattamente sette caratteri&#46;</p>";
         }
         
-        if(controlloInput::validTesto($_POST["marca"])) {
+        if(controlloInput::validTestoCorto($_POST["marca"])) {
             $marca = htmlentities($_POST["marca"],ENT_QUOTES,"UTF-8");
         } else {
             $valid = false;
             $errori .= "<p class='messaggio errorMessage'>La marca inserita non &egrave; valida&#58; ricorda che non pu&ograve; essere vuota&#46;</p>";
         }
         
-        if(controlloInput::validTesto($_POST["modello"])) {
+        if(controlloInput::validTestoCorto($_POST["modello"])) {
             $modello = htmlentities($_POST["modello"],ENT_QUOTES,"UTF-8");
         } else {
             $valid = false;
             $errori .= "<p class='messaggio errorMessage'>Il modello inserito non &egrave; valido&#58; ricorda che non pu&ograve; essere vuoto&#46;</p>";
         }
         
-        if(controlloInput::validNumeri($_POST["cilindrata"])) {
+        if(controlloInput::validCilindrata($_POST["cilindrata"])) {
             $cilindrata = $_POST["cilindrata"];
         } else {
             $valid = false;
             $errori .= "<p class='messaggio errorMessage'>La cilindrata inserita non &egrave; valida&#58; ricorda che non pu&ograve; essere vuota e che pu&ograve; contenere solo numeri&#46;</p>";
         }
         
-        if(controlloInput::validNumeri($_POST["costo"])) {
+        if(controlloInput::validPrezzo($_POST["costo"])) {
             $costo = $_POST["costo"];
         } else {
             $valid = false;
             $errori .= "<p class='messaggio errorMessage'>Il costo inserito non &egrave; valido&#58; ricorda che non pu&ograve; essere vuoto e che pu&ograve contenere solo numeri&#46;</p>";
         }
         
-        if(controlloInput::validNumeri($_POST["cauzione"])) {
+        if(controlloInput::validPrezzo($_POST["cauzione"])) {
             $cauzione = $_POST["cauzione"];
         } else {
             $valid = false;
