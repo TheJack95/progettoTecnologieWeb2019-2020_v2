@@ -49,9 +49,9 @@ if(isset($_SESSION["user"])) {
 	$contentItems = "<div id='content'>"."\n"
 				."	<h3 class='titolo'>Azioni rapide</h3>"."\n"
 				."	<p>Benvenuto $utente! Scegli cosa fare dalle azioni rapide o naviga con il menu a sinistra!</p>"."\n"
-				."	<a class='azioniRapide' href='areaPrivata.php?pageName=messaggi' tabindex='14'>Controlla i Messaggi</a>"."\n"
-				."	<a class='azioniRapide' href='acquistaVeicoli.php' tabindex='15'>Guarda le nostre offerte</a>"."\n"
-				."	<a class='azioniRapide' href='contatti.php#formMessaggio' tabindex='16'>Contatta l'Amministratore</a>"."\n"
+				."	   <div class='linkDiv'><a class='azioniRapide' href='areaPrivata.php?pageName=messaggi' tabindex='14'>Controlla i Messaggi</a></div>"."\n"
+				."	   <div class='linkDiv'><a class='azioniRapide' href='acquistaVeicoli.php' tabindex='15'>Guarda le nostre offerte</a></div>"."\n"
+				."	   <div class='linkDiv'><a class='azioniRapide' href='contatti.php#formMessaggio' tabindex='16'>Contatta l'Amministratore</a></div>"."\n"
 				."</div>"."\n";
 
 

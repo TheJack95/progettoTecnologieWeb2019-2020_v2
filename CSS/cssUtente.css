@@ -19,16 +19,20 @@
   margin-top: 0.75em;
 }
 
+.linkDiv {
+  text-align: center;
+}
+
 .azioniRapide {
   padding: 0.4em;
+  font-size: 1.1em;
   margin: 0.6em;
-  width: auto;
   overflow: auto;
   background-color: #F1AB00;
-  color: #000000;
   border-radius: 4px;
   font-weight: bolder;
-  display: block;
+  display: inline-block;
+  text-align: center;
 }
 
 label {
@@ -141,6 +145,7 @@ h4 {
   margin-top: 0.4em;
   width: 20%;
   padding: 0.4em;
+  text-align: center;
   overflow: auto;
   background-color: #F1AB00;
   color: #000000;
