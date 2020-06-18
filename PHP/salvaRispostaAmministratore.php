@@ -13,13 +13,13 @@
         $oggetto = htmlentities($_POST["oggetto"], ENT_QUOTES, "UTF-8");
         if(controlloInput::validTestoCorto($oggetto) == false) {
             $valid = false;
-            $errori .= "<p class='messaggio errorMessage'>L&#39;oggetto inserito non &egrave; valido&#58; ricorda che non pu&ograve; essere vuoto&#46;</p>";
+            $errori .= "<p class='messaggio errorMessage'>L&#39;oggetto inserito non &egrave; valido&#58; ricorda che non pu&ograve; essere vuoto e non pu&ograve; avere pi&ugrave; di 50 caratteri&#46;</p>";
         }
         
         $testo = htmlentities($_POST["messaggio"], ENT_QUOTES, "UTF-8");
         if(controlloInput::validTesto($testo) == false) {
             $valid = false;
-            $errori .= "<p class='messaggio errorMessage'>Il messaggio inserito non &egrave; valido&#58; ricorda che non pu&ograve; essere vuoto&#46;</p>";
+            $errori .= "<p class='messaggio errorMessage'>Il messaggio inserito non &egrave; valido&#58; ricorda che deve contenere almeno 20 caratteri&#46;</p>";
         }
         
         if($valid == true) {
