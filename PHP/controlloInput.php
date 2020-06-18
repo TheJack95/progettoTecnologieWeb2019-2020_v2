@@ -28,7 +28,7 @@
 
 		public static function validTestoCorto($testoCorto) {
 			if(isset($testoCorto) && !empty($testoCorto)) {
-				if(preg_match("/^[a-zA-ZÀ-ÖØ-öø-ÿ0-9€?$@&#()'!,+\-;:=_.\s]{3,}$/",$testoCorto)) {
+				if(preg_match("/^[a-zA-ZÀ-ÖØ-öø-ÿ0-9€?$@&#()'!,+\-;:=_.\s]{3,50}$/",$testoCorto)) {
 					return true;
 				} else {
 					return false;
