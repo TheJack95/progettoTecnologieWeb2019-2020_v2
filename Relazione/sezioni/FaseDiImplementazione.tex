@@ -1,5 +1,6 @@
 \section{Fase di Implementazione}
 
+\subsection{V1}
 Il punto di partenza dello sviluppo è stato la creazione del Database in SQL e delle pagine in HTML, definendo header, footer e menu congiuntamente, e le singole pagine separatamente. Sin da questo momento il codice HTML è stato ripetutamente validato ad ogni suo aggiornamento. Successivamente le pagine HTML sono state convertite in pagine PHP.
 La componente PHP risulta sicuramente come la più corposa del sito in quanto viene utilizzata non solo per i controlli, ma anche per la generazione della struttura delle pagine e le interazioni con il database.
 Generare la struttura tramite PHP permette numerosi vantaggi, come:
@@ -12,5 +13,30 @@ Il passo successivo è stato appunto scrivere tali funzioni PHP per l’interazi
 Ciò ha reso l’attività di debug molto più veloce e mirata ma ha anche permesso di gestire al meglio eventuali errori di inserimento dei dati da parte dell’utente, fornendo messaggi d’errore precisi. In seguito, i controlli sulla validità degli input dei form, sono stati tradotti in JavaScript, in modo da effettuare un primo controllo client side.
 Infatti il linguaggio JavaScript è stato utilizzato principalmente per la validazione e per la visualizzazione del menù con dispositivi mobile o schermi di piccole dimensioni; inoltre viene impiegato per il calcolo dell'importo, il controllo delle date dei noleggi, il pulsante "scroll-up" atto a facilitare la navigazione e il conrollo IFrame per la visualizzazione della mappa.
 L’ultima parte della realizzazione è stata aggiungere la presentazione al sito tramite fogli CSS, avendo cura che la visualizzazione del sito fosse la stessa su vari dispositivi desktop. Per quando riguarda l’aspetto mobile, abbiamo apportato modifiche di layout in modo da rendere il sito accessibile anche da smartphone.
+
+\subsection{V2}
+
+\subsection{SQL}
+La realizzazione del sito è iniziata con la creazione del Database in SQL, il linguaggio per database relazionali più diffuso. Adottare questo standard ha permesso la compatibilità con i maggiori DBMS, interrogazioni semplici ed efficienti e una struttura pienamente conforme al modello relazionale.
+
+\subsection{XHTML 1.0 Strict}
+La componente XHTML corrisponde alla struttura del sito: le pagine sono state scritte senza includere alcuno script o istruzione di stile, demandati rispettivamente a comportamento (JS e PHP) e presentazione (CSS). La stesura del codice è proceduta contemporaneamente ad una validazione continua
+per assicurare il rispetto delle numerose e stringenti regole del linguaggio, come l'ampio utilizzo di metatag e la chiusura di tutti i Tag, che hanno reso un codice più pulito, comprensibile e soprattuto compatibile anche con i browser più obsoleti.
+
+\subsection{PHP}
+Il linguaggio lato server forma sicuramente la parte più corposa di codice ed è diviso in molti file differenti per rendere l’attività di debug molto più veloce e mirata in quanto svolgono compiti svariati e differenti tra loro, quali:
+\begin{itemize}
+ \item Generazione delle pagine XHTML: tutte le pagine del sito sono composte a partire dal rispettivo file XHTML a cui vengono aggiunte le parti comuni (header, footer, menù...) tramite sostituzione di stringhe per facilitare la mantenibilità e garantire l'assenza di link circolari.
+ \item Controllo degli input: la validità e coerenza dei dati immessi nel sito dall'utente sono sempre verificati per mantenere integro il database e le interazioni con esso. Questi controlli innescano sempre appropriati messaggi di errore/successo nell'inserimento dei dati, ma essendo effettuati a lato server saranno oscurati dai controlli JavaScript per tutti gli utenti con tale opzione attiva.
+ \item Interazioni con il Database: buona parte del sito fa affidamento ad apposite funzioni per estrazione, inserimento, modifica e cancellazione; in tal modo il contenuto delle pagine rispecchia sempre le informazioni del database, ad esempio nel caso delle liste di veicoli o dei dati dell'utente. A questo obbiettivo assolvono anche i file per login, registrazione e invio dei messaggi.
+\end{itemize}
+
+\subsection{JavaScript}
+Per il comportamento, JavaScript è stato utilizzato marginalmente e sostituito da PHP dove necessario per non intaccare l'accessibilità e la fruibilità da mezzi arretrati. L'impiego principale è la validazione degli input lato client e la visualizzazione del menù con dispositivi mobile o schermi di piccole dimensioni;
+inoltre vi sono altre funzioni che non sono essenziali, ma rendono la navigazione più semplice ed efficace, ad esempio il calcolo dell'importo, il controllo delle date dei noleggi, il pulsante "scroll-up" e il controllo IFrame per la visualizzazione della mappa.
+
+\subsection{CSS}
+La resa a schermo è stata destinata a fogli di stile separati dai sorgente XHTML rendendo il CSS essenziale per la separazione tra struttura e presentazione; alla stesura è stata prestata particolare attenzione all'utilizzo di appropriate misure e istruzioni non intrusive.
+Per ogni parte del sito sono presenti regole CSS adatte a diverse dimensioni e tipologie di media che apportano modifiche di layout in modo da rendere il sito accessibile anche da smartphone e schermi piccoli.
 
 \pagebreak
