@@ -98,7 +98,7 @@
 
 		public static function validPass($pass){
 			if(isset($pass) && !empty($pass)){
-				if(preg_match("/^[a-zA-Z0-9]{4,16}$/",$pass)){
+				if(preg_match("/^[a-zA-Z0-9]{8,16}$/",$pass)){
 					return true;
 				}
 				else{
