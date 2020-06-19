@@ -18,8 +18,6 @@ if($logged->status) {
 	#controllo se i campi obbligatori sono stati inseriti e se sono validi
 	if(isset($_GET['idAuto'])) {
 		$conn = new funzioniVeicoli();
-		$autoGiaRichiesta = $conn->preventivoGiaRichiesto($_GET['idAuto'], $_SESSION['user']);
-		$conn = new funzioniVeicoli();
 		$auto = $conn->getVeicoloAcquista($_GET['idAuto'], false);
 		$utente  = $_SESSION['user'];
 		$prezzoVendita = intval($auto->PrezzoVendita);

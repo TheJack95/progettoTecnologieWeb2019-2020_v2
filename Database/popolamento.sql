@@ -2,8 +2,8 @@ USE concessionaria;
 
 /* popolamento tabella Utenti */
 INSERT INTO Utenti() VALUE
-('admin@admin.com', '$2y$10$FWWRA1aayii/Uzp0aq6Gq.uGPymgkB5xpf/rFIRbOA2dOHNWX2Xge', 'Admin', 'Admin', NULL, NULL, NULL, 1),
-('utente@utente.com', '$2y$10$hnGoPYPog4gPStcxHuKX7.uPBZ7G.oNh.PkKAHJV9uV0vOilK2Q72', 'Utente', 'Utente', 999999999, 'Via Trieste, 63 - 35121 Padova (Italy)', '1970-01-01', 0);
+('admin', '$2y$10$KL3vJz2JnAzWVsYFxc4D..mFcrH99KjruekJy3d5aM2BkUim4hU.q', 'Admin', 'Admin', NULL, NULL, NULL, 1),
+('user', '$2y$10$sC9n7s1gyAdlDy8W0LnOqeoM8EOY2Lio6q8JEW75D5fjQKmorMCWq', 'User', 'User', 999999999, 'Via Trieste, 63 - 35121 Padova (Italy)', '1970-01-01', 0);
 
 INSERT INTO AutoVendita() VALUE 
 (NULL,'Citroen','C4 Picasso',0,1560,26800,'../Images/Citroen_C4_Picasso.png','Citroen C4 Picasso'),

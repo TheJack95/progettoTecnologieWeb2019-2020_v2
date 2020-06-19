@@ -41,11 +41,6 @@ foreach($rows as $row) {
 				.'			</li>'
 				.'		</ul>'
 				.'		<a class="linkMod hidePrint" href="../PHP/acquistaVeicoloFn.php?idAuto='.$row->IdAuto.'">Richiedi preventivo</a>'."\n"
-				/*.'		<form class="preventivoForm hidePrint" action="../PHP/acquistaVeicoloFn.php" method="post">'."\n"
-				.'			<fieldset>'."\n"
-                .'				<button type="submit" name="richiedipreventivo" value="'.$row->IdAuto.'" class="button linkMod" >Richiedi preventivo</button>'."\n"
-				.'			</fieldset>'."\n"
-				.'		</form>'."\n"*/
                 .'	</div>'."\n"
 				.'</div>';
 }

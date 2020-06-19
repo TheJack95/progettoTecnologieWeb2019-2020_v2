@@ -33,12 +33,7 @@
                             <p class = \"titoloOccasione\"> " .$row['Marca']. " " .$row['Modello']. "</p>
                             <p class = \"prezzo\"> PREZZO ORIGINALE: " .$row["PrezzoVendita"]. "&#8364;</p>
                             <p class = \"prezzo\"> PREZZO OCCASIONE: " .$prezzoOccasione. "&#8364;</p>
-                            <form class=\"preventivoForm\" action=\"../PHP/acquistaVeicoloFn.php\" method=\"post\">
-                            <fieldset>
-                                <legend></legend>
-                				<button type=\"submit\" name=\"richiedipreventivo\" value=\"".$row['IdAuto']."\" class=\"button\" id=\"preventivo\" tabindex=\"9\">Richiedi preventivo</button>
-							</fieldset>
-						</form>
+                            <a class=\"linkMod hidePrint\" href=\"../PHP/acquistaVeicoloFn.php?idAuto=".$row['IdAuto']."\">Richiedi preventivo</a>
                         </div> 
                     </div>";
         }
