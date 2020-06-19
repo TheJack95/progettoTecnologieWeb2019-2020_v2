@@ -1,21 +1,5 @@
 \section{Fase di Implementazione}
 
-\subsection{V1}
-Il punto di partenza dello sviluppo è stato la creazione del Database in SQL e delle pagine in HTML, definendo header, footer e menu congiuntamente, e le singole pagine separatamente. Sin da questo momento il codice HTML è stato ripetutamente validato ad ogni suo aggiornamento. Successivamente le pagine HTML sono state convertite in pagine PHP.
-La componente PHP risulta sicuramente come la più corposa del sito in quanto viene utilizzata non solo per i controlli, ma anche per la generazione della struttura delle pagine e le interazioni con il database.
-Generare la struttura tramite PHP permette numerosi vantaggi, come:
-\begin{itemize}
-    \item Il contenuto del sito rispecchia sempre il Database grazie alle estrazioni presenti nelle pagine PHP.
-    \item Il sito è più mantenibile poiché le parti comuni alle pagine del sito sono scritte tramite una sola funzione PHP.
-    \item Tramite la sostituzione di stringhe è possibile cambiare il codice HTML, ad esempio per togliere i link circolari.
-\end{itemize}
-Il passo successivo è stato appunto scrivere tali funzioni PHP per l’interazione con il database e la conseguente resa delle pagine, divise a seconda dell'ambito dell'estrazione in diversi file "funzioni". Completano la parte PHP altri file atti a interazioni più specifiche, quali salvataggi ed eliminazioni di dati, controllo degli input, invio di messaggi e login.
-Ciò ha reso l’attività di debug molto più veloce e mirata ma ha anche permesso di gestire al meglio eventuali errori di inserimento dei dati da parte dell’utente, fornendo messaggi d’errore precisi. In seguito, i controlli sulla validità degli input dei form, sono stati tradotti in JavaScript, in modo da effettuare un primo controllo client side.
-Infatti il linguaggio JavaScript è stato utilizzato principalmente per la validazione e per la visualizzazione del menù con dispositivi mobile o schermi di piccole dimensioni; inoltre viene impiegato per il calcolo dell'importo, il controllo delle date dei noleggi, il pulsante "scroll-up" atto a facilitare la navigazione e il conrollo IFrame per la visualizzazione della mappa.
-L’ultima parte della realizzazione è stata aggiungere la presentazione al sito tramite fogli CSS, avendo cura che la visualizzazione del sito fosse la stessa su vari dispositivi desktop. Per quando riguarda l’aspetto mobile, abbiamo apportato modifiche di layout in modo da rendere il sito accessibile anche da smartphone.
-
-\subsection{V2}
-
 \subsection{SQL}
 La realizzazione del sito è iniziata con la creazione del Database in SQL, il linguaggio per database relazionali più diffuso. Adottare questo standard ha permesso la compatibilità con i maggiori DBMS, interrogazioni semplici ed efficienti e una struttura pienamente conforme al modello relazionale.
 

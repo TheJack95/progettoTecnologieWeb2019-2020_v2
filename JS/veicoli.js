@@ -1,7 +1,7 @@
 var dataInizioNolo = null;
 var dataFineNolo = null;
 
-var regexDate = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
+var regexDate = /^(0?[1-9]|[12][0-9]|3[01])[-](0?[1-9]|1[012])[-]\d{4}$/;
 
 /**
  * Converte la data da gg-mm-aaaa a aaaa-mm-gg
