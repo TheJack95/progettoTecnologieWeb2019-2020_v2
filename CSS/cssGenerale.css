@@ -63,6 +63,11 @@ a:visited {
 	font-size: 0;
 }
 
+label, input, textarea {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 1em;
+}
+
 /* BREADCRUMBS */
 #breadcrumb {
 	background: #F1F1F1;
