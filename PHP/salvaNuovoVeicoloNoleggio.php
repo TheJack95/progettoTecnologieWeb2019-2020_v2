@@ -53,21 +53,6 @@
             $errori .= "<p class='messaggio errorMessage'>La cauzione inserita non &egrave; valida&#58; ricorda che non pu&ograve; essere vuota e che pu&ograve; contenere solo numeri&#46;</p>";
         }
 
-        if(is_uploaded_file($_FILES["immagineAuto"]["tmp_name"])) {
-            if($_FILES["immagineAuto"]["size"] <= 1000000) {
-                $path = "../Images/". basename($_FILES["immagineAuto"]["name"]);
-                if(move_uploaded_file($_FILES['immagineAuto']["tmp_name"], $path)) {
-                    $immagine = "../Images/". basename($_FILES["immagineAuto"]["name"]);
-                }
-            } else {
-                $valid = false;
-                $errori .= "<p class='messaggio errorMessage'>L&#39;immagine inserita non &egrave; valida&#58; ricorda che non pu&ograve; superare i 1000KB&#46;</p>";
-            }
-        } else {
-            $valid = false;
-            $errori .= "<p class='messaggio errorMessage'>L&#39;immagine non &egrave; stata inserita&#46;</p>";
-        }
-
         if(controlloInput::validDescr($_POST["descrizione"])) {
             $descrizione = htmlentities($_POST["descrizione"],ENT_QUOTES,"UTF-8");
         } else {
@@ -76,15 +61,35 @@
         }
 
         if($valid == true) {
-            $connessioneDatabase = new database_connection;
-            $insert = "INSERT INTO AutoNoleggio() VALUES ('$targa','$marca','$modello','$cilindrata','$costo','$cauzione','$immagine','$descrizione')";
-            if ($connessioneDatabase->esegui($insert) == TRUE) {
-                $messaggio = "<p class='messaggio successMessage'>Nuovo veicolo a noleggio inserito correttamente</p>";
-                $_SESSION["nuovoMessaggio"] = $messaggio;
-                header("location: ../PAGES/VeicoliNoleggioAmministratore.php");
+            if(is_uploaded_file($_FILES["immagineAuto"]["tmp_name"])) {
+                if($_FILES["immagineAuto"]["size"] <= 1000000) {
+                    $path = "../Images/". basename($_FILES["immagineAuto"]["name"]);
+                    if(move_uploaded_file($_FILES['immagineAuto']["tmp_name"], $path)) {
+                        $immagine = "../Images/". basename($_FILES["immagineAuto"]["name"]);
+                    }
+                } else {
+                    $valid = false;
+                    $errori .= "<p class='messaggio errorMessage'>L&#39;immagine inserita non &egrave; valida&#58; ricorda che non pu&ograve; superare i 1000KB&#46;</p>";
+                }
             } else {
-                $messaggio = "<p class='messaggio errorMessage'>Non &egrave; possibile inserire il nuovo veicolo a noleggio per un problema del database&#46; Riprova pi&ugrave; tardi&#46;</p>";
-                $_SESSION["nuovoMessaggio"] = $messaggio;
+                $valid = false;
+                $errori .= "<p class='messaggio errorMessage'>L&#39;immagine non &egrave; stata inserita&#46;</p>";
+            }
+
+            if($valid == true) {
+                $connessioneDatabase = new database_connection;
+                $insert = "INSERT INTO AutoNoleggio() VALUES ('$targa','$marca','$modello','$cilindrata','$costo','$cauzione','$immagine','$descrizione')";
+                if ($connessioneDatabase->esegui($insert) == TRUE) {
+                    $messaggio = "<p class='messaggio successMessage'>Nuovo veicolo a noleggio inserito correttamente</p>";
+                    $_SESSION["nuovoMessaggio"] = $messaggio;
+                    header("location: ../PAGES/VeicoliNoleggioAmministratore.php");
+                } else {
+                    $messaggio = "<p class='messaggio errorMessage'>Non &egrave; possibile inserire il nuovo veicolo a noleggio per un problema del database&#46; Riprova pi&ugrave; tardi&#46;</p>";
+                    $_SESSION["nuovoMessaggio"] = $messaggio;
+                    header("location: ../PAGES/nuovoVeicoloNoleggio.php");
+                }
+            } else {
+                $_SESSION["nuovoMessaggio"] = $errori;
                 header("location: ../PAGES/nuovoVeicoloNoleggio.php");
             }
         } else {
