@@ -54,11 +54,6 @@ iframe{
     margin-bottom: 3em;
 }
 
-label, input, textarea {
-    font-family: Verdana, Arial, Helvetica, sans-serif;
-    font-size: 1em;
-}
-
 label{
  display: block;
  margin: 0.5em 0;
