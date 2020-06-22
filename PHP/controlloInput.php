@@ -141,7 +141,7 @@
 
 		public static function validAddress($address){
 			if(isset($address) && !empty($address)){
-				if(preg_match("/^([a-zA-ZÀ-ÖØ-öø-ÿ ]{3,11})\s([a-zA-ZÀ-ÖØ-öø-ÿ' ]+\s)+(\d{1,3}([\/][a-zA-ZÀ-ÖØ-öø-ÿ ])?)$/",$address)){
+				if(preg_match("/^([a-zA-ZÀ-ÖØ-öø-ÿ ]{3,11})\s([a-zA-ZÀ-ÖØ-öø-ÿ',. ]+\s)+(\d{1,3}([\/][a-zA-ZÀ-ÖØ-öø-ÿ ])?)+[a-zA-ZÀ-ÖØ-öø-ÿ0-9',()\s]{0,}$/",$address)){
 					return true;
 				}
 				else {
