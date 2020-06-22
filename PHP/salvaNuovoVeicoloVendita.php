@@ -40,7 +40,7 @@
         }
         
         if(controlloInput::validPrezzo($_POST["prezzo"])) {
-            $costo = $_POST["prezzo"];
+            $prezzo = $_POST["prezzo"];
         } else {
             $valid = false;
             $errori .= "<p class='messaggio errorMessage'>Il costo inserito non &egrave; valido&#58; ricorda che non pu&ograve; essere vuoto e che &pu&ograve; contenere solo numeri&#46;</p>";
