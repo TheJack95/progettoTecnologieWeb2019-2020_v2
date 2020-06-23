@@ -5,10 +5,10 @@ USE concessionaria;
 CREATE TABLE IF NOT EXISTS Utenti(
     Email varchar(50),
     Password varchar(100),
-    Nome varchar(30),
-    Cognome varchar(30),
-    Telefono varchar(15),
-    Indirizzo varchar(50),
+    Nome varchar(50),
+    Cognome varchar(50),
+    Telefono varchar(12),
+    Indirizzo varchar(100),
     DataNascita date,
     FlAdmin boolean,
     PRIMARY KEY(Email)
@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS Utenti(
 
 CREATE TABLE IF NOT EXISTS AutoVendita(
     IdAuto int AUTO_INCREMENT,
-	Marca varchar(20),
+	Marca varchar(50),
 	Modello varchar(50),
 	KM int,
 	Cilindrata smallint,
@@ -29,10 +29,10 @@ CREATE TABLE IF NOT EXISTS AutoVendita(
 
 CREATE TABLE IF NOT EXISTS AutoNoleggio(
     Targa varchar(7),
-	Marca varchar(20),
+	Marca varchar(50),
 	Modello varchar(50),
 	Cilindrata smallint,
-	CostoNoleggio smallint,
+	CostoNoleggio int,
 	Cauzione int,
 	Immagine text NULL,
 	DescrImmagine text NULL,
@@ -60,10 +60,10 @@ CREATE TABLE IF NOT EXISTS PrenotazioneNoleggio(
 
 CREATE TABLE IF NOT EXISTS Messaggi (
     IdMess int AUTO_INCREMENT,
-    Nome varchar(30),
-    Cognome varchar(30),
+    Nome varchar(50),
+    Cognome varchar(50),
     Email varchar(50),
-    NumeroTelefono varchar(10),
+    NumeroTelefono varchar(12),
     Messaggio text,
     PRIMARY KEY(IdMess)
 );
@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS Messaggi (
 CREATE TABLE IF NOT EXISTS RisposteMessaggi (
     IdRisp int AUTO_INCREMENT,
     Destinatario int,
-	Oggetto varchar(100),
+	Oggetto varchar(50),
     Messaggio text,
     PRIMARY KEY(IdRisp)
 );
